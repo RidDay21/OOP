@@ -1,13 +1,12 @@
 package ru.nsu.laptev;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-/**
- *
- */
 class HeapSortTest {
+
     @Test
     void sampleTest() {
         int[] array4check = {1, 4, 5, 675, 23, 4};
