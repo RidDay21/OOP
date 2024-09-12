@@ -3,12 +3,12 @@ package ru.nsu.laptev;
 import java.io.*;
 
 /**
- * Class for realization of HeapSort
+ * Class for realization of HeapSort.
  */
 public class HeapSort {
 
     /**
-     * Метод для добавления предка в бинарное дерево
+     * Метод для добавления предка в бинарное дерево.
      */
     public static void addAncestor(int index, int data, int[] bintree) {
         int i = index;
@@ -26,7 +26,7 @@ public class HeapSort {
     }
 
     /**
-     * Метод "просеивания"
+     * Метод "просеивания".
      */
     public static void heapify(int index, int[] list, int size) {
         while (index < size / 2) {
@@ -48,7 +48,7 @@ public class HeapSort {
     }
 
     /**
-     * Метод для пирамидальной сортировки
+     * Метод для пирамидальной сортировки.
      */
     public static void heapsort(int[] array, int length) {
         int[] BinTree = new int[length];
