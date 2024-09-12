@@ -5,7 +5,7 @@ package ru.nsu.laptev;
 public class Main {
     public static void main(String[] args)
     {
-        int [] array = {4,1,5,675,23,4};
+        int [] array = {4, 1, 5, 675, 23, 4};
         HeapSort.heapsort(array, array.length);
 
     }
