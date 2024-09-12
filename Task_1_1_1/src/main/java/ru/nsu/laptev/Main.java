@@ -7,6 +7,5 @@ public class Main {
     {
         int [] array = {34,5,23,543544,1,5,78,3};
         HeapSort.heapsort(array, array.length);
-
     }
 }

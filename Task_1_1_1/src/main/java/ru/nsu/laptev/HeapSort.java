@@ -63,9 +63,9 @@ public class HeapSort {
             heapify(0,BinTree,length - i - 1);
         }
 
-        for (int i = 0;i < length;i++)
+        for (int i = 0; i < length;i++)
         {
-            System.out.print(sortedArray[i] + " ");
+            array[i] = sortedArray[i];
         }
     }
 }
