@@ -7,9 +7,5 @@ public class Main {
     {
         int [] array = {4,1,5,675,23,4};
         HeapSort.heapsort(array, array.length);
-        for (int i = 0;i < array.length;i++)
-        {
-            System.out.println(array[i] + " ");
-        }
     }
 }
