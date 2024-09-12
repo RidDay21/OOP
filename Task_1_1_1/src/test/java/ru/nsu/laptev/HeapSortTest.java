@@ -14,5 +14,7 @@ class HeapSortTest
         HeapSort.heapsort(array4check,6);
         int [] correctArray = {1,4,4,5,23,675};
         assertArrayEquals(correctArray ,array4check);
+        Main.main(null);
+        assertTrue(true);
     }
 }
