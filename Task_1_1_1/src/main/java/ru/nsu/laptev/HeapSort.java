@@ -32,30 +32,27 @@ public class HeapSort {
                 list[indBossAncestor] = list[index];
                 list[index] = tmp;
                 index = indBossAncestor;
-            }
-            else
-                break;
+            } else break;
         }
     }
 
-    public static void heapsort(int [] array, int length)
-    {
-        int [] BinTree = new int [length];
+    public static void heapsort(int[] array, int length) {
+        int[] BinTree = new int[length];
         for (int i = 0; i < length; i++) {
             int anc = array[i];
             addAncestor(i, anc, BinTree);
         }
 
-        for (int i = 0; i < length;i++) {
+        for (int i = 0; i < length; i++) {
             heapify(i, BinTree, length);
         }
 
         int[] sortedArray = new int[length];
 
-        for (int i =0; i < length; i++) {
+        for (int i = 0; i < length; i++) {
             sortedArray[i] = BinTree[0];
             BinTree[0] = BinTree[length - i - 1];
-            heapify(0,BinTree,length - i - 1);
+            heapify(0, BinTree, length - i - 1);
         }
 
         for (int i = 0; i < length; i++) {
