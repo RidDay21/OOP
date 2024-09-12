@@ -2,15 +2,18 @@ package ru.nsu.laptev;
 
 import java.io.*;
 
+/**
+ *
+ */
 public class HeapSort {
 
     public static void addAncestor(int index, int data, int[] bintree) {
         int i = index;
         int indPred = (i - 1) / 2;
 
-        bintree[i] = data;//вносим новый элемент в наше дерево
+        bintree[i] = data; //вносим новый элемент в наше дерево
 
-        while (i > 0 && bintree[i] < bintree[indPred]) {//тут мы просто просеиваем вверх наше дерево
+        while (i > 0 && bintree[i] < bintree[indPred]) { //тут мы просто просеиваем вверх наше дерево
             int tmp = bintree[i];
             bintree[i] = bintree[indPred];
             bintree[indPred] = tmp;
