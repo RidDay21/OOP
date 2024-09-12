@@ -5,7 +5,11 @@ package ru.nsu.laptev;
 public class Main {
     public static void main(String[] args)
     {
-        int [] array = {34,5,23,543544,1,5,78,3};
+        int [] array = {4,1,5,675,23,4};
         HeapSort.heapsort(array, array.length);
+        for (int i = 0;i < array.length;i++)
+        {
+            System.out.println(array[i] + " ");
+        }
     }
 }
