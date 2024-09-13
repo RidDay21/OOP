@@ -3,7 +3,7 @@ package ru.nsu.laptev;
 import java.io.*;
 
 /**
- * Class for realization of HeapSort.
+ * Класс для реализации HeapSort'a (пирамидальной сортировки)
  */
 public class HeapSort {
 
