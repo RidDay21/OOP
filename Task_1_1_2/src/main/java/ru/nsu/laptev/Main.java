@@ -14,6 +14,7 @@ public class Main {
         main_deck.deck = main_deck.GenerateDeck();
         diller.ShuffleDeck(main_deck);
         main_deck.WriteDeck();
+
     }
 }
 
