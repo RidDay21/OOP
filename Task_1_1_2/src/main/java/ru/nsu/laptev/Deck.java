@@ -22,7 +22,7 @@ public class Deck extends Card
 
     public void WriteDeck() {
         for (int i = 0; i < 52; i++) {
-            System.out.println("Масть: " + deck.get(i).get(0) + " Data: " + deck.get(i).get(1));
+            System.out.println("Масть: " + deck.get(i).get(0) + " Имя: " + deck.get(i).get(1));
         }
     }
 

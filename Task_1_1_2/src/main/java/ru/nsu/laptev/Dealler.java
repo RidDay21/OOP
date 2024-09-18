@@ -11,12 +11,12 @@ import java.util.Random;
  */
 public class Dealler extends Player
 {
-    public void ShuffleDeck(Deck exmp1)
+    public void ShuffleDeck(Deck exmp)
     {
-        Collections.shuffle(exmp1.deck);
+        Collections.shuffle(exmp.deck);
     }
 
-    public void DealCards(Deck exmp1, ArrayList<ArrayList<String>> hand, int amount_of_cards)
+    public void DealCards(Deck exmp1, ArrayList<ArrayList<String>> hand)
     {
         int cardIndex = exmp1.deck.size() - 1;
         hand.add(exmp1.deck.get(cardIndex));
