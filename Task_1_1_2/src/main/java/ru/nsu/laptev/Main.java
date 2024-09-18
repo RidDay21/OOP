@@ -11,6 +11,8 @@ public class Main {
         {
             System.out.println("Масть: " + deck[i][0] + " Data: " + deck[i][1]);
         }
+        int n = 0;
+        n += 1;
     }
 }
 
