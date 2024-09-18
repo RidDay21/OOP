@@ -7,14 +7,13 @@ import java.util.Collections;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args)
-    {
-        Deck card = new Deck();
+    public static void main(String[] args) {
+        Deck main_deck = new Deck();
         Dealler diller = new Dealler();
 
-        ArrayList<ArrayList<String>> deck = card.GenerateDeck();
-        diller.ShuffleDeck(deck);
-        card.WriteDeck(deck);
+        main_deck.deck = main_deck.GenerateDeck();
+        diller.ShuffleDeck(main_deck);
+        main_deck.WriteDeck();
     }
 }
 
