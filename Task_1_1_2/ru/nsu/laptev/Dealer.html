@@ -198,38 +198,38 @@ extends <a href="Player.html" title="class in ru.nsu.laptev">Player</a></pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#DealCards(ru.nsu.laptev.Deck,java.util.ArrayList)">DealCards</a></span>&#8203;(<a href="Deck.html" title="class in ru.nsu.laptev">Deck</a>&nbsp;exmp1,
-         java.util.ArrayList&lt;java.util.ArrayList&lt;java.lang.String&gt;&gt;&nbsp;hand)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#cards(int,java.util.Map,boolean)">cards</a></span>&#8203;(int&nbsp;cards,
+     java.util.Map&lt;java.lang.String,&#8203;java.lang.Integer&gt;&nbsp;values,
+     boolean&nbsp;isFirstRound)</code></th>
+<td class="colLast">
+<div class="block">Метод для вывода карт(Аргумент cards - кол-во карт на руках,
+ values - значения карт, IsFirstRound - флаг</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#deal(ru.nsu.laptev.Deck,java.util.ArrayList)">deal</a></span>&#8203;(<a href="Deck.html" title="class in ru.nsu.laptev">Deck</a>&nbsp;exmp1,
+    java.util.ArrayList&lt;java.util.ArrayList&lt;java.lang.String&gt;&gt;&nbsp;hand)</code></th>
 <td class="colLast">
 <div class="block">Метод для раздачи карт (Аргумент exmp1 - колода, hand - рука игрока,
  в которую выдаются карты)</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#DealersTurn(ru.nsu.laptev.Deck,java.util.Map,ru.nsu.laptev.Player)">DealersTurn</a></span>&#8203;(<a href="Deck.html" title="class in ru.nsu.laptev">Deck</a>&nbsp;deck,
-           java.util.Map&lt;java.lang.String,&#8203;java.lang.Integer&gt;&nbsp;values,
-           <a href="Player.html" title="class in ru.nsu.laptev">Player</a>&nbsp;player)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#dlsturn(ru.nsu.laptev.Deck,java.util.Map,ru.nsu.laptev.Player)">dlsturn</a></span>&#8203;(<a href="Deck.html" title="class in ru.nsu.laptev">Deck</a>&nbsp;deck,
+       java.util.Map&lt;java.lang.String,&#8203;java.lang.Integer&gt;&nbsp;values,
+       <a href="Player.html" title="class in ru.nsu.laptev">Player</a>&nbsp;player)</code></th>
 <td class="colLast">
 <div class="block">Метод для реализации ходов Дилера (Аргументы: deck - колода, values - значения карт
  player - наш игрок</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#ShuffleDeck(ru.nsu.laptev.Deck)">ShuffleDeck</a></span>&#8203;(<a href="Deck.html" title="class in ru.nsu.laptev">Deck</a>&nbsp;exmp)</code></th>
-<td class="colLast">
-<div class="block">Метод для переменивания колоды (Аргумент exmp отвечает за переданную колоду)</div>
-</td>
-</tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#WriteCards(int,java.util.Map,boolean)">WriteCards</a></span>&#8203;(int&nbsp;cards,
-          java.util.Map&lt;java.lang.String,&#8203;java.lang.Integer&gt;&nbsp;values,
-          boolean&nbsp;isFirstRound)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#shuffle(ru.nsu.laptev.Deck)">shuffle</a></span>&#8203;(<a href="Deck.html" title="class in ru.nsu.laptev">Deck</a>&nbsp;exmp)</code></th>
 <td class="colLast">
-<div class="block">Метод для вывода карт(Аргумент cards - кол-во карт на руках,
- values - значения карт, IsFirstRound - флаг</div>
+<div class="block">Метод для переменивания колоды (Аргумент exmp отвечает за переданную колоду)</div>
 </td>
 </tr>
 </table>
@@ -238,7 +238,7 @@ extends <a href="Player.html" title="class in ru.nsu.laptev">Player</a></pre>
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;ru.nsu.laptev.<a href="Player.html" title="class in ru.nsu.laptev">Player</a></h3>
-<code><a href="Player.html#MakeTurn(ru.nsu.laptev.Deck,java.util.Map)">MakeTurn</a>, <a href="Player.html#WriteCards(int,java.util.Map)">WriteCards</a></code></li>
+<code><a href="Player.html#cards(int,java.util.Map)">cards</a>, <a href="Player.html#maketurn(ru.nsu.laptev.Deck,java.util.Map)">maketurn</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -282,50 +282,50 @@ extends <a href="Player.html" title="class in ru.nsu.laptev">Player</a></pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="ShuffleDeck(ru.nsu.laptev.Deck)">
+<a id="shuffle(ru.nsu.laptev.Deck)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>ShuffleDeck</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;ShuffleDeck&#8203;(<a href="Deck.html" title="class in ru.nsu.laptev">Deck</a>&nbsp;exmp)</pre>
+<h4>shuffle</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;shuffle&#8203;(<a href="Deck.html" title="class in ru.nsu.laptev">Deck</a>&nbsp;exmp)</pre>
 <div class="block">Метод для переменивания колоды (Аргумент exmp отвечает за переданную колоду)</div>
 </li>
 </ul>
-<a id="DealCards(ru.nsu.laptev.Deck,java.util.ArrayList)">
+<a id="deal(ru.nsu.laptev.Deck,java.util.ArrayList)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>DealCards</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;DealCards&#8203;(<a href="Deck.html" title="class in ru.nsu.laptev">Deck</a>&nbsp;exmp1,
-                      java.util.ArrayList&lt;java.util.ArrayList&lt;java.lang.String&gt;&gt;&nbsp;hand)</pre>
+<h4>deal</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;deal&#8203;(<a href="Deck.html" title="class in ru.nsu.laptev">Deck</a>&nbsp;exmp1,
+                 java.util.ArrayList&lt;java.util.ArrayList&lt;java.lang.String&gt;&gt;&nbsp;hand)</pre>
 <div class="block">Метод для раздачи карт (Аргумент exmp1 - колода, hand - рука игрока,
  в которую выдаются карты)</div>
 </li>
 </ul>
-<a id="WriteCards(int,java.util.Map,boolean)">
+<a id="cards(int,java.util.Map,boolean)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>WriteCards</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;WriteCards&#8203;(int&nbsp;cards,
-                       java.util.Map&lt;java.lang.String,&#8203;java.lang.Integer&gt;&nbsp;values,
-                       boolean&nbsp;isFirstRound)</pre>
+<h4>cards</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;cards&#8203;(int&nbsp;cards,
+                  java.util.Map&lt;java.lang.String,&#8203;java.lang.Integer&gt;&nbsp;values,
+                  boolean&nbsp;isFirstRound)</pre>
 <div class="block">Метод для вывода карт(Аргумент cards - кол-во карт на руках,
  values - значения карт, IsFirstRound - флаг</div>
 </li>
 </ul>
-<a id="DealersTurn(ru.nsu.laptev.Deck,java.util.Map,ru.nsu.laptev.Player)">
+<a id="dlsturn(ru.nsu.laptev.Deck,java.util.Map,ru.nsu.laptev.Player)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>DealersTurn</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;DealersTurn&#8203;(<a href="Deck.html" title="class in ru.nsu.laptev">Deck</a>&nbsp;deck,
-                        java.util.Map&lt;java.lang.String,&#8203;java.lang.Integer&gt;&nbsp;values,
-                        <a href="Player.html" title="class in ru.nsu.laptev">Player</a>&nbsp;player)</pre>
+<h4>dlsturn</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;dlsturn&#8203;(<a href="Deck.html" title="class in ru.nsu.laptev">Deck</a>&nbsp;deck,
+                    java.util.Map&lt;java.lang.String,&#8203;java.lang.Integer&gt;&nbsp;values,
+                    <a href="Player.html" title="class in ru.nsu.laptev">Player</a>&nbsp;player)</pre>
 <div class="block">Метод для реализации ходов Дилера (Аргументы: deck - колода, values - значения карт
  player - наш игрок</div>
 </li>

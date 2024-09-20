@@ -176,7 +176,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>static void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#GameInfo()">GameInfo</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#hello()">hello</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Метод Приветствие</div>
 </td>
@@ -188,7 +188,19 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>static void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#Round(int,ru.nsu.laptev.Dealer,ru.nsu.laptev.Player,ru.nsu.laptev.Deck,java.util.Map)">Round</a></span>&#8203;(int&nbsp;round,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#result(ru.nsu.laptev.Player,ru.nsu.laptev.Dealer,int)">result</a></span>&#8203;(<a href="Player.html" title="class in ru.nsu.laptev">Player</a>&nbsp;player,
+      <a href="Dealer.html" title="class in ru.nsu.laptev">Dealer</a>&nbsp;dealer,
+      int&nbsp;result)</code></th>
+<td class="colLast">
+<div class="block">Метод для подведения итогов нашего раунла
+ Аргументы: player - игрок, dealer - диллер,
+ result - кто выиграл(3 - игрок выиграл, 1 - ничья, 0 - диллер)
+ flag - указатель на то, нужно ли играть дилеру)</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#round(int,ru.nsu.laptev.Dealer,ru.nsu.laptev.Player,ru.nsu.laptev.Deck,java.util.Map)">round</a></span>&#8203;(int&nbsp;round,
      <a href="Dealer.html" title="class in ru.nsu.laptev">Dealer</a>&nbsp;dlr,
      <a href="Player.html" title="class in ru.nsu.laptev">Player</a>&nbsp;pl,
      <a href="Deck.html" title="class in ru.nsu.laptev">Deck</a>&nbsp;deck,
@@ -197,18 +209,6 @@ extends java.lang.Object</pre>
 <div class="block">Метод для реализации нашего раунда
  Аргументы: round - номер раунда, dlr - дилер, pl - иргок,
  values - значения карт</div>
-</td>
-</tr>
-<tr id="i3" class="rowColor">
-<td class="colFirst"><code>static void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#WriteResult(ru.nsu.laptev.Player,ru.nsu.laptev.Dealer,int)">WriteResult</a></span>&#8203;(<a href="Player.html" title="class in ru.nsu.laptev">Player</a>&nbsp;player,
-           <a href="Dealer.html" title="class in ru.nsu.laptev">Dealer</a>&nbsp;dealer,
-           int&nbsp;result)</code></th>
-<td class="colLast">
-<div class="block">Метод для подведения итогов нашего раунла
- Аргументы: player - игрок, dealer - диллер,
- result - кто выиграл(3 - игрок выиграл, 1 - ничья, 0 - диллер)
- flag - указатель на то, нужно ли играть дилеру)</div>
 </td>
 </tr>
 </table>
@@ -263,38 +263,38 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public static&nbsp;void&nbsp;main&#8203;(java.lang.String[]&nbsp;args)</pre>
 </li>
 </ul>
-<a id="GameInfo()">
+<a id="hello()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>GameInfo</h4>
-<pre class="methodSignature">public static&nbsp;void&nbsp;GameInfo()</pre>
+<h4>hello</h4>
+<pre class="methodSignature">public static&nbsp;void&nbsp;hello()</pre>
 <div class="block">Метод Приветствие</div>
 </li>
 </ul>
-<a id="WriteResult(ru.nsu.laptev.Player,ru.nsu.laptev.Dealer,int)">
+<a id="result(ru.nsu.laptev.Player,ru.nsu.laptev.Dealer,int)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>WriteResult</h4>
-<pre class="methodSignature">public static&nbsp;void&nbsp;WriteResult&#8203;(<a href="Player.html" title="class in ru.nsu.laptev">Player</a>&nbsp;player,
-                               <a href="Dealer.html" title="class in ru.nsu.laptev">Dealer</a>&nbsp;dealer,
-                               int&nbsp;result)</pre>
+<h4>result</h4>
+<pre class="methodSignature">public static&nbsp;void&nbsp;result&#8203;(<a href="Player.html" title="class in ru.nsu.laptev">Player</a>&nbsp;player,
+                          <a href="Dealer.html" title="class in ru.nsu.laptev">Dealer</a>&nbsp;dealer,
+                          int&nbsp;result)</pre>
 <div class="block">Метод для подведения итогов нашего раунла
  Аргументы: player - игрок, dealer - диллер,
  result - кто выиграл(3 - игрок выиграл, 1 - ничья, 0 - диллер)
  flag - указатель на то, нужно ли играть дилеру)</div>
 </li>
 </ul>
-<a id="Round(int,ru.nsu.laptev.Dealer,ru.nsu.laptev.Player,ru.nsu.laptev.Deck,java.util.Map)">
+<a id="round(int,ru.nsu.laptev.Dealer,ru.nsu.laptev.Player,ru.nsu.laptev.Deck,java.util.Map)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>Round</h4>
-<pre class="methodSignature">public static&nbsp;void&nbsp;Round&#8203;(int&nbsp;round,
+<h4>round</h4>
+<pre class="methodSignature">public static&nbsp;void&nbsp;round&#8203;(int&nbsp;round,
                          <a href="Dealer.html" title="class in ru.nsu.laptev">Dealer</a>&nbsp;dlr,
                          <a href="Player.html" title="class in ru.nsu.laptev">Player</a>&nbsp;pl,
                          <a href="Deck.html" title="class in ru.nsu.laptev">Deck</a>&nbsp;deck,
