@@ -16,28 +16,22 @@ public class Player {
     public Scanner scanner = new Scanner(System.in);
 
     /**
-     *
      * @param deck
      * @param values
      * @return
      */
-    public int MakeTurn(Deck deck, Map <String, Integer> values)
-    {
+    public int MakeTurn(Deck deck, Map<String, Integer> values) {
         System.out.println("Ваш ход\n-------\nВведите \"1\", чтобы взять карту, и \"0\", чтобы остановиться...");
         int numb = scanner.nextInt();//выбранный номер
-        switch (numb)
-        {
+        switch (numb) {
             case (1):
                 ArrayList<String> card = deck.TakeCard();
                 hand.add(card);
                 int value = values.get(card.get(0));
                 score += value;
-                if (score > 21)
-                {
-                    for (int i = 0; i < hand.size(); i++)
-                    {
-                        if (hand.get(i).get(0) == "Туз")
-                        {
+                if (score > 21) {
+                    for (int i = 0; i < hand.size(); i++) {
+                        if (hand.get(i).get(0) == "Туз") {
                             bust = 1;
                             break;
                         }
@@ -53,23 +47,20 @@ public class Player {
     }
 
     /**
-     *
      * @param amount_of_cards
      * @param values
      */
-    public void WriteCards(int amount_of_cards, Map<String, Integer> values)
-    {
+    public void WriteCards(int amount_of_cards, Map<String, Integer> values) {
         System.out.print("Ваши карты: [");
         score = 0;
-        for (int i = 0; i < amount_of_cards; i++)
-        {
+        for (int i = 0; i < amount_of_cards; i++) {
             int value = values.get(hand.get(i).get(0));
             if (hand.get(i).get(0) == "Туз" && bust > 0) {
                 value = 1;
             }
             score += value;
-            System.out.print(hand.get(i).get(0) +" "+ hand.get(i).get(1) + " (" + value + ")");
-            if (i+1 != amount_of_cards)
+            System.out.print(hand.get(i).get(0) + " " + hand.get(i).get(1) + " (" + value + ")");
+            if (i + 1 != amount_of_cards)
                 System.out.print(", ");
         }
         System.out.println("] -> " + score);
