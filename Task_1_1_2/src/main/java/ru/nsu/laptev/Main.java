@@ -41,7 +41,8 @@ public class Main {
         switch (result) {
             case 3:
                 player.victories++;
-                System.out.print("Вы выиграли. Счёт " + player.victories + ":" + dealer.victories + " в ");
+                System.out.print("Вы выиграли. Счёт " + player.victories +
+                        ":" + dealer.victories + " в ");
                 if (player.victories > dealer.victories)
                     System.out.println("вашу пользу.");
                 else
@@ -49,14 +50,16 @@ public class Main {
                 break;
             case 1:
                 dealer.victories++;
-                System.out.print("Вы проиграли. Счёт " + player.victories + ":" + dealer.victories + " в ");
+                System.out.print("Вы проиграли. Счёт " + player.victories +
+                        ":" + dealer.victories + " в ");
                 if (player.victories > dealer.victories)
                     System.out.println("вашу пользу.");
                 else
                     System.out.println("не вашу пользу.");
                 break;
             case 0:
-                System.out.print("Вы сыграли вничью. Cчет " + player.victories + ":" + dealer.victories + " в ");
+                System.out.print("Вы сыграли вничью. Cчет " + player.victories +
+                        ":" + dealer.victories + " в ");
                 if (player.victories > dealer.victories)
                     System.out.println("вашу пользу.");
                 else

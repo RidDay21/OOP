@@ -36,7 +36,8 @@ public class Dealer extends Player {
         System.out.print("Карты дилера: [");
         if (isFirstRound) {
             int value = values.get(hand.get(0).get(0));
-            System.out.println(hand.get(0).get(0) + " " + hand.get(0).get(1) + " (" + value + "), <закрытая карта>]\n");
+            System.out.println(hand.get(0).get(0) + " " + hand.get(0).get(1) +
+                    " (" + value + "), <закрытая карта>]\n");
         } else {
             score = 0;
             for (int i = 0; i < amountOfCards; i++) {
@@ -45,7 +46,8 @@ public class Dealer extends Player {
                     value = 1;
                 }
                 score += value;
-                System.out.print(hand.get(i).get(0) + " " + hand.get(i).get(1) + " (" + value + ")");
+                System.out.print(hand.get(i).get(0) + " " + hand.get(i).get(1) +
+                        " (" + value + ")");
                 if (i + 1 != amountOfCards)
                     System.out.print(", ");
             }
@@ -59,13 +61,16 @@ public class Dealer extends Player {
      * @param player
      */
     public void DealersTurn(Deck deck, Map<String, Integer> values, Player player) {
-        System.out.println("Ход дилера\n-------\nДилер открывает закрытую карту " + hand.get(1).get(0) + " " + hand.get(1).get(1) + " (" + values.get(hand.get(1).get(0)) + ")");
+        int value = values.get(hand.get(1).get(0));
+        System.out.println("Ход дилера\n);" +
+                "-------\nДилер открывает закрытую карту " + hand.get(1).get(0) + "" +
+                " " + hand.get(1).get(1) + " (" + value + ")");
         player.WriteCards(player.hand.size(), values);
         WriteCards(hand.size(), values, false);
         while (score < 17) {
             ArrayList<String> card = deck.TakeCard();
             hand.add(card);
-            int value = values.get(card.get(0));
+            value = values.get(card.get(0));
             score += value;
             if (score > 21) {
                 for (int i = 0; i < hand.size(); i++) {
@@ -75,7 +80,8 @@ public class Dealer extends Player {
                     }
                 }
             }
-            System.out.println("Дилер открывает карту " + card.get(0) + " " + card.get(1) + " (" + value + ")");
+            System.out.println("Дилер открывает карту " + card.get(0) +
+                    " " + card.get(1) + " (" + value + ")");
             player.WriteCards(player.hand.size(), values);
             WriteCards(hand.size(), values, false);
         }

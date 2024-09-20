@@ -21,7 +21,8 @@ public class Player {
      * @return
      */
     public int MakeTurn(Deck deck, Map<String, Integer> values) {
-        System.out.println("Ваш ход\n-------\nВведите \"1\", чтобы взять карту, и \"0\", чтобы остановиться...");
+        System.out.println("Ваш ход\n-------\n" +
+                "Введите \"1\", чтобы взять карту, и \"0\", чтобы остановиться...");
         int numb = scanner.nextInt();//выбранный номер
         switch (numb) {
             case (1):
@@ -37,7 +38,8 @@ public class Player {
                         }
                     }
                 }
-                System.out.println("Вы открыли карту " + card.get(0) + " " + card.get(1) + " (" + value + ")");
+                System.out.println("Вы открыли карту " + card.get(0) + " " + card.get(1) +
+                        " (" + value + ")");
                 return 1;
             case (0):
                 System.out.println();
