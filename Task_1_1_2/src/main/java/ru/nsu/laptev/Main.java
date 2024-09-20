@@ -99,10 +99,6 @@ public class Main {
         dlr.cards(dlr.hand.size(), values, true);
         while (istaking == 1)
         {
-            istaking = pl.maketurn(deck, values);
-            pl.cards(pl.hand.size(), values);
-            dlr.cards(dlr.hand.size(), values, true);
-
             if (pl.score > 21) {
                 Main.result(pl, dlr, 0);
                 istaking = 0;
@@ -113,6 +109,12 @@ public class Main {
                 Main.result(pl, dlr, 3);
                 istaking = 0;
                 critflag = false;
+            }
+            if (critflag)
+            {
+                istaking = pl.maketurn(deck, values);
+                pl.cards(pl.hand.size(), values);
+                dlr.cards(dlr.hand.size(), values, true);
             }
         }
             if (critflag)
