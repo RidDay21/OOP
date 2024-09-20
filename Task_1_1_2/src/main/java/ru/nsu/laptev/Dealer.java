@@ -5,12 +5,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import java.util.Map;
-import java.util.Random;
 
 /**
  * Класс для создания нашего диллера
  */
-public class Dealler extends Player
+public class Dealer extends Player
 {
     /**
      *
