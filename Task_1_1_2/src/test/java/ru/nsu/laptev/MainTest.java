@@ -3,10 +3,14 @@ package ru.nsu.laptev;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+
 class MainTest {
 @Test
     void sampleTest() {
-        assertEquals(6,6);
-
+        Deck deck = new Deck();
+        ArrayList<ArrayList <String>> maindeck = deck.GenerateDeck();
+        assertEquals(maindeck.size(),52);
 }
 }

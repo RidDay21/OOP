@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 /**
- * Класс для создания наших
+ * Класс для создания наших карт
  */
 public class Card {
     protected String[] suits = {"Черви", "Буби", "Трефы", "Пики"};
@@ -14,7 +14,7 @@ public class Card {
     protected int[] values = {2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11};
 
     /**
-     * @return
+     * Метод для создания нашей колоды
      */
     public Map<String, Integer> CreateDict() {
         Map<String, Integer> valueDictionary = new HashMap<>();
@@ -27,6 +27,9 @@ public class Card {
     public String suit;
     public String name;
 
+    /**
+     *Метод-конструктор
+     */
     public Card(String _suit, String _name) {
         suit = _suit;
         name = _name;

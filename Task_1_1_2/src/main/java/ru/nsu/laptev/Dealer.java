@@ -5,21 +5,22 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  * Класс для создания нашего диллера
  */
 public class Dealer extends Player {
     /**
-     * @param exmp
+     * Метод для переменивания колоды (Аргумент exmp отвечает за переданную колоду)
      */
     public void ShuffleDeck(Deck exmp) {
         Collections.shuffle(exmp.deck);
     }
 
     /**
-     * @param exmp1
-     * @param hand
+     * Метод для раздачи карт (Аргумент exmp1 - колода, hand - рука игрока,
+     * в которую выдаются карты)
      */
     public void DealCards(Deck exmp1, ArrayList<ArrayList<String>> hand) {
         int cardIndex = exmp1.deck.size() - 1;
@@ -28,11 +29,10 @@ public class Dealer extends Player {
     }
 
     /**
-     * @param amountOfCards
-     * @param values
-     * @param isFirstRound
+     * Метод для вывода карт(Аргумент cards - кол-во карт на руках,
+     * values - значения карт, IsFirstRound - флаг
      */
-    public void WriteCards(int amountOfCards, Map<String, Integer> values, boolean isFirstRound) {
+    public void WriteCards(int cards, Map<String, Integer> values, boolean isFirstRound) {
         System.out.print("Карты дилера: [");
         if (isFirstRound) {
             int value = values.get(hand.get(0).get(0));
@@ -40,7 +40,7 @@ public class Dealer extends Player {
                     " (" + value + "), <закрытая карта>]\n");
         } else {
             score = 0;
-            for (int i = 0; i < amountOfCards; i++) {
+            for (int i = 0; i < cards; i++) {
                 int value = values.get(hand.get(i).get(0));
                 if (hand.get(i).get(0) == "Туз" && bust > 0) {
                     value = 1;
@@ -48,7 +48,7 @@ public class Dealer extends Player {
                 score += value;
                 System.out.print(hand.get(i).get(0) + " " + hand.get(i).get(1) +
                         " (" + value + ")");
-                if (i + 1 != amountOfCards)
+                if (i + 1 != cards)
                     System.out.print(", ");
             }
             System.out.println("] -> " + score + "\n");
@@ -56,13 +56,12 @@ public class Dealer extends Player {
     }
 
     /**
-     * @param deck
-     * @param values
-     * @param player
+     * Метод для реализации ходов Дилера (Аргументы: deck - колода, values - значения карт
+     * player - наш игрок
      */
     public void DealersTurn(Deck deck, Map<String, Integer> values, Player player) {
         int value = values.get(hand.get(1).get(0));
-        System.out.println("Ход дилера\n);" +
+        System.out.println("Ход дилера\n" +
                 "-------\nДилер открывает закрытую карту " + hand.get(1).get(0) + "" +
                 " " + hand.get(1).get(1) + " (" + value + ")");
         player.WriteCards(player.hand.size(), values);

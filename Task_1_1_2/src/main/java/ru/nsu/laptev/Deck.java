@@ -4,10 +4,17 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 
+/**
+ * Класс для описания объекта Колода
+ */
 public class Deck extends Card
 {
     protected int _amount = 52;
     ArrayList<ArrayList<String>> deck = new ArrayList<>();
+
+    /**
+     *Метод для создания игральной колоды
+     */
     public ArrayList<ArrayList<String>> GenerateDeck()
     {
         for (int i = 0;i < _amount;i++)
@@ -20,12 +27,9 @@ public class Deck extends Card
         return deck;
     }
 
-    public void WriteDeck() {
-        for (int i = 0; i < 52; i++) {
-            System.out.println("Масть: " + deck.get(i).get(0) + " Имя: " + deck.get(i).get(1));
-        }
-    }
-
+    /**
+     *Метод для взятия карты из колоды
+     */
     public ArrayList<String> TakeCard()
     {
         ArrayList<String> card = deck.get(deck.size() - 1);

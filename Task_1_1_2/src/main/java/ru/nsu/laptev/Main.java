@@ -2,42 +2,50 @@ package ru.nsu.laptev;
 
 import java.util.Map;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
+/**
+ * Метод нащей игры
+ */
 public class Main {
     public static void main(String[] args) {
-        Deck main_deck = new Deck();
+        Deck mainDeck = new Deck();
         Dealer dealer = new Dealer();
         Player player = new Player();
-        Map<String, Integer> values = main_deck.CreateDict();
+        Map<String, Integer> values = mainDeck.CreateDict();
 
         Boolean isInGame = true;
         int cnt = 1;
 
         GameInfo();
 
-        while (cnt <= 6) {
+        while (true) {
             dealer.score = 0;
             player.score = 0;
             player.hand.clear();
             dealer.hand.clear();
 
-            main_deck.deck = main_deck.GenerateDeck();
-
+            mainDeck.deck = mainDeck.GenerateDeck();
+            System.out.println(mainDeck.deck.size());
             //main_deck.WriteDeck();
-            PlayRound(cnt, dealer, player, main_deck, values);
+            Round(cnt, dealer, player, mainDeck, values);
             cnt++;
         }
     }
 
     /**
-     *
+     *Метод Приветствие
      */
     public static void GameInfo() {
         System.out.println("Добро пожаловать в БлекДжек!");
     }
 
-    public static void WriteResult(Player player, Dealer dealer, int result, boolean flag) {
+    /**
+     * Метод для подведения итогов нашего раунла
+     * Аргументы: player - игрок, dealer - диллер,
+     * result - кто выиграл(3 - игрок выиграл, 1 - ничья, 0 - диллер)
+     * flag - указатель на то, нужно ли играть дилеру)
+     */
+    public static void WriteResult(Player player, Dealer dealer, int result) {
         switch (result) {
             case 3:
                 player.victories++;
@@ -48,7 +56,7 @@ public class Main {
                 else
                     System.out.println("не вашу пользу.");
                 break;
-            case 1:
+            case 0:
                 dealer.victories++;
                 System.out.print("Вы проиграли. Счёт " + player.victories +
                         ":" + dealer.victories + " в ");
@@ -57,64 +65,72 @@ public class Main {
                 else
                     System.out.println("не вашу пользу.");
                 break;
-            case 0:
+            case 1:
                 System.out.print("Вы сыграли вничью. Cчет " + player.victories +
                         ":" + dealer.victories + " в ");
                 if (player.victories > dealer.victories)
                     System.out.println("вашу пользу.");
                 else
                     System.out.println("не вашу пользу.");
-
                 break;
         }
     }
 
     /**
-     * @param numbOfRound
-     * @param dealer
-     * @param player
-     * @param mainDeck
-     * @param values
+     * Метод для реализации нашего раунда
+     * Аргументы: round - номер раунда, dlr - дилер, pl - иргок,
+     * values - значения карт
      */
-    public static void PlayRound(int numbOfRound, Dealer dealer, Player player, Deck mainDeck, Map<String, Integer> values) {
-        dealer.ShuffleDeck(mainDeck);
-        System.out.println("\nРаунд " + numbOfRound);
+    public static void Round(int round, Dealer dlr, Player pl, Deck deck,
+                             Map<String, Integer> values) {
+        dlr.ShuffleDeck(deck);
+        System.out.println("\nРаунд " + round);
         for (int i = 0; i < 4; i++) {
             if (i % 2 == 0) {
-                dealer.DealCards(mainDeck, player.hand);
-                player.score += values.get(player.hand.get(i / 2).get(0));
+                dlr.DealCards(deck, pl.hand);
+                pl.score += values.get(pl.hand.get(i / 2).get(0));
             } else {
-                dealer.DealCards(mainDeck, dealer.hand);
-                dealer.score += values.get(dealer.hand.get(i / 2).get(0));
+                dlr.DealCards(deck, dlr.hand);
+                dlr.score += values.get(dlr.hand.get(i / 2).get(0));
             }
         }
         System.out.println("Дилер раздал карты");
-        int isTaking = 1;
-        boolean critFlag = true;//флаг, показывающий нужно ли играть дилеру
-        while (isTaking == 1) {
-            player.WriteCards(player.hand.size(), values);
-            dealer.WriteCards(dealer.hand.size(), values, true);
+        int istaking = 1;
+        boolean critflag = true;//флаг, показывающий нужно ли играть дилеру
+        pl.WriteCards(pl.hand.size(), values);
+        dlr.WriteCards(dlr.hand.size(), values, true);
+        while (istaking == 1)
+        {
+            istaking = pl.MakeTurn(deck, values);
+            pl.WriteCards(pl.hand.size(), values);
+            dlr.WriteCards(dlr.hand.size(), values, true);
 
-            if (player.score > 21)
-                Main.WriteResult(player, dealer, 0, critFlag);
-            if (player.score == 21)
-                Main.WriteResult(player, dealer, 3, critFlag);
-            else if (critFlag)
-                isTaking = player.MakeTurn(mainDeck, values);
-
-            if (critFlag)
-                dealer.DealersTurn(mainDeck, values, player);
-            if (dealer.score == player.score)
-                Main.WriteResult(player, dealer, 1, critFlag);
-            else if (dealer.score > 21 && critFlag)
-                Main.WriteResult(player, dealer, 3, critFlag);
-            else if (dealer.score > player.score)
-                Main.WriteResult(player, dealer, 0, critFlag);
-            else if (player.score > dealer.score && critFlag)
-                Main.WriteResult(player, dealer, 3, critFlag);
+            if (pl.score > 21) {
+                Main.WriteResult(pl, dlr, 0);
+                istaking = 0;
+                critflag = false;
+            }
+            else if (pl.score == 21)
+            {
+                Main.WriteResult(pl, dlr, 3);
+                istaking = 0;
+                critflag = false;
+            }
+        }
+            if (critflag)
+            {
+                dlr.DealersTurn(deck, values, pl);
+                if (dlr.score == pl.score)
+                    Main.WriteResult(pl, dlr, 1);
+                else if (dlr.score > 21)
+                    Main.WriteResult(pl, dlr, 3);
+                else if (dlr.score > pl.score)
+                    Main.WriteResult(pl, dlr, 0);
+                else if (pl.score > dlr.score)
+                    Main.WriteResult(pl, dlr, 3);
+            }
         }
     }
-}
 
 
 

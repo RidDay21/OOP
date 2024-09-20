@@ -16,9 +16,8 @@ public class Player {
     public Scanner scanner = new Scanner(System.in);
 
     /**
-     * @param deck
-     * @param values
-     * @return
+     * Метод для реализации выбора хода нашего игрока
+     * Аргументы: deck - колода, values - значения карт
      */
     public int MakeTurn(Deck deck, Map<String, Integer> values) {
         System.out.println("Ваш ход\n-------\n" +
@@ -49,20 +48,20 @@ public class Player {
     }
 
     /**
-     * @param amountOfCards
-     * @param values
+     * Метод для вывода карт
+     * Аргументы: cards - кол-во карт, values - значения карт
      */
-    public void WriteCards(int amountOfCards, Map<String, Integer> values) {
+    public void WriteCards(int cards, Map<String, Integer> values) {
         System.out.print("Ваши карты: [");
         score = 0;
-        for (int i = 0; i < amountOfCards; i++) {
+        for (int i = 0; i < cards; i++) {
             int value = values.get(hand.get(i).get(0));
             if (hand.get(i).get(0) == "Туз" && bust > 0) {
                 value = 1;
             }
             score += value;
             System.out.print(hand.get(i).get(0) + " " + hand.get(i).get(1) + " (" + value + ")");
-            if (i + 1 != amountOfCards)
+            if (i + 1 != cards)
                 System.out.print(", ");
         }
         System.out.println("] -> " + score);
