@@ -132,6 +132,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <hr>
 <pre>public class <span class="typeNameLabel">Main</span>
 extends java.lang.Object</pre>
+<div class="block">Метод нащей игры</div>
 </li>
 </ul>
 </div>
@@ -176,7 +177,9 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>static void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#GameInfo()">GameInfo</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Метод Приветствие</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
@@ -185,20 +188,28 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>static void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#PlayRound(int,ru.nsu.laptev.Dealer,ru.nsu.laptev.Player,ru.nsu.laptev.Deck,java.util.Map)">PlayRound</a></span>&#8203;(int&nbsp;numbOfRound,
-         <a href="Dealer.html" title="class in ru.nsu.laptev">Dealer</a>&nbsp;dealer,
-         <a href="Player.html" title="class in ru.nsu.laptev">Player</a>&nbsp;player,
-         <a href="Deck.html" title="class in ru.nsu.laptev">Deck</a>&nbsp;mainDeck,
-         java.util.Map&lt;java.lang.String,&#8203;java.lang.Integer&gt;&nbsp;values)</code></th>
-<td class="colLast">&nbsp;</td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#Round(int,ru.nsu.laptev.Dealer,ru.nsu.laptev.Player,ru.nsu.laptev.Deck,java.util.Map)">Round</a></span>&#8203;(int&nbsp;round,
+     <a href="Dealer.html" title="class in ru.nsu.laptev">Dealer</a>&nbsp;dlr,
+     <a href="Player.html" title="class in ru.nsu.laptev">Player</a>&nbsp;pl,
+     <a href="Deck.html" title="class in ru.nsu.laptev">Deck</a>&nbsp;deck,
+     java.util.Map&lt;java.lang.String,&#8203;java.lang.Integer&gt;&nbsp;values)</code></th>
+<td class="colLast">
+<div class="block">Метод для реализации нашего раунда
+ Аргументы: round - номер раунда, dlr - дилер, pl - иргок,
+ values - значения карт</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#WriteResult(ru.nsu.laptev.Player,ru.nsu.laptev.Dealer,int,boolean)">WriteResult</a></span>&#8203;(<a href="Player.html" title="class in ru.nsu.laptev">Player</a>&nbsp;player,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#WriteResult(ru.nsu.laptev.Player,ru.nsu.laptev.Dealer,int)">WriteResult</a></span>&#8203;(<a href="Player.html" title="class in ru.nsu.laptev">Player</a>&nbsp;player,
            <a href="Dealer.html" title="class in ru.nsu.laptev">Dealer</a>&nbsp;dealer,
-           int&nbsp;result,
-           boolean&nbsp;flag)</code></th>
-<td class="colLast">&nbsp;</td>
+           int&nbsp;result)</code></th>
+<td class="colLast">
+<div class="block">Метод для подведения итогов нашего раунла
+ Аргументы: player - игрок, dealer - диллер,
+ result - кто выиграл(3 - игрок выиграл, 1 - ничья, 0 - диллер)
+ flag - указатель на то, нужно ли играть дилеру)</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -259,9 +270,10 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>GameInfo</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;GameInfo()</pre>
+<div class="block">Метод Приветствие</div>
 </li>
 </ul>
-<a id="WriteResult(ru.nsu.laptev.Player,ru.nsu.laptev.Dealer,int,boolean)">
+<a id="WriteResult(ru.nsu.laptev.Player,ru.nsu.laptev.Dealer,int)">
 <!--   -->
 </a>
 <ul class="blockList">
@@ -269,29 +281,27 @@ extends java.lang.Object</pre>
 <h4>WriteResult</h4>
 <pre class="methodSignature">public static&nbsp;void&nbsp;WriteResult&#8203;(<a href="Player.html" title="class in ru.nsu.laptev">Player</a>&nbsp;player,
                                <a href="Dealer.html" title="class in ru.nsu.laptev">Dealer</a>&nbsp;dealer,
-                               int&nbsp;result,
-                               boolean&nbsp;flag)</pre>
+                               int&nbsp;result)</pre>
+<div class="block">Метод для подведения итогов нашего раунла
+ Аргументы: player - игрок, dealer - диллер,
+ result - кто выиграл(3 - игрок выиграл, 1 - ничья, 0 - диллер)
+ flag - указатель на то, нужно ли играть дилеру)</div>
 </li>
 </ul>
-<a id="PlayRound(int,ru.nsu.laptev.Dealer,ru.nsu.laptev.Player,ru.nsu.laptev.Deck,java.util.Map)">
+<a id="Round(int,ru.nsu.laptev.Dealer,ru.nsu.laptev.Player,ru.nsu.laptev.Deck,java.util.Map)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>PlayRound</h4>
-<pre class="methodSignature">public static&nbsp;void&nbsp;PlayRound&#8203;(int&nbsp;numbOfRound,
-                             <a href="Dealer.html" title="class in ru.nsu.laptev">Dealer</a>&nbsp;dealer,
-                             <a href="Player.html" title="class in ru.nsu.laptev">Player</a>&nbsp;player,
-                             <a href="Deck.html" title="class in ru.nsu.laptev">Deck</a>&nbsp;mainDeck,
-                             java.util.Map&lt;java.lang.String,&#8203;java.lang.Integer&gt;&nbsp;values)</pre>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>numbOfRound</code> - </dd>
-<dd><code>dealer</code> - </dd>
-<dd><code>player</code> - </dd>
-<dd><code>mainDeck</code> - </dd>
-<dd><code>values</code> - </dd>
-</dl>
+<h4>Round</h4>
+<pre class="methodSignature">public static&nbsp;void&nbsp;Round&#8203;(int&nbsp;round,
+                         <a href="Dealer.html" title="class in ru.nsu.laptev">Dealer</a>&nbsp;dlr,
+                         <a href="Player.html" title="class in ru.nsu.laptev">Player</a>&nbsp;pl,
+                         <a href="Deck.html" title="class in ru.nsu.laptev">Deck</a>&nbsp;deck,
+                         java.util.Map&lt;java.lang.String,&#8203;java.lang.Integer&gt;&nbsp;values)</pre>
+<div class="block">Метод для реализации нашего раунда
+ Аргументы: round - номер раунда, dlr - дилер, pl - иргок,
+ values - значения карт</div>
 </li>
 </ul>
 </li>
