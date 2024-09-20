@@ -47,20 +47,20 @@ public class Player {
     }
 
     /**
-     * @param amount_of_cards
+     * @param amountOfCards
      * @param values
      */
-    public void WriteCards(int amount_of_cards, Map<String, Integer> values) {
+    public void WriteCards(int amountOfCards, Map<String, Integer> values) {
         System.out.print("Ваши карты: [");
         score = 0;
-        for (int i = 0; i < amount_of_cards; i++) {
+        for (int i = 0; i < amountOfCards; i++) {
             int value = values.get(hand.get(i).get(0));
             if (hand.get(i).get(0) == "Туз" && bust > 0) {
                 value = 1;
             }
             score += value;
             System.out.print(hand.get(i).get(0) + " " + hand.get(i).get(1) + " (" + value + ")");
-            if (i + 1 != amount_of_cards)
+            if (i + 1 != amountOfCards)
                 System.out.print(", ");
         }
         System.out.println("] -> " + score);

@@ -67,48 +67,48 @@ public class Main {
     }
 
     /**
-     * @param numb_of_round
+     * @param numbOfRound
      * @param dealer
      * @param player
-     * @param main_deck
+     * @param mainDeck
      * @param values
      */
-    public static void PlayRound(int numb_of_round, Dealer dealer, Player player, Deck main_deck, Map<String, Integer> values) {
-        dealer.ShuffleDeck(main_deck);
-        System.out.println("\nРаунд " + numb_of_round);
+    public static void PlayRound(int numbOfRound, Dealer dealer, Player player, Deck mainDeck, Map<String, Integer> values) {
+        dealer.ShuffleDeck(mainDeck);
+        System.out.println("\nРаунд " + numbOfRound);
         for (int i = 0; i < 4; i++) {
             if (i % 2 == 0) {
-                dealer.DealCards(main_deck, player.hand);
+                dealer.DealCards(mainDeck, player.hand);
                 player.score += values.get(player.hand.get(i / 2).get(0));
             } else {
-                dealer.DealCards(main_deck, dealer.hand);
+                dealer.DealCards(mainDeck, dealer.hand);
                 dealer.score += values.get(dealer.hand.get(i / 2).get(0));
             }
         }
         System.out.println("Дилер раздал карты");
-        int is_taking = 1;
-        boolean crit_flag = true;//флаг, показывающий нужно ли играть дилеру
-        while (is_taking == 1) {
+        int isTaking = 1;
+        boolean critFlag = true;//флаг, показывающий нужно ли играть дилеру
+        while (isTaking == 1) {
             player.WriteCards(player.hand.size(), values);
             dealer.WriteCards(dealer.hand.size(), values, true);
 
             if (player.score > 21)
-                Main.WriteResult(player, dealer, 0, crit_flag);
+                Main.WriteResult(player, dealer, 0, critFlag);
             if (player.score == 21)
-                Main.WriteResult(player, dealer, 3, crit_flag);
-            else if (crit_flag)
-                is_taking = player.MakeTurn(main_deck, values);
+                Main.WriteResult(player, dealer, 3, critFlag);
+            else if (critFlag)
+                isTaking = player.MakeTurn(mainDeck, values);
 
-            if (crit_flag)
-                dealer.DealersTurn(main_deck, values, player);
+            if (critFlag)
+                dealer.DealersTurn(mainDeck, values, player);
             if (dealer.score == player.score)
-                Main.WriteResult(player, dealer, 1, crit_flag);
-            else if (dealer.score > 21 && crit_flag)
-                Main.WriteResult(player, dealer, 3, crit_flag);
+                Main.WriteResult(player, dealer, 1, critFlag);
+            else if (dealer.score > 21 && critFlag)
+                Main.WriteResult(player, dealer, 3, critFlag);
             else if (dealer.score > player.score)
-                Main.WriteResult(player, dealer, 0, crit_flag);
-            else if (player.score > dealer.score && crit_flag)
-                Main.WriteResult(player, dealer, 3, crit_flag);
+                Main.WriteResult(player, dealer, 0, critFlag);
+            else if (player.score > dealer.score && critFlag)
+                Main.WriteResult(player, dealer, 3, critFlag);
         }
     }
 }
