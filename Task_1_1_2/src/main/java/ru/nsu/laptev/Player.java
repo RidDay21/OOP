@@ -2,6 +2,7 @@ package ru.nsu.laptev;
 
 import java.util.ArrayList;
 
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -9,22 +10,68 @@ import java.util.Scanner;
  */
 public class Player {
     public int victories = 0;
-    public ArrayList<ArrayList<String>> hand;
-    public Deck deck1 = new Deck();
+    public int score;
+    public int bust = 0;//перебор
+    public ArrayList<ArrayList<String>> hand = new ArrayList<>();
     public Scanner scanner = new Scanner(System.in);
 
-    public void MakeTurn(ArrayList<ArrayList<String>> deck)
+    /**
+     *
+     * @param deck
+     * @param values
+     * @return
+     */
+    public int MakeTurn(Deck deck, Map <String, Integer> values)
     {
         System.out.println("Ваш ход\n-------\nВведите \"1\", чтобы взять карту, и \"0\", чтобы остановиться...");
         int numb = scanner.nextInt();//выбранный номер
         switch (numb)
         {
             case (1):
-                ArrayList<String> card = deck1.TakeCard();
+                ArrayList<String> card = deck.TakeCard();
                 hand.add(card);
-                break;
+                int value = values.get(card.get(0));
+                score += value;
+                if (score > 21)
+                {
+                    for (int i = 0; i < hand.size(); i++)
+                    {
+                        if (hand.get(i).get(0) == "Туз")
+                        {
+                            bust = 1;
+                            break;
+                        }
+                    }
+                }
+                System.out.println("Вы открыли карту " + card.get(0) + " " + card.get(1) + " (" + value + ")");
+                return 1;
             case (0):
-                break;
+                System.out.println();
+                return 0;
         }
+        return 0;
+    }
+
+    /**
+     *
+     * @param amount_of_cards
+     * @param values
+     */
+    public void WriteCards(int amount_of_cards, Map<String, Integer> values)
+    {
+        System.out.print("Ваши карты: [");
+        score = 0;
+        for (int i = 0; i < amount_of_cards; i++)
+        {
+            int value = values.get(hand.get(i).get(0));
+            if (hand.get(i).get(0) == "Туз" && bust > 0) {
+                value = 1;
+            }
+            score += value;
+            System.out.print(hand.get(i).get(0) +" "+ hand.get(i).get(1) + " (" + value + ")");
+            if (i+1 != amount_of_cards)
+                System.out.print(", ");
+        }
+        System.out.println("] -> " + score);
     }
 }
