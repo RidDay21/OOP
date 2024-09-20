@@ -16,7 +16,7 @@ public class Card {
     /**
      * Метод для создания нашей колоды
      */
-    public Map<String, Integer> CreateDict() {
+    public Map<String, Integer> dict() {
         Map<String, Integer> valueDictionary = new HashMap<>();
         for (int i = 0; i < values.length; i++) {
             valueDictionary.put(names[i], values[i]);

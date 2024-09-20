@@ -19,13 +19,13 @@ public class Player {
      * Метод для реализации выбора хода нашего игрока
      * Аргументы: deck - колода, values - значения карт
      */
-    public int MakeTurn(Deck deck, Map<String, Integer> values) {
+    public int maketurn(Deck deck, Map<String, Integer> values) {
         System.out.println("Ваш ход\n-------\n" +
                 "Введите \"1\", чтобы взять карту, и \"0\", чтобы остановиться...");
         int numb = scanner.nextInt();//выбранный номер
         switch (numb) {
             case (1):
-                ArrayList<String> card = deck.TakeCard();
+                ArrayList<String> card = deck.takecard();
                 hand.add(card);
                 int value = values.get(card.get(0));
                 score += value;
@@ -51,7 +51,7 @@ public class Player {
      * Метод для вывода карт
      * Аргументы: cards - кол-во карт, values - значения карт
      */
-    public void WriteCards(int cards, Map<String, Integer> values) {
+    public void cards(int cards, Map<String, Integer> values) {
         System.out.print("Ваши карты: [");
         score = 0;
         for (int i = 0; i < cards; i++) {

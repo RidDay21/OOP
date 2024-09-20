@@ -10,7 +10,7 @@ class MainTest {
 @Test
     void sampleTest() {
         Deck deck = new Deck();
-        ArrayList<ArrayList <String>> maindeck = deck.GenerateDeck();
+        ArrayList<ArrayList <String>> maindeck = deck.generatedeck();
         assertEquals(maindeck.size(),52);
 }
 }
