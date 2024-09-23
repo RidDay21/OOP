@@ -9,6 +9,5 @@ import java.util.ArrayList;
 class MainTest {
 @Test
     void sampleTest() {
-
-}
+    }
 }

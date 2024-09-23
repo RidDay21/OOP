@@ -119,7 +119,7 @@ public class Main {
         }
             if (critflag)
             {
-                dlr.dlsturn(deck, values, pl);
+                dlr.turn(deck, values, pl);
                 if (dlr.score == pl.score)
                     Main.result(pl, dlr, 1);
                 else if (dlr.score > 21)

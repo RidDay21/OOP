@@ -13,5 +13,6 @@ class PlayerTest {
         Player pl = new Player();
         assertEquals(pl.victories,0);
         assertEquals(pl.bust, 0);
+        assertEquals(pl.hand.size(),0);
     }
 }

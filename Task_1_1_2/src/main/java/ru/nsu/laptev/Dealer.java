@@ -58,7 +58,7 @@ public class Dealer extends Player {
      * Метод для реализации ходов Дилера (Аргументы: deck - колода, values - значения карт
      * player - наш игрок
      */
-    public void dlsturn(Deck deck, Map<String, Integer> values, Player player) {
+    public void turn(Deck deck, Map<String, Integer> values, Player player) {
         int value = values.get(hand.get(1).get(0));
         System.out.println("Ход дилера\n" +
                 "-------\nДилер открывает закрытую карту " + hand.get(1).get(0) + "" +

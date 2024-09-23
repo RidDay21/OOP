@@ -11,6 +11,7 @@ class DeckTest {
     void sampleTest()
     {
         Deck deck = new Deck();
+        assertEquals(deck.names[3],"Пятерка");
         ArrayList<ArrayList<String>> maindeck = deck.generate_deck();
         assertEquals(maindeck.size(),52);
         assertEquals(deck._amount,52);
