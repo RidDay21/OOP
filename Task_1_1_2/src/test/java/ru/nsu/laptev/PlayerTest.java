@@ -8,6 +8,9 @@ class PlayerTest {
 @Test
     void sampleTest()
     {
+        Player pl = new Player();
+        assertEquals(pl.victories,0);
+        assertEquals(pl.bust, 0);
 
     }
 }

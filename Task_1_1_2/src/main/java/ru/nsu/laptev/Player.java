@@ -19,7 +19,7 @@ public class Player {
      * Метод для реализации выбора хода нашего игрока
      * Аргументы: deck - колода, values - значения карт
      */
-    public int maketurn(Deck deck, Map<String, Integer> values) {
+    public int make_turn(Deck deck, Map<String, Integer> values) {
         System.out.println("Ваш ход\n-------\n" +
                 "Введите \"1\", чтобы взять карту, и \"0\", чтобы остановиться...");
         int numb = scanner.nextInt();//выбранный номер

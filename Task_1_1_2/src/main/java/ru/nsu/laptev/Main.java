@@ -112,7 +112,7 @@ public class Main {
             }
             if (critflag)
             {
-                istaking = pl.maketurn(deck, values);
+                istaking = pl.make_turn(deck, values);
                 pl.cards(pl.hand.size(), values);
                 dlr.cards(dlr.hand.size(), values, true);
             }
