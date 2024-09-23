@@ -25,7 +25,7 @@ public class Player {
         int numb = scanner.nextInt();//выбранный номер
         switch (numb) {
             case (1):
-                ArrayList<String> card = deck.takecard();
+                ArrayList<String> card = deck.take_card();
                 hand.add(card);
                 int value = values.get(card.get(0));
                 score += value;

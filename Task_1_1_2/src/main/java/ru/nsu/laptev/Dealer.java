@@ -66,7 +66,7 @@ public class Dealer extends Player {
         player.cards(player.hand.size(), values);
         cards(hand.size(), values, false);
         while (score < 17) {
-            ArrayList<String> card = deck.takecard();
+            ArrayList<String> card = deck.take_card();
             hand.add(card);
             value = values.get(card.get(0));
             score += value;

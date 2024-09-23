@@ -11,7 +11,11 @@ class DeckTest {
     void sampleTest()
     {
         Deck deck = new Deck();
-        ArrayList<ArrayList<String>> maindeck = deck.generatedeck();
+        ArrayList<ArrayList<String>> maindeck = deck.generate_deck();
         assertEquals(maindeck.size(),52);
+        assertEquals(deck._amount,52);
+        String[] proof = {"Двойка", "Черви"};
+        ArrayList<String> proof1 = deck.take_card();
+        assertEquals(proof[0], proof[0]);
     }
 }

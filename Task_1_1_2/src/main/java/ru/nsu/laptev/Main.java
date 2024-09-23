@@ -24,7 +24,7 @@ public class Main {
             player.hand.clear();
             dealer.hand.clear();
 
-            mainDeck.deck = mainDeck.generatedeck();
+            mainDeck.deck = mainDeck.generate_deck();
             round(cnt, dealer, player, mainDeck, values);
             cnt++;
         }
@@ -73,12 +73,12 @@ public class Main {
                 break;
         }
     }
-
     /**
      * Метод для реализации нашего раунда
      * Аргументы: round - номер раунда, dlr - дилер, pl - иргок,
      * values - значения карт
      */
+
     public static void round(int round, Dealer dlr, Player pl, Deck deck,
                              Map<String, Integer> values) {
         dlr.shuffle(deck);

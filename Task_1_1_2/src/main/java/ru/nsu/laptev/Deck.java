@@ -13,7 +13,7 @@ public class Deck extends Card
     /**
      *Метод для создания игральной колоды
      */
-    public ArrayList<ArrayList<String>> generatedeck()
+    public ArrayList<ArrayList<String>> generate_deck()
     {
         for (int i = 0;i < _amount;i++)
         {
@@ -28,7 +28,7 @@ public class Deck extends Card
     /**
      *Метод для взятия карты из колоды
      */
-    public ArrayList<String> takecard()
+    public ArrayList<String> take_card()
     {
         ArrayList<String> card = deck.get(deck.size() - 1);
         deck.remove(deck.size()-1);
