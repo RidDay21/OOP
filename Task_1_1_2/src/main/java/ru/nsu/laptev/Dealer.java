@@ -11,7 +11,7 @@ import java.util.Map;
  */
 public class Dealer extends Player {
     /**
-     * Метод для переменивания колоды (Аргумент exmp отвечает за переданную колоду)
+     * Метод для переименования колоды (Аргумент exmp отвечает за переданную колоду)
      */
     public void shuffle(Deck exmp) {
         Collections.shuffle(exmp.deck);

@@ -2,6 +2,8 @@ package ru.nsu.laptev;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
@@ -12,5 +14,7 @@ class PlayerTest {
         assertEquals(pl.victories,0);
         assertEquals(pl.bust, 0);
 
+        ArrayList<ArrayList<String>> tmp = new ArrayList<>();
+        assertEquals(pl.hand.get(0).get(0), tmp.get(0).get(0));
     }
 }
