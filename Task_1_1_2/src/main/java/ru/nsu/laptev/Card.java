@@ -29,9 +29,9 @@ public class Card {
     /**
      *Method-Constructor.
      */
-    public Card(String Suit, String Name) {
-        suit = Suit;
-        name = Name;
+    public Card(String suit, String name) {
+        this.suit = suit;
+        this.name = name;
     }
 
     public Card() {
