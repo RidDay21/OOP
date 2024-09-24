@@ -26,10 +26,6 @@ public class Player {
     public int make_turn(Deck deck, Map<String, Integer> values) {
         System.out.println("Ваш ход\n-------\n"
                 + "Введите \"1\", чтобы взять карту, и \"0\", чтобы остановиться...");
-        return insert_digit(values,deck);
-    }
-
-    public int insert_digit(Map<String, Integer> values, Deck deck) {
         int numb = scanner.nextInt();
         switch (numb) {
             case (1):
@@ -56,8 +52,6 @@ public class Player {
         }
         return 0;
     }
-
-
 
     /**
      * Метод для вывода карт.
