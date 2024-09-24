@@ -9,7 +9,7 @@ public class Game {
 
     /**
      * Method for launching a game.
-     * Argument flag - IF -1 --  play infinite (for a long time), if n - play n rounds
+     * Argument flag - IF -1 --  play infinite (for a long time), if n - play n rounds.
      */
     public static void game(int flag) {
         Deck mainDeck = new Deck();
@@ -19,29 +19,26 @@ public class Game {
         Map<String, Integer> values = mainDeck.dict();
 
         int cnt = 1;
-
-        int numb_of_rounds;
+        int numbOfRounds;
 
         if (flag == -1) {
-            numb_of_rounds = Integer.MAX_VALUE;
-        }
-        else{
-            numb_of_rounds = flag;
+            numbOfRounds = Integer.MAX_VALUE;
+        } else {
+            numbOfRounds = flag;
         }
 
         hello();
 
-        while (numb_of_rounds > 0) {
+        while (numbOfRounds > 0) {
             pl.new_one();
             dl.new_one();
 
             mainDeck.deck = mainDeck.generate_deck();
             game.round(cnt, dl, pl, mainDeck, values);
             cnt++;
-            numb_of_rounds--;
+            numbOfRounds--;
         }
     }
-
 
 
     /**
