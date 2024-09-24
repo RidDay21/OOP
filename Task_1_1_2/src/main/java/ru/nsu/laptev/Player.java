@@ -1,12 +1,11 @@
 package ru.nsu.laptev;
 
 import java.util.ArrayList;
-
 import java.util.Map;
 import java.util.Scanner;
 
 /**
- * Класс для описывания действий нашего игрока
+ * Класс для описывания действий нашего игрока.
  */
 public class Player {
     public int victories = 0;
@@ -16,12 +15,12 @@ public class Player {
     public Scanner scanner = new Scanner(System.in);
 
     /**
-     * Метод для реализации выбора хода нашего игрока
-     * Аргументы: deck - колода, values - значения карт
+     * Метод для реализации выбора хода нашего игрока.
+     * Аргументы: deck - колода, values - значения карт.
      */
     public int make_turn(Deck deck, Map<String, Integer> values) {
-        System.out.println("Ваш ход\n-------\n" +
-                "Введите \"1\", чтобы взять карту, и \"0\", чтобы остановиться...");
+        System.out.println("Ваш ход\n-------\n"
+                + "Введите \"1\", чтобы взять карту, и \"0\", чтобы остановиться...");
         int numb = scanner.nextInt();//выбранный номер
         switch (numb) {
             case (1):
@@ -48,8 +47,8 @@ public class Player {
     }
 
     /**
-     * Метод для вывода карт
-     * Аргументы: cards - кол-во карт, values - значения карт
+     * Метод для вывода карт.
+     * Аргументы: cards - кол-во карт, values - значения карт.
      */
     public void cards(int cards, Map<String, Integer> values) {
         System.out.print("Ваши карты: [");

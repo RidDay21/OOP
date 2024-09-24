@@ -2,8 +2,14 @@ package ru.nsu.laptev;
 
 import java.util.Map;
 
+/**
+ * Class for implementation of game.
+ */
 public class Game {
 
+    /**
+     * Method for launching a game.
+     */
     public static void game() {
         Deck mainDeck = new Deck();
         Dealer dealer = new Dealer();
@@ -28,22 +34,25 @@ public class Game {
         }
     }
 
+    /**
+     * Method for just HELLO.
+     */
     public static void hello() {
         System.out.println("Добро пожаловать в БлекДжек!");
     }
 
     /**
-     * Метод для подведения итогов нашего раунла
+     * Метод для подведения итогов нашего раунла.
      * Аргументы: player - игрок, dealer - диллер,
-     * result - кто выиграл(3 - игрок выиграл, 1 - ничья, 0 - диллер)
-     * flag - указатель на то, нужно ли играть дилеру)
+     * result - кто выиграл(3 - игрок выиграл, 1 - ничья, 0 - диллер),
+     * flag - указатель на то, нужно ли играть дилеру).
      */
     public static void result(Player player, Dealer dealer, int result) {
         switch (result) {
             case 3:
                 player.victories++;
-                System.out.print("Вы выиграли. Счёт " + player.victories +
-                        ":" + dealer.victories + " в ");
+                System.out.print("Вы выиграли. Счёт " + player.victories
+                        + ":" + dealer.victories + " в ");
                 if (player.victories > dealer.victories)
                     System.out.println("вашу пользу.");
                 else
@@ -51,16 +60,16 @@ public class Game {
                 break;
             case 0:
                 dealer.victories++;
-                System.out.print("Вы проиграли. Счёт " + player.victories +
-                        ":" + dealer.victories + " в ");
+                System.out.print("Вы проиграли. Счёт " + player.victories
+                        + ":" + dealer.victories + " в ");
                 if (player.victories > dealer.victories)
                     System.out.println("вашу пользу.");
                 else
                     System.out.println("не вашу пользу.");
                 break;
             case 1:
-                System.out.print("Вы сыграли вничью. Cчет " + player.victories +
-                        ":" + dealer.victories + " в ");
+                System.out.print("Вы сыграли вничью. Cчет " + player.victories
+                        + ":" + dealer.victories + " в ");
                 if (player.victories > dealer.victories)
                     System.out.println("вашу пользу.");
                 else
@@ -70,9 +79,9 @@ public class Game {
     }
 
     /**
-     * Метод для реализации нашего раунда
+     * Метод для реализации нашего раунда.
      * Аргументы: round - номер раунда, dlr - дилер, pl - иргок,
-     * values - значения карт
+     * values - значения карт.
      */
 
     public void round(int round, Dealer dlr, Player pl, Deck deck,
