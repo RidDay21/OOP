@@ -9,30 +9,40 @@ public class Game {
 
     /**
      * Method for launching a game.
+     * Argument flag - IF -1 --  play infinite (for a long time), if n - play n rounds
      */
-    public static void game() {
+    public static void game(int flag) {
         Deck mainDeck = new Deck();
-        Dealer dealer = new Dealer();
-        Player player = new Player();
+        Dealer dl = new Dealer();
+        Player pl = new Player();
         Game game = new Game();
         Map<String, Integer> values = mainDeck.dict();
 
-        Boolean isInGame = true;
         int cnt = 1;
+
+        int numb_of_rounds;
+
+        if (flag == -1) {
+            numb_of_rounds = Integer.MAX_VALUE;
+        }
+        else{
+            numb_of_rounds = flag;
+        }
 
         hello();
 
-        while (true) {
-            dealer.score = 0;
-            player.score = 0;
-            player.hand.clear();
-            dealer.hand.clear();
+        while (numb_of_rounds > 0) {
+            pl.new_one();
+            dl.new_one();
 
             mainDeck.deck = mainDeck.generate_deck();
-            game.round(cnt, dealer, player, mainDeck, values);
+            game.round(cnt, dl, pl, mainDeck, values);
             cnt++;
+            numb_of_rounds--;
         }
     }
+
+
 
     /**
      * Method for just HELLO.

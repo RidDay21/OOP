@@ -14,9 +14,21 @@ public class Player {
     public ArrayList<ArrayList<String>> hand = new ArrayList<>();
     public Scanner scanner = new Scanner(System.in);
 
-
+    /**
+     *
+     * Method for checking card for Тузик
+     */
     public int is_ace(String name) {
         return name.equals("Туз") ? 1 : 0;
+    }
+
+    /**
+     * Clear Method
+     */
+    public void new_one(){
+        bust = 0;
+        score = 0;
+        hand.clear();
     }
 
     /**
