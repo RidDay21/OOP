@@ -39,7 +39,7 @@ public class Dealer extends Player {
             score = 0;
             for (int i = 0; i < cards; i++) {
                 int value = values.get(hand.get(i).get(0));
-                if (hand.get(i).get(0) == "Туз" && bust > 0) {
+                if (is_ace(hand.get(i).get(0)) == 1 && bust > 0) {
                     value = 1;
                 }
                 score += value;
@@ -71,7 +71,7 @@ public class Dealer extends Player {
             score += value;
             if (score > 21) {
                 for (int i = 0; i < hand.size(); i++) {
-                    if (hand.get(i).get(0) == "Туз") {
+                    if (is_ace(hand.get(i).get(0)) == 1) {
                         bust = 1;
                         break;
                     }

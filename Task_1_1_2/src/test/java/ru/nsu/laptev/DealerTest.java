@@ -21,5 +21,8 @@ class DealerTest {
         int size = mainDeck.deck.size();
         dl.shuffle(mainDeck);
         assertEquals(mainDeck.deck.size(), size);
+        assertEquals(dl.is_ace("Туз"), 1);
+        assertEquals(dl.is_ace("Двойка"), 0);
+
     }
 }

@@ -14,6 +14,11 @@ public class Player {
     public ArrayList<ArrayList<String>> hand = new ArrayList<>();
     public Scanner scanner = new Scanner(System.in);
 
+
+    public int is_ace(String name) {
+        return name.equals("Туз") ? 1 : 0;
+    }
+
     /**
      * Метод для реализации выбора хода нашего игрока.
      * Аргументы: deck - колода, values - значения карт.
@@ -30,7 +35,7 @@ public class Player {
                 score += value;
                 if (score > 21) {
                     for (int i = 0; i < hand.size(); i++) {
-                        if (hand.get(i).get(0) == "Туз") {
+                        if (is_ace(hand.get(i).get(0)) == 1) {
                             bust = 1;
                             break;
                         }
@@ -57,11 +62,12 @@ public class Player {
         score = 0;
         for (int i = 0; i < cards; i++) {
             int value = values.get(hand.get(i).get(0));
-            if (hand.get(i).get(0) == "Туз" && bust > 0) {
+            if (is_ace(hand.get(i).get(0)) == 1 && bust > 0) {
                 value = 1;
             }
             score += value;
-            System.out.print(hand.get(i).get(0) + " " + hand.get(i).get(1) + " (" + value + ")");
+            System.out.print(hand.get(i).get(0) + " " + hand.get(i).get(1)
+                    + " (" + value + ")");
             if (i + 1 != cards) {
                 System.out.print(", ");
             }
