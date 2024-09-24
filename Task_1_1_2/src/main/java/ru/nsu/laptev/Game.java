@@ -104,7 +104,7 @@ public class Game {
         }
         System.out.println("Дилер раздал карты");
         int istaking = 1;
-        boolean critflag = true;//флаг, показывающий нужно ли играть дилеру
+        boolean critflag = true; //flag for our dealer.
         pl.cards(pl.hand.size(), values);
         dlr.cards(dlr.hand.size(), values, true);
         while (istaking == 1) {
@@ -127,11 +127,11 @@ public class Game {
             dlr.turn(deck, values, pl);
             if (dlr.score == pl.score) {
                 result(pl, dlr, 1);
-            } else if (dlr.score > 21){
+            } else if (dlr.score > 21) {
                 result(pl, dlr, 3);
-            } else if (dlr.score > pl.score){
+            } else if (dlr.score > pl.score) {
                 result(pl, dlr, 0);
-            } else if (pl.score > dlr.score){
+            } else if (pl.score > dlr.score) {
                 result(pl, dlr, 3);
             }
 
