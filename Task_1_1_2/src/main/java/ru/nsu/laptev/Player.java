@@ -16,14 +16,14 @@ public class Player {
 
     /**
      *
-     * Method for checking card for Тузик
+     * Method for checking card for Тузик.
      */
     public int is_ace(String name) {
         return name.equals("Туз") ? 1 : 0;
     }
 
     /**
-     * Clear Method
+     * Clear Method.
      */
     public void new_one(){
         bust = 0;
