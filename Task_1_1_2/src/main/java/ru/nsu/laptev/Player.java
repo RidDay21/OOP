@@ -24,7 +24,7 @@ public class Player {
      * Clear Method.
      */
 
-    public void new_one(){
+    public void new_one() {
         bust = 0;
         score = 0;
         hand.clear();
