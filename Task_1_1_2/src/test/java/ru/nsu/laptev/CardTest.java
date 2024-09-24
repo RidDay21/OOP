@@ -2,7 +2,6 @@ package ru.nsu.laptev;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import java.util.Map;
 import org.junit.jupiter.api.Test;
 
