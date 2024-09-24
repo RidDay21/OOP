@@ -1,20 +1,19 @@
 package ru.nsu.laptev;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
- * Класс для создания наших карт
+ * Class for implementation of Cards
  */
 public class Card {
     protected String[] suits = {"Черви", "Буби", "Трефы", "Пики"};
     protected String[] names = {"Двойка", "Тройка", "Четверка", "Пятерка", "Шестерка", "Семерка",
             "Восьмерка", "Девятка", "Десятка", "Валет", "Дама", "Король", "Туз"};
-
     protected int[] values = {2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11};
 
     /**
-     * Метод для создания нашей колоды
+     * Метод для создания нашей колоды.
      */
     public Map<String, Integer> dict() {
         Map<String, Integer> valueDictionary = new HashMap<>();
@@ -28,11 +27,11 @@ public class Card {
     public String name;
 
     /**
-     *Метод-конструктор
+     *Method-Constructor.
      */
-    public Card(String _suit, String _name) {
-        suit = _suit;
-        name = _name;
+    public Card(String Suit, String Name) {
+        suit = Suit;
+        name = Name;
     }
 
     public Card() {

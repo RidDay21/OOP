@@ -1,9 +1,7 @@
 package ru.nsu.laptev;
 
 import java.util.ArrayList;
-
 import java.util.Collections;
-
 import java.util.Map;
 
 /**
@@ -45,10 +43,11 @@ public class Dealer extends Player {
                     value = 1;
                 }
                 score += value;
-                System.out.print(hand.get(i).get(0) + " " + hand.get(i).get(1) +
-                        " (" + value + ")");
-                if (i + 1 != cards)
+                System.out.print(hand.get(i).get(0) + " " + hand.get(i).get(1)
+                         + " (" + value + ")");
+                if (i + 1 != cards){
                     System.out.print(", ");
+                }
             }
             System.out.println("] -> " + score + "\n");
         }
@@ -60,8 +59,8 @@ public class Dealer extends Player {
      */
     public void turn(Deck deck, Map<String, Integer> values, Player player) {
         int value = values.get(hand.get(1).get(0));
-        System.out.println("Ход дилера\n" +
-                "-------\nДилер открывает закрытую карту " + hand.get(1).get(0) + ""
+        System.out.println("Ход дилера\n"
+                + "-------\nДилер открывает закрытую карту " + hand.get(1).get(0) + ""
                 + " " + hand.get(1).get(1) + " (" + value + ")");
         player.cards(player.hand.size(), values);
         cards(hand.size(), values, false);
@@ -84,5 +83,4 @@ public class Dealer extends Player {
             cards(hand.size(), values, false);
         }
     }
-//    @Override
 }

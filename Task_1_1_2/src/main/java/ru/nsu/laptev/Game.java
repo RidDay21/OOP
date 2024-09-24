@@ -53,27 +53,35 @@ public class Game {
                 player.victories++;
                 System.out.print("Вы выиграли. Счёт " + player.victories
                         + ":" + dealer.victories + " в ");
-                if (player.victories > dealer.victories)
+                if (player.victories > dealer.victories) {
                     System.out.println("вашу пользу.");
-                else
+                }
+                else {
                     System.out.println("не вашу пользу.");
+                }
                 break;
             case 0:
                 dealer.victories++;
                 System.out.print("Вы проиграли. Счёт " + player.victories
                         + ":" + dealer.victories + " в ");
-                if (player.victories > dealer.victories)
+                if (player.victories > dealer.victories) {
                     System.out.println("вашу пользу.");
-                else
+                }
+                else {
                     System.out.println("не вашу пользу.");
+                }
                 break;
             case 1:
                 System.out.print("Вы сыграли вничью. Cчет " + player.victories
                         + ":" + dealer.victories + " в ");
-                if (player.victories > dealer.victories)
+                if (player.victories > dealer.victories) {
                     System.out.println("вашу пользу.");
-                else
+                }
+                else {
                     System.out.println("не вашу пользу.");
+                }
+                break;
+            default:
                 break;
         }
     }
@@ -92,7 +100,8 @@ public class Game {
             if (i % 2 == 0) {
                 dlr.deal(deck, pl.hand);
                 pl.score += values.get(pl.hand.get(i / 2).get(0));
-            } else {
+            }
+            else {
                 dlr.deal(deck, dlr.hand);
                 dlr.score += values.get(dlr.hand.get(i / 2).get(0));
             }
@@ -107,7 +116,8 @@ public class Game {
                 result(pl, dlr, 0);
                 istaking = 0;
                 critflag = false;
-            } else if (pl.score == 21) {
+            }
+            else if (pl.score == 21) {
                 result(pl, dlr, 3);
                 istaking = 0;
                 critflag = false;

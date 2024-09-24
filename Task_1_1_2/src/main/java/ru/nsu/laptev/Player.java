@@ -36,12 +36,14 @@ public class Player {
                         }
                     }
                 }
-                System.out.println("Вы открыли карту " + card.get(0) + " " + card.get(1) +
-                        " (" + value + ")");
+                System.out.println("Вы открыли карту " + card.get(0) + " " + card.get(1)
+                        + " (" + value + ")");
                 return 1;
             case (0):
                 System.out.println();
                 return 0;
+            default:
+                break;
         }
         return 0;
     }
@@ -60,8 +62,9 @@ public class Player {
             }
             score += value;
             System.out.print(hand.get(i).get(0) + " " + hand.get(i).get(1) + " (" + value + ")");
-            if (i + 1 != cards)
+            if (i + 1 != cards) {
                 System.out.print(", ");
+            }
         }
         System.out.println("] -> " + score);
     }
