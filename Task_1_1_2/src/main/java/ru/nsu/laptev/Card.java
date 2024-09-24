@@ -27,7 +27,7 @@ public class Card {
     public String name;
 
     /**
-     *Method-Constructor.
+     * Method-Constructor.
      */
     public Card(String suit, String name) {
         this.suit = suit;

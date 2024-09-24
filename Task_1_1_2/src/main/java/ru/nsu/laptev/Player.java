@@ -15,13 +15,11 @@ public class Player {
     public Scanner scanner = new Scanner(System.in);
 
     /**
-     *
      * Method for checking card for Тузик.
      */
     public int is_ace(String name) {
         return name.equals("Туз") ? 1 : 0;
     }
-
     /**
      * Clear Method.
      */
@@ -30,7 +28,6 @@ public class Player {
         score = 0;
         hand.clear();
     }
-
     /**
      * Метод для реализации выбора хода нашего игрока.
      * Аргументы: deck - колода, values - значения карт.
