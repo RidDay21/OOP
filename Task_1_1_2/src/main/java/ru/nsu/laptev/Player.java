@@ -23,11 +23,13 @@ public class Player {
     /**
      * Clear Method.
      */
+
     public void new_one(){
         bust = 0;
         score = 0;
         hand.clear();
     }
+    
     /**
      * Метод для реализации выбора хода нашего игрока.
      * Аргументы: deck - колода, values - значения карт.
