@@ -4,8 +4,7 @@ import java.util.Map;
 
 public class Game {
 
-    public static void game()
-    {
+    public static void game() {
         Deck mainDeck = new Deck();
         Dealer dealer = new Dealer();
         Player player = new Player();
@@ -28,6 +27,7 @@ public class Game {
             cnt++;
         }
     }
+
     public static void hello() {
         System.out.println("Добро пожаловать в БлекДжек!");
     }
@@ -68,6 +68,7 @@ public class Game {
                 break;
         }
     }
+
     /**
      * Метод для реализации нашего раунда
      * Аргументы: round - номер раунда, dlr - дилер, pl - иргок,
@@ -75,7 +76,7 @@ public class Game {
      */
 
     public void round(int round, Dealer dlr, Player pl, Deck deck,
-                             Map<String, Integer> values) {
+                      Map<String, Integer> values) {
         dlr.shuffle(deck);
         System.out.println("\nРаунд " + round);
         for (int i = 0; i < 4; i++) {
@@ -92,28 +93,23 @@ public class Game {
         boolean critflag = true;//флаг, показывающий нужно ли играть дилеру
         pl.cards(pl.hand.size(), values);
         dlr.cards(dlr.hand.size(), values, true);
-        while (istaking == 1)
-        {
+        while (istaking == 1) {
             if (pl.score > 21) {
                 result(pl, dlr, 0);
                 istaking = 0;
                 critflag = false;
-            }
-            else if (pl.score == 21)
-            {
+            } else if (pl.score == 21) {
                 result(pl, dlr, 3);
                 istaking = 0;
                 critflag = false;
             }
-            if (critflag)
-            {
+            if (critflag) {
                 istaking = pl.make_turn(deck, values);
                 pl.cards(pl.hand.size(), values);
                 dlr.cards(dlr.hand.size(), values, true);
             }
         }
-        if (critflag)
-        {
+        if (critflag) {
             dlr.turn(deck, values, pl);
             if (dlr.score == pl.score)
                 result(pl, dlr, 1);
