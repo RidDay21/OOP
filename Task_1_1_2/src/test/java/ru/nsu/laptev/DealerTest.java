@@ -23,10 +23,10 @@ class DealerTest {
         assertEquals(mainDeck.deck.size(), size);
         assertEquals(dl.is_ace("Туз"), 1);
         assertEquals(dl.is_ace("Двойка"), 0);
-        dl.victories = 21;
-        assertEquals(dl.victories, 21);
+        dl.score = 21;
+        assertEquals(dl.score, 21);
         dl.new_one();
-        assertEquals(dl.victories,0);
+        assertEquals(dl.score,0);
 
     }
 }
