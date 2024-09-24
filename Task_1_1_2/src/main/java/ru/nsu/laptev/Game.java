@@ -55,8 +55,7 @@ public class Game {
                         + ":" + dealer.victories + " в ");
                 if (player.victories > dealer.victories) {
                     System.out.println("вашу пользу.");
-                }
-                else {
+                } else {
                     System.out.println("не вашу пользу.");
                 }
                 break;
@@ -66,8 +65,7 @@ public class Game {
                         + ":" + dealer.victories + " в ");
                 if (player.victories > dealer.victories) {
                     System.out.println("вашу пользу.");
-                }
-                else {
+                } else {
                     System.out.println("не вашу пользу.");
                 }
                 break;
@@ -76,8 +74,7 @@ public class Game {
                         + ":" + dealer.victories + " в ");
                 if (player.victories > dealer.victories) {
                     System.out.println("вашу пользу.");
-                }
-                else {
+                } else {
                     System.out.println("не вашу пользу.");
                 }
                 break;
@@ -100,8 +97,7 @@ public class Game {
             if (i % 2 == 0) {
                 dlr.deal(deck, pl.hand);
                 pl.score += values.get(pl.hand.get(i / 2).get(0));
-            }
-            else {
+            } else {
                 dlr.deal(deck, dlr.hand);
                 dlr.score += values.get(dlr.hand.get(i / 2).get(0));
             }
@@ -116,8 +112,7 @@ public class Game {
                 result(pl, dlr, 0);
                 istaking = 0;
                 critflag = false;
-            }
-            else if (pl.score == 21) {
+            } else if (pl.score == 21) {
                 result(pl, dlr, 3);
                 istaking = 0;
                 critflag = false;
@@ -130,14 +125,16 @@ public class Game {
         }
         if (critflag) {
             dlr.turn(deck, values, pl);
-            if (dlr.score == pl.score)
+            if (dlr.score == pl.score) {
                 result(pl, dlr, 1);
-            else if (dlr.score > 21)
+            } else if (dlr.score > 21){
                 result(pl, dlr, 3);
-            else if (dlr.score > pl.score)
+            } else if (dlr.score > pl.score){
                 result(pl, dlr, 0);
-            else if (pl.score > dlr.score)
+            } else if (pl.score > dlr.score){
                 result(pl, dlr, 3);
+            }
+
         }
     }
 }

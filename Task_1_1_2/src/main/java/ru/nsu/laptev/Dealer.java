@@ -44,8 +44,8 @@ public class Dealer extends Player {
                 }
                 score += value;
                 System.out.print(hand.get(i).get(0) + " " + hand.get(i).get(1)
-                         + " (" + value + ")");
-                if (i + 1 != cards){
+                        + " (" + value + ")");
+                if (i + 1 != cards) {
                     System.out.print(", ");
                 }
             }

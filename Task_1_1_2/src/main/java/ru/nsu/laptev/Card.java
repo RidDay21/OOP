@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Class for implementation of Cards
+ * Class for implementation of Cards.
  */
 public class Card {
     protected String[] suits = {"Черви", "Буби", "Трефы", "Пики"};
@@ -13,7 +13,7 @@ public class Card {
     protected int[] values = {2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11};
 
     /**
-     * Метод для создания нашей колоды.
+     * Method for implementation of dictionary with digital values of cards.
      */
     public Map<String, Integer> dict() {
         Map<String, Integer> valueDictionary = new HashMap<>();

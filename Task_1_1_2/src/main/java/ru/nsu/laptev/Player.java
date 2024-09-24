@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Player {
     public int victories = 0;
     public int score;
-    public int bust = 0;//перебор
+    public int bust = 0; //перебор
     public ArrayList<ArrayList<String>> hand = new ArrayList<>();
     public Scanner scanner = new Scanner(System.in);
 
@@ -21,7 +21,7 @@ public class Player {
     public int make_turn(Deck deck, Map<String, Integer> values) {
         System.out.println("Ваш ход\n-------\n"
                 + "Введите \"1\", чтобы взять карту, и \"0\", чтобы остановиться...");
-        int numb = scanner.nextInt();//выбранный номер
+        int numb = scanner.nextInt();
         switch (numb) {
             case (1):
                 ArrayList<String> card = deck.take_card();
