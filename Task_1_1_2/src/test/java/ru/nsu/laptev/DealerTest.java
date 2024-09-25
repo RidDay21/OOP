@@ -40,11 +40,5 @@ class DealerTest {
         assertEquals(dl.score, 21);
         dl.new_one();
         assertEquals(dl.score, 0);
-
-//        String input;
-//        InputStream inContent;
-//        int tmp;
-
-//        dl.cards(2, values, false);
     }
 }
