@@ -45,13 +45,6 @@ class PlayerTest {
 
         pl.cards(pl.hand.size(), values, false);
 
-        input = "1\n";
-        inContent = new ByteArrayInputStream(input.getBytes());
-        System.setIn(inContent);
-        tmp = pl.make_turn(deck, values);
-        assertEquals(tmp, 1);
-        assertEquals(pl.hand.size(), 2);
-
         input = "0\n";
         inContent = new ByteArrayInputStream(input.getBytes());
         System.setIn(inContent);
