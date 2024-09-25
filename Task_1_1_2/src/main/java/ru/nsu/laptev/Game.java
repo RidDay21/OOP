@@ -138,7 +138,7 @@ public class Game {
                 result(pl, dlr, 3);
             } else if (dlr.score > pl.score) {
                 result(pl, dlr, 0);
-            } else if (pl.score > dlr.score) {
+            } else {
                 result(pl, dlr, 3);
             }
 

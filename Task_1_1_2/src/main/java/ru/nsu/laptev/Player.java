@@ -12,7 +12,6 @@ public class Player {
     public int score;
     public int bust = 0; //перебор
     public ArrayList<ArrayList<String>> hand = new ArrayList<>();
-    public Scanner scanner = new Scanner(System.in);
 
     /**
      * Method for checking card for Тузик.
@@ -37,7 +36,9 @@ public class Player {
     public int make_turn(Deck deck, Map<String, Integer> values) {
         System.out.println("Ваш ход\n-------\n"
                 + "Введите \"1\", чтобы взять карту, и \"0\", чтобы остановиться...");
+        Scanner scanner = new Scanner(System.in);
         int numb = scanner.nextInt();
+        scanner.close();
         switch (numb) {
             case (1):
                 ArrayList<String> card = deck.take_card();
