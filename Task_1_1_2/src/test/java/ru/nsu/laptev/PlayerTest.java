@@ -49,9 +49,9 @@ class PlayerTest {
         assertEquals(pl.make_turn(deck, values), 0);
         assertEquals(pl.hand.size(), 1);
 
-        int score1 = pl.score;
+        int size1 = pl.hand.size();
         int ans = pl.check(deck, values);
-        assertEquals(ans, pl.score  - score1);
+        assertEquals(pl.hand.size(), size1 + 1 );
 
 
 
