@@ -30,17 +30,28 @@ class PlayerTest {
         assertEquals(pl.is_ace("Двойка"), 0);
 
         deck.deck = deck.generate_deck();
-        String input = "1\n";
-        InputStream inContent = new ByteArrayInputStream(input.getBytes());
+        String input;
+        InputStream inContent;
+        int tmp;
+
+        input = "1\n";
+        inContent = new ByteArrayInputStream(input.getBytes());
         System.setIn(inContent);
-        int tmp = pl.make_turn(deck, values);
+        tmp = pl.make_turn(deck, values);
         assertEquals(tmp, 1);
         assertEquals(pl.hand.size(), 1);
+
+        input = "1\n";
+        inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);
+        tmp = pl.make_turn(deck, values);
+        assertEquals(tmp, 1);
+        assertEquals(pl.hand.size(), 2);
 
         input = "0\n";
         inContent = new ByteArrayInputStream(input.getBytes());
         System.setIn(inContent);
         assertEquals(pl.make_turn(deck, values), 0);
-        assertEquals(pl.hand.size(), 1);
+        assertEquals(pl.hand.size(), 2);
     }
 }
