@@ -1,14 +1,9 @@
 package ru.nsu.laptev;
 
-//import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+import java.util.Map;
 import org.junit.jupiter.api.Test;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
-import java.util.Map;
 
 class DealerTest {
     Dealer dl = new Dealer();

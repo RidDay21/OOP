@@ -34,12 +34,11 @@ class PlayerTest {
         deck.deck = deck.generate_deck();
         String input;
         InputStream inContent;
-        int tmp;
 
         input = "1\n";
         inContent = new ByteArrayInputStream(input.getBytes());
         System.setIn(inContent);
-        tmp = pl.make_turn(deck, values);
+        int tmp = pl.make_turn(deck, values);
         assertEquals(tmp, 1);
         assertEquals(pl.hand.size(), 1);
 
