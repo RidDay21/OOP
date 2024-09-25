@@ -53,5 +53,7 @@ class PlayerTest {
         System.setIn(inContent);
         assertEquals(pl.make_turn(deck, values), 0);
         assertEquals(pl.hand.size(), 2);
+
+        pl.cards(2, values);
     }
 }
