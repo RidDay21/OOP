@@ -18,6 +18,8 @@ class PlayerTest {
     @Test
     void sampleTest() {
         assertEquals(pl.victories, 0);
+        pl.victories++;
+        assertEquals(pl.victories, 1);
         assertEquals(pl.bust, 0);
         assertEquals(pl.hand.size(), 0);
         pl.score = 4;
