@@ -34,5 +34,11 @@ class PlayerTest {
         System.setIn(inContent);
         int tmp = pl.make_turn(deck, values);
         assertEquals(tmp, 1);
+
+        input = "0\n";
+        inContent = new ByteArrayInputStream(input.getBytes());
+        System.setIn(inContent);
+        tmp = pl.make_turn(deck,values);
+        assertEquals(tmp, 0);
     }
 }

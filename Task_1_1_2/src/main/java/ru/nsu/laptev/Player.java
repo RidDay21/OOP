@@ -19,10 +19,10 @@ public class Player {
     public int is_ace(String name) {
         return name.equals("Туз") ? 1 : 0;
     }
+
     /**
      * Clear Method.
      */
-
     public void new_one() {
         bust = 0;
         score = 0;
