@@ -33,10 +33,12 @@ class PlayerTest {
         System.setIn(inContent);
         int tmp = pl.make_turn(deck, values);
         assertEquals(tmp, 1);
+        assertEquals(pl.hand.size(),1);
 
         input = "0\n";
         inContent = new ByteArrayInputStream(input.getBytes());
         System.setIn(inContent);
         assertEquals(pl.make_turn(deck, values), 0);
+        assertEquals(pl.hand.size(),1);
     }
 }
