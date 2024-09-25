@@ -51,7 +51,7 @@ class PlayerTest {
 
         int size1 = pl.hand.size();
         int ans = pl.check(deck, values);
-        assertEquals(pl.hand.size(), size1 + 1 );
+        assertEquals(pl.hand.size(), size1 + 1);
 
         pl.new_one();
 

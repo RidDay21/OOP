@@ -1,16 +1,14 @@
 package ru.nsu.laptev;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-
 import org.junit.jupiter.api.Test;
 
 class GameTest {
     @Test
-    void sampleTest()
-    {
+    void sampleTest() {
         String input;
         InputStream inContent;
         input = "0\n";
