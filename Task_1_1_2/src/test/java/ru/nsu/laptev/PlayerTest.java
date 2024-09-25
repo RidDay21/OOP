@@ -43,8 +43,6 @@ class PlayerTest {
         assertEquals(tmp, 1);
         assertEquals(pl.hand.size(), 1);
 
-        pl.cards(pl.hand.size(), values, false);
-
         input = "0\n";
         inContent = new ByteArrayInputStream(input.getBytes());
         System.setIn(inContent);

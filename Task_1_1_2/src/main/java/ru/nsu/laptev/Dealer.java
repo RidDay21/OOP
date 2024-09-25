@@ -42,21 +42,10 @@ public class Dealer extends Player {
     public void turn(Deck deck, Map<String, Integer> values, Player player) {
         player.cards(player.hand.size(), values, false);
         cards(hand.size(), values, true);
-        while (score < 17 && (player.score > score)) {
-            ArrayList<String> card = deck.take_card();
-            hand.add(card);
-            int value = values.get(card.get(0));
-            score += value;
-            if (score > 21) {
-                for (int i = 0; i < hand.size(); i++) {
-                    if (is_ace(hand.get(i).get(0)) == 1) {
-                        bust = 1;
-                        break;
-                    }
-                }
-            }
-            System.out.println("Дилер открывает карту " + card.get(0)
-                    + " " + card.get(1) + " (" + value + ")");
+        while (score < 17 && (player.score >= score)) {
+            int value = check(deck, values);
+            System.out.println("Дилер открывает карту " + hand.get(hand.size()-1).get(0)
+                    + " " + hand.get(hand.size()-1).get(1) + " (" + value + ")");
             player.cards(player.hand.size(), values, false);
             cards(hand.size(), values, true);
             if (player.score < score) {

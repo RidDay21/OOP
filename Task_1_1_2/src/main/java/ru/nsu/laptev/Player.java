@@ -40,20 +40,9 @@ public class Player {
         int numb = scanner.nextInt();
         switch (numb) {
             case (1):
-                ArrayList<String> card = deck.take_card();
-                hand.add(card);
-                int value = values.get(card.get(0));
-                score += value;
-                if (score > 21) {
-                    for (int i = 0; i < hand.size(); i++) {
-                        if (is_ace(hand.get(i).get(0)) == 1) {
-                            bust = 1;
-                            break;
-                        }
-                    }
-                }
-                System.out.println("Вы открыли карту " + card.get(0) + " " + card.get(1)
-                        + " (" + value + ")");
+                int value = check(deck, values);
+                System.out.println("Вы открыли карту " + hand.get(hand.size()-1).get(0)
+                        + " " + hand.get(hand.size()-1).get(1) + " (" + value + ")");
                 return 1;
             case (0):
                 System.out.println();
@@ -64,6 +53,22 @@ public class Player {
         return 0;
     }
 
+    public int check(Deck deck, Map<String, Integer> values)
+    {
+        ArrayList<String> card = deck.take_card();
+        hand.add(card);
+        int value = values.get(card.get(0));
+        score += value;
+        if (score > 21) {
+            for (int i = 0; i < hand.size(); i++) {
+                if (is_ace(hand.get(i).get(0)) == 1) {
+                    bust = 1;
+                    break;
+                }
+            }
+        }
+        return value;
+    }
     /**
      * Метод для вывода карт.
      * Аргументы: cards - кол-во карт, values - значения карт.
