@@ -19,6 +19,19 @@ class GameTest {
         Game.game(1);
 
         Game.hello();
+
+        Player pl = new Player();
+        Dealer dlr = new Dealer();
+
+        Game.result(pl,dlr,0);
+        assertEquals(pl.victories, 0);
+        assertEquals(dlr.victories, 1);
+        Game.result(pl,dlr,1);
+        assertEquals(pl.victories, 0);
+        assertEquals(dlr.victories, 1);
+        Game.result(pl,dlr,3);
+        assertEquals(pl.victories, 1);
+        assertEquals(dlr.victories, 1);
     }
 
 }
