@@ -36,5 +36,14 @@ class DealerTest {
         assertEquals(dl.score, 21);
         dl.new_one();
         assertEquals(dl.score, 0);
+
+        dl.deal(deck, dl.hand);
+        dl.deal(deck, dl.hand);
+
+        dl.firstTurn(values);
+
+        dl.turn(deck, values, pl);
+
+
     }
 }
