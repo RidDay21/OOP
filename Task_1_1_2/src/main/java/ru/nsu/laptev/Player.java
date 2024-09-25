@@ -41,8 +41,8 @@ public class Player {
         switch (numb) {
             case (1):
                 int value = check(deck, values);
-                System.out.println("Вы открыли карту " + hand.get(hand.size()-1).get(0)
-                        + " " + hand.get(hand.size()-1).get(1) + " (" + value + ")");
+                System.out.println("Вы открыли карту " + hand.get(hand.size() - 1).get(0)
+                        + " " + hand.get(hand.size() - 1).get(1) + " (" + value + ")");
                 return 1;
             case (0):
                 System.out.println();
@@ -53,8 +53,10 @@ public class Player {
         return 0;
     }
 
-    public int check(Deck deck, Map<String, Integer> values)
-    {
+    /**
+     * Method for taking cards and checking is it win or boarder situation or not.
+     */
+    public int check(Deck deck, Map<String, Integer> values) {
         ArrayList<String> card = deck.take_card();
         hand.add(card);
         int value = values.get(card.get(0));
@@ -69,6 +71,7 @@ public class Player {
         }
         return value;
     }
+
     /**
      * Метод для вывода карт.
      * Аргументы: cards - кол-во карт, values - значения карт.
