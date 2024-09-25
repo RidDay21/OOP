@@ -44,8 +44,8 @@ public class Dealer extends Player {
         cards(hand.size(), values, true);
         while (score < 17 && (player.score >= score)) {
             int value = check(deck, values);
-            System.out.println("Дилер открывает карту " + hand.get(hand.size()-1).get(0)
-                    + " " + hand.get(hand.size()-1).get(1) + " (" + value + ")");
+            System.out.println("Дилер открывает карту " + hand.get(hand.size() - 1).get(0)
+                    + " " + hand.get(hand.size() - 1).get(1) + " (" + value + ")");
             player.cards(player.hand.size(), values, false);
             cards(hand.size(), values, true);
             if (player.score < score) {

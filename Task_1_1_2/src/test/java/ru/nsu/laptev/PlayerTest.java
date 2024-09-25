@@ -4,8 +4,8 @@ package ru.nsu.laptev;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.io.InputStream;
 import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
 
