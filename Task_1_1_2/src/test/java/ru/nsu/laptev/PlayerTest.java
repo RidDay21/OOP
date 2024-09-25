@@ -40,8 +40,7 @@ class PlayerTest {
         input = "1\n";
         inContent = new ByteArrayInputStream(input.getBytes());
         System.setIn(inContent);
-        int tmp = pl.make_turn(deck, values);
-        assertEquals(tmp, 1);
+        assertEquals(pl.make_turn(deck, values), 1);
         assertEquals(pl.hand.size(), 1);
 
         input = "0\n";
@@ -59,8 +58,7 @@ class PlayerTest {
         pl.score = 21;
         ArrayList<String> card = deck.deck.get(deck.deck.size() - 1);
         System.out.println(card);
-        ans = pl.check(deck, values);
-        assertEquals(ans, values.get(card.get(0)));
+        assertEquals(pl.check(deck, values), values.get(card.get(0)));
 
 
 
