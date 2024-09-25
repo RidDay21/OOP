@@ -38,7 +38,6 @@ public class Player {
                 + "Введите \"1\", чтобы взять карту, и \"0\", чтобы остановиться...");
         Scanner scanner = new Scanner(System.in);
         int numb = scanner.nextInt();
-        scanner.close();
         switch (numb) {
             case (1):
                 ArrayList<String> card = deck.take_card();

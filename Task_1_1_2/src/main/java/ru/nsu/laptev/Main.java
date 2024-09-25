@@ -1,7 +1,5 @@
 package ru.nsu.laptev;
 
-import java.util.Map;
-
 /**
  * Main Class.
  */
@@ -10,7 +8,3 @@ public class Main {
         Game.game(3);
     }
 }
-
-
-
-
