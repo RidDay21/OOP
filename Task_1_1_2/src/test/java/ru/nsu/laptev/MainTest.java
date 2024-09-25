@@ -2,12 +2,17 @@ package ru.nsu.laptev;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+
 import org.junit.jupiter.api.Test;
 
 class MainTest {
     @Test
     void sampleTest() {
-        int tmp = 5;
-        assertEquals(tmp, 5);
+        String input = "0\n";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        Game.game(1);
     }
 }

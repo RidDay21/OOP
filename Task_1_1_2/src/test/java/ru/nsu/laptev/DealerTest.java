@@ -45,11 +45,11 @@ class DealerTest {
         dlr.turn(deck, values, pl);
 
         Game.result(pl, dlr, 3);
-        assertEquals(dlr.victories,0);
+        assertEquals(dlr.victories, 0);
         Game.result(pl, dlr, 1);
-        assertEquals(dlr.victories,0);
+        assertEquals(dlr.victories, 0);
         Game.result(pl, dlr, 0);
-        assertEquals(dlr.victories,1);
+        assertEquals(dlr.victories, 1);
 
     }
 }
