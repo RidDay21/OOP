@@ -10,8 +10,8 @@ import java.io.InputStream;
 import java.util.Map;
 
 class DealerTest {
-    Player pl = new Player();
     Dealer dl = new Dealer();
+    Player pl = new Player();
     Deck deck = new Deck();
     Card card = new Card();
     Map<String, Integer> values = card.dict();
@@ -25,7 +25,11 @@ class DealerTest {
         assertEquals(dl.hand.size(), 0);
         dl.deal(deck, dl.hand);
         assertEquals(dl.hand.size(), 1);
-        assertEquals(deck.deck.size(), 51);
+        dl.deal(deck, dl.hand);
+        assertEquals(dl.hand.size(), 2);
+        dl.deal(deck, pl.hand);
+        dl.deal(deck, pl.hand);
+        assertEquals(deck.deck.size(), 52-4);
         int size = deck.deck.size();
         dl.shuffle(deck);
         assertEquals(deck.deck.size(), size);
@@ -41,27 +45,8 @@ class DealerTest {
         InputStream inContent;
         int tmp;
 
-        input = "1\n";
-        inContent = new ByteArrayInputStream(input.getBytes());
-        System.setIn(inContent);
-        tmp = dl.make_turn(deck, values);
-        assertEquals(tmp, 1);
-        assertEquals(dl.hand.size(), 1);
+        dl.cards(0, values, false);
 
-        input = "1\n";
-        inContent = new ByteArrayInputStream(input.getBytes());
-        System.setIn(inContent);
-        tmp = dl.make_turn(deck, values);
-        assertEquals(tmp, 1);
-        assertEquals(dl.hand.size(), 2);
-
-        input = "0\n";
-        inContent = new ByteArrayInputStream(input.getBytes());
-        System.setIn(inContent);
-        assertEquals(dl.make_turn(deck, values), 0);
-        assertEquals(dl.hand.size(), 2);
-
-        dl.cards(2, values);
-
+        dl.turn(deck, values, pl);
     }
 }
