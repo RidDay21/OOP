@@ -9,7 +9,12 @@ import org.junit.jupiter.api.Test;
 
 class GameTest {
     Game game = new Game();
+    Player pl = new Player();
+    Dealer dlr = new Dealer();
+    Deck deck = new Deck();
+    Card card = new Card();
     @Test
+
     void sampleTest() {
         String input;
         InputStream inContent;
@@ -20,11 +25,7 @@ class GameTest {
 
         Game.hello();
 
-        Player pl = new Player();
-        Dealer dlr = new Dealer();
-        Deck deck = new Deck();
         deck.deck = deck.generate_deck();
-        Card card = new Card();
         Map<String, Integer> values = card.dict();
 
         Game.result(pl, dlr, 0);

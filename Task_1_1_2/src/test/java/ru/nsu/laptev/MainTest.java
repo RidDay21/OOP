@@ -2,7 +2,6 @@ package ru.nsu.laptev;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-
 import org.junit.jupiter.api.Test;
 
 class MainTest {
