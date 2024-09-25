@@ -11,7 +11,6 @@ class GameTest {
     @Test
     void sampleTest()
     {
-        Player pl = new Player();
         String input;
         InputStream inContent;
         input = "0\n";
