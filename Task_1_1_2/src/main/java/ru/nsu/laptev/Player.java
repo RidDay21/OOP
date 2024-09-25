@@ -82,7 +82,6 @@ public class Player {
         } else {
             System.out.print("Ваши карты: [");
         }
-
         score = 0;
         for (int i = 0; i < cards; i++) {
             int value = values.get(hand.get(i).get(0));

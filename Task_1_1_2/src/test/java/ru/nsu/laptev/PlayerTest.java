@@ -53,6 +53,10 @@ class PlayerTest {
         int ans = pl.check(deck, values);
         assertEquals(pl.hand.size(), size1 + 1 );
 
+        pl.new_one();
+
+        pl.score = 21;
+        ans = pl.check(deck, values);
 
 
 
