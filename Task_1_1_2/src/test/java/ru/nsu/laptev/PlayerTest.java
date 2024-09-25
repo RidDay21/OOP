@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.InputStream;
 import java.io.ByteArrayInputStream;
-
 import java.util.Map;
 import org.junit.jupiter.api.Test;
 
@@ -38,7 +37,6 @@ class PlayerTest {
         input = "0\n";
         inContent = new ByteArrayInputStream(input.getBytes());
         System.setIn(inContent);
-        tmp = pl.make_turn(deck,values);
-        assertEquals(tmp, 0);
+        assertEquals(pl.make_turn(deck, values), 0);
     }
 }
