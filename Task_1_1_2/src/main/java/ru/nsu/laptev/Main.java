@@ -5,6 +5,6 @@ package ru.nsu.laptev;
  */
 public class Main {
     public static void main(String[] args) {
-        Game.game(3);
+        Game.game(-1);
     }
 }

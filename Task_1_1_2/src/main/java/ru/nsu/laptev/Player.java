@@ -68,8 +68,13 @@ public class Player {
      * Метод для вывода карт.
      * Аргументы: cards - кол-во карт, values - значения карт.
      */
-    public void cards(int cards, Map<String, Integer> values) {
-        System.out.print("Ваши карты: [");
+    public void cards(int cards, Map<String, Integer> values, boolean isDl) {
+        if (isDl) {
+            System.out.print("Карты дилера: [");
+        } else {
+            System.out.print("Ваши карты: [");
+        }
+
         score = 0;
         for (int i = 0; i < cards; i++) {
             int value = values.get(hand.get(i).get(0));
@@ -83,6 +88,12 @@ public class Player {
                 System.out.print(", ");
             }
         }
-        System.out.println("] -> " + score);
+        if (isDl && cards == 1) {
+            System.out.println(", (закрытая карта)]\n");
+        } else if (isDl && cards > 1) {
+            System.out.println("] -> " + score + "\n");
+        } else {
+            System.out.println("] -> " + score);
+        }
     }
 }

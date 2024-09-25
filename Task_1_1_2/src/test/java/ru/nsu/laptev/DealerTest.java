@@ -1,6 +1,7 @@
 package ru.nsu.laptev;
 
 //import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
@@ -29,7 +30,7 @@ class DealerTest {
         assertEquals(dl.hand.size(), 2);
         dl.deal(deck, pl.hand);
         dl.deal(deck, pl.hand);
-        assertEquals(deck.deck.size(), 52-4);
+        assertEquals(deck.deck.size(), 52 - 4);
         int size = deck.deck.size();
         dl.shuffle(deck);
         assertEquals(deck.deck.size(), size);
@@ -40,13 +41,10 @@ class DealerTest {
         dl.new_one();
         assertEquals(dl.score, 0);
 
-        deck.deck = deck.generate_deck();
         String input;
         InputStream inContent;
         int tmp;
 
-        dl.cards(0, values, false);
-
-        dl.turn(deck, values, pl);
+        dl.cards(2, values, false);
     }
 }

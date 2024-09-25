@@ -1,11 +1,13 @@
 package ru.nsu.laptev;
 
 //import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.InputStream;
 import java.io.ByteArrayInputStream;
 import java.util.Map;
+
 import org.junit.jupiter.api.Test;
 
 
@@ -54,6 +56,6 @@ class PlayerTest {
         assertEquals(pl.make_turn(deck, values), 0);
         assertEquals(pl.hand.size(), 2);
 
-        pl.cards(2, values);
+        pl.cards(2, values, false);
     }
 }

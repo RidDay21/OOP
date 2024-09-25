@@ -111,9 +111,9 @@ public class Game {
         }
         System.out.println("Дилер раздал карты");
         int istaking = 1;
-        boolean critflag = true; //flag for our dealer.
-        pl.cards(pl.hand.size(), values);
-        dlr.cards(dlr.hand.size(), values, true);
+        boolean critflag = true; //flag for our dealer// .
+        pl.cards(pl.hand.size(), values, false);
+        dlr.cards(1, values, true);
         while (istaking == 1) {
             if (pl.score > 21) {
                 result(pl, dlr, 0);
@@ -126,22 +126,30 @@ public class Game {
             }
             if (critflag) {
                 istaking = pl.make_turn(deck, values);
-                pl.cards(pl.hand.size(), values);
-                dlr.cards(dlr.hand.size(), values, true);
+                {
+                    if (istaking == 1) {
+                        pl.cards(pl.hand.size(), values, false);
+                        dlr.cards(1, values, true);
+                    }
+                }
             }
         }
         if (critflag) {
-            dlr.turn(deck, values, pl);
-            if (dlr.score == pl.score) {
-                result(pl, dlr, 1);
-            } else if (dlr.score > 21) {
-                result(pl, dlr, 3);
-            } else if (dlr.score > pl.score) {
+            dlr.firstTurn(values);
+            if (dlr.score > pl.score) {
                 result(pl, dlr, 0);
             } else {
-                result(pl, dlr, 3);
+                dlr.turn(deck, values, pl);
+                if (dlr.score == pl.score) {
+                    result(pl, dlr, 1);
+                } else if (dlr.score > 21) {
+                    result(pl, dlr, 3);
+                } else if (dlr.score > pl.score) {
+                    result(pl, dlr, 0);
+                } else {
+                    result(pl, dlr, 3);
+                }
             }
-
         }
     }
 }

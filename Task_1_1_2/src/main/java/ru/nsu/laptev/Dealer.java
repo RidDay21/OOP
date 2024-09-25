@@ -26,31 +26,13 @@ public class Dealer extends Player {
     }
 
     /**
-     * Метод для вывода карт (Аргумент cards - кол-во карт на руках,
-     * values - значения карт, IsFirstRound - флаг.
+     * Method for implementation of dealer's first turn.
      */
-    public void cards(int cards, Map<String, Integer> values, boolean isFirstRound) {
-        System.out.print("Карты дилера: [");
-        if (isFirstRound) {
-            int value = values.get(hand.get(0).get(0));
-            System.out.println(hand.get(0).get(0) + " " + hand.get(0).get(1)
-                    + " (" + value + "), <закрытая карта>]\n");
-        } else {
-            score = 0;
-            for (int i = 0; i < cards; i++) {
-                int value = values.get(hand.get(i).get(0));
-                if (is_ace(hand.get(i).get(0)) == 1 && bust > 0) {
-                    value = 1;
-                }
-                score += value;
-                System.out.print(hand.get(i).get(0) + " " + hand.get(i).get(1)
-                        + " (" + value + ")");
-                if (i + 1 != cards) {
-                    System.out.print(", ");
-                }
-            }
-            System.out.println("] -> " + score + "\n");
-        }
+    public void firstTurn(Map<String, Integer> values) {
+        System.out.print("Ход дилера\n-------\nДилер открывает закрытую карту "
+                + hand.get(1).get(0)  + " " + hand.get(1).get(1));
+        int value = values.get(hand.get(1).get(0));
+        System.out.println(" (" + value + ")");
     }
 
     /**
@@ -58,16 +40,12 @@ public class Dealer extends Player {
      * player - наш игрок.
      */
     public void turn(Deck deck, Map<String, Integer> values, Player player) {
-        int value = values.get(hand.get(1).get(0));
-        System.out.println("Ход дилера\n"
-                + "-------\nДилер открывает закрытую карту " + hand.get(1).get(0) + ""
-                + " " + hand.get(1).get(1) + " (" + value + ")");
-        player.cards(player.hand.size(), values);
-        cards(hand.size(), values, false);
-        while (score < 17) {
+        player.cards(player.hand.size(), values, false);
+        cards(hand.size(), values, true);
+        while (score < 17 && (player.score > score)) {
             ArrayList<String> card = deck.take_card();
             hand.add(card);
-            value = values.get(card.get(0));
+            int value = values.get(card.get(0));
             score += value;
             if (score > 21) {
                 for (int i = 0; i < hand.size(); i++) {
@@ -79,8 +57,11 @@ public class Dealer extends Player {
             }
             System.out.println("Дилер открывает карту " + card.get(0)
                     + " " + card.get(1) + " (" + value + ")");
-            player.cards(player.hand.size(), values);
-            cards(hand.size(), values, false);
+            player.cards(player.hand.size(), values, false);
+            cards(hand.size(), values, true);
+            if (player.score < score) {
+                break;
+            }
         }
     }
 }
