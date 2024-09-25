@@ -60,6 +60,11 @@ class PlayerTest {
         System.out.println(card);
         assertEquals(pl.check(deck, values), values.get(card.get(0)));
 
+        pl.cards(pl.hand.size(), values, true);
+
+        pl.cards(1, values, true);
+
+
 
 
 
