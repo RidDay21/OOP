@@ -13,6 +13,6 @@ class MainTest {
         String input = "0\n";
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
-        Game.game(1);
+        Main.main(null);
     }
 }
