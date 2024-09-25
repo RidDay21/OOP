@@ -34,12 +34,16 @@ class PlayerTest {
         String input;
         InputStream inContent;
 
+        pl.cards(pl.hand.size(), values, false);
+
         input = "1\n";
         inContent = new ByteArrayInputStream(input.getBytes());
         System.setIn(inContent);
         int tmp = pl.make_turn(deck, values);
         assertEquals(tmp, 1);
         assertEquals(pl.hand.size(), 1);
+
+        pl.cards(pl.hand.size(), values, false);
 
         input = "1\n";
         inContent = new ByteArrayInputStream(input.getBytes());
@@ -54,6 +58,8 @@ class PlayerTest {
         assertEquals(pl.make_turn(deck, values), 0);
         assertEquals(pl.hand.size(), 2);
 
-        pl.cards(pl.hand.size(), values, false);
+
+
+
     }
 }
