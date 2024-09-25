@@ -17,6 +17,8 @@ class GameTest {
         inContent = new ByteArrayInputStream(input.getBytes());
         System.setIn(inContent);
         Game.game(1);
+
+        Game.hello();
     }
 
 }
