@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Map;
 import org.junit.jupiter.api.Test;
 
@@ -56,11 +57,11 @@ class PlayerTest {
         pl.new_one();
 
         pl.score = 21;
-        
+        ArrayList<String> card = deck.deck.get(deck.deck.size() - 1);
+        System.out.println(card);
         ans = pl.check(deck, values);
+        assertEquals(ans, values.get(card.get(0)));
 
-        pl.score = 22;
-        ans = pl.check(deck, values);
 
 
 
