@@ -1,11 +1,11 @@
 package ru.nsu.laptev;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class GameTest {
     @Test
@@ -23,13 +23,13 @@ class GameTest {
         Player pl = new Player();
         Dealer dlr = new Dealer();
 
-        Game.result(pl,dlr,0);
+        Game.result(pl, dlr, 0);
         assertEquals(pl.victories, 0);
         assertEquals(dlr.victories, 1);
-        Game.result(pl,dlr,1);
+        Game.result(pl, dlr, 1);
         assertEquals(pl.victories, 0);
         assertEquals(dlr.victories, 1);
-        Game.result(pl,dlr,3);
+        Game.result(pl, dlr, 3);
         assertEquals(pl.victories, 1);
         assertEquals(dlr.victories, 1);
     }
