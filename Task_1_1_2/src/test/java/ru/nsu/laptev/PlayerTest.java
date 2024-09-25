@@ -56,6 +56,10 @@ class PlayerTest {
         pl.new_one();
 
         pl.score = 21;
+        
+        ans = pl.check(deck, values);
+
+        pl.score = 22;
         ans = pl.check(deck, values);
 
 
