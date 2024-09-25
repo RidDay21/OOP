@@ -54,6 +54,6 @@ class PlayerTest {
         assertEquals(pl.make_turn(deck, values), 0);
         assertEquals(pl.hand.size(), 2);
 
-        pl.cards(2, values, false);
+        pl.cards(pl.hand.size(), values, false);
     }
 }
