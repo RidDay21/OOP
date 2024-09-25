@@ -41,10 +41,10 @@ class DealerTest {
         dl.new_one();
         assertEquals(dl.score, 0);
 
-        String input;
-        InputStream inContent;
-        int tmp;
+//        String input;
+//        InputStream inContent;
+//        int tmp;
 
-        dl.cards(2, values, false);
+//        dl.cards(2, values, false);
     }
 }
