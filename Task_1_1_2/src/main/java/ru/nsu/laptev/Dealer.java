@@ -26,7 +26,7 @@ public class Dealer extends Player {
     }
 
     /**
-     * Метод для вывода карт(Аргумент cards - кол-во карт на руках,
+     * Метод для вывода карт (Аргумент cards - кол-во карт на руках,
      * values - значения карт, IsFirstRound - флаг.
      */
     public void cards(int cards, Map<String, Integer> values, boolean isFirstRound) {

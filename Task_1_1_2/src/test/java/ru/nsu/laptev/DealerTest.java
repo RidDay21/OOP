@@ -26,7 +26,7 @@ class DealerTest {
         dl.score = 21;
         assertEquals(dl.score, 21);
         dl.new_one();
-        assertEquals(dl.score,0);
+        assertEquals(dl.score, 0);
 
     }
 }
