@@ -5,7 +5,8 @@ import java.util.ArrayList;
 /**
  * Класс для описания объекта Колода.
  */
-public class Deck extends Card {
+public class Deck {
+    Card card = new Card();
     protected int amount = 52;
     ArrayList<ArrayList<String>> deck = new ArrayList<>();
 
@@ -15,8 +16,8 @@ public class Deck extends Card {
     public ArrayList<ArrayList<String>> generate_deck() {
         for (int i = 0; i < amount; i++) {
             ArrayList<String> tmpDeck = new ArrayList<>();
-            tmpDeck.add(names[i % 13]);
-            tmpDeck.add(suits[i / 13]);
+            tmpDeck.add(card.names[i % 13]);
+            tmpDeck.add(card.suits[i / 13]);
             deck.add(tmpDeck);
         }
         return deck;

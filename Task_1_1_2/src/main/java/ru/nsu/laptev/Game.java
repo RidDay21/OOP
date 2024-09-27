@@ -13,10 +13,11 @@ public class Game {
      */
     public static void game(int flag) {
         Deck mainDeck = new Deck();
+        Card card = new Card();
         Dealer dl = new Dealer();
         Player pl = new Player();
         Game game = new Game();
-        Map<String, Integer> values = mainDeck.dict();
+        Map<String, Integer> values = card.dict();
 
         int cnt = 1;
         int numbOfRounds;
