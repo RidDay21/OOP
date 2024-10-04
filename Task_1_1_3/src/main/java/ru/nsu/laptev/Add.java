@@ -13,7 +13,7 @@ public class Add extends Expression {
     public void print() {
         System.out.print("(");
         left_sum.print();
-        System.out.print("*");
+        System.out.print("+");
         right_sum.print();
         System.out.print(")");
     }
