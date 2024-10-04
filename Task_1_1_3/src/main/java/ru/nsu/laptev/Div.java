@@ -25,7 +25,7 @@ public class Div extends Expression{
     }
 
     public int eval(String exp) {
-
+        return (numerator.eval(exp) / denominator.eval(exp));
     }
 }
-}
+

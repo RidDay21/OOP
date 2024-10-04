@@ -15,7 +15,7 @@ public class Sub extends Expression {
         deductible.print();
         System.out.print("*");
         demunitive.print();
-        System.out.println(")");
+        System.out.print(")");
     }
     @Override
     public Expression derivative(String exp) {
@@ -23,7 +23,7 @@ public class Sub extends Expression {
     }
     @Override
     public int eval(String exp) {
-        return 
+        return (demunitive.eval(exp) / demunitive.eval(exp));
     }
 }
 

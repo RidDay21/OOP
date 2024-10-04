@@ -4,11 +4,9 @@ package ru.nsu.laptev;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++)
-            System.out.println("i = " + i);
-        }
+        Expression e = new Add(new Number(3), new Mul(new Number(2), new Variable("x")));
+        e.print();//(3*2(2*x))
+        Expression de = e.derivative("x");
+        de.print();
     }
+}

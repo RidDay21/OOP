@@ -13,7 +13,7 @@ public class Variable extends Expression {
 
     @Override
     public void print() {
-        System.out.print("\"" + var + "\"");
+        System.out.print(var);
     }
 
     @Override
@@ -23,6 +23,6 @@ public class Variable extends Expression {
 
     @Override
     public int eval(String exp) {
-        return 4;
+        return Integer.parseInt(Parser.Parsing(var,exp));
     }
 }

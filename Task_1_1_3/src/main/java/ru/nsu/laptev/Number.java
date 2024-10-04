@@ -1,5 +1,8 @@
 package ru.nsu.laptev;
 
+/**
+ * Class for implementation of Number
+ */
 public class Number extends Expression {
 
     private int numb;
@@ -11,7 +14,7 @@ public class Number extends Expression {
 
     @Override
     public void print() {
-        System.out.println(numb);
+        System.out.print(numb);
     }
 
     @Override
@@ -24,3 +27,10 @@ public class Number extends Expression {
         return numb;
     }
 }
+/*@Override
+
+public int eval(String exp) {
+    return new Number(Parser.Parsing(var,exp));
+}
+
+ */

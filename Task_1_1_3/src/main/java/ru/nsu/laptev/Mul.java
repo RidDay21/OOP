@@ -15,7 +15,7 @@ public class Mul extends Expression {
         left_mult.print();
         System.out.print("*");
         right_mult.print();
-        System.out.println(")");
+        System.out.print(")");
     }
 
     @Override
@@ -24,8 +24,8 @@ public class Mul extends Expression {
     }
 
     @Override
-public int eval(String exp) {
-
+    public int eval(String exp) {
+        return (left_mult.eval(exp) + right_mult.eval(exp));
     }
 
 }
