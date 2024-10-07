@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.nsu.laptev.NumberTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-10-07T17:29:48" hostname="MANUNITEDCHAMPI" time="0.038">
-  <properties/>
-  <testcase name="sampleTest()" classname="ru.nsu.laptev.NumberTest" time="0.038"/>
-  <system-out><![CDATA[5]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
