@@ -10,6 +10,7 @@ class NumberTest {
     {
         Number numb =  new Number(5);
         assertEquals(5,numb.eval(""));
+        assertEquals((new Number(0)).eval(""), numb.derivative("").eval(""));
     }
 
 
