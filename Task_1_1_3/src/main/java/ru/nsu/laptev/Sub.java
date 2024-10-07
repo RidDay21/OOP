@@ -13,7 +13,7 @@ public class Sub extends Expression {
     public void print() {
         System.out.print("(");
         deductible.print();
-        System.out.print("*");
+        System.out.print("-");
         demunitive.print();
         System.out.print(")");
     }

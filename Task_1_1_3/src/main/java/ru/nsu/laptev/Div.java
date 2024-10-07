@@ -21,7 +21,7 @@ public class Div extends Expression{
 
 
     public Expression derivative(String exp) {
-        return new Div(new Sub(new Mul(numerator.derivative(exp),denominator), new Mul(numerator, denominator.derivative(exp))),new Mul(denominator,denominator));
+        return new Div(new Sub(new Mul(numerator.derivative(exp),denominator), new Mul(numerator, denominator.derivative(exp))), new Mul(denominator,denominator) );
     }
 
     public int eval(String exp) {
