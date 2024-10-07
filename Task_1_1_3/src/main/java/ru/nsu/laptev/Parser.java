@@ -1,16 +1,18 @@
 package ru.nsu.laptev;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Parser {
 
-    static String Parsing(String variable, String exp) {
-        String number = new String();//explain why latter
-        String[] parts = exp.split(" ");
-        for (int i = 0; i < parts.length;i++) {
-            if (parts.equals(variable)) {
-                number = parts[i+2];
-                break;
-            }
+    static int Parsing(String variable, String exp) {
+        Pattern pattern = Pattern.compile(variable + "\s*=\s*(\\d+)");
+        Matcher matcher = pattern.matcher(exp);
+
+        int value = 0;
+        while(matcher.find()) {
+            value = Integer.parseInt(matcher.group(1));
         }
-        return number;
+        return value;
     }
 }

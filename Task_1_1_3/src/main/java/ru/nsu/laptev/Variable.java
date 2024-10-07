@@ -18,11 +18,11 @@ public class Variable extends Expression {
 
     @Override
     public Expression derivative(String exp) {
-        return new Variable("0");
+        return (exp.equals(var) ? new Number(1) : new Number(0));
     }
 
     @Override
-    public int eval(String exp) {
-        return Integer.parseInt(Parser.Parsing(var,exp));
+    public int eval(String exp) {//x = 10; y = 13;
+        return Parser.Parsing(var, exp);
     }
 }

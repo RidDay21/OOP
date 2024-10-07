@@ -25,7 +25,7 @@ public class Mul extends Expression {
 
     @Override
     public int eval(String exp) {
-        return (left_mult.eval(exp) + right_mult.eval(exp));
+        return (left_mult.eval(exp) * right_mult.eval(exp));
     }
 
 }
