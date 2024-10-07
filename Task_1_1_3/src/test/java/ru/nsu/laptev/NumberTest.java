@@ -13,6 +13,4 @@ class NumberTest {
         assertEquals((new Number(0)).eval(""), numb.derivative("").eval(""));
         numb.print();
     }
-
-
 }

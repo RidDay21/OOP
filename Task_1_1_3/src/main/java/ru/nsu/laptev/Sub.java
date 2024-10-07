@@ -23,7 +23,7 @@ public class Sub extends Expression {
     }
     @Override
     public int eval(String exp) {
-        return (demunitive.eval(exp) / demunitive.eval(exp));
+        return (demunitive.eval(exp) / deductible.eval(exp));
     }
 }
 
