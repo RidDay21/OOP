@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class Parser {
 
     static int Parsing(String variable, String exp) {
-        Pattern pattern = Pattern.compile(variable + "\s*=\s*(\\d+)");
+        Pattern pattern = Pattern.compile(variable + "\\s*=\\s*(\\d+)");
         Matcher matcher = pattern.matcher(exp);
 
         int value = 0;
