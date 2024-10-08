@@ -21,5 +21,7 @@ public class Main {
         int result = e.eval("x = 10; g = 13; x = 25");
         System.out.println(result);
 
+        e = new Div(new Number(5), new Number(0));
+        System.out.println(e.eval(""));
     }
 }

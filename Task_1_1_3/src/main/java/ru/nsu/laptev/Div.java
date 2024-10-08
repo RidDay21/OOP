@@ -25,7 +25,14 @@ public class Div extends Expression {
     }
 
     public int eval(String exp) {
-        return (numerator.eval(exp) / denominator.eval(exp));
+        try {
+            return (numerator.eval(exp) / denominator.eval(exp));
+        } catch (ArithmeticException e) {
+            System.out.println("division by zero, silly guy");
+        }
+        finally {
+            return 0;
+        }
     }
 }
 
