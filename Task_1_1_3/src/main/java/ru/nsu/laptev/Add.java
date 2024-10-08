@@ -17,10 +17,12 @@ public class Add extends Expression {
         right_sum.print();
         System.out.print(")");
     }
+
     @Override
     public Expression derivative(String exp) {
         return new Add(left_sum.derivative(exp), right_sum.derivative(exp));
     }
+
     @Override
     public int eval(String exp) {
         return (left_sum.eval(exp) + right_sum.eval(exp));

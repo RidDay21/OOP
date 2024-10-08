@@ -15,7 +15,7 @@ public class Main {
 //        int res = Parser.Parsing("x","y = 10; y = 13");
 //        System.out.println(res);
 
-        e = new Add(new Variable("y"), new Mul(new Number(2),new Variable("x")));
+        e = new Add(new Variable("y"), new Mul(new Number(2), new Variable("x")));
         e.print();
         System.out.println("\n------------------------------");
         int result = e.eval("x = 10; g = 13; x = 25");
