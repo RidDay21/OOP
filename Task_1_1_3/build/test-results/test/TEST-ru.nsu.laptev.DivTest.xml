@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.nsu.laptev.DivTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-10-08T03:06:49" hostname="MANUNITEDCHAMPI" time="0.036">
-  <properties/>
-  <testcase name="sampleTest()" classname="ru.nsu.laptev.DivTest" time="0.036"/>
-  <system-out><![CDATA[(4/2)(((4*0)-(0*2))/(2*2))]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
