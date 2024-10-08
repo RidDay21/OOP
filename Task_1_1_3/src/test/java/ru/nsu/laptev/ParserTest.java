@@ -11,5 +11,6 @@ class ParserTest {
         assertEquals(123, e);
         e = Parser.Parsing("y", "");
         assertEquals(0, e);
+        Parser parser = new Parser();
     }
 }
