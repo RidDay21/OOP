@@ -24,15 +24,12 @@ public class Div extends Expression {
         return new Div(new Sub(new Mul(numerator.derivative(exp), denominator), new Mul(numerator, denominator.derivative(exp))), new Mul(denominator, denominator));
     }
 
-    public int eval(String exp) {
-        try {
-            return (numerator.eval(exp) / denominator.eval(exp));
-        } catch (ArithmeticException e) {
-            System.out.println("division by zero, silly guy");
+    public int eval(String exp) throws ArithmeticException{
+        if (denominator.eval(exp) == 0) {
+            throw new ArithmeticException("division by ZERO. HOOOOOOOW?!?!?!?!?");
         }
-        finally {
-            return 0;
-        }
+
+        return ((numerator.eval(exp)) / (denominator.eval(exp)));
     }
 }
 

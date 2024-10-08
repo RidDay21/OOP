@@ -11,6 +11,14 @@ class DivTest {
         div.print();
         assertEquals(2, div.eval(""));
         Expression e = div.derivative("x");
+        div = new Div(new Number(5), new Number(0));
+        try {
+            div.eval(" ");
+        }
+        catch (ArithmeticException exception) {
+            System.out.println("Sheeeesh,bro, you tried to divide by zero...Not cool");
+        }
+
         e.print();
     }
 
