@@ -15,5 +15,8 @@ class VariableTest {
         var.print();
         assertEquals(0, var.derivative("y").eval(""));
         var.print();
+        Expression e = new Add(new Variable("x"), new Variable("y"));
+        e.print();
+        assertEquals(25, e.eval("x = 15, y = 10"));
     }
 }
