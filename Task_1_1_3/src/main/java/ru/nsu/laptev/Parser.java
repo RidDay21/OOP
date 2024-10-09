@@ -3,6 +3,9 @@ package ru.nsu.laptev;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Class for implementation parsing.
+ */
 public class Parser {
 
     static int Parsing(String variable, String exp) {

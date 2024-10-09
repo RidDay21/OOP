@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Class for testing class Parser.
+ */
 class ParserTest {
     @Test
     void sampleTest() {

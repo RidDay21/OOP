@@ -4,6 +4,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+/**
+ * Class for testing class Variable.
+ */
 class VariableTest {
     @Test
     void sampleTest() {

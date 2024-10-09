@@ -4,6 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+/**
+ * Class for testing class Sub.
+ */
 class SubTest {
     @Test
     void sampleTest() {
