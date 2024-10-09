@@ -18,5 +18,7 @@ class VariableTest {
         Expression e = new Add(new Variable("x"), new Variable("y"));
         e.print();
         assertEquals(25, e.eval("x = 15, y = 10"));
+
+        assertEquals("x", var.return_var());
     }
 }
