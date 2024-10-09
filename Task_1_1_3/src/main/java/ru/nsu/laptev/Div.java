@@ -28,7 +28,6 @@ public class Div extends Expression {
         if (denominator.eval(exp) == 0) {
             throw new ArithmeticException("division by ZERO. HOOOOOOOW?!?!?!?!?");
         }
-
         return ((numerator.eval(exp)) / (denominator.eval(exp)));
     }
 }

@@ -22,6 +22,12 @@ public class Main {
         System.out.println(result);
 
         e = new Div(new Number(5), new Number(0));
-        System.out.println(e.eval(""));
+        try {
+            System.out.println(e.eval(""));
+        } catch (ArithmeticException pre) {
+            System.out.println("U stupid bastard.");
+        }
+
+
     }
 }
