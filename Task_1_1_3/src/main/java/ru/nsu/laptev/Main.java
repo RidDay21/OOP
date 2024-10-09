@@ -10,24 +10,11 @@ public class Main {
         Expression de = e.derivative("x");
         de.print();
 
-        System.out.println("\n------------------------------");
-
-//        int res = Parser.Parsing("x","y = 10; y = 13");
-//        System.out.println(res);
-
-        e = new Add(new Variable("y"), new Mul(new Number(2), new Variable("x")));
-        e.print();
-        System.out.println("\n------------------------------");
-        int result = e.eval("x = 10; g = 13; x = 25");
-        System.out.println(result);
-
         e = new Div(new Number(5), new Number(0));
         try {
             System.out.println(e.eval(""));
         } catch (ArithmeticException pre) {
             System.out.println("U stupid bastard.");
         }
-
-
     }
 }
