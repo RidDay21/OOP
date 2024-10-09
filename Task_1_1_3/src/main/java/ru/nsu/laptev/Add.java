@@ -10,8 +10,8 @@ public class Add extends Expression {
     /**
      * Constructor of class.
      *
-     * @param left_sum
-     * @param right_sum
+     * @param left_sum for passing left_sum.
+     * @param right_sum for passing right_sum.
      */
     public Add(Expression left_sum, Expression right_sum) {
         this.left_sum = left_sum;
@@ -33,8 +33,8 @@ public class Add extends Expression {
     /**
      * Method for counting the derivative of expression.
      *
-     * @param exp
-     * @return
+     * @param exp for passing variable for derivative.
+     * @return derivative opf expression.
      */
     @Override
     public Expression derivative(String exp) {
@@ -44,8 +44,8 @@ public class Add extends Expression {
     /**
      * Method for substituting variable values and calculating the value.
      *
-     * @param exp
-     * @return
+     * @param exp for passing values of each variable.
+     * @return result of summary with values of variables.
      */
     @Override
     public int eval(String exp) {

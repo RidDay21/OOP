@@ -10,7 +10,7 @@ public class Number extends Expression {
     /**
      * Constructor of class.
      *
-     * @param numb
+     * @param numb pass value to private_numb.
      */
     public Number(int numb) {
         this.numb = numb;
@@ -27,8 +27,8 @@ public class Number extends Expression {
     /**
      * Method for counting the derivative of expression.
      *
-     * @param exp
-     * @return
+     * @param exp for pass the variable to count the variable
+     * @return 0.
      */
     @Override
     public Expression derivative(String exp) {
@@ -38,8 +38,8 @@ public class Number extends Expression {
     /**
      * Method for substituting variable values and calculating the value.
      *
-     * @param exp
-     * @return
+     * @param exp for pass the value of each variable.
+     * @return value of numb.
      */
     @Override
     public int eval(String exp) {

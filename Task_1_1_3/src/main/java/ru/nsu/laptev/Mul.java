@@ -10,8 +10,8 @@ public class Mul extends Expression {
     /**
      * Constructor of class.
      *
-     * @param left_mult
-     * @param right_mult
+     * @param left_mult passing left_milt.
+     * @param right_mult passing right_mult.
      */
     public Mul(Expression left_mult, Expression right_mult) {
         this.left_mult = left_mult;
@@ -33,8 +33,8 @@ public class Mul extends Expression {
     /**
      * Method for counting the derivative of expression.
      *
-     * @param exp
-     * @return
+     * @param exp for passing variable for derivative.
+     * @return value of derivative of multiplication.
      */
     @Override
     public Expression derivative(String exp) {
@@ -44,8 +44,8 @@ public class Mul extends Expression {
     /**
      * Method for substituting variable values and calculating the value.
      *
-     * @param exp
-     * @return
+     * @param exp for pass the value of each variable.
+     * @return result of multiplication with values 0f variables.
      */
     @Override
     public int eval(String exp) {

@@ -10,8 +10,8 @@ public class Sub extends Expression {
     /**
      * Constructor of class.
      *
-     * @param demunitive
-     * @param deductible
+     * @param demunitive for passing demunitive.
+     * @param deductible for passing deductible.
      */
     public Sub(Expression demunitive, Expression deductible) {
         this.demunitive = demunitive;
@@ -33,8 +33,8 @@ public class Sub extends Expression {
     /**
      * Method for counting the derivative of expression.
      *
-     * @param exp
-     * @return
+     * @param exp for pass the variable to count the variable
+     * @return result of derivative of substraction.
      */
     @Override
     public Expression derivative(String exp) {
@@ -44,8 +44,8 @@ public class Sub extends Expression {
     /**
      * Method for substituting variable values and calculating the value.
      *
-     * @param exp
-     * @return
+     * @param exp for pass the value of each variable.
+     * @return the value of subtraction.
      */
     @Override
     public int eval(String exp) {

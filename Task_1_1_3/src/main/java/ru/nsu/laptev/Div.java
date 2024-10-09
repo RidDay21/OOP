@@ -10,8 +10,8 @@ public class Div extends Expression {
     /**
      * Constructor of my class.
      *
-     * @param numerator
-     * @param denominator
+     * @param numerator pass value of numerator.
+     * @param denominator pass value of denominator.
      */
     public Div(Expression numerator, Expression denominator) {
         this.numerator = numerator;
@@ -33,8 +33,8 @@ public class Div extends Expression {
     /**
      * Method for counting the derivative of expression.
      *
-     * @param exp
-     * @return
+     * @param exp for passing variable for derivative.
+     * @return derivative expression.
      */
     public Expression derivative(String exp) {
         return new Div(new Sub(new Mul(numerator.derivative(exp), denominator), new Mul(numerator, denominator.derivative(exp))), new Mul(denominator, denominator));
@@ -43,8 +43,8 @@ public class Div extends Expression {
     /**
      * Method for substituting variable values and calculating the value.
      *
-     * @param exp
-     * @return
+     * @param exp for passing the values for each variable.
+     * @return result of division with values of variables.
      */
     public int eval(String exp) throws ArithmeticException {
         if (denominator.eval(exp) == 0) {

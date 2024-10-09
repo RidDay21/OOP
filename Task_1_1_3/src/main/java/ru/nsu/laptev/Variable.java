@@ -8,8 +8,7 @@ public class Variable extends Expression {
 
     /**
      * Constructor of class.
-     *
-     * @param var
+     * @param var for passing the value.
      */
     public Variable(String var) {
         this.var = var;
@@ -30,8 +29,8 @@ public class Variable extends Expression {
     /**
      * Method for counting the derivative of expression.
      *
-     * @param exp
-     * @return
+     * @param exp for pass the variable to count the variable.
+     * @return derivative of variable, if var == exp - return 1.
      */
     @Override
     public Expression derivative(String exp) {
@@ -41,11 +40,11 @@ public class Variable extends Expression {
     /**
      * Method for substituting variable values and calculating the value.
      *
-     * @param exp
-     * @return
+     * @param exp for pass the value of each variable
+     * @return value of variable.
      */
     @Override
     public int eval(String exp) {//x = 10; y = 13;
-        return Parser.Parsing(var, exp);
+        return Parser.parsing(var, exp);
     }
 }

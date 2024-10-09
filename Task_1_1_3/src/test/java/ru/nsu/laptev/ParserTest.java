@@ -1,8 +1,8 @@
 package ru.nsu.laptev;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
 
 /**
  * Class for testing class Parser.
@@ -10,9 +10,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ParserTest {
     @Test
     void sampleTest() {
-        int e = Parser.Parsing("x", "x = 10; x = 123; y = 0");
+        int e = Parser.parsing("x", "x = 10; x = 123; y = 0");
         assertEquals(123, e);
-        e = Parser.Parsing("y", "");
+        e = Parser.parsing("y", "");
         assertEquals(0, e);
         Parser parser = new Parser();
     }
