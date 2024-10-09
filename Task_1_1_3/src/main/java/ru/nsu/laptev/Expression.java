@@ -11,6 +11,7 @@ public abstract class Expression {
 
     /**
      * Abstract method for counting the derivative of expression.
+     *
      * @param exp
      * @return
      */
@@ -18,6 +19,7 @@ public abstract class Expression {
 
     /**
      * Abstract method for substituting variable values and calculating the value.
+     *
      * @param exp
      * @return
      */

@@ -9,6 +9,7 @@ public class Mul extends Expression {
 
     /**
      * Constructor of class.
+     *
      * @param left_mult
      * @param right_mult
      */
@@ -31,6 +32,7 @@ public class Mul extends Expression {
 
     /**
      * Method for counting the derivative of expression.
+     *
      * @param exp
      * @return
      */
@@ -41,6 +43,7 @@ public class Mul extends Expression {
 
     /**
      * Method for substituting variable values and calculating the value.
+     *
      * @param exp
      * @return
      */

@@ -8,6 +8,7 @@ public class Variable extends Expression {
 
     /**
      * Constructor of class.
+     *
      * @param var
      */
     public Variable(String var) {
@@ -28,6 +29,7 @@ public class Variable extends Expression {
 
     /**
      * Method for counting the derivative of expression.
+     *
      * @param exp
      * @return
      */
@@ -38,6 +40,7 @@ public class Variable extends Expression {
 
     /**
      * Method for substituting variable values and calculating the value.
+     *
      * @param exp
      * @return
      */

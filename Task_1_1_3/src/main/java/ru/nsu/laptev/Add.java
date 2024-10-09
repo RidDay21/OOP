@@ -9,6 +9,7 @@ public class Add extends Expression {
 
     /**
      * Constructor of class.
+     *
      * @param left_sum
      * @param right_sum
      */
@@ -31,6 +32,7 @@ public class Add extends Expression {
 
     /**
      * Method for counting the derivative of expression.
+     *
      * @param exp
      * @return
      */
@@ -41,6 +43,7 @@ public class Add extends Expression {
 
     /**
      * Method for substituting variable values and calculating the value.
+     *
      * @param exp
      * @return
      */

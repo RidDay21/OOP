@@ -1,4 +1,5 @@
 package ru.nsu.laptev;
+
 /**
  * Class for implementation subtraction.
  */
@@ -8,6 +9,7 @@ public class Sub extends Expression {
 
     /**
      * Constructor of class.
+     *
      * @param demunitive
      * @param deductible
      */
@@ -27,8 +29,10 @@ public class Sub extends Expression {
         demunitive.print();
         System.out.print(")");
     }
+
     /**
      * Method for counting the derivative of expression.
+     *
      * @param exp
      * @return
      */
@@ -39,6 +43,7 @@ public class Sub extends Expression {
 
     /**
      * Method for substituting variable values and calculating the value.
+     *
      * @param exp
      * @return
      */

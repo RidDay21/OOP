@@ -9,6 +9,7 @@ public class Div extends Expression {
 
     /**
      * Constructor of my class.
+     *
      * @param numerator
      * @param denominator
      */
@@ -31,6 +32,7 @@ public class Div extends Expression {
 
     /**
      * Method for counting the derivative of expression.
+     *
      * @param exp
      * @return
      */
@@ -40,10 +42,11 @@ public class Div extends Expression {
 
     /**
      * Method for substituting variable values and calculating the value.
+     *
      * @param exp
      * @return
      */
-    public int eval(String exp) throws ArithmeticException{
+    public int eval(String exp) throws ArithmeticException {
         if (denominator.eval(exp) == 0) {
             throw new ArithmeticException("division by ZERO. HOOOOOOOW?!?!?!?!?");
         }

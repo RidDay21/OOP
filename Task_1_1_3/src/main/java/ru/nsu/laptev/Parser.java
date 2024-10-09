@@ -13,7 +13,7 @@ public class Parser {
         Matcher matcher = pattern.matcher(exp);
 
         int value = 0;
-        while(matcher.find()) {
+        while (matcher.find()) {
             value = Integer.parseInt(matcher.group(1));
         }
         return value;
