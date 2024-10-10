@@ -10,7 +10,7 @@ public class Main {
      */
     public static void main(String[] args) {
         Expression e = new Add(new Number(3), new Div(new Number(2), new Variable("x")));
-        e.print();//(3+(2*x))
+        e.print(); //(3+(2*x))
         System.out.println("\n\n");
         Expression de = e.derivative("x");
         de.print();
