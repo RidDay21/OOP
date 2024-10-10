@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 public class Parser {
 
     static double parsing(String variable, String exp) throws ArithmeticException {
-        Pattern pattern = Pattern.compile(variable + "\s*=\s*([\\d.]+)");
+        Pattern pattern = Pattern.compile(variable + "\\s*=\\s*([\\d.]+)");
         //Pattern.compile(variable + "\s=\s(\\d+)(.\\d+)?");
 
         Matcher matcher = pattern.matcher(exp);
