@@ -4,9 +4,7 @@ package ru.nsu.laptev;
  * Class for implementation of Number.
  */
 public class Number extends Expression {
-
     private int numb;
-
     /**
      * Constructor of class.
      *
