@@ -9,11 +9,11 @@ public class Main {
      */
     public static void main(String[] args) {
         Expression e = new Add(new Number(3.6), new Mul(new Number(2), new Variable("x")));
-        e.print(); //(3+(2/x))
+        e.print();
         try {
             e.eval("z = 10");
         } catch (ArithmeticException pre) {
-            System.out.println("Bro, stop.");
+            System.out.println("Some of variables wasn't initialized.");
         }
         Expression de = e.derivative("x");
         de.print();
@@ -21,7 +21,7 @@ public class Main {
         try {
             System.out.println(e.eval(""));
         } catch (ArithmeticException pre) {
-            System.out.println("U stupid bastard.");
+            System.out.println("Try to divide by Zero.");
         }
     }
 }
