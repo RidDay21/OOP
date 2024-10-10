@@ -8,6 +8,7 @@ public class Variable extends Expression {
 
     /**
      * Constructor of class.
+     *
      * @param var for passing the value.
      */
     public Variable(String var) {
