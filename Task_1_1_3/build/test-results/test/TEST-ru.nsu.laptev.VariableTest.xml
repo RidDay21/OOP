@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.nsu.laptev.VariableTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-10-10T07:00:44" hostname="MANUNITEDCHAMPI" time="0.055">
-  <properties/>
-  <testcase name="varExceptionTest()" classname="ru.nsu.laptev.VariableTest" time="0.04"/>
-  <testcase name="varTest()" classname="ru.nsu.laptev.VariableTest" time="0.005"/>
-  <testcase name="twoVariablesTest()" classname="ru.nsu.laptev.VariableTest" time="0.003"/>
-  <system-out><![CDATA[xx(x+y)]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
