@@ -4,18 +4,18 @@ package ru.nsu.laptev;
  * Class for implementation subtraction.
  */
 public class Sub extends Expression {
-    private Expression demunitive;
-    private Expression deductible;
+    private Expression left;
+    private Expression right;
 
     /**
      * Constructor of class.
      *
-     * @param demunitive for passing demunitive.
-     * @param deductible for passing deductible.
+     * @param left for passing demunitive.
+     * @param right for passing deductible.
      */
-    public Sub(Expression demunitive, Expression deductible) {
-        this.demunitive = demunitive;
-        this.deductible = deductible;
+    public Sub(Expression left, Expression right) {
+        this.left = left;
+        this.right = right;
     }
 
     /**
@@ -24,9 +24,9 @@ public class Sub extends Expression {
     @Override
     public void print() {
         System.out.print("(");
-        deductible.print();
+        left.print();
         System.out.print("-");
-        demunitive.print();
+        right.print();
         System.out.print(")");
     }
 
@@ -38,7 +38,7 @@ public class Sub extends Expression {
      */
     @Override
     public Expression derivative(String exp) {
-        return new Sub(deductible.derivative(exp), demunitive.derivative(exp));
+        return new Sub(right.derivative(exp), left.derivative(exp));
     }
 
     /**
@@ -49,7 +49,7 @@ public class Sub extends Expression {
      */
     @Override
     public double eval(String exp) {
-        return (demunitive.eval(exp) - deductible.eval(exp));
+        return (left.eval(exp) - right.eval(exp));
     }
 }
 

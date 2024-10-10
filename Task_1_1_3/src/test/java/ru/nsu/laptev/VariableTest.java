@@ -12,7 +12,6 @@ class VariableTest {
 
     @Test
     void varTest() {
-
         assertEquals(10, var.eval(" x = 10"));
         assertEquals(100, var.eval(" x = 10; x = 100"));
         assertEquals(1, var.derivative("x").eval(""));
@@ -34,7 +33,6 @@ class VariableTest {
         Expression e = new Add(new Variable("x"), new Variable("y"));
         e.print();
         assertEquals(25, e.eval("x = 15, y = 10"));
-
         assertEquals("x", var.return_var());
     }
 }
