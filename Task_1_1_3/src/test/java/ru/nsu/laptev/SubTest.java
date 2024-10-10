@@ -2,8 +2,6 @@ package ru.nsu.laptev;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.text.DecimalFormat;
-
 import org.junit.jupiter.api.Test;
 
 /**
@@ -30,7 +28,5 @@ class SubTest {
         int decimalPlaces = 2; //желаемое кол-во знаков после запятой
         double numb = Math.round(res * Math.pow(10, decimalPlaces)) / Math.pow(10, decimalPlaces);
         assertEquals(1.2, numb);
-
-
     }
 }
