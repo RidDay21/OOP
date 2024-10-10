@@ -16,6 +16,7 @@ class MulTest {
         mul.derivative(""); //it's not correct, bro.
         mul.print();
     }
+
     @Test
     void mulWithVarTest() {
         Mul mul1 = new Mul(new Variable("x"), new Number(6));

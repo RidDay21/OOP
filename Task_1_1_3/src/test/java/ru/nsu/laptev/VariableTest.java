@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
  */
 class VariableTest {
     Variable var = new Variable("x");
+
     @Test
     void varTest() {
 
@@ -29,8 +30,7 @@ class VariableTest {
     }
 
     @Test
-    void twoVariablesTest()
-    {
+    void twoVariablesTest() {
         Expression e = new Add(new Variable("x"), new Variable("y"));
         e.print();
         assertEquals(25, e.eval("x = 15, y = 10"));
