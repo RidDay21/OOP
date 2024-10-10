@@ -48,7 +48,7 @@ public class Sub extends Expression {
      * @return the value of subtraction.
      */
     @Override
-    public int eval(String exp) {
+    public double eval(String exp) {
         return (demunitive.eval(exp) / deductible.eval(exp));
     }
 }

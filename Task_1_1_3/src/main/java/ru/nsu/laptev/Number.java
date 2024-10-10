@@ -4,14 +4,14 @@ package ru.nsu.laptev;
  * Class for implementation of Number.
  */
 public class Number extends Expression {
-    private int numb;
+    private double numb;
 
     /**
      * Constructor of class.
      *
      * @param numb pass value to private_numb.
      */
-    public Number(int numb) {
+    public Number(double numb) {
         this.numb = numb;
     }
 
@@ -41,7 +41,7 @@ public class Number extends Expression {
      * @return value of numb.
      */
     @Override
-    public int eval(String exp) {
+    public double eval(String exp) {
         return numb;
     }
 }

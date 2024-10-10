@@ -48,8 +48,8 @@ public class Div extends Expression {
      * @param exp for passing the values for each variable.
      * @return result of division with values of variables.
      */
-    public int eval(String exp) throws ArithmeticException {
-        if (denominator.eval(exp) == 0) {
+    public double eval(String exp) throws ArithmeticException {
+        if (denominator.eval(exp) == 0.0) {
             throw new ArithmeticException("division by ZERO. HOOOOOOOW?!?!?!?!?");
         }
         return ((numerator.eval(exp)) / (denominator.eval(exp)));

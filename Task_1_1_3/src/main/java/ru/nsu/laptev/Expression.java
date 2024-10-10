@@ -23,5 +23,5 @@ public abstract class Expression {
      * @param exp for pass the value of each variable.
      * @return result of our expression with values of variables.
      */
-    public abstract int eval(String exp);
+    public abstract double eval(String exp);
 }

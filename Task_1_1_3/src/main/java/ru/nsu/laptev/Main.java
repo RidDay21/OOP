@@ -8,7 +8,7 @@ public class Main {
      * Main class for testing my program.
      */
     public static void main(String[] args) {
-        Expression e = new Add(new Number(3), new Div(new Number(2), new Variable("x")));
+        Expression e = new Add(new Number(3.6), new Div(new Number(2), new Variable("x")));
         e.print(); //(3+(2*x))
         try {
             e.eval("z = 10");

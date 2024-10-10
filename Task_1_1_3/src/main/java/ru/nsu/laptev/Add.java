@@ -48,7 +48,7 @@ public class Add extends Expression {
      * @return result of summary with values of variables.
      */
     @Override
-    public int eval(String exp) {
+    public double eval(String exp) {
         return (left.eval(exp) + right.eval(exp));
     }
 }

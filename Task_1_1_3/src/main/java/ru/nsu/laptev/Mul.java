@@ -49,7 +49,7 @@ public class Mul extends Expression {
      * @return result of multiplication with values 0f variables.
      */
     @Override
-    public int eval(String exp) {
+    public double eval(String exp) {
         return (left.eval(exp) * right.eval(exp));
     }
 

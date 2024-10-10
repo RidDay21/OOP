@@ -8,14 +8,14 @@ import java.util.regex.Pattern;
  */
 public class Parser {
 
-    static int parsing(String variable, String exp) throws ArithmeticException {
+    static double parsing(String variable, String exp) throws ArithmeticException {
         Pattern pattern = Pattern.compile(variable + "\\s*=\\s*(\\d+)");
         Matcher matcher = pattern.matcher(exp);
 
-        int value = 0;
+        double value = 0;
         boolean flag = false;
         while (matcher.find()) {
-            value = Integer.parseInt(matcher.group(1));
+            value = Double.parseDouble(matcher.group(1));
             flag = true;
         }
         if (!flag) {

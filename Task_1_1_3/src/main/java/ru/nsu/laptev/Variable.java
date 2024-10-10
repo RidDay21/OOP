@@ -45,7 +45,7 @@ public class Variable extends Expression {
      * @return value of variable.
      */
     @Override
-    public int eval(String exp) {
+    public double eval(String exp) {
         return Parser.parsing(var, exp);
     }
 }
