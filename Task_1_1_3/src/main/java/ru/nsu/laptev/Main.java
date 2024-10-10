@@ -5,7 +5,6 @@ package ru.nsu.laptev;
  */
 public class Main {
     /**
-     *
      * Main class for testing my program.
      */
     public static void main(String[] args) {
