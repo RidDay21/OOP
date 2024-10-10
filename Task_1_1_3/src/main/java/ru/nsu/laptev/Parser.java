@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
  */
 public class Parser {
 
-    static int parsing(String variable, String exp) throws ArithmeticException{
+    static int parsing(String variable, String exp) throws ArithmeticException {
         Pattern pattern = Pattern.compile(variable + "\\s*=\\s*(\\d+)");
         Matcher matcher = pattern.matcher(exp);
 
