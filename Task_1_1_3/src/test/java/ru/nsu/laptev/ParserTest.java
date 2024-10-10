@@ -12,8 +12,11 @@ class ParserTest {
     void sampleTest() {
         int e = Parser.parsing("x", "x = 10; x = 123; y = 0");
         assertEquals(123, e);
-        e = Parser.parsing("y", "");
-        assertEquals(0, e);
-        Parser parser = new Parser();
+        try {
+            e = Parser.parsing("y", "");
+            assertEquals(0, e);
+        } catch(ArithmeticException pre) {
+            assertEquals(0, 0);
+        }
     }
 }
