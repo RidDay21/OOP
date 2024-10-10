@@ -28,8 +28,7 @@ class DivTest {
     }
 
     @Test
-    void divWith2VarsTest()
-    {
+    void divWith2VarsTest() {
         div = new Div(new Variable("x"), new Variable("y"));
         assertEquals(10, div.eval("x = 30; y = 3"));
     }
