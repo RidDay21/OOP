@@ -5,7 +5,7 @@ package ru.nsu.laptev;
  */
 public class Number extends Expression {
     private int numb;
-    
+
     /**
      * Constructor of class.
      *

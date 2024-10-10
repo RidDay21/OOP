@@ -8,13 +8,18 @@ import java.util.regex.Pattern;
  */
 public class Parser {
 
-    static int parsing(String variable, String exp) {
+    static int parsing(String variable, String exp) throws ArithmeticException{
         Pattern pattern = Pattern.compile(variable + "\\s*=\\s*(\\d+)");
         Matcher matcher = pattern.matcher(exp);
 
         int value = 0;
+        boolean flag = false;
         while (matcher.find()) {
             value = Integer.parseInt(matcher.group(1));
+            flag = true;
+        }
+        if (!flag) {
+            throw new ArithmeticException("U haven't initialized variable.");
         }
         return value;
     }
