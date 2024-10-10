@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
  */
 class AddTest {
     @Test
-    void printTest() {
+    void addTest() {
         Add add = new Add(new Number(10), new Number(5));
         add.print();
         assertEquals(15, add.eval(""));

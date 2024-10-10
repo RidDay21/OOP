@@ -31,7 +31,7 @@ public class Number extends Expression {
      */
     @Override
     public Expression derivative(String exp) {
-        return new Number(0);
+        return new Number(0.0);
     }
 
     /**

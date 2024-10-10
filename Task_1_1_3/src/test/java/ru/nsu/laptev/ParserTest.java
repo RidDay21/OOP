@@ -9,9 +9,11 @@ import org.junit.jupiter.api.Test;
  */
 class ParserTest {
     @Test
-    void sampleTest() {
+    void parserTest() {
         double e = Parser.parsing("x", "x = 10; x = 123; y = 0");
         assertEquals(123, e);
+        e = Parser.parsing("x", "x = 10; x = 0.456; y = 0");
+        assertEquals(0.456, e);
         try {
             e = Parser.parsing("y", "");
             assertEquals(0, e);
