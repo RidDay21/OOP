@@ -15,7 +15,7 @@ class ParserTest {
         try {
             e = Parser.parsing("y", "");
             assertEquals(0, e);
-        } catch(ArithmeticException pre) {
+        } catch (ArithmeticException pre) {
             assertEquals(0, 0);
         }
     }
