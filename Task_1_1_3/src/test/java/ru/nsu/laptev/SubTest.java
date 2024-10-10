@@ -12,12 +12,12 @@ class SubTest {
     void sampleTest() {
         Sub sub = new Sub(new Number(5), new Number(6));
         sub.print();
-        assertEquals(0, sub.eval("x = 0"));
+        assertEquals(-1, sub.eval("x = 0"));
         sub.derivative("");
         sub.print();
         sub = new Sub(new Variable("x"), new Number(6));
         sub.print();
-        assertEquals(15, sub.eval("x = 90"));
+        assertEquals(84, sub.eval("x = 90"));
     }
 
 }

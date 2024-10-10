@@ -12,7 +12,7 @@ class MulTest {
     void sampleTest() {
         Mul mul = new Mul(new Number(5), new Number(6));
         mul.print();
-        assertEquals(30, mul.eval(""));
+        assertEquals(30.0, mul.eval(""));
         mul.derivative("");
         mul.print();
         Mul mul1 = new Mul(new Variable("x"), new Number(6));

@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 class NumberTest {
     @Test
     void sampleTest() {
-        Number numb = new Number(5);
+        Number numb = new Number(5.0);
         assertEquals(5, numb.eval(""));
         assertEquals((new Number(0)).eval(""), numb.derivative("").eval(""));
         numb.print();

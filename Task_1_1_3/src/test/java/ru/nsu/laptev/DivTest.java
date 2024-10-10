@@ -12,7 +12,7 @@ class DivTest {
     void sampleTest() {
         Div div = new Div(new Number(4), new Number(2));
         div.print();
-        assertEquals(2, div.eval(""));
+        assertEquals(2.0, div.eval(""));
         Expression e = div.derivative("x");
         div = new Div(new Number(5), new Number(0));
         try {

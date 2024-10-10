@@ -49,7 +49,7 @@ public class Sub extends Expression {
      */
     @Override
     public double eval(String exp) {
-        return (demunitive.eval(exp) / deductible.eval(exp));
+        return (demunitive.eval(exp) - deductible.eval(exp));
     }
 }
 
