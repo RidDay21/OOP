@@ -10,7 +10,7 @@ public class Div extends Expression {
     /**
      * Constructor of my class.
      *
-     * @param numerator pass value of numerator.
+     * @param numerator   pass value of numerator.
      * @param denominator pass value of denominator.
      */
     public Div(Expression numerator, Expression denominator) {
@@ -37,7 +37,9 @@ public class Div extends Expression {
      * @return derivative expression.
      */
     public Expression derivative(String exp) {
-        return new Div(new Sub(new Mul(numerator.derivative(exp), denominator), new Mul(numerator, denominator.derivative(exp))), new Mul(denominator, denominator));
+        return new Div(new Sub(new Mul(numerator.derivative(exp), denominator),
+                new Mul(numerator, denominator.derivative(exp))),
+                new Mul(denominator, denominator));
     }
 
     /**

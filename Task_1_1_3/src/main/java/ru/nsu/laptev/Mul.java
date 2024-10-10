@@ -4,18 +4,18 @@ package ru.nsu.laptev;
  * Class for implementation multiplication.
  */
 public class Mul extends Expression {
-    private Expression left_mult;
-    private Expression right_mult;
+    private Expression left;
+    private Expression right;
 
     /**
      * Constructor of class.
      *
-     * @param left_mult passing left_milt.
-     * @param right_mult passing right_mult.
+     * @param left  passing left_milt.
+     * @param right passing right_mult.
      */
-    public Mul(Expression left_mult, Expression right_mult) {
-        this.left_mult = left_mult;
-        this.right_mult = right_mult;
+    public Mul(Expression left, Expression right) {
+        this.left = left;
+        this.right = right;
     }
 
     /**
@@ -24,9 +24,9 @@ public class Mul extends Expression {
     @Override
     public void print() {
         System.out.print("(");
-        left_mult.print();
+        left.print();
         System.out.print("*");
-        right_mult.print();
+        right.print();
         System.out.print(")");
     }
 
@@ -38,7 +38,8 @@ public class Mul extends Expression {
      */
     @Override
     public Expression derivative(String exp) {
-        return new Add(new Mul(left_mult, right_mult.derivative(exp)), new Mul(left_mult.derivative(exp), right_mult));
+        return new Add(new Mul(left, right.derivative(exp)),
+                new Mul(left.derivative(exp), right));
     }
 
     /**
@@ -49,7 +50,7 @@ public class Mul extends Expression {
      */
     @Override
     public int eval(String exp) {
-        return (left_mult.eval(exp) * right_mult.eval(exp));
+        return (left.eval(exp) * right.eval(exp));
     }
 
 }

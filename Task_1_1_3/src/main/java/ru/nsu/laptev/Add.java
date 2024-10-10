@@ -4,18 +4,18 @@ package ru.nsu.laptev;
  * Class for implementation addition.
  */
 public class Add extends Expression {
-    private Expression left_sum;
-    private Expression right_sum;
+    private Expression left;
+    private Expression right;
 
     /**
      * Constructor of class.
      *
-     * @param left_sum for passing left_sum.
-     * @param right_sum for passing right_sum.
+     * @param left for passing left_sum.
+     * @param right for passing right_sum.
      */
-    public Add(Expression left_sum, Expression right_sum) {
-        this.left_sum = left_sum;
-        this.right_sum = right_sum;
+    public Add(Expression left, Expression right) {
+        this.left = left;
+        this.right = right;
     }
 
     /**
@@ -24,9 +24,9 @@ public class Add extends Expression {
     @Override
     public void print() {
         System.out.print("(");
-        left_sum.print();
+        left.print();
         System.out.print("+");
-        right_sum.print();
+        right.print();
         System.out.print(")");
     }
 
@@ -38,7 +38,7 @@ public class Add extends Expression {
      */
     @Override
     public Expression derivative(String exp) {
-        return new Add(left_sum.derivative(exp), right_sum.derivative(exp));
+        return new Add(left.derivative(exp), right.derivative(exp));
     }
 
     /**
@@ -49,7 +49,7 @@ public class Add extends Expression {
      */
     @Override
     public int eval(String exp) {
-        return (left_sum.eval(exp) + right_sum.eval(exp));
+        return (left.eval(exp) + right.eval(exp));
     }
 }
 
