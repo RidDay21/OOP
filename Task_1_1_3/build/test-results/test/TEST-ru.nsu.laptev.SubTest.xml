@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.nsu.laptev.SubTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-10-10T07:52:14" hostname="MANUNITEDCHAMPI" time="0.085">
-  <properties/>
-  <testcase name="subTest()" classname="ru.nsu.laptev.SubTest" time="0.053"/>
-  <testcase name="subWithVar()" classname="ru.nsu.laptev.SubTest" time="0.028"/>
-  <system-out><![CDATA[(6.0-5.0)(6.0-5.0)(6.0-x)]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
