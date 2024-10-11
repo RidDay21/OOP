@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.nsu.laptev.MainTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-10-11T06:36:05" hostname="MANUNITEDCHAMPI" time="0.047">
+<testsuite name="ru.nsu.laptev.MainTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-10-11T06:39:41" hostname="MANUNITEDCHAMPI" time="0.056">
   <properties/>
-  <testcase name="mainTest()" classname="ru.nsu.laptev.MainTest" time="0.047"/>
+  <testcase name="mainTest()" classname="ru.nsu.laptev.MainTest" time="0.056"/>
   <system-out><![CDATA[(3.6+(2.0/x))
 ---
 Some of variables wasn't initialized.
