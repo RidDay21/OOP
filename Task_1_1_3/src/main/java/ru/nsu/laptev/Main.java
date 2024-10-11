@@ -10,6 +10,7 @@ public class Main {
     public static void main(String[] args) {
         Expression e = new Add(new Number(3.6), new Div(new Number(2), new Variable("x")));
         e.print();
+
         try {
             e.eval("z = 10");
         } catch (ArithmeticException pre) {
@@ -17,6 +18,7 @@ public class Main {
         }
         Expression de = e.derivative("x");
         de.print();
+
         e = new Div(new Number(5), new Number(0));
         try {
             System.out.println(e.eval(""));

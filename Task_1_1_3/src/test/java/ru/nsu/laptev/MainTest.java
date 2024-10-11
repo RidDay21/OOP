@@ -8,6 +8,7 @@ class MainTest {
     @Test
     void mainTest() {
         Main.main(null);
+        Main main = new Main();
     }
 
 }
