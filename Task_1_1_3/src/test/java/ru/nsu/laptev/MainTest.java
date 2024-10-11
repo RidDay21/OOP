@@ -6,8 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
     @Test
-    void mainTest()
-    {
+    void mainTest() {
         Main.main(null);
     }
 
