@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.nsu.laptev.DivTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-10-10T08:21:35" hostname="MANUNITEDCHAMPI" time="0.079">
-  <properties/>
-  <testcase name="divWith2VarsTest()" classname="ru.nsu.laptev.DivTest" time="0.047"/>
-  <testcase name="divByZeroTest()" classname="ru.nsu.laptev.DivTest" time="0.006"/>
-  <testcase name="divTest()" classname="ru.nsu.laptev.DivTest" time="0.022"/>
-  <system-out><![CDATA[(4.0/2.0)]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

@@ -24,4 +24,9 @@ public abstract class Expression {
      * @return result of our expression with values of variables.
      */
     public abstract double eval(String exp);
+
+    public Expression read_expression() {
+
+        return new Number(3);
+    }
 }
