@@ -9,6 +9,7 @@ class MainTest {
     void mainTest() {
         Main.main(null);
         Main main = new Main();
+        main.main(null);
     }
 
 }
