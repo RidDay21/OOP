@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":10};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],8:["t4","Concrete Methods"]};
+var data = {"i0":6,"i1":6,"i2":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -172,7 +172,7 @@ extends java.lang.Object</pre>
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colSecond" scope="col">Method</th>
@@ -198,11 +198,6 @@ extends java.lang.Object</pre>
 <td class="colLast">
 <div class="block">Abstract method for derivation of expression.</div>
 </td>
-</tr>
-<tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="Expression.html" title="class in ru.nsu.laptev">Expression</a></code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#read_expression()">read_expression</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -276,7 +271,7 @@ extends java.lang.Object</pre>
 <a id="eval(java.lang.String)">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>eval</h4>
 <pre class="methodSignature">public abstract&nbsp;double&nbsp;eval&#8203;(java.lang.String&nbsp;exp)</pre>
@@ -287,15 +282,6 @@ extends java.lang.Object</pre>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>result of our expression with values of variables.</dd>
 </dl>
-</li>
-</ul>
-<a id="read_expression()">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>read_expression</h4>
-<pre class="methodSignature">public&nbsp;<a href="Expression.html" title="class in ru.nsu.laptev">Expression</a>&nbsp;read_expression()</pre>
 </li>
 </ul>
 </li>
