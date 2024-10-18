@@ -31,6 +31,7 @@ public class AdjMatrix<T> implements Graph<T> {
 
     public void delVertex(T name) {
         int index = matrix.indexOf(name);
+        System.out.println(index);
         for (int i =0; i < vertex_count;i++) {
             matrix.get(0).remove(index);
         }

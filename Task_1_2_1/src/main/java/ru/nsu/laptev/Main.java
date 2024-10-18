@@ -11,7 +11,9 @@ public class Main {
         new1.addVertex(14);
         new1.addVertex(35);
 
-        new1.de
+        System.out.println(new1.matrix);
+
+        //new1.delVertex(12);
 
         System.out.println(new1.matrix);
 
