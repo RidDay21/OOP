@@ -13,7 +13,7 @@ public class Main {
 
         System.out.println(new1.matrix);
 
-        //new1.delVertex(12);
+        new1.delVertex(12);
 
         System.out.println(new1.matrix);
 

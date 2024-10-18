@@ -4,9 +4,14 @@ import java.util.ArrayList;
 
 public class AdjMatrix<T> implements Graph<T> {
     public ArrayList<ArrayList<T>> matrix = new ArrayList<ArrayList<T>>();
+    private ArrayList<T> vertexes = new ArrayList<>();
     private int vertex_count;
 
     public int get_vertex_count() { return vertex_count;}
+
+    public int get_vertex_number(T name) {
+        return vertexes.indexOf(name);
+    }
 
     /**
      * It's turned out that I need to add a null value to every existing row in the matrix
@@ -14,12 +19,12 @@ public class AdjMatrix<T> implements Graph<T> {
      */
     public void addVertex(T name) {
         vertex_count++;
+        vertexes.add(name);
         //Creating new row for new vertex;
         ArrayList<T> row = new ArrayList<>();
         for (int i = 0; i < vertex_count; i++) {
             row.add(null);
         }
-
         matrix.add(row);
         for (int i = 0; i < vertex_count; i++) {
             //matrix.get(i).add(null);//Adding null to each row
@@ -30,10 +35,10 @@ public class AdjMatrix<T> implements Graph<T> {
     }
 
     public void delVertex(T name) {
-        int index = matrix.indexOf(name);
+        int index = get_vertex_number(name);
         System.out.println(index);
         for (int i =0; i < vertex_count;i++) {
-            matrix.get(0).remove(index);
+            matrix.get(i).remove(index);
         }
         matrix.remove(index);//removing row from matrix
         vertex_count--;
