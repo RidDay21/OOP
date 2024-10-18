@@ -1,14 +1,18 @@
 package ru.nsu.laptev;
 
-public interface Graph<T> {
+import javax.lang.model.element.UnknownElementException;
+import java.io.InvalidObjectException;
 
-    public void addVertex(T name);
-    public void delVertex(T name);
+public interface Graph<V, E> {
 
-    public void addEdge(T start, T end);
-    public void delEdge(T start, T end);
+    public void addVertex(V name);
+    public void delVertex(V name);
 
-    public void get_neighbours(T name);
+    public void addEdge(V start, V end, E name) throws InvalidObjectException;
+    public void delEdge(V start, V end) throws InvalidObjectException;
+
+    public void get_neighbours(V name) throws InvalidObjectException;
+    public void print_graph();
 
 
 
