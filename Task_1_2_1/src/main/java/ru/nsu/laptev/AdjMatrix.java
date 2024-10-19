@@ -5,7 +5,7 @@ import java.io.InvalidObjectException;
 import java.util.ArrayList;
 
 public class AdjMatrix<V, E> implements Graph<V, E> {
-    public ArrayList<ArrayList<E>> matrix = new ArrayList<ArrayList<E>>();
+    public ArrayList<ArrayList<E>> matrix = new ArrayList<>();
     private ArrayList<V> vertexes = new ArrayList<>();
     private int vertex_count;
 
@@ -38,8 +38,11 @@ public class AdjMatrix<V, E> implements Graph<V, E> {
         }
     }
 
-    public void delVertex(V name) {
+    public void delVertex(V name) throws InvalidObjectException{
         int index = get_vertex_number(name);
+        if (index == -1) {
+            throw new InvalidObjectException(("Vertex isn't found"));
+        }
         for (int i =0; i < vertex_count;i++) {
             matrix.get(i).remove(index);
         }
@@ -88,3 +91,6 @@ public class AdjMatrix<V, E> implements Graph<V, E> {
         }
     }
 }
+
+
+//and i need toposort
