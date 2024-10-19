@@ -1,1 +1,1 @@
-typeSearchIndex = [{"p":"ru.nsu.laptev","l":"AdjMatrix"},{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.laptev","l":"Edge"},{"p":"ru.nsu.laptev","l":"Graph"},{"p":"ru.nsu.laptev","l":"Main"},{"p":"ru.nsu.laptev","l":"Vertex"}]
+typeSearchIndex = [{"p":"ru.nsu.laptev","l":"AdjList"},{"p":"ru.nsu.laptev","l":"AdjMatrix"},{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.nsu.laptev","l":"Edge"},{"p":"ru.nsu.laptev","l":"Graph"},{"p":"ru.nsu.laptev","l":"IncMatrix"},{"p":"ru.nsu.laptev","l":"Main"}]

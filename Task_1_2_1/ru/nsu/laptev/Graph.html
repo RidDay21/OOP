@@ -123,7 +123,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Known Implementing Classes:</dt>
-<dd><code><a href="AdjMatrix.html" title="class in ru.nsu.laptev">AdjMatrix</a></code></dd>
+<dd><code><a href="AdjList.html" title="class in ru.nsu.laptev">AdjList</a></code>, <code><a href="AdjMatrix.html" title="class in ru.nsu.laptev">AdjMatrix</a></code>, <code><a href="IncMatrix.html" title="class in ru.nsu.laptev">IncMatrix</a></code></dd>
 </dl>
 <hr>
 <pre>public interface <span class="typeNameLabel">Graph&lt;V,&#8203;E&gt;</span></pre>
@@ -216,7 +216,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <h4>delVertex</h4>
-<pre class="methodSignature">void&nbsp;delVertex&#8203;(<a href="Graph.html" title="type parameter in Graph">V</a>&nbsp;name)</pre>
+<pre class="methodSignature">void&nbsp;delVertex&#8203;(<a href="Graph.html" title="type parameter in Graph">V</a>&nbsp;name)
+        throws java.io.InvalidObjectException</pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.io.InvalidObjectException</code></dd>
+</dl>
 </li>
 </ul>
 <a id="addEdge(java.lang.Object,java.lang.Object,java.lang.Object)">
