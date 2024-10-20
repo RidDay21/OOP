@@ -8,34 +8,30 @@ import java.io.InvalidObjectException;
 public class Main {
     public static void main(String[] args) {
 
-        int flag = 1;
+        int flag = 0;
         if (flag == 0) {
-            AdjMatrix<Integer, String> new1 = new AdjMatrix<>();
+            AdjMatrix<Integer, Number> new1 = new AdjMatrix<>();
             new1.addVertex(12);
             new1.addVertex(14);
             new1.addVertex(35);
 
-            System.out.println(new1.matrix);
-
             try {
-                new1.addEdge(14,35,"3453454");
+                new1.addEdge(14,35,10.4);
             } catch(InvalidObjectException e) {
                 System.out.println("Dumb?");
             }
 
             try {
-                new1.addEdge(35,14,"aboba");
+                new1.addEdge(35,14,13.2);
             } catch(InvalidObjectException e) {
                 System.out.println("Dumb?");
             }
 
-            System.out.println(new1.matrix + "\n\n\n\n");
-
-            try {
-                new1.delEdge(14,35);
-            } catch(InvalidObjectException e) {
-                System.out.println("Dumb?");
-            }
+//            try {
+//                new1.delEdge(14,35);
+//            } catch(InvalidObjectException e) {
+//                System.out.println("Dumb?");
+//            }
 
 
             new1.print_graph();
@@ -47,15 +43,15 @@ public class Main {
         }
 
         if (flag == 1) {
-            IncMatrix<Integer, String> new1 = new IncMatrix<>();
-            new1.addVertex(12);
-            new1.addVertex(14);
-            new1.addVertex(35);
+            IncMatrix<String, Number> new1 = new IncMatrix<>();
+            new1.addVertex("12");
+            new1.addVertex("aboba");
+            new1.addVertex("35");
 
             new1.print_graph();
 
             try {
-                new1.addEdge(14,35,"3453454");
+                new1.addEdge("12","35",100);
             } catch(InvalidObjectException e) {
                 System.out.println("Dumb?");
             }
@@ -63,7 +59,7 @@ public class Main {
             new1.print_graph();
 
             try {
-                new1.addEdge(35,14,"aboba");
+                new1.addEdge("35","12",3456);
             } catch(InvalidObjectException e) {
                 System.out.println("Dumb?");
             }
@@ -71,7 +67,7 @@ public class Main {
             new1.print_graph();
 
             try {
-                new1.delEdge(14,35);
+                new1.delEdge("12","35");
             } catch(InvalidObjectException e) {
                 System.out.println("Dumb?" + e);
             }
@@ -80,7 +76,7 @@ public class Main {
             new1.print_graph();
 
             try {
-                new1.delVertex(14);
+                new1.delVertex("aboba");
             } catch (InvalidObjectException epr) {
                 System.out.println(epr);
             }
@@ -88,7 +84,7 @@ public class Main {
             new1.print_graph();
 
             try {
-                new1.get_neighbours(14);
+                new1.get_neighbours("35");
             } catch (InvalidObjectException e) {
                 System.out.println(e);
             }

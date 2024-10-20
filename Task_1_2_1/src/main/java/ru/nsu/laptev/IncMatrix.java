@@ -1,9 +1,10 @@
 package ru.nsu.laptev;
 
+import java.io.IOException;
 import java.io.InvalidObjectException;
 import java.util.ArrayList;
 
-public class IncMatrix<V, E> implements Graph<V, E>{
+public class IncMatrix<V, E extends Number> implements Graph<V, E>{
     public ArrayList<ArrayList<Integer>> matrix = new ArrayList<> ();
     private ArrayList<V> vertexes = new ArrayList<>();
     private ArrayList<Edge<V, E>> edges = new ArrayList<>();
@@ -24,6 +25,11 @@ public class IncMatrix<V, E> implements Graph<V, E>{
             index++;
         }
         return -1;
+    }
+
+    public char[] read_from_file() throws IOException {
+        char[] def = new char[45];
+        return def;
     }
 
     public void addVertex(V name) {
