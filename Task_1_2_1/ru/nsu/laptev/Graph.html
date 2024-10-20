@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6};
+var data = {"i0":6,"i1":6,"i2":6,"i3":6,"i4":6,"i5":6,"i6":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -115,7 +115,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <main role="main">
 <div class="header">
 <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">ru.nsu.laptev</a></div>
-<h2 title="Interface Graph" class="title">Interface Graph&lt;V,&#8203;E&gt;</h2>
+<h2 title="Interface Graph" class="title">Interface Graph&lt;V,&#8203;E extends java.lang.Number&gt;</h2>
 </div>
 <div class="contentContainer">
 <div class="description">
@@ -126,7 +126,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code><a href="AdjList.html" title="class in ru.nsu.laptev">AdjList</a></code>, <code><a href="AdjMatrix.html" title="class in ru.nsu.laptev">AdjMatrix</a></code>, <code><a href="IncMatrix.html" title="class in ru.nsu.laptev">IncMatrix</a></code></dd>
 </dl>
 <hr>
-<pre>public interface <span class="typeNameLabel">Graph&lt;V,&#8203;E&gt;</span></pre>
+<pre>public interface <span class="typeNameLabel">Graph&lt;V,&#8203;E extends java.lang.Number&gt;</span></pre>
 </li>
 </ul>
 </div>
@@ -180,6 +180,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#print_graph()">print_graph</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>char[]</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#read_from_file()">read_from_file</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
 </table>
 </li>
 </ul>
@@ -224,7 +229,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </dl>
 </li>
 </ul>
-<a id="addEdge(java.lang.Object,java.lang.Object,java.lang.Object)">
+<a id="addEdge(java.lang.Object,java.lang.Object,java.lang.Number)">
 <!--   -->
 </a><a id="addEdge(V,V,E)">
 <!--   -->
@@ -278,10 +283,24 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <a id="print_graph()">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>print_graph</h4>
 <pre class="methodSignature">void&nbsp;print_graph()</pre>
+</li>
+</ul>
+<a id="read_from_file()">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>read_from_file</h4>
+<pre class="methodSignature">char[]&nbsp;read_from_file()
+               throws java.io.IOException</pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.io.IOException</code></dd>
+</dl>
 </li>
 </ul>
 </li>

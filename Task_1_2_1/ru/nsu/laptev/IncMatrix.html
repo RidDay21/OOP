@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -115,7 +115,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <main role="main">
 <div class="header">
 <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">ru.nsu.laptev</a></div>
-<h2 title="Class IncMatrix" class="title">Class IncMatrix&lt;V,&#8203;E&gt;</h2>
+<h2 title="Class IncMatrix" class="title">Class IncMatrix&lt;V,&#8203;E extends java.lang.Number&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -134,7 +134,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;V,&#8203;E&gt;</code></dd>
 </dl>
 <hr>
-<pre>public class <span class="typeNameLabel">IncMatrix&lt;V,&#8203;E&gt;</span>
+<pre>public class <span class="typeNameLabel">IncMatrix&lt;V,&#8203;E extends java.lang.Number&gt;</span>
 extends java.lang.Object
 implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;V,&#8203;E&gt;</pre>
 </li>
@@ -254,6 +254,11 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#print_graph()">print_graph</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>char[]</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#read_from_file()">read_from_file</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
@@ -354,6 +359,22 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <pre class="methodSignature">public&nbsp;int&nbsp;get_edge_index&#8203;(<a href="Edge.html" title="class in ru.nsu.laptev">Edge</a>&nbsp;edge)</pre>
 </li>
 </ul>
+<a id="read_from_file()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>read_from_file</h4>
+<pre class="methodSignature">public&nbsp;char[]&nbsp;read_from_file()
+                      throws java.io.IOException</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Graph.html#read_from_file()">read_from_file</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">V</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">E</a> extends java.lang.Number&gt;</code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.io.IOException</code></dd>
+</dl>
+</li>
+</ul>
 <a id="addVertex(java.lang.Object)">
 <!--   -->
 </a><a id="addVertex(V)">
@@ -365,7 +386,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <pre class="methodSignature">public&nbsp;void&nbsp;addVertex&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">V</a>&nbsp;name)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#addVertex(V)">addVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">V</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">E</a>&gt;</code></dd>
+<dd><code><a href="Graph.html#addVertex(V)">addVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">V</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">E</a> extends java.lang.Number&gt;</code></dd>
 </dl>
 </li>
 </ul>
@@ -381,13 +402,13 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
                throws java.io.InvalidObjectException</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#delVertex(V)">delVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">V</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">E</a>&gt;</code></dd>
+<dd><code><a href="Graph.html#delVertex(V)">delVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">V</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">E</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.io.InvalidObjectException</code></dd>
 </dl>
 </li>
 </ul>
-<a id="addEdge(java.lang.Object,java.lang.Object,java.lang.Object)">
+<a id="addEdge(java.lang.Object,java.lang.Object,java.lang.Number)">
 <!--   -->
 </a><a id="addEdge(V,V,E)">
 <!--   -->
@@ -401,7 +422,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
              throws java.io.InvalidObjectException</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#addEdge(V,V,E)">addEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">V</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">E</a>&gt;</code></dd>
+<dd><code><a href="Graph.html#addEdge(V,V,E)">addEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">V</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">E</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.io.InvalidObjectException</code></dd>
 </dl>
@@ -420,7 +441,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
              throws java.io.InvalidObjectException</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#delEdge(V,V)">delEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">V</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">E</a>&gt;</code></dd>
+<dd><code><a href="Graph.html#delEdge(V,V)">delEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">V</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">E</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.io.InvalidObjectException</code></dd>
 </dl>
@@ -438,7 +459,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
                     throws java.io.InvalidObjectException</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#get_neighbours(V)">get_neighbours</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">V</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">E</a>&gt;</code></dd>
+<dd><code><a href="Graph.html#get_neighbours(V)">get_neighbours</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">V</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">E</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.io.InvalidObjectException</code></dd>
 </dl>
@@ -453,7 +474,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <pre class="methodSignature">public&nbsp;void&nbsp;print_graph()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#print_graph()">print_graph</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">V</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">E</a>&gt;</code></dd>
+<dd><code><a href="Graph.html#print_graph()">print_graph</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">V</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">E</a> extends java.lang.Number&gt;</code></dd>
 </dl>
 </li>
 </ul>

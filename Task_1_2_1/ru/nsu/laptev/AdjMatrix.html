@@ -115,7 +115,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <main role="main">
 <div class="header">
 <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">ru.nsu.laptev</a></div>
-<h2 title="Class AdjMatrix" class="title">Class AdjMatrix&lt;V,&#8203;E&gt;</h2>
+<h2 title="Class AdjMatrix" class="title">Class AdjMatrix&lt;V,&#8203;E extends java.lang.Number&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
@@ -134,7 +134,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;V,&#8203;E&gt;</code></dd>
 </dl>
 <hr>
-<pre>public class <span class="typeNameLabel">AdjMatrix&lt;V,&#8203;E&gt;</span>
+<pre>public class <span class="typeNameLabel">AdjMatrix&lt;V,&#8203;E extends java.lang.Number&gt;</span>
 extends java.lang.Object
 implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;V,&#8203;E&gt;</pre>
 </li>
@@ -227,8 +227,8 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code>java.util.ArrayList&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">V</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get_list_vertex()">get_list_vertex</a></span>()</code></th>
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get_edge_index(ru.nsu.laptev.Edge)">get_edge_index</a></span>&#8203;(<a href="Edge.html" title="class in ru.nsu.laptev">Edge</a>&nbsp;edge)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
@@ -238,17 +238,17 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get_vertex_count()">get_vertex_count</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i7" class="rowColor">
-<td class="colFirst"><code>int</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get_vertex_number(V)">get_vertex_number</a></span>&#8203;(<a href="AdjMatrix.html" title="type parameter in AdjMatrix">V</a>&nbsp;name)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#print_graph()">print_graph</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>char[]</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#read_from_file()">read_from_file</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
@@ -281,7 +281,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <ul class="blockListLast">
 <li class="blockList">
 <h4>matrix</h4>
-<pre>public&nbsp;java.util.ArrayList&lt;java.util.ArrayList&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">E</a>&gt;&gt; matrix</pre>
+<pre>public&nbsp;java.util.ArrayList&lt;java.util.ArrayList&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">E</a> extends java.lang.Number&gt;&gt; matrix</pre>
 </li>
 </ul>
 </li>
@@ -313,24 +313,6 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="get_vertex_count()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>get_vertex_count</h4>
-<pre class="methodSignature">public&nbsp;int&nbsp;get_vertex_count()</pre>
-</li>
-</ul>
-<a id="get_list_vertex()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>get_list_vertex</h4>
-<pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">V</a>&gt;&nbsp;get_list_vertex()</pre>
-</li>
-</ul>
 <a id="get_vertex_number(java.lang.Object)">
 <!--   -->
 </a><a id="get_vertex_number(V)">
@@ -340,6 +322,31 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <li class="blockList">
 <h4>get_vertex_number</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;get_vertex_number&#8203;(<a href="AdjMatrix.html" title="type parameter in AdjMatrix">V</a>&nbsp;name)</pre>
+</li>
+</ul>
+<a id="get_edge_index(ru.nsu.laptev.Edge)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>get_edge_index</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;get_edge_index&#8203;(<a href="Edge.html" title="class in ru.nsu.laptev">Edge</a>&nbsp;edge)</pre>
+</li>
+</ul>
+<a id="read_from_file()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>read_from_file</h4>
+<pre class="methodSignature">public&nbsp;char[]&nbsp;read_from_file()
+                      throws java.io.IOException</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="Graph.html#read_from_file()">read_from_file</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">V</a>,&#8203;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">E</a> extends java.lang.Number&gt;</code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.io.IOException</code></dd>
+</dl>
 </li>
 </ul>
 <a id="addVertex(java.lang.Object)">
@@ -354,7 +361,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <div class="block">It's turned out that I need to add a null value to every existing row in the matrix</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#addVertex(V)">addVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">V</a>,&#8203;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">E</a>&gt;</code></dd>
+<dd><code><a href="Graph.html#addVertex(V)">addVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">V</a>,&#8203;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">E</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>name</code> - - name of new vertex</dd>
 </dl>
@@ -372,13 +379,13 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
                throws java.io.InvalidObjectException</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#delVertex(V)">delVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">V</a>,&#8203;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">E</a>&gt;</code></dd>
+<dd><code><a href="Graph.html#delVertex(V)">delVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">V</a>,&#8203;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">E</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.io.InvalidObjectException</code></dd>
 </dl>
 </li>
 </ul>
-<a id="addEdge(java.lang.Object,java.lang.Object,java.lang.Object)">
+<a id="addEdge(java.lang.Object,java.lang.Object,java.lang.Number)">
 <!--   -->
 </a><a id="addEdge(V,V,E)">
 <!--   -->
@@ -392,7 +399,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
              throws java.io.InvalidObjectException</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#addEdge(V,V,E)">addEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">V</a>,&#8203;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">E</a>&gt;</code></dd>
+<dd><code><a href="Graph.html#addEdge(V,V,E)">addEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">V</a>,&#8203;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">E</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.io.InvalidObjectException</code></dd>
 </dl>
@@ -411,7 +418,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
              throws java.io.InvalidObjectException</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#delEdge(V,V)">delEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">V</a>,&#8203;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">E</a>&gt;</code></dd>
+<dd><code><a href="Graph.html#delEdge(V,V)">delEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">V</a>,&#8203;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">E</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.io.InvalidObjectException</code></dd>
 </dl>
@@ -429,7 +436,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
                     throws java.io.InvalidObjectException</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#get_neighbours(V)">get_neighbours</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">V</a>,&#8203;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">E</a>&gt;</code></dd>
+<dd><code><a href="Graph.html#get_neighbours(V)">get_neighbours</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">V</a>,&#8203;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">E</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.io.InvalidObjectException</code></dd>
 </dl>
@@ -444,7 +451,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <pre class="methodSignature">public&nbsp;void&nbsp;print_graph()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#print_graph()">print_graph</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">V</a>,&#8203;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">E</a>&gt;</code></dd>
+<dd><code><a href="Graph.html#print_graph()">print_graph</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">V</a>,&#8203;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">E</a> extends java.lang.Number&gt;</code></dd>
 </dl>
 </li>
 </ul>
