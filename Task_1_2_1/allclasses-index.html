@@ -27,8 +27,8 @@
     catch(err) {
     }
 //-->
-var data = {"i0":2,"i1":2,"i2":2,"i3":1,"i4":2,"i5":2};
-var tabs = {65535:["t0","All Classes"],1:["t1","Interface Summary"],2:["t2","Class Summary"]};
+var data = {"i0":2,"i1":2,"i2":2,"i3":1,"i4":2,"i5":8,"i6":2,"i7":2};
+var tabs = {65535:["t0","All Classes"],1:["t1","Interface Summary"],2:["t2","Class Summary"],8:["t4","Exception Summary"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -104,33 +104,41 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <table class="typeSummary">
-<caption><span id="t0" class="activeTableTab"><span>All Classes</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Interface Summary</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Class Summary</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Classes</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Interface Summary</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Class Summary</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Exception Summary</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Class</th>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><a href="ru/nsu/laptev/AdjList.html" title="class in ru.nsu.laptev">AdjList</a>&lt;<a href="ru/nsu/laptev/AdjList.html" title="type parameter in AdjList">V</a>,&#8203;<a href="ru/nsu/laptev/AdjList.html" title="type parameter in AdjList">E</a> extends java.lang.Number&gt;</td>
+<td class="colFirst"><a href="ru/nsu/laptev/AdjList.html" title="class in ru.nsu.laptev">AdjList</a>&lt;<a href="ru/nsu/laptev/AdjList.html" title="type parameter in AdjList">VertexType</a>,&#8203;<a href="ru/nsu/laptev/AdjList.html" title="type parameter in AdjList">EdgeType</a> extends java.lang.Number&gt;</td>
 <th class="colLast" scope="row">&nbsp;</th>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><a href="ru/nsu/laptev/AdjMatrix.html" title="class in ru.nsu.laptev">AdjMatrix</a>&lt;<a href="ru/nsu/laptev/AdjMatrix.html" title="type parameter in AdjMatrix">V</a>,&#8203;<a href="ru/nsu/laptev/AdjMatrix.html" title="type parameter in AdjMatrix">E</a> extends java.lang.Number&gt;</td>
+<td class="colFirst"><a href="ru/nsu/laptev/AdjMatrix.html" title="class in ru.nsu.laptev">AdjMatrix</a>&lt;<a href="ru/nsu/laptev/AdjMatrix.html" title="type parameter in AdjMatrix">VertexType</a>,&#8203;<a href="ru/nsu/laptev/AdjMatrix.html" title="type parameter in AdjMatrix">EdgeType</a> extends java.lang.Number&gt;</td>
 <th class="colLast" scope="row">&nbsp;</th>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><a href="ru/nsu/laptev/Edge.html" title="class in ru.nsu.laptev">Edge</a>&lt;<a href="ru/nsu/laptev/Edge.html" title="type parameter in Edge">T</a>,&#8203;<a href="ru/nsu/laptev/Edge.html" title="type parameter in Edge">E</a>&gt;</td>
+<td class="colFirst"><a href="ru/nsu/laptev/Edge.html" title="class in ru.nsu.laptev">Edge</a>&lt;<a href="ru/nsu/laptev/Edge.html" title="type parameter in Edge">VertexType</a>,&#8203;<a href="ru/nsu/laptev/Edge.html" title="type parameter in Edge">EdgeType</a>&gt;</td>
 <th class="colLast" scope="row">&nbsp;</th>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><a href="ru/nsu/laptev/Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="ru/nsu/laptev/Graph.html" title="type parameter in Graph">V</a>,&#8203;<a href="ru/nsu/laptev/Graph.html" title="type parameter in Graph">E</a> extends java.lang.Number&gt;</td>
+<td class="colFirst"><a href="ru/nsu/laptev/Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="ru/nsu/laptev/Graph.html" title="type parameter in Graph">VertexType</a>,&#8203;<a href="ru/nsu/laptev/Graph.html" title="type parameter in Graph">EdgeType</a> extends java.lang.Number&gt;</td>
 <th class="colLast" scope="row">&nbsp;</th>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><a href="ru/nsu/laptev/IncMatrix.html" title="class in ru.nsu.laptev">IncMatrix</a>&lt;<a href="ru/nsu/laptev/IncMatrix.html" title="type parameter in IncMatrix">V</a>,&#8203;<a href="ru/nsu/laptev/IncMatrix.html" title="type parameter in IncMatrix">E</a> extends java.lang.Number&gt;</td>
+<td class="colFirst"><a href="ru/nsu/laptev/IncMatrix.html" title="class in ru.nsu.laptev">IncMatrix</a>&lt;<a href="ru/nsu/laptev/IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>,&#8203;<a href="ru/nsu/laptev/IncMatrix.html" title="type parameter in IncMatrix">EdgeType</a> extends java.lang.Number&gt;</td>
 <th class="colLast" scope="row">&nbsp;</th>
 </tr>
 <tr id="i5" class="rowColor">
+<td class="colFirst"><a href="ru/nsu/laptev/InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></td>
+<th class="colLast" scope="row">&nbsp;</th>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><a href="ru/nsu/laptev/Main.html" title="class in ru.nsu.laptev">Main</a></td>
+<th class="colLast" scope="row">&nbsp;</th>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><a href="ru/nsu/laptev/TopoSort.html" title="class in ru.nsu.laptev">TopoSort</a>&lt;<a href="ru/nsu/laptev/TopoSort.html" title="type parameter in TopoSort">VertexType</a>&gt;</td>
 <th class="colLast" scope="row">&nbsp;</th>
 </tr>
 </table>

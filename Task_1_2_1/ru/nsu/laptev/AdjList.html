@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -115,14 +115,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <main role="main">
 <div class="header">
 <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">ru.nsu.laptev</a></div>
-<h2 title="Class AdjList" class="title">Class AdjList&lt;V,&#8203;E extends java.lang.Number&gt;</h2>
+<h2 title="Class AdjList" class="title">Class AdjList&lt;VertexType,&#8203;EdgeType extends java.lang.Number&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li>ru.nsu.laptev.AdjList&lt;V,&#8203;E&gt;</li>
+<li>ru.nsu.laptev.AdjList&lt;VertexType,&#8203;EdgeType&gt;</li>
 </ul>
 </li>
 </ul>
@@ -131,12 +131,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;V,&#8203;E&gt;</code></dd>
+<dd><code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;VertexType,&#8203;EdgeType&gt;</code></dd>
 </dl>
 <hr>
-<pre>public class <span class="typeNameLabel">AdjList&lt;V,&#8203;E extends java.lang.Number&gt;</span>
+<pre>public class <span class="typeNameLabel">AdjList&lt;VertexType,&#8203;EdgeType extends java.lang.Number&gt;</span>
 extends java.lang.Object
-implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;V,&#8203;E&gt;</pre>
+implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;VertexType,&#8203;EdgeType&gt;</pre>
 </li>
 </ul>
 </div>
@@ -158,7 +158,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>java.util.ArrayList&lt;java.util.ArrayList&lt;<a href="AdjList.html" title="type parameter in AdjList">V</a>&gt;&gt;</code></td>
+<td class="colFirst"><code>java.util.ArrayList&lt;java.util.ArrayList&lt;<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#matrix">matrix</a></span></code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -203,25 +203,25 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addEdge(V,V,E)">addEdge</a></span>&#8203;(<a href="AdjList.html" title="type parameter in AdjList">V</a>&nbsp;start,
-       <a href="AdjList.html" title="type parameter in AdjList">V</a>&nbsp;end,
-       <a href="AdjList.html" title="type parameter in AdjList">E</a>&nbsp;name)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addEdge(VertexType,VertexType,EdgeType)">addEdge</a></span>&#8203;(<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>&nbsp;start,
+       <a href="AdjList.html" title="type parameter in AdjList">VertexType</a>&nbsp;end,
+       <a href="AdjList.html" title="type parameter in AdjList">EdgeType</a>&nbsp;name)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addVertex(V)">addVertex</a></span>&#8203;(<a href="AdjList.html" title="type parameter in AdjList">V</a>&nbsp;name)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addVertex(VertexType)">addVertex</a></span>&#8203;(<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>&nbsp;name)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#delEdge(V,V)">delEdge</a></span>&#8203;(<a href="AdjList.html" title="type parameter in AdjList">V</a>&nbsp;start,
-       <a href="AdjList.html" title="type parameter in AdjList">V</a>&nbsp;end)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#delEdge(VertexType,VertexType)">delEdge</a></span>&#8203;(<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>&nbsp;start,
+       <a href="AdjList.html" title="type parameter in AdjList">VertexType</a>&nbsp;end)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#delVertex(V)">delVertex</a></span>&#8203;(<a href="AdjList.html" title="type parameter in AdjList">V</a>&nbsp;name)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#delVertex(VertexType)">delVertex</a></span>&#8203;(<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>&nbsp;name)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
@@ -230,31 +230,21 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code>java.util.ArrayList&lt;<a href="AdjList.html" title="type parameter in AdjList">V</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get_list_vertex()">get_list_vertex</a></span>()</code></th>
+<td class="colFirst"><code>java.util.ArrayList&lt;<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get_neighbours(VertexType)">get_neighbours</a></span>&#8203;(<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>&nbsp;name)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get_neighbours(V)">get_neighbours</a></span>&#8203;(<a href="AdjList.html" title="type parameter in AdjList">V</a>&nbsp;name)</code></th>
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get_vertex_index(VertexType)">get_vertex_index</a></span>&#8203;(<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>&nbsp;name)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get_vertex_count()">get_vertex_count</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i8" class="altColor">
-<td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get_vertex_index(V)">get_vertex_index</a></span>&#8203;(<a href="AdjList.html" title="type parameter in AdjList">V</a>&nbsp;name)</code></th>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#print_graph()">print_graph</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>char[]</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#read_from_file()">read_from_file</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
@@ -289,7 +279,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <ul class="blockListLast">
 <li class="blockList">
 <h4>matrix</h4>
-<pre>public&nbsp;java.util.ArrayList&lt;java.util.ArrayList&lt;<a href="AdjList.html" title="type parameter in AdjList">V</a>&gt;&gt; matrix</pre>
+<pre>public&nbsp;java.util.ArrayList&lt;java.util.ArrayList&lt;<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>&gt;&gt; matrix</pre>
 </li>
 </ul>
 </li>
@@ -321,33 +311,15 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="get_vertex_count()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>get_vertex_count</h4>
-<pre class="methodSignature">public&nbsp;int&nbsp;get_vertex_count()</pre>
-</li>
-</ul>
-<a id="get_list_vertex()">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>get_list_vertex</h4>
-<pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;<a href="AdjList.html" title="type parameter in AdjList">V</a>&gt;&nbsp;get_list_vertex()</pre>
-</li>
-</ul>
 <a id="get_vertex_index(java.lang.Object)">
 <!--   -->
-</a><a id="get_vertex_index(V)">
+</a><a id="get_vertex_index(VertexType)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>get_vertex_index</h4>
-<pre class="methodSignature">public&nbsp;int&nbsp;get_vertex_index&#8203;(<a href="AdjList.html" title="type parameter in AdjList">V</a>&nbsp;name)</pre>
+<pre class="methodSignature">public&nbsp;int&nbsp;get_vertex_index&#8203;(<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>&nbsp;name)</pre>
 </li>
 </ul>
 <a id="get_edge_index(ru.nsu.laptev.Edge)">
@@ -369,7 +341,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
                       throws java.io.IOException</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#read_from_file()">read_from_file</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">V</a>,&#8203;<a href="AdjList.html" title="type parameter in AdjList">E</a> extends java.lang.Number&gt;</code></dd>
+<dd><code><a href="Graph.html#read_from_file()">read_from_file</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>,&#8203;<a href="AdjList.html" title="type parameter in AdjList">EdgeType</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.io.IOException</code></dd>
 </dl>
@@ -377,88 +349,94 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 </ul>
 <a id="addVertex(java.lang.Object)">
 <!--   -->
-</a><a id="addVertex(V)">
+</a><a id="addVertex(VertexType)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>addVertex</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;addVertex&#8203;(<a href="AdjList.html" title="type parameter in AdjList">V</a>&nbsp;name)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;addVertex&#8203;(<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>&nbsp;name)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#addVertex(V)">addVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">V</a>,&#8203;<a href="AdjList.html" title="type parameter in AdjList">E</a> extends java.lang.Number&gt;</code></dd>
+<dd><code><a href="Graph.html#addVertex(VertexType)">addVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>,&#8203;<a href="AdjList.html" title="type parameter in AdjList">EdgeType</a> extends java.lang.Number&gt;</code></dd>
 </dl>
 </li>
 </ul>
 <a id="delVertex(java.lang.Object)">
 <!--   -->
-</a><a id="delVertex(V)">
+</a><a id="delVertex(VertexType)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>delVertex</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;delVertex&#8203;(<a href="AdjList.html" title="type parameter in AdjList">V</a>&nbsp;name)</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;delVertex&#8203;(<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>&nbsp;name)
+               throws <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a>,
+                      java.io.InvalidObjectException</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#delVertex(V)">delVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">V</a>,&#8203;<a href="AdjList.html" title="type parameter in AdjList">E</a> extends java.lang.Number&gt;</code></dd>
+<dd><code><a href="Graph.html#delVertex(VertexType)">delVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>,&#8203;<a href="AdjList.html" title="type parameter in AdjList">EdgeType</a> extends java.lang.Number&gt;</code></dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
+<dd><code>java.io.InvalidObjectException</code></dd>
 </dl>
 </li>
 </ul>
 <a id="addEdge(java.lang.Object,java.lang.Object,java.lang.Number)">
 <!--   -->
-</a><a id="addEdge(V,V,E)">
+</a><a id="addEdge(VertexType,VertexType,EdgeType)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>addEdge</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;addEdge&#8203;(<a href="AdjList.html" title="type parameter in AdjList">V</a>&nbsp;start,
-                    <a href="AdjList.html" title="type parameter in AdjList">V</a>&nbsp;end,
-                    <a href="AdjList.html" title="type parameter in AdjList">E</a>&nbsp;name)
-             throws java.io.InvalidObjectException</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;addEdge&#8203;(<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>&nbsp;start,
+                    <a href="AdjList.html" title="type parameter in AdjList">VertexType</a>&nbsp;end,
+                    <a href="AdjList.html" title="type parameter in AdjList">EdgeType</a>&nbsp;name)
+             throws <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#addEdge(V,V,E)">addEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">V</a>,&#8203;<a href="AdjList.html" title="type parameter in AdjList">E</a> extends java.lang.Number&gt;</code></dd>
+<dd><code><a href="Graph.html#addEdge(VertexType,VertexType,EdgeType)">addEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>,&#8203;<a href="AdjList.html" title="type parameter in AdjList">EdgeType</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.io.InvalidObjectException</code></dd>
+<dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
 </dl>
 </li>
 </ul>
 <a id="delEdge(java.lang.Object,java.lang.Object)">
 <!--   -->
-</a><a id="delEdge(V,V)">
+</a><a id="delEdge(VertexType,VertexType)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>delEdge</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;delEdge&#8203;(<a href="AdjList.html" title="type parameter in AdjList">V</a>&nbsp;start,
-                    <a href="AdjList.html" title="type parameter in AdjList">V</a>&nbsp;end)
-             throws java.io.InvalidObjectException</pre>
+<pre class="methodSignature">public&nbsp;void&nbsp;delEdge&#8203;(<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>&nbsp;start,
+                    <a href="AdjList.html" title="type parameter in AdjList">VertexType</a>&nbsp;end)
+             throws <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a>,
+                    <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#delEdge(V,V)">delEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">V</a>,&#8203;<a href="AdjList.html" title="type parameter in AdjList">E</a> extends java.lang.Number&gt;</code></dd>
+<dd><code><a href="Graph.html#delEdge(VertexType,VertexType)">delEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>,&#8203;<a href="AdjList.html" title="type parameter in AdjList">EdgeType</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.io.InvalidObjectException</code></dd>
+<dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
 </dl>
 </li>
 </ul>
 <a id="get_neighbours(java.lang.Object)">
 <!--   -->
-</a><a id="get_neighbours(V)">
+</a><a id="get_neighbours(VertexType)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>get_neighbours</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;get_neighbours&#8203;(<a href="AdjList.html" title="type parameter in AdjList">V</a>&nbsp;name)
-                    throws java.io.InvalidObjectException</pre>
+<pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>&gt;&nbsp;get_neighbours&#8203;(<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>&nbsp;name)
+                                               throws <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#get_neighbours(V)">get_neighbours</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">V</a>,&#8203;<a href="AdjList.html" title="type parameter in AdjList">E</a> extends java.lang.Number&gt;</code></dd>
+<dd><code><a href="Graph.html#get_neighbours(VertexType)">get_neighbours</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>,&#8203;<a href="AdjList.html" title="type parameter in AdjList">EdgeType</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.io.InvalidObjectException</code></dd>
+<dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -471,7 +449,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <pre class="methodSignature">public&nbsp;void&nbsp;print_graph()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#print_graph()">print_graph</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">V</a>,&#8203;<a href="AdjList.html" title="type parameter in AdjList">E</a> extends java.lang.Number&gt;</code></dd>
+<dd><code><a href="Graph.html#print_graph()">print_graph</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">VertexType</a>,&#8203;<a href="AdjList.html" title="type parameter in AdjList">EdgeType</a> extends java.lang.Number&gt;</code></dd>
 </dl>
 </li>
 </ul>
