@@ -2,29 +2,20 @@ package ru.nsu.laptev;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class AdjList<V, E  extends Number>  implements Graph<V, E> {
+public class AdjList<VertexType, EdgeType extends Number>  implements Graph<VertexType, EdgeType> {
     private static final int SIZE = Integer.MAX_VALUE;
 
-    public ArrayList<ArrayList<V>> matrix = new ArrayList<>();
-    private ArrayList<V> vertexes = new ArrayList<>();
-    private ArrayList<Edge<V, E>> edges = new ArrayList<>();
+    public ArrayList<ArrayList<VertexType>> matrix = new ArrayList<>();
+    private ArrayList<VertexType> vertices = new ArrayList<>();
+    private ArrayList<Edge<VertexType, EdgeType>> edges = new ArrayList<>();
 
     private int vertex_number;
     private int edge_number;
 
-    public int get_vertex_count() {
-        return vertex_number;
-    }
-
-    public ArrayList<V> get_list_vertex() {
-        return vertexes;
-    }
-
-    public int get_vertex_index(V name) {
-        return vertexes.indexOf(name);
+    public int get_vertex_index(VertexType name) {
+        return vertices.indexOf(name);
     }
 
     public int get_edge_index(Edge edge) {
@@ -66,24 +57,62 @@ public class AdjList<V, E  extends Number>  implements Graph<V, E> {
     }
 
 
-    public void addVertex(V name) {
-
-    }
-    public void delVertex(V name) {
-
-    }
-
-    public void addEdge(V start, V end, E name) throws InvalidObjectException {
-
-    }
-    public void delEdge(V start, V end) throws InvalidObjectException {
-
+    public void addVertex(VertexType name) {
+        vertex_number++;
+        vertices.add(name);
+        ArrayList<VertexType> row = new ArrayList<>();
+        matrix.add(row);
     }
 
-    public void get_neighbours(V name) throws InvalidObjectException {
-
+    @SuppressWarnings("unchecked")
+    public void delVertex(VertexType name) throws InvalidVertexException, InvalidObjectException {
+        int index = get_vertex_index(name);
+        if (index == -1) {
+            throw new InvalidVertexException("Vertex isn't found");
+        }
+        for (int i = 0; i < vertex_number; i++) {
+            matrix.get(i).remove(name);
+        }
+        matrix.remove(index);//removing row from matrix
+        vertices.remove(name);
+        vertex_number--;
     }
+
+    public void addEdge(VertexType start, VertexType end, EdgeType name) throws InvalidVertexException {
+        int startVertex = get_vertex_index(start);
+        int endVertex = get_vertex_index(end);
+        if (startVertex != -1 && endVertex != -1) {
+            matrix.get(startVertex).add(end);
+        } else {
+            throw new InvalidVertexException(" Vertex isn't found.");
+        }
+    }
+
+    public void delEdge(VertexType start, VertexType end) throws InvalidVertexException, InvalidVertexException {
+        int startVertex = get_vertex_index(start);
+        int endVertex = get_vertex_index(end);
+        if (startVertex != -1 && endVertex != -1) {
+            matrix.get(startVertex).remove(end);
+        } else {
+            throw new InvalidVertexException("Vertex isn't found.");
+        }
+    }
+
+    public ArrayList<VertexType> get_neighbours(VertexType name) throws InvalidVertexException {
+        ArrayList<VertexType> neighbours_list = new ArrayList<>();
+        int index = vertices.indexOf(name);
+        if (index == -1) {
+            throw new InvalidVertexException("Vertex isn't found");
+        }
+        for (int i = 0; i < matrix.get(index).size(); i++) {
+            neighbours_list.add(matrix.get(index).get(i));
+        }
+        return neighbours_list;
+    }
+
     public void print_graph() {
-
+        for (int i = 0; i < vertex_number; i++) {
+            System.out.println("Vertex " + vertices.get(i) + " - " + matrix.get(i));
+        }
     }
 }

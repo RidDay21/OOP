@@ -1,20 +1,20 @@
 package ru.nsu.laptev;
 
-public class Edge <T,E> {
-    private T startVertex;
-    private T endVertex;
-    private E name;
+public class Edge <VertexType, EdgeType> {
+    private VertexType startVertex;
+    private VertexType endVertex;
+    private EdgeType name;
 
 
-    Edge (T startVertex, T endVertex, E name) {
+    Edge (VertexType startVertex, VertexType endVertex, EdgeType name) {
         this.startVertex = startVertex;
         this.endVertex = endVertex;
         this.name = name;
     }
 
-    public T get_start_vertex() {return this.startVertex;}
+    public VertexType get_start_vertex() {return this.startVertex;}
 
-    public T get_end_vertex() {return this.endVertex;}
+    public VertexType get_end_vertex() {return this.endVertex;}
 
-    public E get_name() { return name;}
+    public EdgeType get_name() { return name;}
 }

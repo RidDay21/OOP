@@ -4,17 +4,17 @@ import java.io.IOException;
 import java.io.InvalidObjectException;
 import java.util.ArrayList;
 
-public class IncMatrix<V, E extends Number> implements Graph<V, E>{
+public class IncMatrix<VertexType, EdgeType extends Number> implements Graph<VertexType, EdgeType>{
     public ArrayList<ArrayList<Integer>> matrix = new ArrayList<> ();
-    private ArrayList<V> vertexes = new ArrayList<>();
-    private ArrayList<Edge<V, E>> edges = new ArrayList<>();
+    private ArrayList<VertexType> vertices = new ArrayList<>();
+    private ArrayList<Edge<VertexType, EdgeType>> edges = new ArrayList<>();
 
     private int vertex_number;
     private int edge_number;
 
     public int get_vertex_count() { return vertex_number;}
-    public ArrayList<V> get_list_vertex() { return vertexes; }
-    public int get_vertex_index(V name) { return vertexes.indexOf(name); }
+    public ArrayList<VertexType> get_list_vertex() { return vertices; }
+    public int get_vertex_index(VertexType name) { return vertices.indexOf(name); }
     public int get_edge_index(Edge edge) {
         int index = 0;
         for (Edge e: edges) {
@@ -32,9 +32,9 @@ public class IncMatrix<V, E extends Number> implements Graph<V, E>{
         return def;
     }
 
-    public void addVertex(V name) {
+    public void addVertex(VertexType name) {
         vertex_number++;
-        vertexes.add(name);
+        vertices.add(name);
         //Creating new row for new vertex;
         ArrayList<Integer> row = new ArrayList<>();
         matrix.add(row);
@@ -45,33 +45,38 @@ public class IncMatrix<V, E extends Number> implements Graph<V, E>{
         }
     }
 
-    public void delVertex(V name) throws InvalidObjectException {
+    public void delVertex(VertexType name) throws InvalidVertexException, InvalidObjectException {
         int index = get_vertex_index(name);
         if (index == -1) {
-            throw new InvalidObjectException(("Vertex isn't found"));
+            throw new InvalidVertexException(("Vertex isn't found"));
         }
 
         for (int i = 0; i < edge_number; i++) {
-            V start = edges.get(i).get_start_vertex();
-            V end = edges.get(i).get_end_vertex();
+            VertexType start = edges.get(i).get_start_vertex();
+            VertexType end = edges.get(i).get_end_vertex();
             if ((start == name) || (end == name)) {
-                delEdge(start, end);
+                try {
+                    delEdge(start, end);
+                } catch (InvalidVertexException e) {
+                    System.out.println();
+                } catch (InvalidObjectException e) {
+                }
             }
 
         }
         matrix.remove(index);//removing row from matrix
-        vertexes.remove(name);
+        vertices.remove(name);
         vertex_number--;
     }
 
 
-    public void addEdge(V start, V end, E name) throws InvalidObjectException{
+    public void addEdge(VertexType start, VertexType end, EdgeType name) throws InvalidVertexException{
         for (int i = 0; i < vertex_number; i++) { //Adding null to each row
                 matrix.get(i).add(0);
             }
         int startVertex = get_vertex_index(start);
         int endVertex = get_vertex_index(end);
-        Edge<V,E> edge = new Edge(start,end,name);
+        Edge<VertexType, EdgeType> edge = new Edge(start,end,name);
         edges.add(edge);
         edge_number++;
         int edgeIndex = get_edge_index(edge);//новое ребро будет в конце массива;
@@ -83,16 +88,16 @@ public class IncMatrix<V, E extends Number> implements Graph<V, E>{
                 matrix.get(endVertex).set(edgeIndex, -1);
             }
         } else {
-            throw new InvalidObjectException("One of Vertexes isn't found.");
+            throw new InvalidVertexException("One of Vertexes isn't found.");
         }
     }
 
-    public void delEdge(V start, V end) throws InvalidObjectException {
+    public void delEdge(VertexType start, VertexType end) throws InvalidObjectException, InvalidVertexException {
         edge_number--;
         int startVertex = get_vertex_index(start);
         int endVertex = get_vertex_index(end);
         if (startVertex == -1 || endVertex == -1) {
-            throw new InvalidObjectException("Vertex isn't found.");
+            throw new InvalidVertexException("Vertex isn't found.");
         }
 
         int edgeIndex = get_edge_index(new Edge(start, end, null));
@@ -105,27 +110,34 @@ public class IncMatrix<V, E extends Number> implements Graph<V, E>{
         }
     }
 
-    public void get_neighbours(V name) throws InvalidObjectException {
+    public ArrayList<VertexType> get_neighbours(VertexType name) throws InvalidVertexException {
+        ArrayList<VertexType> neighbours_list = new ArrayList<>();
         int vertexIndex = get_vertex_index(name);
         if (vertexIndex == -1) {
-            throw new InvalidObjectException("Vertex isn't founded.");
+            throw new InvalidVertexException("Vertex isn't founded.");
         }
-        System.out.print("Neighbours of vertex " + name + ": ");
-        int ind = 0;
-        for (Integer link : matrix.get(get_vertex_index(name))) {
-            if (link == 2) {
-                System.out.print(name);
+
+        for (int ind = 0; ind < edge_number; ind++) {
+            int pointer = matrix.get(vertexIndex).get(ind);
+            if (pointer == 2) {
+                neighbours_list.add(name);
             }
-            if (link == 1) {
-                System.out.print(edges.get(ind).get_end_vertex());
+            if (pointer == 1) {
+                for (int i = 0; i < vertex_number; i++) {
+                    if (matrix.get(i).get(ind) == -1) { neighbours_list.add(vertices.get(i)); }
+                }
             }
             ind++;
         }
+        return neighbours_list;
     }
+
     public void print_graph() {
         for (int i = 0; i < vertex_number; i++) {
-            System.out.println("Vertex " + vertexes.get(i) + ": " + matrix.get(i));
+            System.out.println("Vertex " + vertices.get(i) + ": " + matrix.get(i));
             }
         System.out.println("\n");
         }
+
+
     }
