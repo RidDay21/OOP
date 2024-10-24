@@ -61,6 +61,8 @@ class AdjMatrixTest {
     void graph_test () {
         ArrayList<Edge<String, Integer>> edges = new ArrayList<>();
         edges =  graph.get_edges();
+        int a = graph.get_edge_index(edges.get(0));
+        assertEquals(a, 0);
         assertEquals(graph.get_vertices(), vertices);
         assertEquals(graph.get_vertex_index("a"), 0);
         try {
