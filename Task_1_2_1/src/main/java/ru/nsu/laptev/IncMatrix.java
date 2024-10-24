@@ -1,5 +1,7 @@
 package ru.nsu.laptev;
 
+import javax.swing.text.html.parser.Parser;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InvalidObjectException;
 import java.util.ArrayList;
@@ -40,12 +42,19 @@ public class IncMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
         return -1;
     }
 
-    public char[] read_from_file() throws IOException {
-        char[] def = new char[45];
-        return def;
+    public void read_from_file(String path) throws FileNotFoundException {
+//        ArrayList<String> text = ReadFile.read(path);
+//        int vertex_count = Integer.parseInt(text.get(0));
+//        String[] vertexes = text.get(1).split(", ");
+//        for (int i = 0; i < vertex_count; i++) {
+//            //addVertex(vertexes[i]);
+//        }
     }
 
-    public void addVertex(VertexType name) {
+    public void addVertex(VertexType name) throws InvalidVertexException {
+        if (vertices.contains(name)) {
+            throw new InvalidVertexException("Graph has already haven such vertex.");
+        }
         vertex_number++;
         vertices.add(name);
         //Creating new row for new vertex;
@@ -83,13 +92,18 @@ public class IncMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
     }
 
 
-    public void addEdge(VertexType start, VertexType end, EdgeType name) throws InvalidVertexException {
+    public void addEdge(VertexType start, VertexType end, EdgeType name) throws InvalidVertexException, InvalidEdgeException {
         for (int i = 0; i < vertex_number; i++) { //Adding null to each row
             matrix.get(i).add(0);
         }
         int startVertex = get_vertex_index(start);
+        if (startVertex == -1) { throw new InvalidVertexException("Start Vertex isn't found."); }
         int endVertex = get_vertex_index(end);
+        if (startVertex == -1) { throw new InvalidVertexException("End Vertex isn't found."); }
         Edge<VertexType, EdgeType> edge = new Edge(start, end, name);
+        if (edges.contains(edge)) {
+            throw new InvalidEdgeException("Graph has already haven such edge.");
+        }
         edges.add(edge);
         edge_number++;
         int edgeIndex = get_edge_index(edge);//новое ребро будет в конце массива;
@@ -100,9 +114,8 @@ public class IncMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
                 matrix.get(startVertex).set(edgeIndex, 1);
                 matrix.get(endVertex).set(edgeIndex, -1);
             }
-        } else {
-            throw new InvalidVertexException("One of Vertexes isn't found.");
         }
+
     }
 
     public void delEdge(VertexType start, VertexType end) throws InvalidEdgeException, InvalidVertexException {

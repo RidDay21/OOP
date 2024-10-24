@@ -1,7 +1,9 @@
 package ru.nsu.laptev;
 
 import javax.lang.model.element.UnknownElementException;
+import java.io.FileNotFoundException;
 import java.io.InvalidObjectException;
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -23,8 +25,9 @@ public class Main {
                 break;
             case 3:
                 new1 = new AdjList<>();
-            default:
                 break;
+            default:
+                throw new InvalidParameterException("eblan");
         }
         try {
             new1.addVertex("12");
@@ -146,6 +149,14 @@ public class Main {
         } catch (CycleFoundException e) {
             System.out.println("ok");
         }
+
+        try {
+            String path = "\\C:\\Users\\niko_\\Desktop\\Niki\\nsu\\tmp\\graph.txt";
+            ReadFile.read(path);
+        } catch (FileNotFoundException e) {
+            System.out.println("okokokoko");
+        }
+
     }
 }
 

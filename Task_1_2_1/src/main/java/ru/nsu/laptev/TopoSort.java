@@ -1,6 +1,8 @@
 package ru.nsu.laptev;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class TopoSort<VertexType, EdgeType extends Number> {
     int length;
@@ -60,6 +62,7 @@ public class TopoSort<VertexType, EdgeType extends Number> {
         if (order == null) {
             throw new CycleFoundException("Graph contains a cycle");
         }
+        Collections.reverse(order);
         return order;
     }
 }

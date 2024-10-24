@@ -1,9 +1,6 @@
 package ru.nsu.laptev;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InvalidObjectException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -40,30 +37,9 @@ public class AdjMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
         return -1;
     }
 
-    public char[] read_from_file() throws IOException {
-        FileInputStream inputStream = null;
-        Scanner scanner = null;
-        try {
-            File file = new File("путь_к_вашему_файлу/fileTest.txt"); // Укажите полный путь к вашему файлу
-            inputStream = new FileInputStream(file);
-            scanner = new Scanner(inputStream);
-
-            int numVertices = scanner.nextInt();
-            for (int i = 0; i < numVertices; i++) {
-                String vertexName = scanner.next();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (scanner != null) {
-                scanner.close();
-            }
-            if (inputStream != null) {
-                inputStream.close();
-            }
-        }
-        char[] def = new char[4];
-        return def;
+    public void read_from_file(String path) throws FileNotFoundException{
+        ArrayList<String> text = new ArrayList<>();
+        text = ReadFile.read(path);
     }
 
     /**
@@ -71,7 +47,10 @@ public class AdjMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
      *
      * @param name - name of new vertex
      */
-    public void addVertex(VertexType name) {
+    public void addVertex(VertexType name) throws InvalidVertexException {
+        if (vertices.contains(name)) {
+            throw new InvalidVertexException("Graph has already haven such vertex.");
+        }
         vertex_number++;
         vertices.add(name);
         ArrayList<EdgeType> row = new ArrayList<>();

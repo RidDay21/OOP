@@ -1,5 +1,6 @@
 package ru.nsu.laptev;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InvalidObjectException;
 import java.util.ArrayList;
@@ -23,6 +24,6 @@ public interface Graph<VertexType, EdgeType extends Number> {
 
     public void print_graph();
 
-    public char[] read_from_file() throws IOException;
+    public void read_from_file(String path) throws FileNotFoundException;
 
 }

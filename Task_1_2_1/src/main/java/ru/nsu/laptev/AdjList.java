@@ -40,34 +40,15 @@ public class AdjList<VertexType, EdgeType extends Number> implements Graph<Verte
         return -1;
     }
 
-    public char[] read_from_file() throws IOException {
-        FileInputStream inputStream = null;
-        Scanner scanner = null;
-        try {
-            File file = new File("путь_к_вашему_файлу/fileTest.txt"); // Укажите полный путь к вашему файлу
-            inputStream = new FileInputStream(file);
-            scanner = new Scanner(inputStream);
+    public void read_from_file(String path) throws FileNotFoundException {
 
-            int numVertices = scanner.nextInt();
-            for (int i = 0; i < numVertices; i++) {
-//                addVertex(scanner.next());
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (scanner != null) {
-                scanner.close();
-            }
-            if (inputStream != null) {
-                inputStream.close();
-            }
-        }
-        char[] def = new char[4];
-        return def;
     }
 
 
-    public void addVertex(VertexType name) {
+    public void addVertex(VertexType name) throws InvalidVertexException {
+        if (vertices.contains(name)) {
+            throw new InvalidVertexException("Graph has already haven such vertex.");
+        }
         vertex_number++;
         vertices.add(name);
         ArrayList<VertexType> row = new ArrayList<>();
