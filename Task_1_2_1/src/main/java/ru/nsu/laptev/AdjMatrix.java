@@ -98,7 +98,6 @@ public class AdjMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
     }
 
     public void delEdge(VertexType start, VertexType end) throws InvalidEdgeException, InvalidVertexException {
-
         int startVertex = get_vertex_index(start);
         if (startVertex == -1) {
             throw new InvalidVertexException("ok");

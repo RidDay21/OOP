@@ -69,8 +69,19 @@ public class AdjList<VertexType, EdgeType extends Number> implements Graph<Verte
     }
 
     public void addEdge(VertexType start, VertexType end, EdgeType name) throws InvalidVertexException, InvalidEdgeException {
+        Edge e = new Edge(start, end, name);
+        if (edges.contains(e)) {
+            throw new InvalidEdgeException("Edge is already in graph.");
+        }
+        edges.add(e);
         int startVertex = get_vertex_index(start);
+        if (startVertex == -1) {
+            throw new InvalidVertexException("ok");
+        }
         int endVertex = get_vertex_index(end);
+        if (endVertex == -1) {
+            throw new InvalidVertexException("ok");
+        }
         if (startVertex != -1 && endVertex != -1) {
             matrix.get(startVertex).add(end);
         } else {
@@ -80,12 +91,23 @@ public class AdjList<VertexType, EdgeType extends Number> implements Graph<Verte
 
     public void delEdge(VertexType start, VertexType end) throws InvalidEdgeException, InvalidVertexException {
         int startVertex = get_vertex_index(start);
+        if (startVertex == -1) {
+            throw new InvalidVertexException("ok");
+        }
         int endVertex = get_vertex_index(end);
+        if (endVertex == -1) {
+            throw new InvalidVertexException("ok");
+        }
         if (startVertex != -1 && endVertex != -1) {
             matrix.get(startVertex).remove(end);
-        } else {
-            throw new InvalidVertexException("Vertex isn't found.");
         }
+        for (Edge e : edges) {
+            if(e.is_equal(start, end)) {
+                edges.remove(e);
+                return;
+            }
+        }
+        throw new InvalidEdgeException("Edge isn't in graph.");
     }
 
     public ArrayList<VertexType> get_neighbours(VertexType name) throws InvalidVertexException {
