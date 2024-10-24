@@ -78,13 +78,22 @@ public class AdjMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
         vertex_number--;
     }
 
-    public void addEdge(VertexType start, VertexType end, EdgeType name) throws InvalidVertexException {
+    public void addEdge(VertexType start, VertexType end, EdgeType name) throws InvalidVertexException, InvalidEdgeException {
+        Edge e = new Edge(start, end, name);
+        if (edges.contains(e)) {
+            throw new InvalidEdgeException("Edge is already in graph.");
+        }
+        edges.add(e);
         int startVertex = get_vertex_index(start);
+        if (startVertex == -1) {
+            throw new InvalidVertexException("ok");
+        }
         int endVertex = get_vertex_index(end);
+        if (endVertex == -1) {
+            throw new InvalidVertexException("ok");
+        }
         if (startVertex != -1 && endVertex != -1) {
             matrix.get(startVertex).set(endVertex, name);
-        } else {
-            throw new InvalidVertexException("ok");
         }
     }
 
