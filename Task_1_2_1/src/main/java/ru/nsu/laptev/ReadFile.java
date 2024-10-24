@@ -17,6 +17,6 @@ public class ReadFile  {
             System.out.println(text);
         }
 
-        return new ArrayList<>();
+        return text;
     }
 }
