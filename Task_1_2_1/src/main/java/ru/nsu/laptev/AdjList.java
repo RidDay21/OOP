@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AdjList<VertexType, EdgeType extends Number>  implements Graph<VertexType, EdgeType> {
+public class AdjList<VertexType, EdgeType extends Number> implements Graph<VertexType, EdgeType> {
     private static final int SIZE = Integer.MAX_VALUE;
 
     public ArrayList<ArrayList<VertexType>> matrix = new ArrayList<>();
@@ -14,8 +14,18 @@ public class AdjList<VertexType, EdgeType extends Number>  implements Graph<Vert
     private int vertex_number;
     private int edge_number;
 
+
     public int get_vertex_index(VertexType name) {
         return vertices.indexOf(name);
+    }
+
+    @Override
+    public ArrayList<VertexType> get_vertices() {
+        return vertices;
+    }
+
+    public ArrayList<Edge<VertexType, EdgeType>> get_edges() {
+        return edges;
     }
 
     public int get_edge_index(Edge edge) {
@@ -64,8 +74,7 @@ public class AdjList<VertexType, EdgeType extends Number>  implements Graph<Vert
         matrix.add(row);
     }
 
-    @SuppressWarnings("unchecked")
-    public void delVertex(VertexType name) throws InvalidVertexException, InvalidObjectException {
+    public void delVertex(VertexType name) throws InvalidVertexException, InvalidEdgeException {
         int index = get_vertex_index(name);
         if (index == -1) {
             throw new InvalidVertexException("Vertex isn't found");
@@ -78,7 +87,7 @@ public class AdjList<VertexType, EdgeType extends Number>  implements Graph<Vert
         vertex_number--;
     }
 
-    public void addEdge(VertexType start, VertexType end, EdgeType name) throws InvalidVertexException {
+    public void addEdge(VertexType start, VertexType end, EdgeType name) throws InvalidVertexException, InvalidEdgeException {
         int startVertex = get_vertex_index(start);
         int endVertex = get_vertex_index(end);
         if (startVertex != -1 && endVertex != -1) {
@@ -88,7 +97,7 @@ public class AdjList<VertexType, EdgeType extends Number>  implements Graph<Vert
         }
     }
 
-    public void delEdge(VertexType start, VertexType end) throws InvalidVertexException, InvalidVertexException {
+    public void delEdge(VertexType start, VertexType end) throws InvalidEdgeException, InvalidVertexException {
         int startVertex = get_vertex_index(start);
         int endVertex = get_vertex_index(end);
         if (startVertex != -1 && endVertex != -1) {

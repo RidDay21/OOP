@@ -15,13 +15,22 @@ public class AdjMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
     private int vertex_number;
     private int edges_number;
 
+
+    public ArrayList<VertexType> get_vertices() {
+        return vertices;
+    }
+
+    public ArrayList<Edge<VertexType, EdgeType>> get_edges() {
+        return edges;
+    }
+
     public int get_vertex_index(VertexType name) {
         return vertices.indexOf(name);
     }
 
     public int get_edge_index(Edge edge) {
         int index = 0;
-        for (Edge e: edges) {
+        for (Edge e : edges) {
             if ((e.get_start_vertex() == edge.get_start_vertex())
                     && (e.get_end_vertex() == edge.get_end_vertex())) {
                 return index;
@@ -56,8 +65,10 @@ public class AdjMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
         char[] def = new char[4];
         return def;
     }
+
     /**
      * It's turned out that I need to add a null value to every existing row in the matrix
+     *
      * @param name - name of new vertex
      */
     public void addVertex(VertexType name) {
@@ -75,7 +86,7 @@ public class AdjMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
         }
     }
 
-    public void delVertex(VertexType name) throws InvalidVertexException, InvalidObjectException{
+    public void delVertex(VertexType name) throws InvalidVertexException, InvalidEdgeException {
         int index = get_vertex_index(name);
         if (index == -1) {
             throw new InvalidVertexException("ok");
@@ -92,13 +103,13 @@ public class AdjMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
         int startVertex = get_vertex_index(start);
         int endVertex = get_vertex_index(end);
         if (startVertex != -1 && endVertex != -1) {
-            matrix.get(startVertex).set(endVertex,name);
+            matrix.get(startVertex).set(endVertex, name);
         } else {
             throw new InvalidVertexException("ok");
         }
     }
 
-    public void delEdge(VertexType start, VertexType end) throws InvalidObjectException, InvalidVertexException {
+    public void delEdge(VertexType start, VertexType end) throws InvalidEdgeException, InvalidVertexException {
         int startVertex = get_vertex_index(start);
         int endVertex = get_vertex_index(end);
         if (startVertex != -1 && endVertex != -1) {
