@@ -35,8 +35,10 @@ public class TopoSort<VertexType, EdgeType extends Number> {
 
         for (VertexType v : neighbours) {
             int temp_index = matrix.get_vertex_index(v);
-            if (visited[index] == 'w') {
+            if (visited[temp_index] == 'w') {
                 dfs(temp_index);
+            } else if (visited[temp_index] == 'g') {
+                throw new CycleFoundException("Graph contains a cycle");
             }
         }
 
@@ -66,3 +68,4 @@ public class TopoSort<VertexType, EdgeType extends Number> {
         return order;
     }
 }
+
