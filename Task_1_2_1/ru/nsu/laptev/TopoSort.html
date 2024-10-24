@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10};
+var data = {"i0":10,"i1":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -115,14 +115,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <main role="main">
 <div class="header">
 <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">ru.nsu.laptev</a></div>
-<h2 title="Class TopoSort" class="title">Class TopoSort&lt;VertexType&gt;</h2>
+<h2 title="Class TopoSort" class="title">Class TopoSort&lt;VertexType,&#8203;EdgeType extends java.lang.Number&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li>ru.nsu.laptev.TopoSort&lt;VertexType&gt;</li>
+<li>ru.nsu.laptev.TopoSort&lt;VertexType,&#8203;EdgeType&gt;</li>
 </ul>
 </li>
 </ul>
@@ -130,7 +130,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <hr>
-<pre>public class <span class="typeNameLabel">TopoSort&lt;VertexType&gt;</span>
+<pre>public class <span class="typeNameLabel">TopoSort&lt;VertexType,&#8203;EdgeType extends java.lang.Number&gt;</span>
 extends java.lang.Object</pre>
 </li>
 </ul>
@@ -152,7 +152,7 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E()">TopoSort</a></span>()</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(ru.nsu.laptev.Graph)">TopoSort</a></span>&#8203;(<a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="TopoSort.html" title="type parameter in TopoSort">VertexType</a>,&#8203;<a href="TopoSort.html" title="type parameter in TopoSort">EdgeType</a>&gt;&nbsp;matrix)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
@@ -174,8 +174,13 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#dfs(int)">dfs</a></span>&#8203;(int&nbsp;index)</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>java.util.ArrayList&lt;<a href="TopoSort.html" title="type parameter in TopoSort">VertexType</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#top_sort()">top_sort</a></span>()</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#topologicalSort()">topologicalSort</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
@@ -202,13 +207,13 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;()">
+<a id="&lt;init&gt;(ru.nsu.laptev.Graph)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>TopoSort</h4>
-<pre>public&nbsp;TopoSort()</pre>
+<pre>public&nbsp;TopoSort&#8203;(<a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="TopoSort.html" title="type parameter in TopoSort">VertexType</a>,&#8203;<a href="TopoSort.html" title="type parameter in TopoSort">EdgeType</a>&gt;&nbsp;matrix)</pre>
 </li>
 </ul>
 </li>
@@ -221,17 +226,35 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="top_sort()">
+<a id="dfs(int)">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>dfs</h4>
+<pre class="methodSignature">public&nbsp;void&nbsp;dfs&#8203;(int&nbsp;index)
+         throws <a href="CycleFoundException.html" title="class in ru.nsu.laptev">CycleFoundException</a>,
+                <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="CycleFoundException.html" title="class in ru.nsu.laptev">CycleFoundException</a></code></dd>
+<dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
+</dl>
+</li>
+</ul>
+<a id="topologicalSort()">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>top_sort</h4>
-<pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;<a href="TopoSort.html" title="type parameter in TopoSort">VertexType</a>&gt;&nbsp;top_sort()
-                                         throws java.lang.IllegalArgumentException</pre>
+<h4>topologicalSort</h4>
+<pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;<a href="TopoSort.html" title="type parameter in TopoSort">VertexType</a>&gt;&nbsp;topologicalSort()
+                                                throws <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a>,
+                                                       <a href="CycleFoundException.html" title="class in ru.nsu.laptev">CycleFoundException</a></pre>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.IllegalArgumentException</code></dd>
+<dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
+<dd><code><a href="CycleFoundException.html" title="class in ru.nsu.laptev">CycleFoundException</a></code></dd>
 </dl>
 </li>
 </ul>
