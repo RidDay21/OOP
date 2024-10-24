@@ -98,13 +98,26 @@ public class AdjMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
     }
 
     public void delEdge(VertexType start, VertexType end) throws InvalidEdgeException, InvalidVertexException {
+
         int startVertex = get_vertex_index(start);
+        if (startVertex == -1) {
+            throw new InvalidVertexException("ok");
+        }
         int endVertex = get_vertex_index(end);
+        if (endVertex == -1) {
+            throw new InvalidVertexException("ok");
+        }
         if (startVertex != -1 && endVertex != -1) {
             matrix.get(startVertex).set(endVertex, null);
-        } else {
-            throw new InvalidVertexException("InvalidVertexException");
         }
+
+        for (Edge e : edges) {
+            if(e.is_equal(start, end)) {
+                edges.remove(e);
+                return;
+            }
+        }
+        throw new InvalidEdgeException("Edge isn't in graph.");
     }
 
     public ArrayList<VertexType> get_neighbours(VertexType name) throws InvalidVertexException {
