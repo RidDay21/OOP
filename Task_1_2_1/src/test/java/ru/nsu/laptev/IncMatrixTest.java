@@ -9,7 +9,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
-
+/**
+ * Testing method.
+ */
 class IncMatrixTest {
     IncMatrix<String, Integer> graph = new IncMatrix<>();
     String[] vertexes = {"a", "b", "c", "d", "e", "f"};

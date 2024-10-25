@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Testing method.
+ */
 class AdjMatrixTest {
     AdjMatrix<String, Integer> graph = new AdjMatrix<>();
     String[] vertexes = {"a", "b", "c", "d", "e", "f"};

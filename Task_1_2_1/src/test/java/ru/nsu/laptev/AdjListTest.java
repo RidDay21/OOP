@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
+/**
+ * Testing method.
+ */
 class AdjListTest {
     AdjList<String, Integer> graph = new AdjList<>();
     String[] vertexes = {"a", "b", "c", "d", "e", "f"};
