@@ -1,17 +1,16 @@
 package ru.nsu.laptev;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
-public class TopoSort<VertexType, EdgeType extends Number> {
+public class TopoSort<VertexT, EdgeT extends Number> {
     int length;
-    private Graph<VertexType, EdgeType> matrix;
+    private Graph<VertexT, EdgeT> matrix;
     private char[] visited;
-    private ArrayList<VertexType> order;
-    private ArrayList<VertexType> vertices;
+    private ArrayList<VertexT> order;
+    private ArrayList<VertexT> vertices;
 
-    public TopoSort(Graph<VertexType, EdgeType> matrix) {
+    public TopoSort(Graph<VertexT, EdgeT> matrix) {
         this.matrix = matrix;
         this.length = matrix.get_vertices().size();
         this.vertices = matrix.get_vertices();
@@ -26,18 +25,18 @@ public class TopoSort<VertexType, EdgeType extends Number> {
     public void dfs(int index) throws CycleFoundException, InvalidVertexException {
 
         visited[index] = 'g';
-        ArrayList<VertexType> neighbours = new ArrayList<>();
+        ArrayList<VertexT> neighbours = new ArrayList<>();
         try {
             neighbours = matrix.get_neighbours(vertices.get(index));
         } catch (InvalidVertexException e) {
             System.out.println("WHY");
         }
 
-        for (VertexType v : neighbours) {
-            int temp_index = matrix.get_vertex_index(v);
-            if (visited[temp_index] == 'w') {
-                dfs(temp_index);
-            } else if (visited[temp_index] == 'g') {
+        for (VertexT v : neighbours) {
+            int temp = matrix.get_vertex_index(v);
+            if (visited[temp] == 'w') {
+                dfs(temp);
+            } else if (visited[temp] == 'g') {
                 throw new CycleFoundException("Graph contains a cycle");
             }
         }
@@ -46,7 +45,8 @@ public class TopoSort<VertexType, EdgeType extends Number> {
         order.add(vertices.get(index));
     }
 
-    public ArrayList<VertexType> topologicalSort() throws InvalidVertexException, CycleFoundException {
+    public ArrayList<VertexT> topologicalSort() throws InvalidVertexException,
+            CycleFoundException {
         for (int i = 0; i < length; i++) {
             if (visited[i] == 'w') {
                 try {

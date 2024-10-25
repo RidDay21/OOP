@@ -2,23 +2,25 @@ package ru.nsu.laptev;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
+
+
 
 class AdjListTest {
     AdjList<String, Integer> graph = new AdjList<>();
     String[] vertexes = {"a", "b", "c", "d", "e", "f"};
     ArrayList<String> vertices = new ArrayList<>();
 
-    String[][] edges = {{"a", "b", "23"}, {"a", "c", "231"}, {"e", "b", "34"}, {"f", "b", "3"}, {"b", "a", "1221"}, {"d", "e", "2"}};
+    String[][] edges = {{"a", "b", "23"}, {"a", "c", "231"}, {"e", "b", "34"},
+            {"f", "b", "3"}, {"b", "a", "1221"}, {"d", "e", "2"}};
 
 
     @BeforeEach
     void initialize() {
-
         for (int i = 0; i < vertexes.length; i++) {
             vertices.add(vertexes[i]);
         }
@@ -38,24 +40,24 @@ class AdjListTest {
             try {
                 graph.addEdge(edges[e][0], edges[e][1], Integer.parseInt(edges[e][2]));
             } catch (InvalidEdgeException epr) {
-
+                System.out.println();
             } catch (InvalidVertexException epr) {
-
+                System.out.println();
             }
         }
         try {
             graph.addEdge(edges[0][0], edges[0][1], Integer.parseInt(edges[0][2]));
         } catch (InvalidEdgeException epr) {
-
+            System.out.println();
         } catch (InvalidVertexException epr) {
             graph.print_graph();
         }
         try {
             graph.addEdge(edges[0][0], "as", Integer.parseInt(edges[0][2]));
         } catch (InvalidEdgeException epr) {
-
+            System.out.println();
         } catch (InvalidVertexException epr) {
-
+            System.out.println();
         }
     }
 
@@ -70,36 +72,36 @@ class AdjListTest {
         try {
             graph.delEdge("a", "b");
         } catch (InvalidEdgeException e) {
-
+            System.out.println();
         } catch (InvalidVertexException e) {
-
+            System.out.println();
         }
 
         try {
             graph.delVertex("a");
             vertices.remove("a");
         } catch (InvalidVertexException e) {
-
+            System.out.println();
         } catch (InvalidEdgeException e) {
-
+            System.out.println();
         }
 
         try {
             graph.delVertex("c");
             vertices.remove("c");
         } catch (InvalidVertexException e) {
-
+            System.out.println();
         } catch (InvalidEdgeException e) {
-
+            System.out.println();
         }
 
         try {
             graph.delVertex("h");
             vertices.remove("h");
         } catch (InvalidVertexException e) {
-
+            System.out.println();
         } catch (InvalidEdgeException e) {
-
+            System.out.println();
         }
         assertEquals(graph.get_vertices().size(), vertices.size());
 

@@ -1,16 +1,12 @@
 package ru.nsu.laptev;
 
-import javax.swing.text.html.parser.Parser;
-
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InvalidObjectException;
 import java.util.ArrayList;
 
-public class IncMatrix<VertexType, EdgeType extends Number> implements Graph<VertexType, EdgeType> {
+public class IncMatrix<VertexT, EdgeT extends Number> implements Graph<VertexT, EdgeT> {
     public ArrayList<ArrayList<Integer>> matrix = new ArrayList<>();
-    private ArrayList<VertexType> vertices = new ArrayList<>();
-    private ArrayList<Edge<VertexType, EdgeType>> edges = new ArrayList<>();
+    private ArrayList<VertexT> vertices = new ArrayList<>();
+    private ArrayList<Edge<VertexT, EdgeT>> edges = new ArrayList<>();
 
     private int vertex_number;
     private int edge_number;
@@ -19,15 +15,15 @@ public class IncMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
         return vertex_number;
     }
 
-    public ArrayList<VertexType> get_vertices() {
+    public ArrayList<VertexT> get_vertices() {
         return vertices;
     }
 
-    public ArrayList<Edge<VertexType, EdgeType>> get_edges() {
+    public ArrayList<Edge<VertexT, EdgeT>> get_edges() {
         return edges;
     }
 
-    public int get_vertex_index(VertexType name) {
+    public int get_vertex_index(VertexT name) {
         return vertices.indexOf(name);
     }
 
@@ -43,18 +39,12 @@ public class IncMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
         return -1;
     }
 
-    public void read_from_file(Transformer<VertexType> vertexTransformer,
-                               Transformer<EdgeType> edgeTransformer,
+    public void read_from_file(Transformer<VertexT> vertexTransformer,
+                               Transformer<EdgeT> edgeTransformer,
                                String path) throws FileNotFoundException {
-//        ArrayList<String> text = ReadFile.read(path);
-//        int vertex_count = Integer.parseInt(text.get(0));
-//        String[] vertexes = text.get(1).split(", ");
-//        for (int i = 0; i < vertex_count; i++) {
-//            //addVertex(vertexes[i]);
-//        }
     }
 
-    public void addVertex(VertexType name) throws InvalidVertexException {
+    public void addVertex(VertexT name) throws InvalidVertexException {
         if (vertices.contains(name)) {
             throw new InvalidVertexException("Graph has already haven such vertex.");
         }
@@ -70,32 +60,33 @@ public class IncMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
         }
     }
 
-    public void delVertex(VertexType name) throws InvalidVertexException, InvalidEdgeException {
+    public void delVertex(VertexT name) throws InvalidVertexException, InvalidEdgeException {
         int index = get_vertex_index(name);
         if (index == -1) {
             throw new InvalidVertexException(("Vertex isn't found"));
         }
 
         for (int i = 0; i < edge_number; i++) {
-            VertexType start = edges.get(i).get_start_vertex();
-            VertexType end = edges.get(i).get_end_vertex();
+            VertexT start = edges.get(i).get_start_vertex();
+            VertexT end = edges.get(i).get_end_vertex();
             if ((start == name) || (end == name)) {
                 try {
                     delEdge(start, end);
                 } catch (InvalidVertexException e) {
                     System.out.println();
                 } catch (InvalidEdgeException e) {
+                    System.out.println();
                 }
             }
 
         }
-        matrix.remove(index);//removing row from matrix
+        matrix.remove(index); //removing row from matrix
         vertices.remove(name);
         vertex_number--;
     }
 
 
-    public void addEdge(VertexType start, VertexType end, EdgeType name) throws InvalidVertexException, InvalidEdgeException {
+    public void addEdge(VertexT start, VertexT end, EdgeT name) throws InvalidVertexException, InvalidEdgeException {
         for (int i = 0; i < vertex_number; i++) { //Adding null to each row
             matrix.get(i).add(0);
         }
@@ -107,13 +98,13 @@ public class IncMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
         if (startVertex == -1) {
             throw new InvalidVertexException("End Vertex isn't found.");
         }
-        Edge<VertexType, EdgeType> edge = new Edge(start, end, name);
+        Edge<VertexT, EdgeT> edge = new Edge(start, end, name);
         if (edges.contains(edge)) {
             throw new InvalidEdgeException("Graph has already haven such edge.");
         }
         edges.add(edge);
         edge_number++;
-        int edgeIndex = get_edge_index(edge);//новое ребро будет в конце массива;
+        int edgeIndex = get_edge_index(edge); //новое ребро будет в конце массива;
         if (startVertex != -1 && endVertex != -1) {
             if (start == end) {
                 matrix.get(startVertex).set(edgeIndex, 2);
@@ -125,7 +116,7 @@ public class IncMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
 
     }
 
-    public void delEdge(VertexType start, VertexType end) throws InvalidEdgeException, InvalidVertexException {
+    public void delEdge(VertexT start, VertexT end) throws InvalidEdgeException, InvalidVertexException {
         edge_number--;
         int startVertex = get_vertex_index(start);
         int endVertex = get_vertex_index(end);
@@ -152,8 +143,8 @@ public class IncMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
         }
     }
 
-    public ArrayList<VertexType> get_neighbours(VertexType name) throws InvalidVertexException {
-        ArrayList<VertexType> neighbours_list = new ArrayList<>();
+    public ArrayList<VertexT> get_neighbours(VertexT name) throws InvalidVertexException {
+        ArrayList<VertexT> neighbours_list = new ArrayList<>();
         int vertexIndex = get_vertex_index(name);
         if (vertexIndex == -1) {
             throw new InvalidVertexException("Vertex isn't founded.");

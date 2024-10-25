@@ -1,12 +1,12 @@
 package ru.nsu.laptev;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class TopoSortTest {
 
@@ -24,24 +24,24 @@ public class TopoSortTest {
         try {
             graph.addEdge("A", "B", 1);
         } catch (InvalidVertexException epr) {
-
+            System.out.println();
         } catch (InvalidEdgeException epr) {
-
+            System.out.println();
         }
         try {
             graph.addEdge("C", "D", 1);
         } catch (InvalidVertexException epr) {
-
+            System.out.println();
         } catch (InvalidEdgeException epr) {
-
+            System.out.println();
         }
 
         try {
             graph.addEdge("B", "C", 1);
         } catch (InvalidVertexException epr) {
-
+            System.out.println();
         } catch (InvalidEdgeException epr) {
-
+            System.out.println();
         }
         TopoSort<String, Integer> topoSort = new TopoSort<>(graph);
         try {
@@ -65,31 +65,31 @@ public class TopoSortTest {
         try {
             graph.addEdge("A", "B", 1);
         } catch (InvalidVertexException epr) {
-
+            System.out.println();
         } catch (InvalidEdgeException epr) {
-
+            System.out.println();
         }
         try {
             graph.addEdge("B", "C", 1);
         } catch (InvalidVertexException epr) {
-
+            System.out.println();
         } catch (InvalidEdgeException epr) {
-
+            System.out.println();
         }
         try {
             graph.addEdge("C", "A", 1);
         } catch (InvalidVertexException epr) {
-
+            System.out.println();
         } catch (InvalidEdgeException epr) {
-
+            System.out.println();
         }
         TopoSort<String, Integer> topoSort = new TopoSort<>(graph);
         try {
             topoSort.topologicalSort();
         } catch (CycleFoundException e) {
-
+            System.out.println();
         } catch (InvalidVertexException e) {
-
+            System.out.println();
         }
     }
 }

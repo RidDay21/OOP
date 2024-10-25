@@ -1,11 +1,16 @@
 package ru.nsu.laptev;
 
-import javax.lang.model.element.UnknownElementException;
-import java.io.FileNotFoundException;
-import java.io.InvalidObjectException;
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.security.InvalidParameterException;
+
+import java.io.InvalidObjectException;
+import java.io.FileNotFoundException;
+import javax.lang.model.element.UnknownElementException;
+
+
+;
+
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -106,7 +111,8 @@ public class Main {
         new1.print_graph();
         ArrayList<Edge<String, Number>> ab = new1.get_edges();
         for (Edge e : ab) {
-            System.out.println(e.get_end_vertex() + ", " + e.get_start_vertex() + ", " + e.get_name());
+            System.out.println(e.get_end_vertex() + ", " + e.get_start_vertex() + ", "
+                    + e.get_name());
         }
 
         System.out.println();
@@ -128,34 +134,17 @@ public class Main {
 
         new1.print_graph();
 
-//        for (int i = 0; i < new1.get_vertices().size();i++) {
-//            try {
-//                ArrayList<String> neighbours =  new1.get_neighbours(new1.get_vertices().get(i));
-//                System.out.println(neighbours);
-//            } catch (InvalidVertexException e) {
-//                System.out.println(e);
-//            }
-//        }
-
-
         TopoSort ts = new TopoSort(new1);
-        ArrayList<String> top_order = new ArrayList<>();
+        ArrayList<String> topOrder = new ArrayList<>();
 
         try {
-            top_order = ts.topologicalSort();
-            System.out.println(top_order);
+            topOrder = ts.topologicalSort();
+            System.out.println(topOrder);
         } catch (InvalidVertexException e) {
             System.out.println("be");
         } catch (CycleFoundException e) {
             System.out.println("ok");
         }
-
-//        try {
-//            String path = "\\C:\\Users\\niko_\\Desktop\\Niki\\nsu\\tmp\\graph.txt";
-//        } catch (FileNotFoundException e) {
-//            System.out.println("okokokoko");
-//        }
-
     }
 }
 

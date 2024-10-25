@@ -1,29 +1,34 @@
 package ru.nsu.laptev;
 
 import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InvalidObjectException;
 import java.util.ArrayList;
 
-public interface Graph<VertexType, EdgeType extends Number> {
-    public int get_vertex_index(VertexType name);
+/**
+ * Interface for graph implementaton.
+ * @param <VertexT>
+ * @param <EdgeT>
+ */
+public interface Graph<VertexT, EdgeT extends Number> {
+    public int get_vertex_index(VertexT name);
 
-    public ArrayList<VertexType> get_vertices();
+    public ArrayList<VertexT> get_vertices();
 
-    public ArrayList<Edge<VertexType, EdgeType>> get_edges();
+    public ArrayList<Edge<VertexT, EdgeT>> get_edges();
 
-    public void addVertex(VertexType name) throws InvalidVertexException;
+    public void addVertex(VertexT name) throws InvalidVertexException;
 
-    public void delVertex(VertexType name) throws InvalidVertexException, InvalidEdgeException;
+    public void delVertex(VertexT name) throws InvalidVertexException, InvalidEdgeException;
 
-    public void addEdge(VertexType start, VertexType end, EdgeType name) throws InvalidVertexException, InvalidEdgeException;
+    public void addEdge(VertexT start, VertexT end, EdgeT name) throws InvalidVertexException, InvalidEdgeException;
 
-    public void delEdge(VertexType start, VertexType end) throws InvalidEdgeException, InvalidVertexException;
+    public void delEdge(VertexT start, VertexT end) throws InvalidEdgeException, InvalidVertexException;
 
-    public ArrayList<VertexType> get_neighbours(VertexType name) throws InvalidVertexException;
+    public ArrayList<VertexT> get_neighbours(VertexT name) throws InvalidVertexException;
 
     public void print_graph();
 
-    public void read_from_file(Transformer<VertexType> vertexTransformer, Transformer<EdgeType> edgeTransformer, String path) throws FileNotFoundException;
+    public void read_from_file(Transformer<VertexT> vertexTransformer,
+                               Transformer<EdgeT> edgeTransformer,
+                               String path) throws FileNotFoundException;
 
 }

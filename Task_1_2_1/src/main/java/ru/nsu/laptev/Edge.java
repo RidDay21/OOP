@@ -1,32 +1,30 @@
 package ru.nsu.laptev;
 
-import java.util.ArrayList;
-
-public class Edge<VertexType, EdgeType> {
-    private VertexType startVertex;
-    private VertexType endVertex;
-    private EdgeType name;
+public class Edge<VertexT, EdgeT> {
+    private VertexT startVertex;
+    private VertexT endVertex;
+    private EdgeT name;
 
 
-    Edge(VertexType startVertex, VertexType endVertex, EdgeType name) {
+    Edge(VertexT startVertex, VertexT endVertex, EdgeT name) {
         this.startVertex = startVertex;
         this.endVertex = endVertex;
         this.name = name;
     }
 
-    public VertexType get_start_vertex() {
+    public VertexT get_start_vertex() {
         return this.startVertex;
     }
 
-    public VertexType get_end_vertex() {
+    public VertexT get_end_vertex() {
         return this.endVertex;
     }
 
-    public EdgeType get_name() {
+    public EdgeT get_name() {
         return name;
     }
 
-    public boolean is_equal(VertexType start, VertexType end) throws InvalidEdgeException {
+    public boolean is_equal(VertexT start, VertexT end) throws InvalidEdgeException {
         boolean flag = false;
         if (start == startVertex && end == endVertex) {
             flag = true;

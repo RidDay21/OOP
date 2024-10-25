@@ -2,7 +2,6 @@ package ru.nsu.laptev;
 
 import java.io.FileNotFoundException;
 import java.io.File;
-import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -14,8 +13,8 @@ public class AdjList<VertexType, EdgeType extends Number> implements Graph<Verte
     private ArrayList<VertexType> vertices = new ArrayList<>();
     private ArrayList<Edge<VertexType, EdgeType>> edges = new ArrayList<>();
 
-    private int vertex_number;
-    private int edge_number;
+    private int vertexNumber;
+    private int edgeNumber;
 
 
     public int get_vertex_index(VertexType name) {
@@ -54,21 +53,21 @@ public class AdjList<VertexType, EdgeType extends Number> implements Graph<Verte
             text.add(scanner.nextLine());
         }
 
-        int amount_of_vertices = Integer.parseInt(text.get(0));
+        int amountOfVertices = Integer.parseInt(text.get(0));
         ArrayList<String> vertices_names = new ArrayList<>(Arrays.asList(text.get(1).split(", ")));
-        for (int i = 0; i < amount_of_vertices; i++) {
+        for (int i = 0; i < amountOfVertices; i++) {
             vertices.add(vertexTransformer.transform(vertices_names.get(i)));
             try {
                 addVertex(vertices.get(i));
             } catch (InvalidVertexException e) {
-
+                System.out.println();
             }
         }
-        vertex_number = amount_of_vertices;
+        vertexNumber = amountOfVertices;
 
-        int amount_of_edges = Integer.parseInt(text.get(2));
+        int amountOfEdges = Integer.parseInt(text.get(2));
         System.out.println(vertices);
-        for (int i = 3; i < 3 + amount_of_edges; i++) {
+        for (int i = 3; i < 3 + amountOfEdges; i++) {
             String[] edge = text.get(i).split(" ");
             VertexType start = vertexTransformer.transform(edge[0]);
             VertexType end = vertexTransformer.transform(edge[1]);
@@ -81,9 +80,9 @@ public class AdjList<VertexType, EdgeType extends Number> implements Graph<Verte
             try {
                 addEdge(start, end, weight);
             } catch (InvalidVertexException e) {
-
+                System.out.println();
             } catch (InvalidEdgeException epr) {
-
+                System.out.println();
             }
         }
     }
@@ -93,7 +92,7 @@ public class AdjList<VertexType, EdgeType extends Number> implements Graph<Verte
         if (vertices.contains(name)) {
             throw new InvalidVertexException("Graph has already haven such vertex.");
         }
-        vertex_number++;
+        vertexNumber++;
         vertices.add(name);
         ArrayList<VertexType> row = new ArrayList<>();
         matrix.add(row);
@@ -104,15 +103,17 @@ public class AdjList<VertexType, EdgeType extends Number> implements Graph<Verte
         if (index == -1) {
             throw new InvalidVertexException("Vertex isn't found");
         }
-        for (int i = 0; i < vertex_number; i++) {
+        for (int i = 0; i < vertexNumber; i++) {
             matrix.get(i).remove(name);
         }
-        matrix.remove(index);//removing row from matrix
+        matrix.remove(index); //removing row from matrix
         vertices.remove(name);
-        vertex_number--;
+        vertexNumber--;
     }
 
-    public void addEdge(VertexType start, VertexType end, EdgeType name) throws InvalidVertexException, InvalidEdgeException {
+
+    public void addEdge(VertexType start, VertexType end, EdgeType name) throws InvalidVertexException,
+            InvalidEdgeException {
         Edge e = new Edge(start, end, name);
         if (edges.contains(e)) {
             throw new InvalidEdgeException("Edge is already in graph.");
@@ -133,7 +134,11 @@ public class AdjList<VertexType, EdgeType extends Number> implements Graph<Verte
         }
     }
 
-    public void delEdge(VertexType start, VertexType end) throws InvalidEdgeException, InvalidVertexException {
+    /**
+     * Method for deletting edge.
+     */
+    public void delEdge(VertexType start, VertexType end) throws InvalidEdgeException,
+            InvalidVertexException {
         int startVertex = get_vertex_index(start);
         if (startVertex == -1) {
             throw new InvalidVertexException("ok");
@@ -154,20 +159,26 @@ public class AdjList<VertexType, EdgeType extends Number> implements Graph<Verte
         throw new InvalidEdgeException("Edge isn't in graph.");
     }
 
+    /**
+     * Method for getting neighbours of vertex.
+     */
     public ArrayList<VertexType> get_neighbours(VertexType name) throws InvalidVertexException {
-        ArrayList<VertexType> neighbours_list = new ArrayList<>();
+        ArrayList<VertexType> neighboursList = new ArrayList<>();
         int index = vertices.indexOf(name);
         if (index == -1) {
             throw new InvalidVertexException("Vertex isn't found");
         }
         for (int i = 0; i < matrix.get(index).size(); i++) {
-            neighbours_list.add(matrix.get(index).get(i));
+            neighboursList.add(matrix.get(index).get(i));
         }
-        return neighbours_list;
+        return neighboursList;
     }
 
+    /**
+     * Method for printing my graph.
+     */
     public void print_graph() {
-        for (int i = 0; i < vertex_number; i++) {
+        for (int i = 0; i < vertexNumber; i++) {
             System.out.println("Vertex " + vertices.get(i) + " - " + matrix.get(i));
         }
     }

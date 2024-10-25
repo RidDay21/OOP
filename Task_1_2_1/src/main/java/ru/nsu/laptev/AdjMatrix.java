@@ -1,28 +1,26 @@
 package ru.nsu.laptev;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
-public class AdjMatrix<VertexType, EdgeType extends Number> implements Graph<VertexType, EdgeType> {
-    public ArrayList<ArrayList<EdgeType>> matrix = new ArrayList<>();
-    private ArrayList<VertexType> vertices = new ArrayList<>();
-    private ArrayList<Edge<VertexType, EdgeType>> edges = new ArrayList<>();
+public class AdjMatrix<VertexT, EdgeT extends Number> implements Graph<VertexT, EdgeT> {
+    public ArrayList<ArrayList<EdgeT>> matrix = new ArrayList<>();
+    private ArrayList<VertexT> vertices = new ArrayList<>();
+    private ArrayList<Edge<VertexT, EdgeT>> edges = new ArrayList<>();
 
-    private int vertex_number;
-    private int edges_number;
+    private int vertexNumber;
+    private int edgesNumber;
 
 
-    public ArrayList<VertexType> get_vertices() {
+    public ArrayList<VertexT> get_vertices() {
         return vertices;
     }
 
-    public ArrayList<Edge<VertexType, EdgeType>> get_edges() {
+    public ArrayList<Edge<VertexT, EdgeT>> get_edges() {
         return edges;
     }
 
-    public int get_vertex_index(VertexType name) {
+    public int get_vertex_index(VertexT name) {
         return vertices.indexOf(name);
     }
 
@@ -38,50 +36,51 @@ public class AdjMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
         return -1;
     }
 
-    public void read_from_file(Transformer<VertexType> vertexTransformer,
-                               Transformer<EdgeType> edgeTransformer,
+    public void read_from_file(Transformer<VertexT> vertexTransformer,
+                               Transformer<EdgeT> edgeTransformer,
                                String path) throws FileNotFoundException {
         ArrayList<String> text = new ArrayList<>();
 
     }
 
     /**
-     * It's turned out that I need to add a null value to every existing row in the matrix
+     * It's turned out that I need to add a null value to every existing row in the matrix.
      *
      * @param name - name of new vertex
      */
-    public void addVertex(VertexType name) throws InvalidVertexException {
+    public void addVertex(VertexT name) throws InvalidVertexException {
         if (vertices.contains(name)) {
             throw new InvalidVertexException("Graph has already haven such vertex.");
         }
-        vertex_number++;
+        vertexNumber++;
         vertices.add(name);
-        ArrayList<EdgeType> row = new ArrayList<>();
-        for (int i = 0; i < vertex_number; i++) {
+        ArrayList<EdgeT> row = new ArrayList<>();
+        for (int i = 0; i < vertexNumber; i++) {
             row.add(null);
         }
         matrix.add(row);
-        for (int i = 0; i < vertex_number; i++) {
-            while (matrix.get(i).size() < vertex_number) {
+        for (int i = 0; i < vertexNumber; i++) {
+            while (matrix.get(i).size() < vertexNumber) {
                 matrix.get(i).add(null);
             }
         }
     }
 
-    public void delVertex(VertexType name) throws InvalidVertexException, InvalidEdgeException {
+    public void delVertex(VertexT name) throws InvalidVertexException, InvalidEdgeException {
         int index = get_vertex_index(name);
         if (index == -1) {
             throw new InvalidVertexException("ok");
         }
-        for (int i = 0; i < vertex_number; i++) {
+        for (int i = 0; i < vertexNumber; i++) {
             matrix.get(i).remove(index);
         }
-        matrix.remove(index);//removing row from matrix
+        matrix.remove(index);
         vertices.remove(name);
-        vertex_number--;
+        vertexNumber--;
     }
 
-    public void addEdge(VertexType start, VertexType end, EdgeType name) throws InvalidVertexException, InvalidEdgeException {
+    public void addEdge(VertexT start, VertexT end, EdgeT name) throws InvalidVertexException,
+            InvalidEdgeException {
         Edge e = new Edge(start, end, name);
         if (edges.contains(e)) {
             throw new InvalidEdgeException("Edge is already in graph.");
@@ -100,7 +99,8 @@ public class AdjMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
         }
     }
 
-    public void delEdge(VertexType start, VertexType end) throws InvalidEdgeException, InvalidVertexException {
+    public void delEdge(VertexT start, VertexT end) throws InvalidEdgeException,
+            InvalidVertexException {
         int startVertex = get_vertex_index(start);
         if (startVertex == -1) {
             throw new InvalidVertexException("ok");
@@ -122,14 +122,14 @@ public class AdjMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
         throw new InvalidEdgeException("Edge isn't in graph.");
     }
 
-    public ArrayList<VertexType> get_neighbours(VertexType name) throws InvalidVertexException {
-        ArrayList<VertexType> neighbours_list = new ArrayList<>();
+    public ArrayList<VertexT> get_neighbours(VertexT name) throws InvalidVertexException {
+        ArrayList<VertexT> neighbours_list = new ArrayList<>();
         int index = vertices.indexOf(name);
         if (index == -1) {
             throw new InvalidVertexException("Vertex isn't found");
         }
-        for (int i = 0; i < vertex_number; i++) {
-            EdgeType edge = matrix.get(index).get(i);
+        for (int i = 0; i < vertexNumber; i++) {
+            EdgeT edge = matrix.get(index).get(i);
             if (edge != null) {
                 neighbours_list.add(vertices.get(i));
             }
@@ -138,7 +138,7 @@ public class AdjMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
     }
 
     public void print_graph() {
-        for (int i = 0; i < vertex_number; i++) {
+        for (int i = 0; i < vertexNumber; i++) {
             System.out.println("Vertex " + vertices.get(i) + " - " + matrix.get(i));
         }
     }
