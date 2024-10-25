@@ -10,10 +10,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AdjMatrixTest {
     AdjMatrix<String, Integer> graph = new AdjMatrix<>();
-    String[] vertexes = {"a","b","c","d","e","f"};
+    String[] vertexes = {"a", "b", "c", "d", "e", "f"};
     ArrayList<String> vertices = new ArrayList<>();
 
-    String [][] edges = {{"a", "b", "23"},{"a", "c", "231"},{"e", "b", "34"},{"f", "b", "3"},{"b", "a", "1221"},{"d", "e", "2"}};
+    String[][] edges = {{"a", "b", "23"}, {"a", "c", "231"}, {"e", "b", "34"}, {"f", "b", "3"}, {"b", "a", "1221"}, {"d", "e", "2"}};
 
     @BeforeEach
     void initialize() {
@@ -49,7 +49,7 @@ class AdjMatrixTest {
             graph.print_graph();
         }
         try {
-            graph.addEdge(edges[0][0],"as", Integer.parseInt(edges[0][2]));
+            graph.addEdge(edges[0][0], "as", Integer.parseInt(edges[0][2]));
         } catch (InvalidEdgeException epr) {
 
         } catch (InvalidVertexException epr) {
@@ -58,9 +58,9 @@ class AdjMatrixTest {
     }
 
     @Test
-    void graph_test () {
+    void graph_test() {
         ArrayList<Edge<String, Integer>> edges = new ArrayList<>();
-        edges =  graph.get_edges();
+        edges = graph.get_edges();
         int a = graph.get_edge_index(edges.get(0));
         assertEquals(a, 0);
         assertEquals(graph.get_vertices(), vertices);
@@ -117,11 +117,11 @@ class AdjMatrixTest {
         ArrayList<String> ns = new ArrayList<>();
         ns.add("e");
         assertEquals(neighbours, ns);
-        try {
-            graph.read_from_file("C:\\Users\\niko_\\Desktop\\Niki\\nsu\\tmp\\graph.txt");
-        } catch (FileNotFoundException e) {
-
-        }
+//        try {
+//            graph.read_from_file("C:\\Users\\niko_\\Desktop\\Niki\\nsu\\tmp\\graph.txt");
+//        } catch (FileNotFoundException e) {
+//
+//        }
 
     }
 }

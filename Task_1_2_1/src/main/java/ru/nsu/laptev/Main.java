@@ -150,12 +150,11 @@ public class Main {
             System.out.println("ok");
         }
 
-        try {
-            String path = "\\C:\\Users\\niko_\\Desktop\\Niki\\nsu\\tmp\\graph.txt";
-            ReadFile.read(path);
-        } catch (FileNotFoundException e) {
-            System.out.println("okokokoko");
-        }
+//        try {
+//            String path = "\\C:\\Users\\niko_\\Desktop\\Niki\\nsu\\tmp\\graph.txt";
+//        } catch (FileNotFoundException e) {
+//            System.out.println("okokokoko");
+//        }
 
     }
 }

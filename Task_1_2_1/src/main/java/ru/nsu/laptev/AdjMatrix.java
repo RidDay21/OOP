@@ -37,9 +37,11 @@ public class AdjMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
         return -1;
     }
 
-    public void read_from_file(String path) throws FileNotFoundException{
+    public void read_from_file(Transformer<VertexType> vertexTransformer,
+                               Transformer<EdgeType> edgeTransformer,
+                               String path) throws FileNotFoundException {
         ArrayList<String> text = new ArrayList<>();
-        text = ReadFile.read(path);
+
     }
 
     /**
@@ -111,7 +113,7 @@ public class AdjMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
         }
 
         for (Edge e : edges) {
-            if(e.is_equal(start, end)) {
+            if (e.is_equal(start, end)) {
                 edges.remove(e);
                 return;
             }

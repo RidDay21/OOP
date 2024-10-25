@@ -42,7 +42,9 @@ public class IncMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
         return -1;
     }
 
-    public void read_from_file(String path) throws FileNotFoundException {
+    public void read_from_file(Transformer<VertexType> vertexTransformer,
+                               Transformer<EdgeType> edgeTransformer,
+                               String path) throws FileNotFoundException {
 //        ArrayList<String> text = ReadFile.read(path);
 //        int vertex_count = Integer.parseInt(text.get(0));
 //        String[] vertexes = text.get(1).split(", ");
@@ -97,9 +99,13 @@ public class IncMatrix<VertexType, EdgeType extends Number> implements Graph<Ver
             matrix.get(i).add(0);
         }
         int startVertex = get_vertex_index(start);
-        if (startVertex == -1) { throw new InvalidVertexException("Start Vertex isn't found."); }
+        if (startVertex == -1) {
+            throw new InvalidVertexException("Start Vertex isn't found.");
+        }
         int endVertex = get_vertex_index(end);
-        if (startVertex == -1) { throw new InvalidVertexException("End Vertex isn't found."); }
+        if (startVertex == -1) {
+            throw new InvalidVertexException("End Vertex isn't found.");
+        }
         Edge<VertexType, EdgeType> edge = new Edge(start, end, name);
         if (edges.contains(edge)) {
             throw new InvalidEdgeException("Graph has already haven such edge.");

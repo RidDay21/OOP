@@ -24,6 +24,6 @@ public interface Graph<VertexType, EdgeType extends Number> {
 
     public void print_graph();
 
-    public void read_from_file(String path) throws FileNotFoundException;
+    public void read_from_file(Transformer<VertexType> vertexTransformer, Transformer<EdgeType> edgeTransformer, String path) throws FileNotFoundException;
 
 }

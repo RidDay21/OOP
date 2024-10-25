@@ -1,7 +1,9 @@
 package ru.nsu.laptev;
 
 import java.io.*;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class AdjList<VertexType, EdgeType extends Number> implements Graph<VertexType, EdgeType> {
@@ -40,8 +42,49 @@ public class AdjList<VertexType, EdgeType extends Number> implements Graph<Verte
         return -1;
     }
 
-    public void read_from_file(String path) throws FileNotFoundException {
+    public void read_from_file(Transformer<VertexType> vertexTransformer,
+                               Transformer<EdgeType> edgeTransformer,
+                               String path) throws FileNotFoundException {
+        File file = new File(path);
+        ArrayList<String> text = new ArrayList<>();
+        Scanner scanner = new Scanner(file);
 
+        while (scanner.hasNextLine()) {
+            text.add(scanner.nextLine());
+        }
+
+        int amount_of_vertices = Integer.parseInt(text.get(0));
+        ArrayList<String> vertices_names = new ArrayList<>(Arrays.asList(text.get(1).split(", ")));
+        for (int i = 0; i < amount_of_vertices; i++) {
+            vertices.add(vertexTransformer.transform(vertices_names.get(i)));
+            try {
+                addVertex(vertices.get(i));
+            } catch (InvalidVertexException e) {
+
+            }
+        }
+        vertex_number = amount_of_vertices;
+
+        int amount_of_edges = Integer.parseInt(text.get(2));
+        System.out.println(vertices);
+        for (int i = 3; i < 3 + amount_of_edges; i++) {
+            String[] edge = text.get(i).split(" ");
+            VertexType start = vertexTransformer.transform(edge[0]);
+            VertexType end = vertexTransformer.transform(edge[1]);
+            EdgeType weight;
+            if (edge.length > 2) {
+                weight = edgeTransformer.transform(edge[2]);
+            } else {
+                weight = edgeTransformer.transform("1");
+            }
+            try {
+                addEdge(start, end, weight);
+            } catch (InvalidVertexException e) {
+
+            } catch (InvalidEdgeException epr) {
+
+            }
+        }
     }
 
 
@@ -102,7 +145,7 @@ public class AdjList<VertexType, EdgeType extends Number> implements Graph<Verte
             matrix.get(startVertex).remove(end);
         }
         for (Edge e : edges) {
-            if(e.is_equal(start, end)) {
+            if (e.is_equal(start, end)) {
                 edges.remove(e);
                 return;
             }

@@ -113,11 +113,11 @@ class IncMatrixTest {
             ArrayList<String> ns = new ArrayList<>();
             ns.add("e");
             assertEquals(neighbours, ns);
-            try {
-                graph.read_from_file("C:\\Users\\niko_\\Desktop\\Niki\\nsu\\tmp\\graph.txt");
-            } catch (FileNotFoundException e) {
-
-            }
+//            try {
+//                graph.read_from_file("C:\\Users\\niko_\\Desktop\\Niki\\nsu\\tmp\\graph.txt");
+//            } catch (FileNotFoundException e) {
+//
+//            }
 
         }
     }
