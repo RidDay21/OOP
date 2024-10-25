@@ -123,7 +123,7 @@ public class AdjMatrix<VertexT, EdgeT extends Number> implements Graph<VertexT, 
     }
 
     public ArrayList<VertexT> get_neighbours(VertexT name) throws InvalidVertexException {
-        ArrayList<VertexT> neighbours_list = new ArrayList<>();
+        ArrayList<VertexT> neighboursList = new ArrayList<>();
         int index = vertices.indexOf(name);
         if (index == -1) {
             throw new InvalidVertexException("Vertex isn't found");
@@ -131,10 +131,10 @@ public class AdjMatrix<VertexT, EdgeT extends Number> implements Graph<VertexT, 
         for (int i = 0; i < vertexNumber; i++) {
             EdgeT edge = matrix.get(index).get(i);
             if (edge != null) {
-                neighbours_list.add(vertices.get(i));
+                neighboursList.add(vertices.get(i));
             }
         }
-        return neighbours_list;
+        return neighboursList;
     }
 
     public void print_graph() {
