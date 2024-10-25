@@ -36,6 +36,12 @@ public class AdjList<VertexT, EdgeT extends Number> implements Graph<VertexT, Ed
         return edges;
     }
 
+    /**
+     * Method for getting index of edge.
+     *
+     * @param edge that u need.
+     * @return index.
+     */
     public int get_edge_index(Edge edge) {
         int index = 0;
         for (Edge e : edges) {

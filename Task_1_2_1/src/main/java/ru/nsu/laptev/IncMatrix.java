@@ -33,6 +33,12 @@ public class IncMatrix<VertexT, EdgeT extends Number> implements Graph<VertexT, 
         return vertices.indexOf(name);
     }
 
+    /**
+     * Method for getting index of edge.
+     *
+     * @param edge that u need.
+     * @return
+     */
     public int get_edge_index(Edge edge) {
         int index = 0;
         for (Edge e : edges) {

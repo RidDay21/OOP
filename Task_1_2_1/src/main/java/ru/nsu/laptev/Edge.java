@@ -2,6 +2,7 @@ package ru.nsu.laptev;
 
 /**
  * Class for edge implementation.
+ *
  * @param <VertexT> for vertex type.
  * @param <EdgeT> for edge type.
  */

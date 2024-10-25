@@ -16,6 +16,10 @@ public class TopoSort<VertexT, EdgeT extends Number> {
     private ArrayList<VertexT> order;
     private ArrayList<VertexT> vertices;
 
+    /**
+     * Constructor
+     * @param matrix for passing my matrix.
+     */
     public TopoSort(Graph<VertexT, EdgeT> matrix) {
         this.matrix = matrix;
         this.length = matrix.get_vertices().size();
@@ -31,8 +35,6 @@ public class TopoSort<VertexT, EdgeT extends Number> {
      * Method for dfs realization with searching a cycle.
      *
      * @param index of vertex.
-     * @throws CycleFoundException
-     * @throws InvalidVertexException
      */
     public void dfs(int index) throws CycleFoundException, InvalidVertexException {
 
