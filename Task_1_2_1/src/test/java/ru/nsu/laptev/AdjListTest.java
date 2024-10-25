@@ -123,6 +123,6 @@ class AdjListTest {
 
     @Test
     void readGraphTest() {
-        
+
     }
 }

@@ -14,8 +14,8 @@ public class TopoSortTest {
     public void testTopologicalSort() {
         String[] vertices = {"A", "B", "C", "D"};
         IncMatrix<String, Integer> graph = new IncMatrix<>();
-        for (String s: vertices) {
-            try{
+        for (String s : vertices) {
+            try {
                 graph.addVertex(s);
             } catch (InvalidVertexException e) {
                 System.out.println("ok");
@@ -23,24 +23,24 @@ public class TopoSortTest {
         }
         try {
             graph.addEdge("A", "B", 1);
-        }catch (InvalidVertexException epr) {
+        } catch (InvalidVertexException epr) {
 
-        } catch(InvalidEdgeException epr) {
+        } catch (InvalidEdgeException epr) {
 
         }
         try {
             graph.addEdge("C", "D", 1);
-        }catch (InvalidVertexException epr) {
+        } catch (InvalidVertexException epr) {
 
-        } catch(InvalidEdgeException epr) {
+        } catch (InvalidEdgeException epr) {
 
         }
 
         try {
             graph.addEdge("B", "C", 1);
-        }catch (InvalidVertexException epr) {
+        } catch (InvalidVertexException epr) {
 
-        } catch(InvalidEdgeException epr) {
+        } catch (InvalidEdgeException epr) {
 
         }
         TopoSort<String, Integer> topoSort = new TopoSort<>(graph);
@@ -64,23 +64,23 @@ public class TopoSortTest {
 
         try {
             graph.addEdge("A", "B", 1);
-        }catch (InvalidVertexException epr) {
+        } catch (InvalidVertexException epr) {
 
-        } catch(InvalidEdgeException epr) {
+        } catch (InvalidEdgeException epr) {
 
         }
         try {
             graph.addEdge("B", "C", 1);
-        }catch (InvalidVertexException epr) {
+        } catch (InvalidVertexException epr) {
 
-        } catch(InvalidEdgeException epr) {
+        } catch (InvalidEdgeException epr) {
 
         }
         try {
             graph.addEdge("C", "A", 1);
-        }catch (InvalidVertexException epr) {
+        } catch (InvalidVertexException epr) {
 
-        } catch(InvalidEdgeException epr) {
+        } catch (InvalidEdgeException epr) {
 
         }
         TopoSort<String, Integer> topoSort = new TopoSort<>(graph);
