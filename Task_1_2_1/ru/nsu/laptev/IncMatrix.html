@@ -261,7 +261,9 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#read_from_file(java.lang.String)">read_from_file</a></span>&#8203;(java.lang.String&nbsp;path)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#read_from_file(ru.nsu.laptev.Transformer,ru.nsu.laptev.Transformer,java.lang.String)">read_from_file</a></span>&#8203;(<a href="Transformer.html" title="interface in ru.nsu.laptev">Transformer</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&gt;&nbsp;vertexTransformer,
+              <a href="Transformer.html" title="interface in ru.nsu.laptev">Transformer</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeType</a>&gt;&nbsp;edgeTransformer,
+              java.lang.String&nbsp;path)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 </table>
@@ -385,17 +387,19 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <pre class="methodSignature">public&nbsp;int&nbsp;get_edge_index&#8203;(<a href="Edge.html" title="class in ru.nsu.laptev">Edge</a>&nbsp;edge)</pre>
 </li>
 </ul>
-<a id="read_from_file(java.lang.String)">
+<a id="read_from_file(ru.nsu.laptev.Transformer,ru.nsu.laptev.Transformer,java.lang.String)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>read_from_file</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;read_from_file&#8203;(java.lang.String&nbsp;path)
+<pre class="methodSignature">public&nbsp;void&nbsp;read_from_file&#8203;(<a href="Transformer.html" title="interface in ru.nsu.laptev">Transformer</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&gt;&nbsp;vertexTransformer,
+                           <a href="Transformer.html" title="interface in ru.nsu.laptev">Transformer</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeType</a>&gt;&nbsp;edgeTransformer,
+                           java.lang.String&nbsp;path)
                     throws java.io.FileNotFoundException</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#read_from_file(java.lang.String)">read_from_file</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeType</a> extends java.lang.Number&gt;</code></dd>
+<dd><code><a href="Graph.html#read_from_file(ru.nsu.laptev.Transformer,ru.nsu.laptev.Transformer,java.lang.String)">read_from_file</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeType</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.io.FileNotFoundException</code></dd>
 </dl>
