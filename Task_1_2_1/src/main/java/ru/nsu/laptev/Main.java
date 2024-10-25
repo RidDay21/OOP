@@ -1,16 +1,14 @@
 package ru.nsu.laptev;
 
-import java.util.ArrayList;
-import java.util.Scanner;
 import java.security.InvalidParameterException;
 
 import java.io.InvalidObjectException;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
 import java.io.FileNotFoundException;
 import javax.lang.model.element.UnknownElementException;
-
-
-;
-
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -37,28 +35,28 @@ public class Main {
         try {
             new1.addVertex("12");
         } catch (InvalidVertexException e) {
-
+            System.out.println();
         }
 
         try {
             new1.addVertex("aboba");
         } catch (InvalidVertexException e) {
-
+            System.out.println();
         }
         try {
             new1.addVertex("35");
         } catch (InvalidVertexException e) {
-
+            System.out.println();
         }
         try {
             new1.addVertex("Marcus");
         } catch (InvalidVertexException e) {
-
+            System.out.println();
         }
         try {
             new1.addVertex("Sick");
         } catch (InvalidVertexException e) {
-
+            System.out.println();
         }
 
         new1.print_graph();

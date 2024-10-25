@@ -5,9 +5,10 @@ import java.util.ArrayList;
 
 /**
  * Interface for graph implementaton.
- * @param <VertexT>
- * @param <EdgeT>
+ * @param <VertexT> for vertex type.
+ * @param <EdgeT> for edge type.
  */
+
 public interface Graph<VertexT, EdgeT extends Number> {
     public int get_vertex_index(VertexT name);
 
@@ -19,9 +20,11 @@ public interface Graph<VertexT, EdgeT extends Number> {
 
     public void delVertex(VertexT name) throws InvalidVertexException, InvalidEdgeException;
 
-    public void addEdge(VertexT start, VertexT end, EdgeT name) throws InvalidVertexException, InvalidEdgeException;
+    public void addEdge(VertexT start, VertexT end, EdgeT name) throws InvalidVertexException,
+            InvalidEdgeException;
 
-    public void delEdge(VertexT start, VertexT end) throws InvalidEdgeException, InvalidVertexException;
+    public void delEdge(VertexT start, VertexT end) throws InvalidEdgeException,
+            InvalidVertexException;
 
     public ArrayList<VertexT> get_neighbours(VertexT name) throws InvalidVertexException;
 

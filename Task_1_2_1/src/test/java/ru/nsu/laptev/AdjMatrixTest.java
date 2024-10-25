@@ -2,16 +2,11 @@ package ru.nsu.laptev;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.ArrayList;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-
-
-
-
 
 class AdjMatrixTest {
     AdjMatrix<String, Integer> graph = new AdjMatrix<>();
@@ -19,7 +14,7 @@ class AdjMatrixTest {
     ArrayList<String> vertices = new ArrayList<>();
 
     String[][] edges = {{"a", "b", "23"}, {"a", "c", "231"}, {"e", "b", "34"},
-            {"f", "b", "3"}, {"b", "a", "1221"}, {"d", "e", "2"}};
+                        {"f", "b", "3"}, {"b", "a", "1221"}, {"d", "e", "2"}};
 
     @BeforeEach
     void initialize() {
@@ -111,7 +106,7 @@ class AdjMatrixTest {
         try {
             neighbours = graph.get_neighbours("d");
         } catch (InvalidVertexException e) {
-
+            int f = 9;
         }
 
         try {
