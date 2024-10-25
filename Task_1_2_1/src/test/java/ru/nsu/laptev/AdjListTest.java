@@ -1,12 +1,12 @@
 package ru.nsu.laptev;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class AdjListTest {
     AdjList<String, Integer> graph = new AdjList<>();

@@ -1,12 +1,15 @@
 package ru.nsu.laptev;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.io.FileNotFoundException;
+import java.io.File;
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class IncMatrixTest {
     IncMatrix<String, Integer> graph = new IncMatrix<>();
