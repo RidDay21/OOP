@@ -115,14 +115,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <main role="main">
 <div class="header">
 <div class="subTitle"><span class="packageLabelInType">Package</span>&nbsp;<a href="package-summary.html">ru.nsu.laptev</a></div>
-<h2 title="Class IncMatrix" class="title">Class IncMatrix&lt;VertexType,&#8203;EdgeType extends java.lang.Number&gt;</h2>
+<h2 title="Class IncMatrix" class="title">Class IncMatrix&lt;VertexT,&#8203;EdgeT extends java.lang.Number&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li>ru.nsu.laptev.IncMatrix&lt;VertexType,&#8203;EdgeType&gt;</li>
+<li>ru.nsu.laptev.IncMatrix&lt;VertexT,&#8203;EdgeT&gt;</li>
 </ul>
 </li>
 </ul>
@@ -131,12 +131,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;VertexType,&#8203;EdgeType&gt;</code></dd>
+<dd><code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;VertexT,&#8203;EdgeT&gt;</code></dd>
 </dl>
 <hr>
-<pre>public class <span class="typeNameLabel">IncMatrix&lt;VertexType,&#8203;EdgeType extends java.lang.Number&gt;</span>
+<pre>public class <span class="typeNameLabel">IncMatrix&lt;VertexT,&#8203;EdgeT extends java.lang.Number&gt;</span>
 extends java.lang.Object
-implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;VertexType,&#8203;EdgeType&gt;</pre>
+implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;VertexT,&#8203;EdgeT&gt;</pre>
 </li>
 </ul>
 </div>
@@ -203,25 +203,25 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addEdge(VertexType,VertexType,EdgeType)">addEdge</a></span>&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&nbsp;start,
-       <a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&nbsp;end,
-       <a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeType</a>&nbsp;name)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addEdge(VertexT,VertexT,EdgeT)">addEdge</a></span>&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&nbsp;start,
+       <a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&nbsp;end,
+       <a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeT</a>&nbsp;name)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addVertex(VertexType)">addVertex</a></span>&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&nbsp;name)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addVertex(VertexT)">addVertex</a></span>&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&nbsp;name)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#delEdge(VertexType,VertexType)">delEdge</a></span>&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&nbsp;start,
-       <a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&nbsp;end)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#delEdge(VertexT,VertexT)">delEdge</a></span>&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&nbsp;start,
+       <a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&nbsp;end)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#delVertex(VertexType)">delVertex</a></span>&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&nbsp;name)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#delVertex(VertexT)">delVertex</a></span>&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&nbsp;name)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
@@ -230,13 +230,13 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code>java.util.ArrayList&lt;<a href="Edge.html" title="class in ru.nsu.laptev">Edge</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeType</a>&gt;&gt;</code></td>
+<td class="colFirst"><code>java.util.ArrayList&lt;<a href="Edge.html" title="class in ru.nsu.laptev">Edge</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeT</a>&gt;&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get_edges()">get_edges</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code>java.util.ArrayList&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&gt;</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get_neighbours(VertexType)">get_neighbours</a></span>&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&nbsp;name)</code></th>
+<td class="colFirst"><code>java.util.ArrayList&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get_neighbours(VertexT)">get_neighbours</a></span>&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&nbsp;name)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
@@ -246,11 +246,11 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>int</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get_vertex_index(VertexType)">get_vertex_index</a></span>&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&nbsp;name)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get_vertex_index(VertexT)">get_vertex_index</a></span>&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&nbsp;name)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
-<td class="colFirst"><code>java.util.ArrayList&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&gt;</code></td>
+<td class="colFirst"><code>java.util.ArrayList&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get_vertices()">get_vertices</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -261,8 +261,8 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#read_from_file(ru.nsu.laptev.Transformer,ru.nsu.laptev.Transformer,java.lang.String)">read_from_file</a></span>&#8203;(<a href="Transformer.html" title="interface in ru.nsu.laptev">Transformer</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&gt;&nbsp;vertexTransformer,
-              <a href="Transformer.html" title="interface in ru.nsu.laptev">Transformer</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeType</a>&gt;&nbsp;edgeTransformer,
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#read_from_file(ru.nsu.laptev.Transformer,ru.nsu.laptev.Transformer,java.lang.String)">read_from_file</a></span>&#8203;(<a href="Transformer.html" title="interface in ru.nsu.laptev">Transformer</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&gt;&nbsp;vertexTransformer,
+              <a href="Transformer.html" title="interface in ru.nsu.laptev">Transformer</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeT</a>&gt;&nbsp;edgeTransformer,
               java.lang.String&nbsp;path)</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
@@ -343,10 +343,10 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <ul class="blockList">
 <li class="blockList">
 <h4>get_vertices</h4>
-<pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&gt;&nbsp;get_vertices()</pre>
+<pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&gt;&nbsp;get_vertices()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#get_vertices()">get_vertices</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeType</a> extends java.lang.Number&gt;</code></dd>
+<dd><code><a href="Graph.html#get_vertices()">get_vertices</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeT</a> extends java.lang.Number&gt;</code></dd>
 </dl>
 </li>
 </ul>
@@ -356,25 +356,25 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <ul class="blockList">
 <li class="blockList">
 <h4>get_edges</h4>
-<pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;<a href="Edge.html" title="class in ru.nsu.laptev">Edge</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeType</a>&gt;&gt;&nbsp;get_edges()</pre>
+<pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;<a href="Edge.html" title="class in ru.nsu.laptev">Edge</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeT</a>&gt;&gt;&nbsp;get_edges()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#get_edges()">get_edges</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeType</a> extends java.lang.Number&gt;</code></dd>
+<dd><code><a href="Graph.html#get_edges()">get_edges</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeT</a> extends java.lang.Number&gt;</code></dd>
 </dl>
 </li>
 </ul>
 <a id="get_vertex_index(java.lang.Object)">
 <!--   -->
-</a><a id="get_vertex_index(VertexType)">
+</a><a id="get_vertex_index(VertexT)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>get_vertex_index</h4>
-<pre class="methodSignature">public&nbsp;int&nbsp;get_vertex_index&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&nbsp;name)</pre>
+<pre class="methodSignature">public&nbsp;int&nbsp;get_vertex_index&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&nbsp;name)</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#get_vertex_index(VertexType)">get_vertex_index</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeType</a> extends java.lang.Number&gt;</code></dd>
+<dd><code><a href="Graph.html#get_vertex_index(VertexT)">get_vertex_index</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeT</a> extends java.lang.Number&gt;</code></dd>
 </dl>
 </li>
 </ul>
@@ -393,13 +393,13 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <ul class="blockList">
 <li class="blockList">
 <h4>read_from_file</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;read_from_file&#8203;(<a href="Transformer.html" title="interface in ru.nsu.laptev">Transformer</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&gt;&nbsp;vertexTransformer,
-                           <a href="Transformer.html" title="interface in ru.nsu.laptev">Transformer</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeType</a>&gt;&nbsp;edgeTransformer,
+<pre class="methodSignature">public&nbsp;void&nbsp;read_from_file&#8203;(<a href="Transformer.html" title="interface in ru.nsu.laptev">Transformer</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&gt;&nbsp;vertexTransformer,
+                           <a href="Transformer.html" title="interface in ru.nsu.laptev">Transformer</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeT</a>&gt;&nbsp;edgeTransformer,
                            java.lang.String&nbsp;path)
                     throws java.io.FileNotFoundException</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#read_from_file(ru.nsu.laptev.Transformer,ru.nsu.laptev.Transformer,java.lang.String)">read_from_file</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeType</a> extends java.lang.Number&gt;</code></dd>
+<dd><code><a href="Graph.html#read_from_file(ru.nsu.laptev.Transformer,ru.nsu.laptev.Transformer,java.lang.String)">read_from_file</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeT</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.io.FileNotFoundException</code></dd>
 </dl>
@@ -407,17 +407,17 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 </ul>
 <a id="addVertex(java.lang.Object)">
 <!--   -->
-</a><a id="addVertex(VertexType)">
+</a><a id="addVertex(VertexT)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>addVertex</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;addVertex&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&nbsp;name)
+<pre class="methodSignature">public&nbsp;void&nbsp;addVertex&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&nbsp;name)
                throws <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#addVertex(VertexType)">addVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeType</a> extends java.lang.Number&gt;</code></dd>
+<dd><code><a href="Graph.html#addVertex(VertexT)">addVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeT</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
 </dl>
@@ -425,18 +425,18 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 </ul>
 <a id="delVertex(java.lang.Object)">
 <!--   -->
-</a><a id="delVertex(VertexType)">
+</a><a id="delVertex(VertexT)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>delVertex</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;delVertex&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&nbsp;name)
+<pre class="methodSignature">public&nbsp;void&nbsp;delVertex&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&nbsp;name)
                throws <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a>,
                       <a href="InvalidEdgeException.html" title="class in ru.nsu.laptev">InvalidEdgeException</a></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#delVertex(VertexType)">delVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeType</a> extends java.lang.Number&gt;</code></dd>
+<dd><code><a href="Graph.html#delVertex(VertexT)">delVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeT</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
 <dd><code><a href="InvalidEdgeException.html" title="class in ru.nsu.laptev">InvalidEdgeException</a></code></dd>
@@ -445,20 +445,20 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 </ul>
 <a id="addEdge(java.lang.Object,java.lang.Object,java.lang.Number)">
 <!--   -->
-</a><a id="addEdge(VertexType,VertexType,EdgeType)">
+</a><a id="addEdge(VertexT,VertexT,EdgeT)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>addEdge</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;addEdge&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&nbsp;start,
-                    <a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&nbsp;end,
-                    <a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeType</a>&nbsp;name)
+<pre class="methodSignature">public&nbsp;void&nbsp;addEdge&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&nbsp;start,
+                    <a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&nbsp;end,
+                    <a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeT</a>&nbsp;name)
              throws <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a>,
                     <a href="InvalidEdgeException.html" title="class in ru.nsu.laptev">InvalidEdgeException</a></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#addEdge(VertexType,VertexType,EdgeType)">addEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeType</a> extends java.lang.Number&gt;</code></dd>
+<dd><code><a href="Graph.html#addEdge(VertexT,VertexT,EdgeT)">addEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeT</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
 <dd><code><a href="InvalidEdgeException.html" title="class in ru.nsu.laptev">InvalidEdgeException</a></code></dd>
@@ -467,19 +467,19 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 </ul>
 <a id="delEdge(java.lang.Object,java.lang.Object)">
 <!--   -->
-</a><a id="delEdge(VertexType,VertexType)">
+</a><a id="delEdge(VertexT,VertexT)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>delEdge</h4>
-<pre class="methodSignature">public&nbsp;void&nbsp;delEdge&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&nbsp;start,
-                    <a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&nbsp;end)
+<pre class="methodSignature">public&nbsp;void&nbsp;delEdge&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&nbsp;start,
+                    <a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&nbsp;end)
              throws <a href="InvalidEdgeException.html" title="class in ru.nsu.laptev">InvalidEdgeException</a>,
                     <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#delEdge(VertexType,VertexType)">delEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeType</a> extends java.lang.Number&gt;</code></dd>
+<dd><code><a href="Graph.html#delEdge(VertexT,VertexT)">delEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeT</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="InvalidEdgeException.html" title="class in ru.nsu.laptev">InvalidEdgeException</a></code></dd>
 <dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
@@ -488,17 +488,17 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 </ul>
 <a id="get_neighbours(java.lang.Object)">
 <!--   -->
-</a><a id="get_neighbours(VertexType)">
+</a><a id="get_neighbours(VertexT)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>get_neighbours</h4>
-<pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&gt;&nbsp;get_neighbours&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>&nbsp;name)
-                                               throws <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></pre>
+<pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&gt;&nbsp;get_neighbours&#8203;(<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>&nbsp;name)
+                                            throws <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#get_neighbours(VertexType)">get_neighbours</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeType</a> extends java.lang.Number&gt;</code></dd>
+<dd><code><a href="Graph.html#get_neighbours(VertexT)">get_neighbours</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeT</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
 </dl>
@@ -513,7 +513,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <pre class="methodSignature">public&nbsp;void&nbsp;print_graph()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="Graph.html#print_graph()">print_graph</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexType</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeType</a> extends java.lang.Number&gt;</code></dd>
+<dd><code><a href="Graph.html#print_graph()">print_graph</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="IncMatrix.html" title="type parameter in IncMatrix">VertexT</a>,&#8203;<a href="IncMatrix.html" title="type parameter in IncMatrix">EdgeT</a> extends java.lang.Number&gt;</code></dd>
 </dl>
 </li>
 </ul>
