@@ -6,6 +6,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * Class for implementation graph with AdjList.
+ *
+ * @param <VertexT> for vertex type.
+ * @param <EdgeT> for edge type.
+ */
 public class AdjList<VertexT, EdgeT extends Number> implements Graph<VertexT, EdgeT> {
     private static final int SIZE = Integer.MAX_VALUE;
 
@@ -42,6 +48,9 @@ public class AdjList<VertexT, EdgeT extends Number> implements Graph<VertexT, Ed
         return -1;
     }
 
+    /**
+     * Method for reading graph from file.
+     */
     public void read_from_file(Transformer<VertexT> vertexTransformer,
                                Transformer<EdgeT> edgeTransformer,
                                String path) throws FileNotFoundException {
@@ -87,7 +96,11 @@ public class AdjList<VertexT, EdgeT extends Number> implements Graph<VertexT, Ed
         }
     }
 
-
+    /**
+     * Method for adding a vertex into my graph.
+     *
+     * @param name of vertex.
+     */
     public void addVertex(VertexT name) throws InvalidVertexException {
         if (vertices.contains(name)) {
             throw new InvalidVertexException("Graph has already haven such vertex.");
@@ -98,6 +111,11 @@ public class AdjList<VertexT, EdgeT extends Number> implements Graph<VertexT, Ed
         matrix.add(row);
     }
 
+    /**
+     * Method for deletting a vertex from my graph.
+     *
+     * @param name of vertex.
+     */
     public void delVertex(VertexT name) throws InvalidVertexException, InvalidEdgeException {
         int index = get_vertex_index(name);
         if (index == -1) {
@@ -111,6 +129,13 @@ public class AdjList<VertexT, EdgeT extends Number> implements Graph<VertexT, Ed
         vertexNumber--;
     }
 
+    /**
+     * Method for adding an edge to my graph.
+     *
+     * @param start - name of startVertex.
+     * @param end - name of endVertex.
+     * @param name of edge.
+     */
     public void addEdge(VertexT start, VertexT end, EdgeT name) throws
             InvalidVertexException, InvalidEdgeException {
         Edge e = new Edge(start, end, name);
@@ -134,7 +159,10 @@ public class AdjList<VertexT, EdgeT extends Number> implements Graph<VertexT, Ed
     }
 
     /**
-     * Method for deletting edge.
+     * Method for deletting an edge from my graph.
+     *
+     * @param start - name of startVertex.
+     * @param end - name of endVertex.
      */
     public void delEdge(VertexT start, VertexT end) throws InvalidEdgeException,
             InvalidVertexException {
@@ -160,6 +188,8 @@ public class AdjList<VertexT, EdgeT extends Number> implements Graph<VertexT, Ed
 
     /**
      * Method for getting neighbours of vertex.
+     *
+     * @param name of vertex.
      */
     public ArrayList<VertexT> get_neighbours(VertexT name) throws InvalidVertexException {
         ArrayList<VertexT> neighboursList = new ArrayList<>();

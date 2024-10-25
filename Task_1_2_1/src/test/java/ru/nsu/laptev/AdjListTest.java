@@ -14,7 +14,7 @@ class AdjListTest {
     ArrayList<String> vertices = new ArrayList<>();
 
     String[][] edges = {{"a", "b", "23"}, {"a", "c", "231"}, {"e", "b", "34"},
-            {"f", "b", "3"}, {"b", "a", "1221"}, {"d", "e", "2"}};
+                        {"f", "b", "3"}, {"b", "a", "1221"}, {"d", "e", "2"}};
 
 
     @BeforeEach

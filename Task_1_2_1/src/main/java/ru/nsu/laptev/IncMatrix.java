@@ -3,6 +3,12 @@ package ru.nsu.laptev;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
+/**
+ * Class for implementation graph with IncMatrix.
+ *
+ * @param <VertexT> for vertex type.
+ * @param <EdgeT> for edge type.
+ */
 public class IncMatrix<VertexT, EdgeT extends Number> implements Graph<VertexT, EdgeT> {
     public ArrayList<ArrayList<Integer>> matrix = new ArrayList<>();
     private ArrayList<VertexT> vertices = new ArrayList<>();
@@ -39,11 +45,19 @@ public class IncMatrix<VertexT, EdgeT extends Number> implements Graph<VertexT, 
         return -1;
     }
 
+    /**
+     * Method for reading graph from file.
+     */
     public void read_from_file(Transformer<VertexT> vertexTransformer,
                                Transformer<EdgeT> edgeTransformer,
                                String path) throws FileNotFoundException {
     }
 
+    /**
+     * Method for adding a vertex into my graph.
+     *
+     * @param name of vertex.
+     */
     public void addVertex(VertexT name) throws InvalidVertexException {
         if (vertices.contains(name)) {
             throw new InvalidVertexException("Graph has already haven such vertex.");
@@ -60,6 +74,11 @@ public class IncMatrix<VertexT, EdgeT extends Number> implements Graph<VertexT, 
         }
     }
 
+    /**
+     * Method for deletting a vertex from my graph.
+     *
+     * @param name of vertex.
+     */
     public void delVertex(VertexT name) throws InvalidVertexException, InvalidEdgeException {
         int index = get_vertex_index(name);
         if (index == -1) {
@@ -85,7 +104,13 @@ public class IncMatrix<VertexT, EdgeT extends Number> implements Graph<VertexT, 
         vertexNumber--;
     }
 
-
+    /**
+     * Method for adding an edge to my graph.
+     *
+     * @param start - name of startVertex.
+     * @param end - name of endVertex.
+     * @param name of edge.
+     */
     public void addEdge(VertexT start, VertexT end, EdgeT name) throws InvalidVertexException,
             InvalidEdgeException {
         for (int i = 0; i < vertexNumber; i++) { //Adding null to each row
@@ -117,6 +142,12 @@ public class IncMatrix<VertexT, EdgeT extends Number> implements Graph<VertexT, 
 
     }
 
+    /**
+     * Method for deletting an edge from my graph.
+     *
+     * @param start - name of startVertex.
+     * @param end - name of endVertex.
+     */
     public void delEdge(VertexT start, VertexT end) throws InvalidEdgeException,
             InvalidVertexException {
         edgeNumber--;
@@ -145,6 +176,11 @@ public class IncMatrix<VertexT, EdgeT extends Number> implements Graph<VertexT, 
         }
     }
 
+    /**
+     * Method for getting neighbours of vertex.
+     *
+     * @param name of vertex.
+     */
     public ArrayList<VertexT> get_neighbours(VertexT name) throws InvalidVertexException {
         ArrayList<VertexT> neighboursList = new ArrayList<>();
         int vertexIndex = get_vertex_index(name);
@@ -168,6 +204,9 @@ public class IncMatrix<VertexT, EdgeT extends Number> implements Graph<VertexT, 
         return neighboursList;
     }
 
+    /**
+     * Method for printing my graph.
+     */
     public void print_graph() {
         for (int i = 0; i < vertexNumber; i++) {
             System.out.println("Vertex " + vertices.get(i) + ": " + matrix.get(i));

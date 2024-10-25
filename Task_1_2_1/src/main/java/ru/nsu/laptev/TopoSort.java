@@ -3,6 +3,12 @@ package ru.nsu.laptev;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * Class for implementation Toposort.
+ *
+ * @param <VertexT> for vertex type.
+ * @param <EdgeT> for edge type.
+ */
 public class TopoSort<VertexT, EdgeT extends Number> {
     int length;
     private Graph<VertexT, EdgeT> matrix;
@@ -21,7 +27,13 @@ public class TopoSort<VertexT, EdgeT extends Number> {
         }
     }
 
-
+    /**
+     * Method for dfs realization with searching a cycle.
+     *
+     * @param index of vertex.
+     * @throws CycleFoundException
+     * @throws InvalidVertexException
+     */
     public void dfs(int index) throws CycleFoundException, InvalidVertexException {
 
         visited[index] = 'g';
@@ -45,6 +57,11 @@ public class TopoSort<VertexT, EdgeT extends Number> {
         order.add(vertices.get(index));
     }
 
+    /**
+     * Class for TopoSort.
+     *
+     * @return right order of toposort.
+     */
     public ArrayList<VertexT> topologicalSort() throws InvalidVertexException,
             CycleFoundException {
         for (int i = 0; i < length; i++) {

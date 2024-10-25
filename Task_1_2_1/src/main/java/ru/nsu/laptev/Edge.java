@@ -1,5 +1,10 @@
 package ru.nsu.laptev;
 
+/**
+ * Class for edge implementation.
+ * @param <VertexT> for vertex type.
+ * @param <EdgeT> for edge type.
+ */
 public class Edge<VertexT, EdgeT> {
     private VertexT startVertex;
     private VertexT endVertex;
