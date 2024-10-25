@@ -129,9 +129,15 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
+<dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>VertexT</code> - for vertex type.</dd>
+<dd><code>EdgeT</code> - for edge type.</dd>
+</dl>
 <hr>
 <pre>public class <span class="typeNameLabel">TopoSort&lt;VertexT,&#8203;EdgeT extends java.lang.Number&gt;</span>
 extends java.lang.Object</pre>
+<div class="block">Class for implementation Toposort.</div>
 </li>
 </ul>
 </div>
@@ -176,12 +182,16 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#dfs(int)">dfs</a></span>&#8203;(int&nbsp;index)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method for dfs realization with searching a cycle.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>java.util.ArrayList&lt;<a href="TopoSort.html" title="type parameter in TopoSort">VertexT</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#topologicalSort()">topologicalSort</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Class for TopoSort.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -235,7 +245,10 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;void&nbsp;dfs&#8203;(int&nbsp;index)
          throws <a href="CycleFoundException.html" title="class in ru.nsu.laptev">CycleFoundException</a>,
                 <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></pre>
+<div class="block">Method for dfs realization with searching a cycle.</div>
 <dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>index</code> - of vertex.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="CycleFoundException.html" title="class in ru.nsu.laptev">CycleFoundException</a></code></dd>
 <dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
@@ -251,7 +264,10 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;<a href="TopoSort.html" title="type parameter in TopoSort">VertexT</a>&gt;&nbsp;topologicalSort()
                                              throws <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a>,
                                                     <a href="CycleFoundException.html" title="class in ru.nsu.laptev">CycleFoundException</a></pre>
+<div class="block">Class for TopoSort.</div>
 <dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>right order of toposort.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
 <dd><code><a href="CycleFoundException.html" title="class in ru.nsu.laptev">CycleFoundException</a></code></dd>

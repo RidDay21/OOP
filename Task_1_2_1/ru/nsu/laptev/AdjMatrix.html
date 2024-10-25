@@ -130,6 +130,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>VertexT</code> - for vertex type.</dd>
+<dd><code>EdgeT</code> - for edge type.</dd>
+</dl>
+<dl>
 <dt>All Implemented Interfaces:</dt>
 <dd><code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;VertexT,&#8203;EdgeT&gt;</code></dd>
 </dl>
@@ -137,6 +142,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">AdjMatrix&lt;VertexT,&#8203;EdgeT extends java.lang.Number&gt;</span>
 extends java.lang.Object
 implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;VertexT,&#8203;EdgeT&gt;</pre>
+<div class="block">Class for implementation graph with AdjMatrix.</div>
 </li>
 </ul>
 </div>
@@ -206,7 +212,9 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addEdge(VertexT,VertexT,EdgeT)">addEdge</a></span>&#8203;(<a href="AdjMatrix.html" title="type parameter in AdjMatrix">VertexT</a>&nbsp;start,
        <a href="AdjMatrix.html" title="type parameter in AdjMatrix">VertexT</a>&nbsp;end,
        <a href="AdjMatrix.html" title="type parameter in AdjMatrix">EdgeT</a>&nbsp;name)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method for adding an edge to my graph.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -219,12 +227,16 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#delEdge(VertexT,VertexT)">delEdge</a></span>&#8203;(<a href="AdjMatrix.html" title="type parameter in AdjMatrix">VertexT</a>&nbsp;start,
        <a href="AdjMatrix.html" title="type parameter in AdjMatrix">VertexT</a>&nbsp;end)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method for deletting an edge from my graph.</div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#delVertex(VertexT)">delVertex</a></span>&#8203;(<a href="AdjMatrix.html" title="type parameter in AdjMatrix">VertexT</a>&nbsp;name)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method for deletting a vertex from my graph.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>int</code></td>
@@ -239,7 +251,9 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>java.util.ArrayList&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">VertexT</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get_neighbours(VertexT)">get_neighbours</a></span>&#8203;(<a href="AdjMatrix.html" title="type parameter in AdjMatrix">VertexT</a>&nbsp;name)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method for getting neighbours of vertex.</div>
+</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>int</code></td>
@@ -254,14 +268,18 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#print_graph()">print_graph</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method for printing my graph.</div>
+</td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#read_from_file(ru.nsu.laptev.Transformer,ru.nsu.laptev.Transformer,java.lang.String)">read_from_file</a></span>&#8203;(<a href="Transformer.html" title="interface in ru.nsu.laptev">Transformer</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">VertexT</a>&gt;&nbsp;vertexTransformer,
               <a href="Transformer.html" title="interface in ru.nsu.laptev">Transformer</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">EdgeT</a>&gt;&nbsp;edgeTransformer,
               java.lang.String&nbsp;path)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method for reading graph from file.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -385,6 +403,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
                            <a href="Transformer.html" title="interface in ru.nsu.laptev">Transformer</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">EdgeT</a>&gt;&nbsp;edgeTransformer,
                            java.lang.String&nbsp;path)
                     throws java.io.FileNotFoundException</pre>
+<div class="block">Method for reading graph from file.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Graph.html#read_from_file(ru.nsu.laptev.Transformer,ru.nsu.laptev.Transformer,java.lang.String)">read_from_file</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">VertexT</a>,&#8203;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">EdgeT</a> extends java.lang.Number&gt;</code></dd>
@@ -408,7 +427,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Graph.html#addVertex(VertexT)">addVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">VertexT</a>,&#8203;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">EdgeT</a> extends java.lang.Number&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>name</code> - - name of new vertex</dd>
+<dd><code>name</code> - - name of new vertex.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
 </dl>
@@ -425,9 +444,12 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <pre class="methodSignature">public&nbsp;void&nbsp;delVertex&#8203;(<a href="AdjMatrix.html" title="type parameter in AdjMatrix">VertexT</a>&nbsp;name)
                throws <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a>,
                       <a href="InvalidEdgeException.html" title="class in ru.nsu.laptev">InvalidEdgeException</a></pre>
+<div class="block">Method for deletting a vertex from my graph.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Graph.html#delVertex(VertexT)">delVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">VertexT</a>,&#8203;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">EdgeT</a> extends java.lang.Number&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>name</code> - of vertex.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
 <dd><code><a href="InvalidEdgeException.html" title="class in ru.nsu.laptev">InvalidEdgeException</a></code></dd>
@@ -447,9 +469,14 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
                     <a href="AdjMatrix.html" title="type parameter in AdjMatrix">EdgeT</a>&nbsp;name)
              throws <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a>,
                     <a href="InvalidEdgeException.html" title="class in ru.nsu.laptev">InvalidEdgeException</a></pre>
+<div class="block">Method for adding an edge to my graph.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Graph.html#addEdge(VertexT,VertexT,EdgeT)">addEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">VertexT</a>,&#8203;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">EdgeT</a> extends java.lang.Number&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>start</code> - - name of startVertex.</dd>
+<dd><code>end</code> - - name of endVertex.</dd>
+<dd><code>name</code> - of edge.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
 <dd><code><a href="InvalidEdgeException.html" title="class in ru.nsu.laptev">InvalidEdgeException</a></code></dd>
@@ -468,9 +495,13 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
                     <a href="AdjMatrix.html" title="type parameter in AdjMatrix">VertexT</a>&nbsp;end)
              throws <a href="InvalidEdgeException.html" title="class in ru.nsu.laptev">InvalidEdgeException</a>,
                     <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></pre>
+<div class="block">Method for deletting an edge from my graph.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Graph.html#delEdge(VertexT,VertexT)">delEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">VertexT</a>,&#8203;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">EdgeT</a> extends java.lang.Number&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>start</code> - - name of startVertex.</dd>
+<dd><code>end</code> - - name of endVertex.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="InvalidEdgeException.html" title="class in ru.nsu.laptev">InvalidEdgeException</a></code></dd>
 <dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
@@ -487,9 +518,12 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <h4>get_neighbours</h4>
 <pre class="methodSignature">public&nbsp;java.util.ArrayList&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">VertexT</a>&gt;&nbsp;get_neighbours&#8203;(<a href="AdjMatrix.html" title="type parameter in AdjMatrix">VertexT</a>&nbsp;name)
                                             throws <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></pre>
+<div class="block">Method for getting neighbours of vertex.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Graph.html#get_neighbours(VertexT)">get_neighbours</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">VertexT</a>,&#8203;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">EdgeT</a> extends java.lang.Number&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>name</code> - of vertex.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
 </dl>
@@ -502,6 +536,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <li class="blockList">
 <h4>print_graph</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;print_graph()</pre>
+<div class="block">Method for printing my graph.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Graph.html#print_graph()">print_graph</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">VertexT</a>,&#8203;<a href="AdjMatrix.html" title="type parameter in AdjMatrix">EdgeT</a> extends java.lang.Number&gt;</code></dd>

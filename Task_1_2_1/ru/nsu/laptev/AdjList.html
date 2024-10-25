@@ -130,6 +130,11 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <ul class="blockList">
 <li class="blockList">
 <dl>
+<dt><span class="paramLabel">Type Parameters:</span></dt>
+<dd><code>VertexT</code> - for vertex type.</dd>
+<dd><code>EdgeT</code> - for edge type.</dd>
+</dl>
+<dl>
 <dt>All Implemented Interfaces:</dt>
 <dd><code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;VertexT,&#8203;EdgeT&gt;</code></dd>
 </dl>
@@ -137,6 +142,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <pre>public class <span class="typeNameLabel">AdjList&lt;VertexT,&#8203;EdgeT extends java.lang.Number&gt;</span>
 extends java.lang.Object
 implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;VertexT,&#8203;EdgeT&gt;</pre>
+<div class="block">Class for implementation graph with AdjList.</div>
 </li>
 </ul>
 </div>
@@ -206,25 +212,31 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addEdge(VertexT,VertexT,EdgeT)">addEdge</a></span>&#8203;(<a href="AdjList.html" title="type parameter in AdjList">VertexT</a>&nbsp;start,
        <a href="AdjList.html" title="type parameter in AdjList">VertexT</a>&nbsp;end,
        <a href="AdjList.html" title="type parameter in AdjList">EdgeT</a>&nbsp;name)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method for adding an edge to my graph.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#addVertex(VertexT)">addVertex</a></span>&#8203;(<a href="AdjList.html" title="type parameter in AdjList">VertexT</a>&nbsp;name)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method for adding a vertex into my graph.</div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#delEdge(VertexT,VertexT)">delEdge</a></span>&#8203;(<a href="AdjList.html" title="type parameter in AdjList">VertexT</a>&nbsp;start,
        <a href="AdjList.html" title="type parameter in AdjList">VertexT</a>&nbsp;end)</code></th>
 <td class="colLast">
-<div class="block">Method for deletting edge.</div>
+<div class="block">Method for deletting an edge from my graph.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#delVertex(VertexT)">delVertex</a></span>&#8203;(<a href="AdjList.html" title="type parameter in AdjList">VertexT</a>&nbsp;name)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method for deletting a vertex from my graph.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>int</code></td>
@@ -265,7 +277,9 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#read_from_file(ru.nsu.laptev.Transformer,ru.nsu.laptev.Transformer,java.lang.String)">read_from_file</a></span>&#8203;(<a href="Transformer.html" title="interface in ru.nsu.laptev">Transformer</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">VertexT</a>&gt;&nbsp;vertexTransformer,
               <a href="Transformer.html" title="interface in ru.nsu.laptev">Transformer</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">EdgeT</a>&gt;&nbsp;edgeTransformer,
               java.lang.String&nbsp;path)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method for reading graph from file.</div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -389,6 +403,7 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
                            <a href="Transformer.html" title="interface in ru.nsu.laptev">Transformer</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">EdgeT</a>&gt;&nbsp;edgeTransformer,
                            java.lang.String&nbsp;path)
                     throws java.io.FileNotFoundException</pre>
+<div class="block">Method for reading graph from file.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Graph.html#read_from_file(ru.nsu.laptev.Transformer,ru.nsu.laptev.Transformer,java.lang.String)">read_from_file</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">VertexT</a>,&#8203;<a href="AdjList.html" title="type parameter in AdjList">EdgeT</a> extends java.lang.Number&gt;</code></dd>
@@ -407,9 +422,12 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <h4>addVertex</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;addVertex&#8203;(<a href="AdjList.html" title="type parameter in AdjList">VertexT</a>&nbsp;name)
                throws <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></pre>
+<div class="block">Method for adding a vertex into my graph.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Graph.html#addVertex(VertexT)">addVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">VertexT</a>,&#8203;<a href="AdjList.html" title="type parameter in AdjList">EdgeT</a> extends java.lang.Number&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>name</code> - of vertex.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
 </dl>
@@ -426,9 +444,12 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <pre class="methodSignature">public&nbsp;void&nbsp;delVertex&#8203;(<a href="AdjList.html" title="type parameter in AdjList">VertexT</a>&nbsp;name)
                throws <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a>,
                       <a href="InvalidEdgeException.html" title="class in ru.nsu.laptev">InvalidEdgeException</a></pre>
+<div class="block">Method for deletting a vertex from my graph.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Graph.html#delVertex(VertexT)">delVertex</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">VertexT</a>,&#8203;<a href="AdjList.html" title="type parameter in AdjList">EdgeT</a> extends java.lang.Number&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>name</code> - of vertex.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
 <dd><code><a href="InvalidEdgeException.html" title="class in ru.nsu.laptev">InvalidEdgeException</a></code></dd>
@@ -448,9 +469,14 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
                     <a href="AdjList.html" title="type parameter in AdjList">EdgeT</a>&nbsp;name)
              throws <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a>,
                     <a href="InvalidEdgeException.html" title="class in ru.nsu.laptev">InvalidEdgeException</a></pre>
+<div class="block">Method for adding an edge to my graph.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Graph.html#addEdge(VertexT,VertexT,EdgeT)">addEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">VertexT</a>,&#8203;<a href="AdjList.html" title="type parameter in AdjList">EdgeT</a> extends java.lang.Number&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>start</code> - - name of startVertex.</dd>
+<dd><code>end</code> - - name of endVertex.</dd>
+<dd><code>name</code> - of edge.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
 <dd><code><a href="InvalidEdgeException.html" title="class in ru.nsu.laptev">InvalidEdgeException</a></code></dd>
@@ -469,10 +495,13 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
                     <a href="AdjList.html" title="type parameter in AdjList">VertexT</a>&nbsp;end)
              throws <a href="InvalidEdgeException.html" title="class in ru.nsu.laptev">InvalidEdgeException</a>,
                     <a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></pre>
-<div class="block">Method for deletting edge.</div>
+<div class="block">Method for deletting an edge from my graph.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Graph.html#delEdge(VertexT,VertexT)">delEdge</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">VertexT</a>,&#8203;<a href="AdjList.html" title="type parameter in AdjList">EdgeT</a> extends java.lang.Number&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>start</code> - - name of startVertex.</dd>
+<dd><code>end</code> - - name of endVertex.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="InvalidEdgeException.html" title="class in ru.nsu.laptev">InvalidEdgeException</a></code></dd>
 <dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
@@ -493,6 +522,8 @@ implements <a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="Graph.html#get_neighbours(VertexT)">get_neighbours</a></code>&nbsp;in interface&nbsp;<code><a href="Graph.html" title="interface in ru.nsu.laptev">Graph</a>&lt;<a href="AdjList.html" title="type parameter in AdjList">VertexT</a>,&#8203;<a href="AdjList.html" title="type parameter in AdjList">EdgeT</a> extends java.lang.Number&gt;</code></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>name</code> - of vertex.</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code><a href="InvalidVertexException.html" title="class in ru.nsu.laptev">InvalidVertexException</a></code></dd>
 </dl>
