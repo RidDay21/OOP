@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 /**
  * Interface for graph implementaton.
+ * 
  * @param <VertexT> for vertex type.
  * @param <EdgeT> for edge type.
  */
