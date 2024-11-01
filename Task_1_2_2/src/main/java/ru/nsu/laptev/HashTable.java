@@ -82,7 +82,7 @@ public class HashTable<KeyT, ValueT> {
      * @param value value.
      */
     public void delete(KeyT key, ValueT value) {
-
+        return;
     }
 //
 //    /
@@ -108,13 +108,13 @@ public class HashTable<KeyT, ValueT> {
      * Method for printing hash table in a row, u know.
      */
     public void print() {
-
+        return;
     }
 
     /**
      *
      */
     public void resize() {
-
+        return;
     }
 }
