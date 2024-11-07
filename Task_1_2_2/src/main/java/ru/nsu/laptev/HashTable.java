@@ -2,17 +2,20 @@ package ru.nsu.laptev;
 
 import org.w3c.dom.Node;
 
+import javax.management.InvalidAttributeValueException;
 import java.security.InvalidKeyException;
-import java.util.Collection;
-import java.util.Collections;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.ArrayList;
-import java.util.ListIterator;
 
+/**
+ * Class for implementation hash table.
+ *
+ * @param <KeyT>   type data of keys.
+ * @param <ValueT> data type of values.
+ */
 public class HashTable<KeyT, ValueT> {
     private int size = 0;
     private int capacity = 16;
-
 
     private static final int HASH_CONSTANT = 0x7FFFFFFF;
     private static final double LOAD_FACTOR = 0.75f;
@@ -24,9 +27,14 @@ public class HashTable<KeyT, ValueT> {
         table = new ArrayList<>(Collections.nCopies(capacity, null));
     }
 
-    public boolean containsKey(Object key) {
+    private int get_hash(KeyT key) {
         int hashIndex = key.hashCode();
         int index = (hashIndex & HASH_CONSTANT) % table.size();
+        return index;
+    }
+
+    public boolean containsKey(KeyT key) {
+        int index = get_hash(key);
         ListIterator<Nodes<KeyT, ValueT>> iterator = table.get(index).listIterator();
         while (iterator.hasNext()) {
             Nodes<KeyT, ValueT> node = iterator.next();
@@ -41,7 +49,8 @@ public class HashTable<KeyT, ValueT> {
      * Method for putting new item in HashTable.
      *
      * @param key   value.
-     * @param value value).
+     * @param value value.
+     * @throws InvalidKeyException for exception ok.
      */
     public void put(KeyT key, ValueT value) throws InvalidKeyException {
         Nodes<KeyT, ValueT> newNode = new Nodes<KeyT, ValueT>(key, value);
@@ -71,8 +80,25 @@ public class HashTable<KeyT, ValueT> {
      * @param key   value, that would change.
      * @param value - new value.
      */
-    public void update(KeyT key, ValueT value) {
+    public void update(KeyT key, ValueT value) throws InvalidKeyException {
+        if (!containsKey(key)) {
+            throw new InvalidKeyException("Key isn't found. Error in update().");
+        }
 
+        Nodes<KeyT, ValueT> node = new Nodes<>(key, value);
+        int hashIndex = key.hashCode();
+        int indexInTable = (hashIndex & HASH_CONSTANT) % capacity;
+
+        Iterator<Nodes<KeyT, ValueT>> iterator = table.get(indexInTable).listIterator();
+        int ind = 0;
+        while (iterator.hasNext()) {
+            Nodes<KeyT, ValueT> curNode = iterator.next();
+            if (curNode.getKey() == key) {
+                table.get(indexInTable).set(ind, node);
+                break;
+            }
+            ind++;
+        }
     }
 
     /**
@@ -81,18 +107,39 @@ public class HashTable<KeyT, ValueT> {
      * @param key   value.
      * @param value value.
      */
-    public void delete(KeyT key, ValueT value) {
+    public void delete(KeyT key, ValueT value) throws InvalidKeyException, InvalidAttributeValueException {
+        if (!containsKey(key)) {
+            throw new InvalidKeyException();
+        }
+
+        if (true) {
+        }
+
+
+        int indexInTable = get_hash(key);
+
         return;
     }
-//
-//    /
-//     * Method for getting value by passing key.
-//     * @param key - value of key.
-//     * @return value of item by this key.
-//     */
-//    public ValueT get(KeyT key) {
-//
-//    }
+
+    /**
+     * Method for getting value by passing key.
+     *
+     * @param key - value of key.
+     * @return value of item by this key.
+     */
+    public ValueT get(KeyT key) throws InvalidKeyException {
+        if (!containsKey(key)) {
+            throw new InvalidKeyException();
+        }
+
+        int indexInTable = get_hash(key);
+        for (Nodes<KeyT, ValueT> n : table.get(indexInTable)) {
+            if (n.getKey() == key) {
+                return n.getValue();
+            }
+        }
+        return null;
+    }
 
     /**
      * Method for checking is two hash tables equal.
@@ -115,6 +162,20 @@ public class HashTable<KeyT, ValueT> {
      *
      */
     public void resize() {
-        return;
+        capacity *= 2;
+        ArrayList<ArrayList<Nodes<KeyT, ValueT>>> newTable = table;
+        table.clear();
+        for (int hashInd = 0; hashInd < table.size(); hashInd++) {
+            for (int j = 0; j < table.get(hashInd).size(); j++) {
+                KeyT newKey = table.get(hashInd).get(j).getKey();
+                ValueT newValue = table.get(hashInd).get(j).getValue();
+                try {
+                    put(newKey, newValue);
+                } catch (InvalidKeyException e) {
+                    System.out.println("How?");
+                }
+            }
+        }
+        newTable.clear();
     }
 }

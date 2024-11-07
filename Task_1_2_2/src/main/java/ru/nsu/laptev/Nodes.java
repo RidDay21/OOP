@@ -27,7 +27,8 @@ public class Nodes<KeyT, ValueT> {
 //        }
         Nodes<KeyT, ValueT> node = (Nodes<KeyT, ValueT>) o;
         boolean keyEqual = this.key.equals(node.getKey());
-        boolean valueEqual = this.value.equals(node.getValue());;
+        boolean valueEqual = this.value.equals(node.getValue());
+        ;
         return keyEqual && valueEqual;
     }
 }
