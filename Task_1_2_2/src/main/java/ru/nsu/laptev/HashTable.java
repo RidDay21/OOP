@@ -79,6 +79,7 @@ public class HashTable<KeyT, ValueT> {
      *
      * @param key   value, that would change.
      * @param value - new value.
+     * @throws InvalidKeyException - why not.
      */
     public void update(KeyT key, ValueT value) throws InvalidKeyException {
         if (!containsKey(key)) {
@@ -102,10 +103,12 @@ public class HashTable<KeyT, ValueT> {
     }
 
     /**
-     * Method for removing item <key,value>.
+     * Method for removing item key,value.
      *
      * @param key   value.
      * @param value value.
+     * @throws InvalidKeyException - why not.
+     * @throws InvalidAttributeValueException - why not.
      */
     public void delete(KeyT key, ValueT value) throws InvalidKeyException, InvalidAttributeValueException {
         if (!containsKey(key)) {
@@ -126,6 +129,7 @@ public class HashTable<KeyT, ValueT> {
      *
      * @param key - value of key.
      * @return value of item by this key.
+     * @throws InvalidKeyException - why not.
      */
     public ValueT get(KeyT key) throws InvalidKeyException {
         if (!containsKey(key)) {
