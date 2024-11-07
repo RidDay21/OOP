@@ -2,6 +2,7 @@ package ru.nsu.laptev;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 /**
  * Class for implementation graph with AdjMatrix.
@@ -49,7 +50,7 @@ public class AdjMatrix<VertexT, EdgeT extends Number> implements Graph<VertexT, 
                                Transformer<EdgeT> edgeTransformer,
                                String path) throws FileNotFoundException {
         ArrayList<String> text = new ArrayList<>();
-
+        Hashtable
     }
 
     /**

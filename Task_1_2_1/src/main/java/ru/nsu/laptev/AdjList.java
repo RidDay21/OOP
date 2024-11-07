@@ -60,46 +60,6 @@ public class AdjList<VertexT, EdgeT extends Number> implements Graph<VertexT, Ed
     public void read_from_file(Transformer<VertexT> vertexTransformer,
                                Transformer<EdgeT> edgeTransformer,
                                String path) throws FileNotFoundException {
-        File file = new File(path);
-        ArrayList<String> text = new ArrayList<>();
-        Scanner scanner = new Scanner(file);
-
-        while (scanner.hasNextLine()) {
-            text.add(scanner.nextLine());
-        }
-
-        int amountOfVertices = Integer.parseInt(text.get(0));
-        ArrayList<String> verticesNames = new ArrayList<>(Arrays.asList(text.get(1).split(", ")));
-        for (int i = 0; i < amountOfVertices; i++) {
-            vertices.add(vertexTransformer.transform(verticesNames.get(i)));
-            try {
-                addVertex(vertices.get(i));
-            } catch (InvalidVertexException e) {
-                System.out.println();
-            }
-        }
-        vertexNumber = amountOfVertices;
-
-        int amountOfEdges = Integer.parseInt(text.get(2));
-        System.out.println(vertices);
-        for (int i = 3; i < 3 + amountOfEdges; i++) {
-            String[] edge = text.get(i).split(" ");
-            VertexT start = vertexTransformer.transform(edge[0]);
-            VertexT end = vertexTransformer.transform(edge[1]);
-            EdgeT weight;
-            if (edge.length > 2) {
-                weight = edgeTransformer.transform(edge[2]);
-            } else {
-                weight = edgeTransformer.transform("1");
-            }
-            try {
-                addEdge(start, end, weight);
-            } catch (InvalidVertexException e) {
-                System.out.println();
-            } catch (InvalidEdgeException epr) {
-                System.out.println();
-            }
-        }
     }
 
     /**
