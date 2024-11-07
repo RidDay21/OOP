@@ -35,6 +35,9 @@ public class HashTable<KeyT, ValueT> {
 
     public boolean containsKey(KeyT key) {
         int index = get_hash(key);
+        if (table.get(index) == null) {
+            return false;
+        }
         ListIterator<Nodes<KeyT, ValueT>> iterator = table.get(index).listIterator();
         while (iterator.hasNext()) {
             Nodes<KeyT, ValueT> node = iterator.next();
@@ -54,10 +57,9 @@ public class HashTable<KeyT, ValueT> {
      */
     public void put(KeyT key, ValueT value) throws InvalidKeyException {
         Nodes<KeyT, ValueT> newNode = new Nodes<KeyT, ValueT>(key, value);
-        int hashIndex = key.hashCode();
-        int index = (hashIndex & HASH_CONSTANT) % capacity;
+        int index = get_hash(key);
 
-        if (table.get(index).isEmpty()) {
+        if (table.get(index) == null || table.get(index).isEmpty()) {
             table.set(index, new ArrayList<Nodes<KeyT, ValueT>>());
             table.get(index).add(newNode);
             size++;
@@ -107,7 +109,7 @@ public class HashTable<KeyT, ValueT> {
      *
      * @param key   value.
      * @param value value.
-     * @throws InvalidKeyException - why not.
+     * @throws InvalidKeyException            - why not.
      * @throws InvalidAttributeValueException - why not.
      */
     public void delete(KeyT key, ValueT value) throws InvalidKeyException, InvalidAttributeValueException {
@@ -138,7 +140,8 @@ public class HashTable<KeyT, ValueT> {
 
         int indexInTable = get_hash(key);
         for (Nodes<KeyT, ValueT> n : table.get(indexInTable)) {
-            if (n.getKey() == key) {
+            System.out.println(n.getKey() + " " + n.getValue() + " " + key);
+            if (n.getKey().equals(key)) {
                 return n.getValue();
             }
         }
@@ -158,8 +161,25 @@ public class HashTable<KeyT, ValueT> {
     /**
      * Method for printing hash table in a row, u know.
      */
-    public void print() {
-        return;
+    public String to_string() {
+        StringBuilder str = new StringBuilder();
+        str.append("[");
+
+        for (int hashInd = 0; hashInd < table.size(); hashInd++) {
+            if (table.get(hashInd) == null) {
+                continue;
+            }
+            for (int j = 0; j < table.get(hashInd).size(); j++) {
+                KeyT newKey = table.get(hashInd).get(j).getKey();
+                ValueT newValue = table.get(hashInd).get(j).getValue();
+                str.append("(").append(newKey).append(",").append(newValue).append("); ");
+            }
+        }
+        int size = str.length();
+        str.delete(size - 2, size-1);
+        str.append("]");
+        String curStr = str.toString();
+        return curStr;
     }
 
     /**
