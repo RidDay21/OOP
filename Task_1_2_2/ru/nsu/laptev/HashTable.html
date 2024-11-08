@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -134,9 +134,14 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd><code>KeyT</code> - type data of keys.</dd>
 <dd><code>ValueT</code> - data type of values.</dd>
 </dl>
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><code>java.lang.Cloneable</code></dd>
+</dl>
 <hr>
 <pre>public class <span class="typeNameLabel">HashTable&lt;KeyT,&#8203;ValueT&gt;</span>
-extends java.lang.Object</pre>
+extends java.lang.Object
+implements java.lang.Cloneable</pre>
 <div class="block">Class for implementation hash table.</div>
 </li>
 </ul>
@@ -223,13 +228,18 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get_capacity()">get_capacity</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#is_equal(ru.nsu.laptev.HashTable)">is_equal</a></span>&#8203;(<a href="HashTable.html" title="class in ru.nsu.laptev">HashTable</a>&lt;<a href="HashTable.html" title="type parameter in HashTable">ValueT</a>,&#8203;<a href="HashTable.html" title="type parameter in HashTable">KeyT</a>&gt;&nbsp;new_hash_table)</code></th>
 <td class="colLast">
 <div class="block">Method for checking is two hash tables equal.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#put(KeyT,ValueT)">put</a></span>&#8203;(<a href="HashTable.html" title="type parameter in HashTable">KeyT</a>&nbsp;key,
    <a href="HashTable.html" title="type parameter in HashTable">ValueT</a>&nbsp;value)</code></th>
@@ -237,19 +247,19 @@ extends java.lang.Object</pre>
 <div class="block">Method for putting new item in HashTable.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#resize()">resize</a></span>()</code></th>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#to_string()">to_string</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Method for printing hash table in a row, u know.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#update(KeyT,ValueT)">update</a></span>&#8203;(<a href="HashTable.html" title="type parameter in HashTable">KeyT</a>&nbsp;key,
       <a href="HashTable.html" title="type parameter in HashTable">ValueT</a>&nbsp;value)</code></th>
@@ -319,6 +329,15 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a id="get_capacity()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>get_capacity</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;get_capacity()</pre>
+</li>
+</ul>
 <a id="containsKey(java.lang.Object)">
 <!--   -->
 </a><a id="containsKey(KeyT)">
