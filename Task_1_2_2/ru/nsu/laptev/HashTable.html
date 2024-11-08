@@ -210,7 +210,9 @@ implements java.lang.Cloneable</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#containsKey(KeyT)">containsKey</a></span>&#8203;(<a href="HashTable.html" title="type parameter in HashTable">KeyT</a>&nbsp;key)</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method for checking existing of key in HashTable.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -234,7 +236,7 @@ implements java.lang.Cloneable</pre>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#is_equal(ru.nsu.laptev.HashTable)">is_equal</a></span>&#8203;(<a href="HashTable.html" title="class in ru.nsu.laptev">HashTable</a>&lt;<a href="HashTable.html" title="type parameter in HashTable">ValueT</a>,&#8203;<a href="HashTable.html" title="type parameter in HashTable">KeyT</a>&gt;&nbsp;new_hash_table)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#is_equal(ru.nsu.laptev.HashTable)">is_equal</a></span>&#8203;(<a href="HashTable.html" title="class in ru.nsu.laptev">HashTable</a>&lt;<a href="HashTable.html" title="type parameter in HashTable">ValueT</a>,&#8203;<a href="HashTable.html" title="type parameter in HashTable">KeyT</a>&gt;&nbsp;newHashTable)</code></th>
 <td class="colLast">
 <div class="block">Method for checking is two hash tables equal.</div>
 </td>
@@ -250,7 +252,9 @@ implements java.lang.Cloneable</pre>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#resize()">resize</a></span>()</code></th>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Method for changing capacity of hash table.</div>
+</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
@@ -347,6 +351,13 @@ implements java.lang.Cloneable</pre>
 <li class="blockList">
 <h4>containsKey</h4>
 <pre class="methodSignature">public&nbsp;boolean&nbsp;containsKey&#8203;(<a href="HashTable.html" title="type parameter in HashTable">KeyT</a>&nbsp;key)</pre>
+<div class="block">Method for checking existing of key in HashTable.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>key</code> - for passing key.</dd>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>boolean data.</dd>
+</dl>
 </li>
 </ul>
 <a id="put(java.lang.Object,java.lang.Object)">
@@ -441,11 +452,11 @@ implements java.lang.Cloneable</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>is_equal</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;is_equal&#8203;(<a href="HashTable.html" title="class in ru.nsu.laptev">HashTable</a>&lt;<a href="HashTable.html" title="type parameter in HashTable">ValueT</a>,&#8203;<a href="HashTable.html" title="type parameter in HashTable">KeyT</a>&gt;&nbsp;new_hash_table)</pre>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;is_equal&#8203;(<a href="HashTable.html" title="class in ru.nsu.laptev">HashTable</a>&lt;<a href="HashTable.html" title="type parameter in HashTable">ValueT</a>,&#8203;<a href="HashTable.html" title="type parameter in HashTable">KeyT</a>&gt;&nbsp;newHashTable)</pre>
 <div class="block">Method for checking is two hash tables equal.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>new_hash_table</code> - with which would compare.</dd>
+<dd><code>newHashTable</code> - with which would compare.</dd>
 </dl>
 </li>
 </ul>
@@ -466,6 +477,7 @@ implements java.lang.Cloneable</pre>
 <li class="blockList">
 <h4>resize</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;resize()</pre>
+<div class="block">Method for changing capacity of hash table.</div>
 </li>
 </ul>
 </li>
