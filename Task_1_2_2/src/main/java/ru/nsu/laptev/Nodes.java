@@ -2,6 +2,7 @@ package ru.nsu.laptev;
 
 /**
  * Class for implementation pair in my HashTable.
+ *
  * @param <KeyT> for Type of Key Data.
  * @param <ValueT> for Type of Value Data.
  */

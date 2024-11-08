@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.ListIterator;
-
-import javax.management.InvalidAttributeValueException;
 import java.security.InvalidKeyException;
-
+import javax.management.InvalidAttributeValueException;
 
 /**
  * Class for implementation hash table.
@@ -41,6 +39,7 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
 
     /**
      * Method for checking existing of key in HashTable.
+     * 
      * @param key for passing key.
      * @return boolean data.
      */

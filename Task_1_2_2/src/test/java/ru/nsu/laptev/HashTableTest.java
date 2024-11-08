@@ -1,11 +1,11 @@
 package ru.nsu.laptev;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import javax.management.InvalidAttributeValueException;
 import java.security.InvalidKeyException;
+import javax.management.InvalidAttributeValueException;
 
 import org.junit.jupiter.api.Test;
 
