@@ -1,12 +1,11 @@
 package ru.nsu.laptev;
 
-import jdk.jfr.Category;
-import org.w3c.dom.Node;
-
 import javax.management.InvalidAttributeValueException;
 import java.security.InvalidKeyException;
-import java.util.*;
-import java.util.Map.Entry;
+import java.util.Collections;
+import java.util.ArrayList;
+import java.util.ListIterator;
+import java.util.Iterator;
 
 /**
  * Class for implementation hash table.
@@ -38,6 +37,11 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
         return capacity;
     }
 
+    /**
+     * Method for checking existing of key in HashTable.
+     * @param key for passing key.
+     * @return boolean data.
+     */
     public boolean containsKey(KeyT key) {
         int index = get_hash(key);
         if (table.get(index) == null) {
@@ -77,7 +81,7 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
             }
             int bucketSize = table.get(index).size();
             table.get(index).add(bucketSize, newNode);
-            size++;//
+            size++;
         }
 
     }
@@ -163,9 +167,9 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
     /**
      * Method for checking is two hash tables equal.
      *
-     * @param new_hash_table with which would compare.
+     * @param newHashTable with which would compare.
      */
-    public boolean is_equal(HashTable<ValueT, KeyT> new_hash_table) {
+    public boolean is_equal(HashTable<ValueT, KeyT> newHashTable) {
         return true;
     }
 
@@ -195,7 +199,7 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
     }
 
     /**
-     *
+     *Method for changing capacity of hash table.
      */
     public void resize() {
         capacity *= 2;

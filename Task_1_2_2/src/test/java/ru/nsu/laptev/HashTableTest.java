@@ -1,11 +1,13 @@
 package ru.nsu.laptev;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import javax.management.InvalidAttributeValueException;
 import java.security.InvalidKeyException;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 class HashTableTest {
     @Test
@@ -43,16 +45,16 @@ class HashTableTest {
             assertEquals(hashTable.get("1"), "sdf");
             hashTable.update(232323, "sdf");
         } catch (InvalidKeyException e) {
-
+            System.out.println("Such key doesn't exist in HashTable");
         }
 
         try {
             hashTable.delete("1", "sdf");
             assertFalse(hashTable.containsKey("1"));
             hashTable.delete("ManUnited", 1878);
-        } catch(InvalidKeyException e) {
+        } catch (InvalidKeyException e) {
             System.out.println("HashTable doesn't contain such key.");
-        } catch(InvalidAttributeValueException e) {
+        } catch (InvalidAttributeValueException e) {
             System.out.println("HashTable doesn't contain such pair of key-value.");
         }
 
@@ -62,12 +64,11 @@ class HashTableTest {
     @Test
     void nodesTest() {
         Nodes<Integer, String> n = new Nodes<>(12, "ds");
-        Nodes<Integer, String> n1 = new Nodes<>(14, "dfr");
-        Nodes<Integer, String> n2 = new Nodes<>(12, "ds");
-
         assertEquals(n.getKey(), 12);
         assertEquals(n.getValue(), "ds");
 
+        Nodes<Integer, String> n1 = new Nodes<>(14, "dfr");
+        Nodes<Integer, String> n2 = new Nodes<>(12, "ds");
         assertEquals(true, n.equals(n2));
         assertEquals(false, n.equals(n1));
     }
