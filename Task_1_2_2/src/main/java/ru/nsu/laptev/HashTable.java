@@ -1,5 +1,6 @@
 package ru.nsu.laptev;
 
+import jdk.jfr.Category;
 import org.w3c.dom.Node;
 
 import javax.management.InvalidAttributeValueException;
@@ -13,9 +14,9 @@ import java.util.Map.Entry;
  * @param <KeyT>   type data of keys.
  * @param <ValueT> data type of values.
  */
-public class HashTable<KeyT, ValueT> {
+public class HashTable<KeyT, ValueT> implements Cloneable {
     private int size = 0;
-    private int capacity = 16;
+    private int capacity = 4;
 
     private static final int HASH_CONSTANT = 0x7FFFFFFF;
     private static final double LOAD_FACTOR = 0.75f;
@@ -31,6 +32,10 @@ public class HashTable<KeyT, ValueT> {
         int hashIndex = key.hashCode();
         int index = (hashIndex & HASH_CONSTANT) % table.size();
         return index;
+    }
+
+    public int get_capacity() {
+        return capacity;
     }
 
     public boolean containsKey(KeyT key) {
@@ -68,6 +73,7 @@ public class HashTable<KeyT, ValueT> {
         } else {
             if ((double) size / (double) capacity >= LOAD_FACTOR) {
                 resize();
+                System.out.println(get_capacity());
             }
             int bucketSize = table.get(index).size();
             table.get(index).add(bucketSize, newNode);
@@ -112,18 +118,24 @@ public class HashTable<KeyT, ValueT> {
      * @throws InvalidKeyException            - why not.
      * @throws InvalidAttributeValueException - why not.
      */
-    public void delete(KeyT key, ValueT value) throws InvalidKeyException, InvalidAttributeValueException {
+    public void delete(KeyT key, ValueT value) throws InvalidKeyException,
+            InvalidAttributeValueException {
         if (!containsKey(key)) {
             throw new InvalidKeyException();
         }
 
-        if (true) {
-        }
-
-
         int indexInTable = get_hash(key);
-
-        return;
+        for (int hashInd = 0; hashInd < table.get(indexInTable).size();hashInd++) {
+            KeyT curKey = table.get(indexInTable).get(hashInd).getKey();
+            ValueT curValue = table.get(indexInTable).get(hashInd).getValue();
+            if (curKey.equals(key)) {
+                if (curValue.equals(value)) {
+                    table.get(indexInTable).remove(hashInd);
+                } else {
+                    throw new InvalidAttributeValueException();
+                }
+            }
+        }
     }
 
     /**
@@ -176,7 +188,7 @@ public class HashTable<KeyT, ValueT> {
             }
         }
         int size = str.length();
-        str.delete(size - 2, size-1);
+        str.delete(size - 2, size - 1);
         str.append("]");
         String curStr = str.toString();
         return curStr;
@@ -187,19 +199,26 @@ public class HashTable<KeyT, ValueT> {
      */
     public void resize() {
         capacity *= 2;
-        ArrayList<ArrayList<Nodes<KeyT, ValueT>>> newTable = table;
-        table.clear();
+        ArrayList<ArrayList<Nodes<KeyT, ValueT>>> newTable = new ArrayList<>(capacity);
+        for (int i = 0; i < capacity; i++) {
+            newTable.add(new ArrayList<>());
+        }
+
         for (int hashInd = 0; hashInd < table.size(); hashInd++) {
+            if (table.get(hashInd) == null) {
+                continue;
+            }
             for (int j = 0; j < table.get(hashInd).size(); j++) {
                 KeyT newKey = table.get(hashInd).get(j).getKey();
                 ValueT newValue = table.get(hashInd).get(j).getValue();
-                try {
-                    put(newKey, newValue);
-                } catch (InvalidKeyException e) {
-                    System.out.println("How?");
-                }
+                newTable.get(get_hash(newKey)).add(new Nodes<>(newKey, newValue));
             }
         }
-        newTable.clear();
+
+        table = newTable; // Обновляем table на newTable
     }
+
+
+
+
 }
