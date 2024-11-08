@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.security.InvalidKeyException;
 import javax.management.InvalidAttributeValueException;
-
 import org.junit.jupiter.api.Test;
 
 class HashTableTest {

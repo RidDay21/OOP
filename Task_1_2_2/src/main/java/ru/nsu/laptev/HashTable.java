@@ -1,16 +1,16 @@
 package ru.nsu.laptev;
 
+import java.security.InvalidKeyException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.ListIterator;
-import java.security.InvalidKeyException;
 import javax.management.InvalidAttributeValueException;
 
 /**
  * Class for implementation hash table.
  *
- * @param <KeyT>   type data of keys.
+ * @param <KeyT> type data of keys.
  * @param <ValueT> data type of values.
  */
 public class HashTable<KeyT, ValueT> implements Cloneable {
@@ -39,7 +39,7 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
 
     /**
      * Method for checking existing of key in HashTable.
-     * 
+     *
      * @param key for passing key.
      * @return boolean data.
      */
@@ -61,7 +61,7 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
     /**
      * Method for putting new item in HashTable.
      *
-     * @param key   value.
+     * @param key  value.
      * @param value value.
      * @throws InvalidKeyException for exception ok.
      */
