@@ -1,11 +1,13 @@
 package ru.nsu.laptev;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.ListIterator;
+
 import javax.management.InvalidAttributeValueException;
 import java.security.InvalidKeyException;
-import java.util.Collections;
-import java.util.ArrayList;
-import java.util.ListIterator;
-import java.util.Iterator;
+
 
 /**
  * Class for implementation hash table.
@@ -129,7 +131,7 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
         }
 
         int indexInTable = get_hash(key);
-        for (int hashInd = 0; hashInd < table.get(indexInTable).size();hashInd++) {
+        for (int hashInd = 0; hashInd < table.get(indexInTable).size(); hashInd++) {
             KeyT curKey = table.get(indexInTable).get(hashInd).getKey();
             ValueT curValue = table.get(indexInTable).get(hashInd).getValue();
             if (curKey.equals(key)) {
