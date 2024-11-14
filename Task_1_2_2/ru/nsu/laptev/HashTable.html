@@ -27,7 +27,7 @@
     catch(err) {
     }
 //-->
-var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var data = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -235,13 +235,25 @@ implements java.lang.Cloneable</pre>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
+<td class="colFirst"><code>int</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#get_size()">get_size</a></span>()</code></th>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#is_equal(ru.nsu.laptev.HashTable)">is_equal</a></span>&#8203;(<a href="HashTable.html" title="class in ru.nsu.laptev">HashTable</a>&lt;<a href="HashTable.html" title="type parameter in HashTable">ValueT</a>,&#8203;<a href="HashTable.html" title="type parameter in HashTable">KeyT</a>&gt;&nbsp;newHashTable)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#is_equal(ru.nsu.laptev.HashTable)">is_equal</a></span>&#8203;(<a href="HashTable.html" title="class in ru.nsu.laptev">HashTable</a>&lt;<a href="HashTable.html" title="type parameter in HashTable">KeyT</a>,&#8203;<a href="HashTable.html" title="type parameter in HashTable">ValueT</a>&gt;&nbsp;newHashTable)</code></th>
 <td class="colLast">
 <div class="block">Method for checking is two hash tables equal.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>java.util.Iterator&lt;<a href="Nodes.html" title="class in ru.nsu.laptev">Nodes</a>&lt;<a href="HashTable.html" title="type parameter in HashTable">KeyT</a>,&#8203;<a href="HashTable.html" title="type parameter in HashTable">ValueT</a>&gt;&gt;</code></td>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#iterator()">iterator</a></span>()</code></th>
+<td class="colLast">
+<div class="block">Iterator for hash table.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#put(KeyT,ValueT)">put</a></span>&#8203;(<a href="HashTable.html" title="type parameter in HashTable">KeyT</a>&nbsp;key,
    <a href="HashTable.html" title="type parameter in HashTable">ValueT</a>&nbsp;value)</code></th>
@@ -249,21 +261,21 @@ implements java.lang.Cloneable</pre>
 <div class="block">Method for putting new item in HashTable.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#resize()">resize</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Method for changing capacity of hash table.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#to_string()">to_string</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Method for printing hash table in a row, u know.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#update(KeyT,ValueT)">update</a></span>&#8203;(<a href="HashTable.html" title="type parameter in HashTable">KeyT</a>&nbsp;key,
       <a href="HashTable.html" title="type parameter in HashTable">ValueT</a>&nbsp;value)</code></th>
@@ -342,6 +354,15 @@ implements java.lang.Cloneable</pre>
 <pre class="methodSignature">public&nbsp;int&nbsp;get_capacity()</pre>
 </li>
 </ul>
+<a id="get_size()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>get_size</h4>
+<pre class="methodSignature">public&nbsp;int&nbsp;get_size()</pre>
+</li>
+</ul>
 <a id="containsKey(java.lang.Object)">
 <!--   -->
 </a><a id="containsKey(KeyT)">
@@ -357,6 +378,20 @@ implements java.lang.Cloneable</pre>
 <dd><code>key</code> - for passing key.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>boolean data.</dd>
+</dl>
+</li>
+</ul>
+<a id="iterator()">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>iterator</h4>
+<pre class="methodSignature">public&nbsp;java.util.Iterator&lt;<a href="Nodes.html" title="class in ru.nsu.laptev">Nodes</a>&lt;<a href="HashTable.html" title="type parameter in HashTable">KeyT</a>,&#8203;<a href="HashTable.html" title="type parameter in HashTable">ValueT</a>&gt;&gt;&nbsp;iterator()</pre>
+<div class="block">Iterator for hash table.</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>hash table iterator.</dd>
 </dl>
 </li>
 </ul>
@@ -452,7 +487,7 @@ implements java.lang.Cloneable</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>is_equal</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;is_equal&#8203;(<a href="HashTable.html" title="class in ru.nsu.laptev">HashTable</a>&lt;<a href="HashTable.html" title="type parameter in HashTable">ValueT</a>,&#8203;<a href="HashTable.html" title="type parameter in HashTable">KeyT</a>&gt;&nbsp;newHashTable)</pre>
+<pre class="methodSignature">public&nbsp;boolean&nbsp;is_equal&#8203;(<a href="HashTable.html" title="class in ru.nsu.laptev">HashTable</a>&lt;<a href="HashTable.html" title="type parameter in HashTable">KeyT</a>,&#8203;<a href="HashTable.html" title="type parameter in HashTable">ValueT</a>&gt;&nbsp;newHashTable)</pre>
 <div class="block">Method for checking is two hash tables equal.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
