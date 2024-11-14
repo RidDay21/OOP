@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.security.InvalidKeyException;
 import javax.management.InvalidAttributeValueException;
 
-import com.sun.source.doctree.ValueTree;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -15,6 +14,7 @@ class HashTableTest {
     HashTable<Object, Object> hashTable = new HashTable<>();
     HashTable<Object, Object> ht = new HashTable<>();
     HashTable<Object, Object> ht2 = new HashTable<>();
+
     @BeforeEach
     void initialize() {
         try {
@@ -35,7 +35,7 @@ class HashTableTest {
             ht.put(0.4f, 4);
             ht2.put(0.4f, 4);
             assertTrue(hashTable.containsKey(0.4f));
-            assertTrue(ht.containsKey(0.4f));//вот тут почему-то ht содержит 0.4f
+            assertTrue(ht.containsKey(0.4f));
 
             hashTable.put("ManUnited", "Old Trafford");
             ht.put("ManUnited", "Old Trafford");
@@ -44,8 +44,6 @@ class HashTableTest {
             assertEquals(hashTable.get_capacity(), 8);
 
             hashTable.put("Movie", 43);
-//            System.out.println(hashTable.to_string());
-//            System.out.println(ht.to_string());
             ht.put("Movie", 43);
             ht2.put("Movie", 43);
 
