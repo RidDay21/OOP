@@ -1,13 +1,16 @@
 package ru.nsu.laptev;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.security.InvalidKeyException;
+import java.security.Key;
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 import javax.management.InvalidAttributeValueException;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class HashTableTest {
     HashTable<Object, Object> hashTable = new HashTable<>();
@@ -101,6 +104,45 @@ class HashTableTest {
             System.out.println("HashTable doesn't contain such key.");
         } catch (InvalidAttributeValueException e) {
             System.out.println("HashTable doesn't contain such pair of key-value.");
+        }
+    }
+
+    @Test
+    void iteratorTest() {
+        HashTable<Integer, Integer> hashtable = new HashTable<>();
+
+        for (int i = 0; i < 10; i++) {
+            try {
+                hashtable.put(i, i * 10 ^ 2);
+            } catch (InvalidKeyException e) {
+                System.out.println("ok.");
+            }
+        }
+        assertEquals(hashtable.get_size(), 10);
+
+        Iterator<Nodes<Integer, Integer>> iterator = hashtable.iterator();
+
+        while (iterator.hasNext()) {
+            iterator.next();
+        }
+        assertThrows(NoSuchElementException.class, () -> iterator.next());
+        //check for Changing mistake
+        HashTable<Integer, Integer> hashtable1 = new HashTable<>();
+        for (int i = 0; i < 10; i++) {
+            try {
+                hashtable1.put(i, i * 42);
+            } catch (InvalidKeyException e) {
+                System.out.println("ok.");
+            }
+        }
+        Iterator<Nodes<Integer, Integer>> iterator1 = hashtable1.iterator();
+        iterator1.next();
+        try {
+            hashtable1.put(123, 3);
+            assertThrows(ConcurrentModificationException.class, () -> iterator1.next());
+            assertThrows(ConcurrentModificationException.class, () -> iterator1.hasNext());
+        } catch (InvalidKeyException e) {
+            System.out.println("Such key has already existed.");
         }
     }
 
