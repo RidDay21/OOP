@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.security.InvalidKeyException;
 import javax.management.InvalidAttributeValueException;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -40,8 +39,7 @@ class HashTableTest {
             hashTable.put("ManUnited", "Old Trafford");
             ht.put("ManUnited", "Old Trafford");
             ht2.put("ManUnited", "Old Trafford");
-            //after 4'th key our hash table need to resize and we check it.
-            assertEquals(hashTable.get_capacity(), 8);
+            assertEquals(hashTable.get_capacity(), 8); //after 4'th key our hash table need to resize and we check it.
 
             hashTable.put("Movie", 43);
             ht.put("Movie", 43);
