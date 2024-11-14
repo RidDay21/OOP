@@ -94,7 +94,7 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
             }
 
             @Override
-            public Nodes<KeyT, ValueT> next() throws NoSuchElementException{
+            public Nodes<KeyT, ValueT> next() throws NoSuchElementException {
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
