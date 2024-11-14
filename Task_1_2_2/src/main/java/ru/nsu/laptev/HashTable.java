@@ -65,12 +65,14 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
 
     /**
      * Iterator for hash table.
+     *
      * @return hash table iterator.
      */
-    public Iterator <Nodes <KeyT,ValueT>> iterator() {
+    public Iterator <Nodes<KeyT, ValueT>> iterator() {
         return new Iterator<>() {
             private int hashTableIndex = 0;
-            private Iterator<Nodes <KeyT, ValueT>> hashTableIterator = table.get(hashTableIndex).iterator();
+            private Iterator<Nodes<KeyT, ValueT>> hashTableIterator =
+                    table.get(hashTableIndex).iterator();
 
             {
                 modified = false;
@@ -81,7 +83,8 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
                 if (modified) {
                     throw new ConcurrentModificationException();
                 }
-                while ((hashTableIterator == null || hashTableIterator.hasNext()) && hashTableIndex < size - 1) {
+                while ((hashTableIterator == null ||
+                        hashTableIterator.hasNext()) && hashTableIndex < size - 1) {
                     hashTableIndex++;
                     if (hashTableIterator != null) {
                         hashTableIterator = table.get(hashTableIndex).iterator();
