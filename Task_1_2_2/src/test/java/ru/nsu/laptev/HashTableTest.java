@@ -39,7 +39,8 @@ class HashTableTest {
             hashTable.put("ManUnited", "Old Trafford");
             ht.put("ManUnited", "Old Trafford");
             ht2.put("ManUnited", "Old Trafford");
-            assertEquals(hashTable.get_capacity(), 8); //after 4'th key our hash table need to resize and we check it.
+            assertEquals(hashTable.get_capacity(), 8);
+
 
             hashTable.put("Movie", 43);
             ht.put("Movie", 43);

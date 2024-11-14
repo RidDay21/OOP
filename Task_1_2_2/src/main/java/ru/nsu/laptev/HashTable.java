@@ -68,7 +68,7 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
      *
      * @return hash table iterator.
      */
-    public Iterator <Nodes <KeyT, ValueT>> iterator() {
+    public Iterator<Nodes<KeyT, ValueT>> iterator() {
         return new Iterator<>() {
             private int hashTableIndex = 0;
             private Iterator<Nodes<KeyT, ValueT>> hashTableIterator =
