@@ -1,24 +1,24 @@
 package ru.nsu.laptev;
 
+import org.w3c.dom.Node;
+
 import java.security.InvalidKeyException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.ListIterator;
+import java.util.*;
 import javax.management.InvalidAttributeValueException;
 
 /**
  * Class for implementation hash table.
  *
- * @param <KeyT> type data of keys.
+ * @param <KeyT>   type data of keys.
  * @param <ValueT> data type of values.
  */
 public class HashTable<KeyT, ValueT> implements Cloneable {
-    private int size = 0;
-    private int capacity = 4;
-
     private static final int HASH_CONSTANT = 0x7FFFFFFF;
     private static final double LOAD_FACTOR = 0.75f;
+
+    private boolean modified = false;
+    private int size = 0;
+    private int capacity = 4;
 
     public ArrayList<ArrayList<Nodes<KeyT, ValueT>>> table;
 
@@ -29,7 +29,7 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
 
     private int get_hash(KeyT key) {
         int hashIndex = key.hashCode();
-        int index = (hashIndex & HASH_CONSTANT) % table.size();
+        int index = (hashIndex & HASH_CONSTANT) % capacity;
         return index;
     }
 
@@ -37,20 +37,23 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
         return capacity;
     }
 
+    public int get_size() {
+        return size;
+    }
+
     /**
      * Method for checking existing of key in HashTable.
      *
      * @param key for passing key.
      * @return boolean data.
-     */
+     **/
     public boolean containsKey(KeyT key) {
         int index = get_hash(key);
         if (table.get(index) == null) {
             return false;
         }
-        ListIterator<Nodes<KeyT, ValueT>> iterator = table.get(index).listIterator();
-        while (iterator.hasNext()) {
-            Nodes<KeyT, ValueT> node = iterator.next();
+
+        for (Nodes<KeyT, ValueT> node : table.get(index)) {
             if (node.getKey().equals(key)) {
                 return true;
             }
@@ -59,15 +62,58 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
     }
 
     /**
+     * Iterator for hash table.
+     * @return hash table iterator.
+     */
+    public Iterator <Nodes <KeyT,ValueT>> iterator() {
+        return new Iterator<>() {
+            private int hashTableIndex = 0;
+            private Iterator<Nodes <KeyT, ValueT>> hashTableIterator = table.get(hashTableIndex).iterator();
+
+            {
+                modified = false;
+            }
+
+            @Override
+            public boolean hasNext() {
+                if (modified) {
+                    throw new ConcurrentModificationException();
+                }
+                while ((hashTableIterator == null || hashTableIterator.hasNext()) && hashTableIndex < size - 1) {
+                    hashTableIndex++;
+                    if (hashTableIterator != null) {
+                        hashTableIterator = table.get(hashTableIndex).iterator();
+                    }
+                }
+                return hashTableIterator != null && hashTableIterator.hasNext();
+            }
+
+            public Nodes<KeyT, ValueT> next() {
+                if (modified) {
+                    throw new ConcurrentModificationException();
+                }
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+                return hashTableIterator.next();
+            }
+        };
+    }
+
+    /**
      * Method for putting new item in HashTable.
      *
-     * @param key  value.
+     * @param key   value.
      * @param value value.
      * @throws InvalidKeyException for exception ok.
      */
     public void put(KeyT key, ValueT value) throws InvalidKeyException {
         Nodes<KeyT, ValueT> newNode = new Nodes<KeyT, ValueT>(key, value);
         int index = get_hash(key);
+
+        if ((double) size / (double) capacity >= LOAD_FACTOR) {
+            resize();
+        }
 
         if (table.get(index) == null || table.get(index).isEmpty()) {
             table.set(index, new ArrayList<Nodes<KeyT, ValueT>>());
@@ -76,15 +122,11 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
         } else if (containsKey(key)) {
             throw new InvalidKeyException();
         } else {
-            if ((double) size / (double) capacity >= LOAD_FACTOR) {
-                resize();
-                System.out.println(get_capacity());
-            }
             int bucketSize = table.get(index).size();
             table.get(index).add(bucketSize, newNode);
             size++;
         }
-
+        modified = true;
     }
 
     /**
@@ -113,6 +155,7 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
             }
             ind++;
         }
+        modified = true;
     }
 
     /**
@@ -141,6 +184,7 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
                 }
             }
         }
+        modified = true;
     }
 
     /**
@@ -157,7 +201,6 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
 
         int indexInTable = get_hash(key);
         for (Nodes<KeyT, ValueT> n : table.get(indexInTable)) {
-            System.out.println(n.getKey() + " " + n.getValue() + " " + key);
             if (n.getKey().equals(key)) {
                 return n.getValue();
             }
@@ -170,10 +213,33 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
      *
      * @param newHashTable with which would compare.
      */
-    public boolean is_equal(HashTable<ValueT, KeyT> newHashTable) {
+    public boolean is_equal(HashTable<KeyT, ValueT> newHashTable) {
+        if (newHashTable.get_size() != size || newHashTable == null) {
+            System.out.println("Different size of Hash Tables");
+            return false;
+        }
+
+        for (int hashInd = 0; hashInd < table.size(); hashInd++) {
+            if (table.get(hashInd) == null) {
+                continue;
+            }
+
+            for (Nodes<KeyT, ValueT> node : table.get(hashInd)) {
+                try {
+                    if (newHashTable.get(node.getKey()).equals(node.getValue())) {
+                        continue;
+                    } else {
+                        System.out.println("Values of same key are different.");
+                        return false;
+                    }
+                } catch (InvalidKeyException e) {
+                    System.out.println("Such key doesn't exist in hash table which you compare.");
+                    return false;
+                }
+            }
+        }
         return true;
     }
-
 
     /**
      * Method for printing hash table in a row, u know.
@@ -200,7 +266,7 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
     }
 
     /**
-     *Method for changing capacity of hash table.
+     * Method for changing capacity of hash table.
      */
     public void resize() {
         capacity *= 2;
@@ -222,8 +288,6 @@ public class HashTable<KeyT, ValueT> implements Cloneable {
 
         table = newTable; // Обновляем table на newTable
     }
-
-
 
 
 }

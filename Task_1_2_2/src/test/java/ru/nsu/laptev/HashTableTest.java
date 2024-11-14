@@ -6,30 +6,79 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.security.InvalidKeyException;
 import javax.management.InvalidAttributeValueException;
+
+import com.sun.source.doctree.ValueTree;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class HashTableTest {
-    @Test
-    void sampleTest() {
-        HashTable<Object, Object> hashTable = new HashTable<>();
+    HashTable<Object, Object> hashTable = new HashTable<>();
+    HashTable<Object, Object> ht = new HashTable<>();
+    HashTable<Object, Object> ht2 = new HashTable<>();
+    @BeforeEach
+    void initialize() {
         try {
             assertEquals(hashTable.get_capacity(), 4);
+            assertTrue(hashTable.is_equal(ht));
+            assertTrue(hashTable.is_equal(ht2));
+            assertTrue(ht.is_equal(ht2));
             //adding keys
             hashTable.put("1", 234);
+            ht.put("1", 234);
+            ht2.put("1", 234);
+
             hashTable.put(234, "qwerty");
+            ht.put(234, "qwerty");
+            ht2.put(234, "qwerty");
+
             hashTable.put(0.4f, 4);
+            ht.put(0.4f, 4);
+            ht2.put(0.4f, 4);
             assertTrue(hashTable.containsKey(0.4f));
+            assertTrue(ht.containsKey(0.4f));//вот тут почему-то ht содержит 0.4f
+
             hashTable.put("ManUnited", "Old Trafford");
+            ht.put("ManUnited", "Old Trafford");
+            ht2.put("ManUnited", "Old Trafford");
             //after 4'th key our hash table need to resize and we check it.
             assertEquals(hashTable.get_capacity(), 8);
+
             hashTable.put("Movie", 43);
+//            System.out.println(hashTable.to_string());
+//            System.out.println(ht.to_string());
+            ht.put("Movie", 43);
+            ht2.put("Movie", 43);
+
             hashTable.put(8841, "wow...");
+            ht.put(8841, "wow...");
+            ht2.put(8841, "wow...");
+
+            ht2.put("Marcus", "0 goals");
+
             hashTable.put("1", 0.345345f);
         } catch (InvalidKeyException e) {
             System.out.println("Key is already in HashTable");
         }
+    }
 
+    @Test
+    void hashTableTest() {
         System.out.println(hashTable.to_string());
+        System.out.println(ht.to_string());
+
+        try {
+            ht.get("Movie");
+            ht.get("Pavel");
+        } catch (InvalidKeyException e) {
+            System.out.println("Such key doesn't exist.");
+        }
+
+        System.out.println(ht2.to_string());
+        System.out.println(ht.to_string());
+        System.out.println(hashTable.to_string());
+
+        assertFalse(hashTable.is_equal(ht2));
+        assertTrue(ht.is_equal(hashTable));
 
         try {
             assertEquals(hashTable.get("1"), 234);
@@ -56,8 +105,6 @@ class HashTableTest {
         } catch (InvalidAttributeValueException e) {
             System.out.println("HashTable doesn't contain such pair of key-value.");
         }
-
-
     }
 
     @Test

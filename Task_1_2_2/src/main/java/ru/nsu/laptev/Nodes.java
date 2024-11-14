@@ -34,5 +34,9 @@ public class Nodes<KeyT, ValueT> {
         ;
         return keyEqual && valueEqual;
     }
+
+    //public boolean equalsKey(KeyT key) {
+        //return this.key.equals(key);
+        //   }
 }
 
