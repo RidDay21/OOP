@@ -41,10 +41,10 @@ public class SubStringSearching {
     /**
      * Method for reading from file and
      * doing kmp algorithm for searching substring.
-     *
      * @param filePath path to file.
      * @param pattern  pattern.
-     * @return array of first indexes of elements.
+     *
+     * @return array of first indexes of elements
      * in every includes of substring.
      * @throws IOException if any IO error occurs.
      */
