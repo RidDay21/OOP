@@ -1,11 +1,15 @@
 package ru.nsu.laptev;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Class for testing, bro.
+ */
 class SubStringSearchingTest {
     @Test
     void buildPrefixTable() {
@@ -22,17 +26,29 @@ class SubStringSearchingTest {
         f.add(3);
         f.add(4);
         assertEquals(f, SubStringSearching.buildPrefixTable(pattern, str.length()));
+        f.clear();
 
         String bigStr = "aabcaaabcaaabcaaadffdfcaaabcaabcaabcaaabcaaabc";
         System.out.println("----");
-        ArrayList<Integer> list =  SubStringSearching.kmp_algorithm(bigStr, pattern);
-        f = new ArrayList<>();
-        f.add(0);
-        f.add(5);
-        f.add(32);
-        f.add(37);
-        assertEquals(list, f);
+        String filePath = "C:/Users/niko_/Desktop/Niki/nsu/OOP/Task_1_3_1/src/main"
+                + "/java/ru/nsu/laptev/test_file";
+        ArrayList<Long> list = new ArrayList<>();
+        try {
+            list = SubStringSearching.kmpAlgorithm(filePath, pattern);
+        } catch (IOException e) {
+            String strsdf = "";
+        }
+//        } catch (FileNotFoundException fnfe) {
+//
+//        }
+        ArrayList<Long> f1 = new ArrayList<>();
+        f1.add(0L);
+        f1.add(5L);
+        f1.add(32L);
+        f1.add(37L);
+        assertEquals(list.toString(), f1.toString());
 
+        System.out.println(list + " " + f1);
     }
 
 }
