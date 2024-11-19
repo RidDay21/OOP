@@ -30,8 +30,7 @@ class SubStringSearchingTest {
 
         String bigStr = "aabcaaabcaaabcaaadffdfcaaabcaabcaabcaaabcaaabc";
         System.out.println("----");
-        String filePath = "C:/Users/niko_/Desktop/Niki/nsu/OOP/Task_1_3_1/src/main"
-                + "/java/ru/nsu/laptev/test_file";
+        String filePath = "test_file";
         ArrayList<Long> list = new ArrayList<>();
         try {
             list = SubStringSearching.kmpAlgorithm(filePath, pattern);
