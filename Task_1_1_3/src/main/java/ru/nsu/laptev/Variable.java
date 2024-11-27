@@ -46,6 +46,6 @@ public class Variable extends Expression {
      */
     @Override
     public double eval(String exp) {
-        return Parser.parsing(var, exp);
+        return 0;
     }
 }
