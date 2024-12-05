@@ -16,12 +16,16 @@ public class Student {
         this.grades = new ArrayList<>();
     }
 
+    static String createID() {
+        String str = "1";
+        return str;
+    }
 
     public String getName() {
         return name;
     }
 
-    public String getId() {
+    public String getID() {
         return id;
     }
 
