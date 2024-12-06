@@ -18,5 +18,5 @@ class StudentTest {
         student.setPaid(false);
         assertEquals(false, student.isPaid());
     }
-    
+
 }
