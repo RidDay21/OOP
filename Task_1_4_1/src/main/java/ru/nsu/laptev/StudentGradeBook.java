@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Main class with implementation of Student's Graduate book.
+ */
 public class StudentGradeBook { // Изменено имя класса
     private final Student student;
     private final List<ExamSession> examSessions;
@@ -22,7 +25,7 @@ public class StudentGradeBook { // Изменено имя класса
         if (grades.isEmpty()) return 0;
         return grades.stream()
                 .mapToInt(grade -> grade.getGrade().getNumericValue())
-                  .average()
+                .average()
                 .orElse(0);
     }
 

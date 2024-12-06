@@ -1,5 +1,8 @@
 package ru.nsu.laptev;
 
+/**
+ * Class for implementation behavior of grade.
+ */
 public class Grade {
     private final String subject;
     private final GradeValue grade;

@@ -1,5 +1,8 @@
 package ru.nsu.laptev;
 
+/**
+ * Enum class for implementation different possible marks for exam.
+ */
 public enum GradeValue {
     НЕУДОВЛЕТВОРИТЕЛЬНО(2),
     УДОВЛЕТВОРИТЕЛЬНО(3),

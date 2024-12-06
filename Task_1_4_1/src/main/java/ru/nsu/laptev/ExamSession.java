@@ -2,6 +2,9 @@ package ru.nsu.laptev;
 
 import java.util.List;
 
+/**
+ * Class for implementation session.
+ */
 public class ExamSession {
     private final int semester;
     private final List<Grade> grades;
@@ -19,7 +22,4 @@ public class ExamSession {
         return grades;
     }
 
-    public boolean hasSatisfactoryGrade() {
-        return grades.stream().anyMatch(g -> g.getGrade() == GradeValue.НЕУДОВЛЕТВОРИТЕЛЬНО);
-    }
 }

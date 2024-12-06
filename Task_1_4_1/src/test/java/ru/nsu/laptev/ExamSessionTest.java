@@ -1,12 +1,14 @@
 package ru.nsu.laptev;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
+import java.util.List;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
-//переделай
+/**
+ * Class for testing.
+ */
 class ExamSessionTest {
     @Test
     void EStest() {
