@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.nsu.laptev","l":"Main"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.nsu.laptev","l":"ParallelsPrimeNumberDetection"},{"p":"ru.nsu.laptev","l":"PrimeNumber"},{"p":"ru.nsu.laptev","l":"ThreadPrimeNumberDetection"}];updateSearchResults();
