@@ -13,7 +13,7 @@ public class PrimeNumber {
             return false;
         }
         if (number == 2) {
-            return false;
+            return true;
         }
         for (int i = 2; i <= sqrt(number); i++) {
             if (number % i == 0) {
@@ -23,9 +23,10 @@ public class PrimeNumber {
         return true;
     }
 
-    public static boolean hasPrimeNumber(ArrayList<Integer> array) {
+    public static boolean hasСompositeNumber(ArrayList<Integer> array) {
         for (int num : array) {
-            if (isPrime(num)) {
+            if (!isPrime(num)) {
+                System.out.println(num);
                 return true;
             }
         }
