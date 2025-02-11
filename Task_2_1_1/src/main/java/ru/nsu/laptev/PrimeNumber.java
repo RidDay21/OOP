@@ -12,10 +12,9 @@ public class PrimeNumber {
         if (number <= 1) {
             return false;
         }
-        if (number == 2) {
-            return true;
-        }
-        for (int i = 2; i <= sqrt(number); i++) {
+
+        //убери корень
+        for (int i = 2; i < number; i++) {
             if (number % i == 0) {
                 return false;
             }
@@ -26,7 +25,6 @@ public class PrimeNumber {
     public static boolean hasСompositeNumber(ArrayList<Integer> array) {
         for (int num : array) {
             if (!isPrime(num)) {
-                System.out.println(num);
                 return true;
             }
         }
