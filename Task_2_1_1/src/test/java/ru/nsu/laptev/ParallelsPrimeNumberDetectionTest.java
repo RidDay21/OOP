@@ -18,11 +18,11 @@ class ParallelsPrimeNumberDetectionTest {
         ArrayList<Integer> list1 = new ArrayList<>(Arrays.asList(120120021, 1, 213213, 3));
         ArrayList<Integer> list2 = new ArrayList<>(Arrays.asList(13, 17, 3, 5, 7, 37, 13, 17, 3,
                 5, 7, 37, 13, 17, 3, 5, 7, 37));
-        ArrayList<Integer> empty_list = new ArrayList<>();
+        ArrayList<Integer> emptyList = new ArrayList<>();
 
         assertTrue(ParallelsPrimeNumberDetection.hasCompositeNumber(list1));
         assertFalse(ParallelsPrimeNumberDetection.hasCompositeNumber(list2));
-        assertFalse(ParallelsPrimeNumberDetection.hasCompositeNumber(empty_list));
+        assertFalse(ParallelsPrimeNumberDetection.hasCompositeNumber(emptyList));
 
         list1 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8));
         assertTrue(ParallelsPrimeNumberDetection.hasCompositeNumber(list1));
@@ -155,7 +155,8 @@ class ParallelsPrimeNumberDetectionTest {
         assertFalse(result);
         long endTime = System.currentTimeMillis();
         System.out.println("Is there any composite number in list? " + result);
-        System.out.println("Time for parallelStream implementation: " + (endTime - startTime) + " ms.");
+        System.out.println("Time for parallelStream implementation: " + (endTime - startTime)
+                + " ms.");
 
 
         list.add(21);

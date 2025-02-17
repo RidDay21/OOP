@@ -15,8 +15,6 @@ public class ParallelsPrimeNumberDetection {
      * @return true if the list contains a composite number, false otherwise.
      */
     public static boolean hasCompositeNumber(ArrayList<Integer> list) {
-        return list.
-                parallelStream().
-                anyMatch(PrimeNumber::isComp);
+        return list.parallelStream().anyMatch(PrimeNumber::isComp);
     }
 }

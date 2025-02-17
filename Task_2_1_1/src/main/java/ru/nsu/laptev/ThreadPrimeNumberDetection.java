@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- *
+ * Class contains method for searching composite number in array using threads.
  */
 public class ThreadPrimeNumberDetection {
     public static volatile boolean hasCompNumbFlag = false;
+
     /**
      * Checks if the given ArrayList contains any composite numbers.
      *
