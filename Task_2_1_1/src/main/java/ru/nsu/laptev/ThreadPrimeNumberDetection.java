@@ -17,7 +17,8 @@ public class ThreadPrimeNumberDetection {
      * @return true if array contains composite number, false otherwise.
      * @throws InterruptedException if.
      */
-    public static boolean hasCompositeNumber(int amountOfThreads, ArrayList<Integer> array) throws InterruptedException {
+    public static boolean hasCompositeNumber(int amountOfThreads, ArrayList<Integer> array)
+            throws InterruptedException {
         Thread[] threads = new Thread[amountOfThreads];
         int length = array.size();
         int threadScanArea = (length + amountOfThreads - 1) / amountOfThreads;

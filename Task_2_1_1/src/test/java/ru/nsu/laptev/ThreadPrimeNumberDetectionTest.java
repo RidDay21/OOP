@@ -3,8 +3,8 @@ package ru.nsu.laptev;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +16,8 @@ class ThreadPrimeNumberDetectionTest {
     @Test
     void sampleTest() {
         ArrayList<Integer> list1 = new ArrayList<>(Arrays.asList(120120021, 1, 213213, 3));
-        ArrayList<Integer> list2 = new ArrayList<>(Arrays.asList(13, 17, 3, 5, 7, 37, 13, 17, 3, 5, 7, 37, 13, 17, 3, 5, 7, 37));
+        ArrayList<Integer> list2 = new ArrayList<>(Arrays.asList(13, 17, 3, 5, 7, 37, 13, 17, 3,
+                5, 7, 37, 13, 17, 3, 5, 7, 37));
         ArrayList<Integer> list = new ArrayList<>(Arrays.asList(73939133, 73939133, 73939133,
                 73939133, 73939133, 73939133, 73939133, 73939133, 73939133, 73939133, 73939133,
                 73939133, 73939133, 73939133, 73939133, 73939133, 73939133, 73939133, 73939133,
@@ -139,14 +140,13 @@ class ThreadPrimeNumberDetectionTest {
             long startTime = System.currentTimeMillis();
             boolean result = ThreadPrimeNumberDetection.hasCompositeNumber(20, list);
             long endTime = System.currentTimeMillis();
-            System.out.println(result);
+            System.out.println("Is there any composite number in list? " + result);
             System.out.println("Time for Threads: " + (endTime - startTime) + " ms.");
 
             list.add(21);
             assertTrue(ThreadPrimeNumberDetection.hasCompositeNumber(20, list));
-        } catch (
-                InterruptedException e) {
-
+        } catch (InterruptedException e) {
+            return;
         }
 
     }

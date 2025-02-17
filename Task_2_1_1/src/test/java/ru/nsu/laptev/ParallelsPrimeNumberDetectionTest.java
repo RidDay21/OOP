@@ -3,8 +3,8 @@ package ru.nsu.laptev;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +16,8 @@ class ParallelsPrimeNumberDetectionTest {
     @Test
     void sampleTest() {
         ArrayList<Integer> list1 = new ArrayList<>(Arrays.asList(120120021, 1, 213213, 3));
-        ArrayList<Integer> list2 = new ArrayList<>(Arrays.asList(13, 17, 3, 5, 7, 37, 13, 17, 3, 5, 7, 37, 13, 17, 3, 5, 7, 37));
+        ArrayList<Integer> list2 = new ArrayList<>(Arrays.asList(13, 17, 3, 5, 7, 37, 13, 17, 3,
+                5, 7, 37, 13, 17, 3, 5, 7, 37));
         ArrayList<Integer> empty_list = new ArrayList<>();
 
         assertTrue(ParallelsPrimeNumberDetection.hasCompositeNumber(list1));
@@ -144,11 +145,20 @@ class ParallelsPrimeNumberDetectionTest {
         boolean result = ParallelsPrimeNumberDetection.hasCompositeNumber(list);
         assertFalse(result);
         long endTime = System.currentTimeMillis();
-        System.out.println(result);
-        System.out.println(endTime - startTime);
+        System.out.println("Is there any composite number in list? " + result);
+        System.out.println("Time for parallelStream implementation: " + (endTime - startTime) + " ms.");
 
 
         list.add(21);
         assertTrue(ParallelsPrimeNumberDetection.hasCompositeNumber(list));
+    }
+
+    @Test
+    void singleNumberTest() {
+        ArrayList<Integer> list1 = new ArrayList<>(Arrays.asList(120120021));
+        ArrayList<Integer> list2 = new ArrayList<>(Arrays.asList(13));
+
+        assertTrue(ParallelsPrimeNumberDetection.hasCompositeNumber(list1));
+        assertFalse(ParallelsPrimeNumberDetection.hasCompositeNumber(list2));
     }
 }

@@ -3,8 +3,8 @@ package ru.nsu.laptev;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
 
@@ -14,11 +14,11 @@ import org.junit.jupiter.api.Test;
 class PrimeNumberTest {
     @Test
     void sampleTest() {
-        ArrayList<Integer> list1 = new ArrayList<>(Arrays.asList(120120021, 1, 213213, 3));
-        ArrayList<Integer> list2 = new ArrayList<>(Arrays.asList(13, 17, 3, 5, 7, 37, 13, 17, 3, 5, 7, 37, 13, 17, 3, 5, 7, 37));
         assertTrue(PrimeNumber.isComp(4));
         assertFalse(PrimeNumber.isComp(7));
-
+        ArrayList<Integer> list1 = new ArrayList<>(Arrays.asList(120120021, 1, 213213, 3));
+        ArrayList<Integer> list2 = new ArrayList<>(Arrays.asList(13, 17, 3, 5, 7, 37, 13, 17,
+                3, 5, 7, 37, 13, 17, 3, 5, 7, 37));
         assertTrue(PrimeNumber.hasCompositeNumber(list1));
         assertFalse(PrimeNumber.hasCompositeNumber(list2));
     }
@@ -141,8 +141,8 @@ class PrimeNumberTest {
         long startTime = System.currentTimeMillis();
         boolean result = PrimeNumber.hasCompositeNumber(list);
         long endTime = System.currentTimeMillis();
-        System.out.println(result);
-        System.out.println(endTime - startTime);
+        System.out.println("Is there any composite number in list? " + result);
+        System.out.println("Time for basic implementation: " + (endTime - startTime) + " ms.");
 
 
         list.add(21);
