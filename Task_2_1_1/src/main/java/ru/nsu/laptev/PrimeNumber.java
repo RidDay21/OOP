@@ -1,30 +1,41 @@
 package ru.nsu.laptev;
 
-import java.io.Console;
 import java.util.ArrayList;
 
-import static java.lang.Math.sqrt;
-
+/**
+ * The PrimeNumber class contains methods for working with prime numbers.
+ */
 public class PrimeNumber {
 
-
-    public static boolean isPrime(int number) {
+    /**
+     * Checks if the given number is composite.
+     *
+     * @param number the number to check.
+     * @return true if the number is composite, false otherwise.
+     */
+    public static boolean isComp(int number) {
         if (number <= 1) {
             return false;
         }
 
-        //убери корень
+        // Remove square root
         for (int i = 2; i < number; i++) {
             if (number % i == 0) {
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
-    public static boolean hasСompositeNumber(ArrayList<Integer> array) {
+    /**
+     * Checks if the given ArrayList contains any composite numbers.
+     *
+     * @param array passing the array of numbers to check.
+     * @return true if array contains a composite number, false otherwise.
+     */
+    public static boolean hasCompositeNumber(ArrayList<Integer> array) {
         for (int num : array) {
-            if (!isPrime(num)) {
+            if (isComp(num)) {
                 return true;
             }
         }
@@ -32,5 +43,3 @@ public class PrimeNumber {
     }
 
 }
-
-
