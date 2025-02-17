@@ -17,9 +17,10 @@ class ParallelsPrimeNumberDetectionTest {
     void sampleTest() {
         ArrayList<Integer> list1 = new ArrayList<>(Arrays.asList(120120021, 1, 213213, 3));
         ArrayList<Integer> list2 = new ArrayList<>(Arrays.asList(13, 17, 3, 5, 7, 37, 13, 17, 3, 5, 7, 37, 13, 17, 3, 5, 7, 37));
-
+        ArrayList<Integer> empty_list = new ArrayList<>();
         assertTrue(ParallelsPrimeNumberDetection.hasCompositeNumber(list1));
         assertFalse(ParallelsPrimeNumberDetection.hasCompositeNumber(list2));
+        assertFalse(ParallelsPrimeNumberDetection.hasCompositeNumber(empty_list));
     }
 
     @Test
