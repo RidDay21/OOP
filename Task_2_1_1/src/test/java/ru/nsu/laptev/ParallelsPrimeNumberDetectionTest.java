@@ -23,6 +23,15 @@ class ParallelsPrimeNumberDetectionTest {
         assertTrue(ParallelsPrimeNumberDetection.hasCompositeNumber(list1));
         assertFalse(ParallelsPrimeNumberDetection.hasCompositeNumber(list2));
         assertFalse(ParallelsPrimeNumberDetection.hasCompositeNumber(empty_list));
+
+        list1 = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8));
+        assertTrue(ParallelsPrimeNumberDetection.hasCompositeNumber(list1));
+
+        list2 = new ArrayList<>((Arrays.asList(7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7)));
+        assertFalse(ParallelsPrimeNumberDetection.hasCompositeNumber(list2));
+
+        list1 = new ArrayList<>(Arrays.asList(21, 21, 21, 21, 21, 21, 21, 21));
+        assertTrue(ParallelsPrimeNumberDetection.hasCompositeNumber(list1));
     }
 
     @Test
