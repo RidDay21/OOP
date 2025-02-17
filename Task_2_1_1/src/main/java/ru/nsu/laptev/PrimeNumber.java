@@ -22,7 +22,7 @@ public class PrimeNumber {
         // Remove square root
         double sqr = Math.sqrt(number);
         int sqr_int = (int) Math.round(sqr);
-        for (int i = 2; i < sqr_int; i++) {
+        for (int i = 2; i <= sqr_int; i++) {
             if (number % i == 0) {
                 return true;
             }

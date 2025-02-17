@@ -8,27 +8,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
  */
 public class ThreadPrimeNumberDetection {
     public static volatile boolean hasCompNumbFlag = false;
-
-    /**
-     * Checks if the given number is composite.
-     *
-     * @param number the number to check.
-     * @return true if the number is composite, false otherwise.
-     */
-    public static boolean isComp(int number) {
-        if (number <= 1) {
-            return false;
-        }
-
-        // Remove square root
-        for (int i = 2; i < number; i++) {
-            if (number % i == 0) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     /**
      * Checks if the given ArrayList contains any composite numbers.
      *
@@ -47,7 +26,7 @@ public class ThreadPrimeNumberDetection {
             final int end = Math.min(start + threadScanArea, length);
             threads[i] = new Thread(() -> {
                 for (int j = start; j < end; j++) {
-                    if (isComp(array.get(j))) {
+                    if (PrimeNumber.isComp(array.get(j))) {
                         hasCompNumbFlag = true;
                         //System.out.println(array.get(j));
                         break;
