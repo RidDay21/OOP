@@ -169,5 +169,8 @@ class ParallelsPrimeNumberDetectionTest {
 
         assertTrue(ParallelsPrimeNumberDetection.hasCompositeNumber(list1));
         assertFalse(ParallelsPrimeNumberDetection.hasCompositeNumber(list2));
+
+        list2 = new ArrayList<>(Arrays.asList(1));
+        assertTrue(ParallelsPrimeNumberDetection.hasCompositeNumber(list2));
     }
 }

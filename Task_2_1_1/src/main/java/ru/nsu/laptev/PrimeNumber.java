@@ -1,5 +1,6 @@
 package ru.nsu.laptev;
 
+import java.rmi.MarshalException;
 import java.util.ArrayList;
 
 /**
@@ -14,12 +15,14 @@ public class PrimeNumber {
      * @return true if the number is composite, false otherwise.
      */
     public static boolean isComp(int number) {
-        if (number <= 1) {
-            return false;
+        if (number == 1) {
+            return true;
         }
 
         // Remove square root
-        for (int i = 2; i < number; i++) {
+        double sqr = Math.sqrt(number);
+        int sqr_int = (int) Math.round(sqr);
+        for (int i = 2; i < sqr_int; i++) {
             if (number % i == 0) {
                 return true;
             }
