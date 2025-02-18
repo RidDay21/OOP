@@ -43,7 +43,7 @@ class ParallelsPrimeNumberDetectionTest {
     @BeforeEach
     void initialize() {
         list = new ArrayList<>();
-        size = 21;
+        size = 10;
         primeNumber = 73939133;
     }
 
@@ -154,6 +154,30 @@ class ParallelsPrimeNumberDetectionTest {
                 + " & big amount: " + (endTime - startTime)  + " ms.\n\n");
         list.clear();
     }
+
+    @Test
+    void sixthTimeTest() {
+        size *= (size * size * size * size * size);
+
+        for (int i = 0; i < size; i++) {
+            list.add(primeNumber);
+        }
+        long startTime = System.currentTimeMillis();
+        assertFalse(ParallelsPrimeNumberDetection.hasCompositeNumber(list));
+        long endTime = System.currentTimeMillis();
+        System.out.println("Time for parallelStream implementation(no Composite & "
+                + size + " numbers: " + (endTime - startTime) + " ms.");
+
+        list.add(21);
+        startTime = System.currentTimeMillis();
+        assertTrue(ParallelsPrimeNumberDetection.hasCompositeNumber(list));
+        endTime = System.currentTimeMillis();
+        System.out.println("Time for parallelStream implementation(Composite in the last "
+                + " & big amount: " + (endTime - startTime)  + " ms.\n\n");
+        list.clear();
+    }
+
+
 
     @Test
     void singleNumberTest() {

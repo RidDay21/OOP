@@ -15,7 +15,7 @@ public class PrimeNumber {
      * @return true if the number is composite, false otherwise.
      */
     public static boolean isComp(int number) {
-        if (number == 1) {
+        if (number <= 1) {
             return true;
         }
 

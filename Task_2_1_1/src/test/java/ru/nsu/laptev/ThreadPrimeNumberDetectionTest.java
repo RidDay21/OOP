@@ -21,7 +21,7 @@ class ThreadPrimeNumberDetectionTest {
     @BeforeEach
     void initialize() {
         list = new ArrayList<>();
-        size = 21;
+        size = 15;
         primeNumber = 73939133;
     }
 
@@ -34,14 +34,14 @@ class ThreadPrimeNumberDetectionTest {
         long startTime = System.currentTimeMillis();
         assertFalse(ThreadPrimeNumberDetection.hasCompositeNumber(amountOfThreads, list));
         long endTime = System.currentTimeMillis();
-        System.out.println("Time for parallelStream implementation(no Composite & "
+        System.out.println("Time for Threads implementation(no Composite & "
                 + size + " numbers: " + (endTime - startTime) + " ms.");
 
         list.add(21);
         startTime = System.currentTimeMillis();
         assertTrue(ThreadPrimeNumberDetection.hasCompositeNumber(amountOfThreads, list));
         endTime = System.currentTimeMillis();
-        System.out.println("Time for parallelStream implementation(Composite in the last "
+        System.out.println("Time for Threads implementation(Composite in the last "
                 + " & big amount: " + (endTime - startTime) + " ms.\n\n");
         list.clear();
     }
@@ -56,14 +56,14 @@ class ThreadPrimeNumberDetectionTest {
         long startTime = System.currentTimeMillis();
         assertFalse(ThreadPrimeNumberDetection.hasCompositeNumber(amountOfThreads, list));
         long endTime = System.currentTimeMillis();
-        System.out.println("Time for parallelStream implementation(no Composite & "
+        System.out.println("Time for Threads implementation(no Composite & "
                 + size + " numbers: " + (endTime - startTime) + " ms.");
 
         list.add(21);
         startTime = System.currentTimeMillis();
         assertTrue(ThreadPrimeNumberDetection.hasCompositeNumber(amountOfThreads, list));
         endTime = System.currentTimeMillis();
-        System.out.println("Time for parallelStream implementation(Composite in the last "
+        System.out.println("Time for Threads implementation(Composite in the last "
                 + " & big amount: " + (endTime - startTime) + " ms.\n\n");
         list.clear();
     }
@@ -78,14 +78,14 @@ class ThreadPrimeNumberDetectionTest {
         long startTime = System.currentTimeMillis();
         assertFalse(ThreadPrimeNumberDetection.hasCompositeNumber(amountOfThreads, list));
         long endTime = System.currentTimeMillis();
-        System.out.println("Time for parallelStream implementation(no Composite & "
+        System.out.println("Time for Threads implementation(no Composite & "
                 + size + " numbers: " + (endTime - startTime) + " ms.");
 
         list.add(21);
         startTime = System.currentTimeMillis();
         assertTrue(ThreadPrimeNumberDetection.hasCompositeNumber(amountOfThreads, list));
         endTime = System.currentTimeMillis();
-        System.out.println("Time for parallelStream implementation(Composite in the last "
+        System.out.println("Time for Threads implementation(Composite in the last "
                 + " & big amount: " + (endTime - startTime) + " ms.\n\n");
         list.clear();
     }
@@ -99,14 +99,14 @@ class ThreadPrimeNumberDetectionTest {
         long startTime = System.currentTimeMillis();
         assertFalse(ThreadPrimeNumberDetection.hasCompositeNumber(amountOfThreads, list));
         long endTime = System.currentTimeMillis();
-        System.out.println("Time for parallelStream implementation(no Composite & "
+        System.out.println("Time for Threads implementation(no Composite & "
                 + size + " numbers: " + (endTime - startTime) + " ms.");
 
         list.add(21);
         startTime = System.currentTimeMillis();
         assertTrue(ThreadPrimeNumberDetection.hasCompositeNumber(amountOfThreads, list));
         endTime = System.currentTimeMillis();
-        System.out.println("Time for parallelStream implementation(Composite in the last "
+        System.out.println("Time for Threads implementation(Composite in the last "
                 + " & big amount: " + (endTime - startTime) + " ms.\n\n");
         list.clear();
     }
@@ -121,15 +121,37 @@ class ThreadPrimeNumberDetectionTest {
         long startTime = System.currentTimeMillis();
         assertFalse(ThreadPrimeNumberDetection.hasCompositeNumber(amountOfThreads, list));
         long endTime = System.currentTimeMillis();
-        System.out.println("Time for parallelStream implementation(no Composite & "
+        System.out.println("Time for Threads implementation(no Composite & "
                 + size + " numbers: " + (endTime - startTime) + " ms.");
 
         list.add(21);
         startTime = System.currentTimeMillis();
         assertTrue(ThreadPrimeNumberDetection.hasCompositeNumber(amountOfThreads, list));
         endTime = System.currentTimeMillis();
-        System.out.println("Time for parallelStream implementation(Composite in the last "
+        System.out.println("Time for Threads implementation(Composite in the last "
                 + " & big amount: " + (endTime - startTime) + " ms.\n\n");
+        list.clear();
+    }
+
+    @Test
+    void sixthTimeTest() {
+        size *= (size * size * size * size * size);
+
+        for (int i = 0; i < size; i++) {
+            list.add(primeNumber);
+        }
+        long startTime = System.currentTimeMillis();
+        assertFalse(ParallelsPrimeNumberDetection.hasCompositeNumber(list));
+        long endTime = System.currentTimeMillis();
+        System.out.println("Time for Threads implementation(no Composite & "
+                + size + " numbers: " + (endTime - startTime) + " ms.");
+
+        list.add(21);
+        startTime = System.currentTimeMillis();
+        assertTrue(ParallelsPrimeNumberDetection.hasCompositeNumber(list));
+        endTime = System.currentTimeMillis();
+        System.out.println("Time for Threads implementation(Composite in the last "
+                + " & big amount: " + (endTime - startTime)  + " ms.\n\n");
         list.clear();
     }
 
