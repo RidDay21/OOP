@@ -1,39 +1,34 @@
 package ru.nsu.laptev;
 
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class PapaCarlo {
+    private final int totalBakers;
+    private final int totalCouriers;
+
     private ArrayList<Baker> bakers;
     private ArrayList<Courier> couriers;
-    private int totalBakers;
-    private int totalCouriers;
-    private int freeBakersCount;
-    private int freeCourierCount;
+    private ArrayList<Order> orders;
+    private AtomicInteger freeBakersCount;
+    private AtomicInteger freeCourierCount;
+
     private Storage storage;
+    private OrderQueue listOfOrders;
 
     public PapaCarlo(ArrayList<Baker> bakers, ArrayList<Courier> couriers,
                      int storageCapacity ) {
         this.bakers = bakers;
         totalBakers = bakers.size();
-        freeBakersCount = totalBakers;
+        freeBakersCount = new AtomicInteger(totalBakers);
 
         this.couriers = couriers;
         totalCouriers = couriers.size();
-        freeCourierCount = totalCouriers;
+        freeCourierCount = new AtomicInteger(totalCouriers);
 
         this.storage = new Storage(storageCapacity);
+        this.orders = null;
     }
 
-    public void hireCourier(Courier courier) {
-        totalCouriers++;
-        freeCourierCount++;
-        couriers.add(courier);
-    }
-
-    public void hireBaker(Baker baker) {
-        totalBakers++;
-        freeBakersCount++;
-        bakers.add(baker);
-    }
 
 }

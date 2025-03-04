@@ -3,7 +3,7 @@ package ru.nsu.laptev;
 /**
  *
  */
-public class Baker {
+public class Baker extends Thread {
     private int bakerID;
     private int pizzaBakeTime;
     private Order currentOrder; //если currentOrder равен null, то у курьера пока что нет заказа
@@ -26,7 +26,8 @@ public class Baker {
         }
     }
 
-    public void deliver() {
+    @Override
+    public void run() {
 
     }
 }
