@@ -3,7 +3,7 @@ plugins {
     id 'jacoco'
 }
 
-group = 'ru.nsu.laptev'
+group = 'ru.nsu.fitkulin'
 version = '1.0-SNAPSHOT'
 
 repositories {

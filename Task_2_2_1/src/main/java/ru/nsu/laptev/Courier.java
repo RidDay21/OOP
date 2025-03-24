@@ -1,42 +1,44 @@
 package ru.nsu.laptev;
 
-/**
- *
- */
-public class Courier {
-    private int courierID;
-    private int deliverySpeed;
-    private int trunkCapacity;
-    private Order currentOrder; //если currentOrder равен null, то у курьера пока что нет заказа
+import static java.lang.Thread.sleep;
 
-    /**
-     *
-     * @param courierID
-     * @param deliverySpeed
-     */
-    public Courier (int courierID, int deliverySpeed, int trunkCapacity) {
+public class Courier implements Runnable {
+    private final int courierID;
+    private final int deliverySpeed;
+    private final int trunkCapacity;
+    private final StorageOrderProviderInterface orderProvider;
+    private Order order;
+
+    public Courier(int courierID, int deliverySpeed, int trunkCapacity,
+                   Storage storage, StorageOrderProviderInterface orderProvider) {
         this.courierID = courierID;
         this.deliverySpeed = deliverySpeed;
+        this.orderProvider = orderProvider;
         this.trunkCapacity = trunkCapacity;
-        currentOrder = null;
+
+        order = null;
     }
 
-    /**
-     * User need to pass an currentOrder.getAmountOfPizza().
-     */
-    public boolean takeAnOrder(Order order) {
-        int numberOfPizzas = order.getAmountOfPizza();
-        boolean flag = false;
-        if (trunkCapacity >= numberOfPizzas) {
-            currentOrder = order;
-            flag = true;
-            return flag;
-        } else {
-            return flag;
+    @Override
+    public void run() {
+        while (true) {
+            try {
+                System.out.println("Courier " + courierID + " ожидает заказ...");
+                order = orderProvider.takeOrder(trunkCapacity);
+                if (order == null) continue;
+
+                System.out.println("Order " + order.getID() + " is DELIVERING");
+                order.becomeNewState(OrderState.DELIVERING);
+                sleep(deliverySpeed * 1000L);
+                synchronized (order) {
+                    order.becomeNewState(OrderState.DELIVERED);
+                    order.notifyAll(); // Уведомляем клиента
+                }
+                System.out.println("Order " + order.getID() + " DELIVERED by courier " + courierID);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+            order = null;
         }
-    }
-
-    public void deliver() {
-
     }
 }

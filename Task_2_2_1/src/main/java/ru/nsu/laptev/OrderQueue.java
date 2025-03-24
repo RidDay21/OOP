@@ -1,32 +1,67 @@
+// OrderQueue.java
 package ru.nsu.laptev;
 
+import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Queue;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * My implementation of BlockingQueue
- */
-public class OrderQueue {
-    static final int LIMIT = 21;
-    LinkedList<Order> orders;
+public class OrderQueue implements Iterable <Order> {
+    private Queue<Order> orders;
+    private AtomicInteger storedAmount;
+    private final int capacity;
 
-    public OrderQueue() {
+    public OrderQueue(int capacity) {
+        this.capacity = capacity;
         orders = new LinkedList<>();
+        storedAmount = new AtomicInteger(0);
     }
 
-    public synchronized void addOrder(Order order) throws OrderListIsFullException {
-        if (orders.size() == LIMIT) {
-            throw new OrderListIsFullException("Достигнут лимит заказов в нашей "
-                    + "маленькой пиццерии. Перезвоните позже\n");
+    @Override
+    public Iterator<Order> iterator() {
+        return orders.iterator();
+    }
+
+    public synchronized int getStoredAmount() {
+        return storedAmount.get();
+    }
+
+    public synchronized void add(Order order) throws InterruptedException {
+        while (orders.size() >= capacity) {
+            System.out.println("В очереди нет места для заказа");
+            wait();
         }
-        orders.add(order);
-    }
-
-    public synchronized Order takeOrder(Order order) throws OrderListIsEmptyException {
-        if (orders.isEmpty()) {
-            throw new OrderListIsEmptyException("Заказов нет, отдохни");
+        orders.offer(order);
+        System.out.println("Добавлен заказ " + order.getID());
+        storedAmount.incrementAndGet();
+        System.out.println("Сейчас в очереди лежат заказы ");
+        for (Order o : orders) {
+            System.out.println("ID: " + o.getID() + " Кол-во пицц: " + o.getAmountOfPizza());
         }
-        Order tmpOrder = orders.removeFirst();
-
-        return tmpOrder;
+        notifyAll();
+        System.out.println("Оповестили всех, текущее Stored amount: " + storedAmount.get());
     }
+
+    public synchronized Order take() throws InterruptedException {
+        while (orders.isEmpty()) {
+            System.out.println("Baker ожидает заказ, но очередь пуста. Ждем...");
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                System.out.println("МЕНЯ ПИЗДАНУЛИ ЛОПАТОЙ");
+            }
+
+        }
+        Order item = orders.poll();
+        item.becomeNewState(OrderState.COOKING);
+        System.out.println("Получен заказ " + item.getID());
+
+        storedAmount.decrementAndGet();
+        System.out.println("Оповестили всех, заказ забирают, текущее Stored amount: " + storedAmount.get());
+        notifyAll();
+        System.out.println("Baker получил заказ " + item.getID());
+        return item;
+    }
+
 }

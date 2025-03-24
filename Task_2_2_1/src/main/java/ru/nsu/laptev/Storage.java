@@ -1,37 +1,60 @@
 package ru.nsu.laptev;
 
-import java.util.Queue;
+import java.util.Iterator;
+
 
 public class Storage {
     private final int capacity;
-    private int availableCapacity;
-    private final Queue<Order> orderQueue;
+    private OrderQueue cookedOrderQueue;
 
     public Storage(int capacity) {
         this.capacity = capacity;
-        this.availableCapacity = capacity;
-        orderQueue = null;
+        this.cookedOrderQueue = new OrderQueue(capacity);
     }
 
-    public void takeAnOrder(Order order) {
-        int numberOfPizzas = order.getAmountOfPizza();
-        if (availableCapacity >= numberOfPizzas) {
-            orderQueue.add(order);
-            availableCapacity -= numberOfPizzas;
+    public synchronized boolean takeOrder(Order order) {
+        while (cookedOrderQueue.getStoredAmount() + order.getAmountOfPizza() >= capacity) {
+            try {
+                System.out.println("Хранилище заполнено. Подождите пожалуйста...");
+                wait();
+            } catch (InterruptedException ignored) {
+                return false;
+            }
+        }
+        try {
+            System.out.println("Заказ" + order.getID() + " добавлен в хранилище");
+            cookedOrderQueue.add(order);
+
+            notifyAll();
+        } catch (InterruptedException e) {
+            return false;
+        }
+        return true;
+    }
+
+    public synchronized Order passOrder(int availableCapacity) {
+        try {
+            while (true) {
+                if (cookedOrderQueue.getStoredAmount() == 0) {
+                    wait(100);  // Если очередь пуста, ждём появления заказов
+                    continue;
+                }
+                // Ищем заказ, который удовлетворяет вместимости
+                for (Iterator <Order> it = cookedOrderQueue.iterator(); it.hasNext();) {
+                    Order order = it.next();
+                    if (order.getAmountOfPizza() <= availableCapacity) {
+                        it.remove(); // Удаляем заказ из очереди
+                        notifyAll(); // Уведомляем другие потоки об изменении
+                        return order;
+                    }
+                }
+                // Если ни один заказ не подошёл, подождем немного и повторим попытку
+                wait(100);
+            }
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            return null;
         }
     }
 
-    public boolean take_from_kitchen(Order order) {
-        boolean flag = false;
-
-        return flag;
-    }
-
-    public boolean give_to_courier(Order order) {
-        boolean flag = false;
-        if (true) {
-
-        }
-        return flag;
-    }
 }
