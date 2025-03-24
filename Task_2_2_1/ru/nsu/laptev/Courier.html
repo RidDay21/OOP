@@ -73,9 +73,14 @@ loadScripts(document, 'script');</script>
 <div class="inheritance">ru.nsu.laptev.Courier</div>
 </div>
 <section class="class-description" id="class-description">
+<dl class="notes">
+<dt>All Implemented Interfaces:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a></code></dd>
+</dl>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">Courier</span>
-<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span></div>
+<span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
+implements <a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a></span></div>
 </section>
 <section class="summary">
 <ul class="summary-list">
@@ -87,9 +92,11 @@ loadScripts(document, 'script');</script>
 <div class="summary-table two-column-summary">
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
-<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,int,int)" class="member-name-link">Courier</a><wbr>(int&nbsp;courierID,
+<div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E(int,int,int,ru.nsu.laptev.Storage,ru.nsu.laptev.StorageOrderProviderInterface)" class="member-name-link">Courier</a><wbr>(int&nbsp;courierID,
  int&nbsp;deliverySpeed,
- int&nbsp;trunkCapacity)</code></div>
+ int&nbsp;trunkCapacity,
+ <a href="Storage.html" title="class in ru.nsu.laptev">Storage</a>&nbsp;storage,
+ <a href="StorageOrderProviderInterface.html" title="interface in ru.nsu.laptev">StorageOrderProviderInterface</a>&nbsp;orderProvider)</code></div>
 <div class="col-last even-row-color">&nbsp;</div>
 </div>
 </section>
@@ -106,13 +113,8 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-second">Method</div>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>void</code></div>
-<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#deliver()" class="member-name-link">deliver</a>()</code></div>
+<div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#run()" class="member-name-link">run</a>()</code></div>
 <div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
-<div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>boolean</code></div>
-<div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#takeAnOrder(ru.nsu.laptev.Order)" class="member-name-link">takeAnOrder</a><wbr>(<a href="Order.html" title="class in ru.nsu.laptev">Order</a>&nbsp;order)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
-<div class="block">User need to pass an currentOrder.getAmountOfPizza().</div>
-</div>
 </div>
 </div>
 </div>
@@ -131,16 +133,13 @@ loadScripts(document, 'script');</script>
 <h2>Constructor Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="&lt;init&gt;(int,int,int)">
+<section class="detail" id="&lt;init&gt;(int,int,int,ru.nsu.laptev.Storage,ru.nsu.laptev.StorageOrderProviderInterface)">
 <h3>Courier</h3>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">Courier</span><wbr><span class="parameters">(int&nbsp;courierID,
  int&nbsp;deliverySpeed,
- int&nbsp;trunkCapacity)</span></div>
-<dl class="notes">
-<dt>Parameters:</dt>
-<dd><code>courierID</code> - </dd>
-<dd><code>deliverySpeed</code> - </dd>
-</dl>
+ int&nbsp;trunkCapacity,
+ <a href="Storage.html" title="class in ru.nsu.laptev">Storage</a>&nbsp;storage,
+ <a href="StorageOrderProviderInterface.html" title="interface in ru.nsu.laptev">StorageOrderProviderInterface</a>&nbsp;orderProvider)</span></div>
 </section>
 </li>
 </ul>
@@ -152,16 +151,13 @@ loadScripts(document, 'script');</script>
 <h2>Method Details</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="takeAnOrder(ru.nsu.laptev.Order)">
-<h3>takeAnOrder</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="element-name">takeAnOrder</span><wbr><span class="parameters">(<a href="Order.html" title="class in ru.nsu.laptev">Order</a>&nbsp;order)</span></div>
-<div class="block">User need to pass an currentOrder.getAmountOfPizza().</div>
-</section>
-</li>
-<li>
-<section class="detail" id="deliver()">
-<h3>deliver</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">deliver</span>()</div>
+<section class="detail" id="run()">
+<h3>run</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">void</span>&nbsp;<span class="element-name">run</span>()</div>
+<dl class="notes">
+<dt>Specified by:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html#run()" title="class or interface in java.lang" class="external-link">run</a></code>&nbsp;in interface&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Runnable.html" title="class or interface in java.lang" class="external-link">Runnable</a></code></dd>
+</dl>
 </section>
 </li>
 </ul>
