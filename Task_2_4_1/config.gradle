@@ -1,0 +1,18 @@
+import main.groovy.ru.nsu.laptev.ConfigDSL
+
+def config = new ConfigDSL()
+
+config.task {
+    id = 'Task_2_4_1'
+    name = 'Доменно-специфичные языки (DSL)'
+    maxPoints = 10
+    softDeadLine = '2025-04-15';
+    hardDeadLine = '2025-04-15';
+}
+
+config.student {
+    githubNick = 'RidDay21'
+    fullName = 'Laptev Nikolay'
+    repoUrl = 'https://github.com/RidDay21/testing_rep.git'
+}
+return config
