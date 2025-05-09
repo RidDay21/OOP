@@ -1,0 +1,11 @@
+package ru.nsu.laptev;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+class PapaCarloTest {
+    @Test
+    void smallPizzeriaTest() {
+
+    }
+}

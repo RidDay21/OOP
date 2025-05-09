@@ -1,0 +1,8 @@
+LTime for parallelStream implementation(no Composite & 1000 numbers: 503 ms.
+TTime for parallelStream implementation(Composite in the last  & big amount: 208 ms.
+
+
+JTime for parallelStream implementation(no Composite & 100 numbers: 17 ms.
+RTime for parallelStream implementation(Composite in the last  & big amount: 6 ms.
+
+
