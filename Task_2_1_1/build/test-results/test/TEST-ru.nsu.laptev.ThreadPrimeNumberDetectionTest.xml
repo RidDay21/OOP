@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.nsu.laptev.ThreadPrimeNumberDetectionTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-02-18T03:09:20" hostname="manutd-nikolay" time="42.701">
+  <properties/>
+  <testcase name="thirdTimeTest()" classname="ru.nsu.laptev.ThreadPrimeNumberDetectionTest" time="0.276"/>
+  <testcase name="secondTimeTest()" classname="ru.nsu.laptev.ThreadPrimeNumberDetectionTest" time="0.01"/>
+  <testcase name="sixthTimeTest()" classname="ru.nsu.laptev.ThreadPrimeNumberDetectionTest" time="39.054"/>
+  <testcase name="fourthTimeTest()" classname="ru.nsu.laptev.ThreadPrimeNumberDetectionTest" time="0.264"/>
+  <testcase name="firstTimeTest()" classname="ru.nsu.laptev.ThreadPrimeNumberDetectionTest" time="0.009"/>
+  <testcase name="fifthTimeTest()" classname="ru.nsu.laptev.ThreadPrimeNumberDetectionTest" time="3.078"/>
+  <system-out><![CDATA[Time for Threads implementation(no Composite & 3375 numbers: 216 ms.
+Time for Threads implementation(Composite in the last  & big amount: 27 ms.
+
+
+Time for Threads implementation(no Composite & 225 numbers: 3 ms.
+Time for Threads implementation(Composite in the last  & big amount: 3 ms.
+
+
+Time for Threads implementation(no Composite & 11390625 numbers: 21133 ms.
+Time for Threads implementation(Composite in the last  & big amount: 17504 ms.
+
+
+Time for Threads implementation(no Composite & 50625 numbers: 137 ms.
+Time for Threads implementation(Composite in the last  & big amount: 117 ms.
+
+
+Time for Threads implementation(no Composite & 15 numbers: 4 ms.
+Time for Threads implementation(Composite in the last  & big amount: 1 ms.
+
+
+Time for Threads implementation(no Composite & 759375 numbers: 1520 ms.
+Time for Threads implementation(Composite in the last  & big amount: 1522 ms.
+
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
